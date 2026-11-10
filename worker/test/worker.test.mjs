@@ -3,7 +3,8 @@
 // Ends by running scripts/smoke-test.sh against the local Worker.
 // Usage: npm test (in worker/)
 import { unstable_startWorker } from "wrangler";
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync, spawnSync } from "node:child_process";
@@ -58,7 +59,14 @@ await test("unit: 405 has the standard error shape and Allow", async () => {
 });
 
 // ---- Integration tests: the real Worker with static assets ----
-execFileSync("node", ["scripts/build-site.mjs"], { cwd: root, stdio: "inherit" });
+// Build with a temporary images folder: one valid PNG, and an SVG that must not be served.
+const imgDir = mkdtempSync(join(tmpdir(), "cod-images-"));
+const PNG = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==", "base64");
+mkdirSync(join(imgDir, "Feeds"));
+writeFileSync(join(imgDir, "Feeds", "pixel.png"), PNG);
+writeFileSync(join(imgDir, "Feeds", "logo.svg"), "<svg xmlns='http://www.w3.org/2000/svg'/>");
+execFileSync("node", ["scripts/build-site.mjs"], { cwd: root, stdio: "inherit", env: { ...process.env, IMAGES_DIR: imgDir } });
+rmSync(imgDir, { recursive: true, force: true });
 const index = JSON.parse(readFileSync(join(here, "..", "dist", "index.json"), "utf8"));
 const files = index.datasets.flatMap(d => [d.data, d.schema]).map(p => p.slice(1));
 
@@ -79,6 +87,25 @@ try {
       assert.equal(r.headers.get("cache-control"), "public, max-age=300");
       assert.ok(r.headers.get("etag"), "has ETag");
       assert.deepEqual(Buffer.from(await r.arrayBuffer()), readFileSync(join(root, "data", key)));
+    });
+  }
+
+  await test("GET /images/Feeds/pixel.png (static image)", async () => {
+    const r = await fetch(`${base}/images/Feeds/pixel.png`, { headers: { Origin: "https://example.com" } });
+    assert.equal(r.status, 200);
+    assert.equal(r.headers.get("content-type"), "image/png");
+    assert.equal(r.headers.get("access-control-allow-origin"), "*");
+    assert.equal(r.headers.get("cache-control"), "public, max-age=300");
+    assert.deepEqual(Buffer.from(await r.arrayBuffer()), PNG);
+  });
+
+  for (const [path, why] of [
+    ["images/Feeds/logo.svg", "SVG (not copied)"],
+    ["images/Feeds/", "image folder listing"],
+    ["images/", "images root"],
+  ]) {
+    await test(`404 for ${why} (${path})`, async () => {
+      await expectError(await fetch(`${base}/${path}`), 404);
     });
   }
 

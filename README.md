@@ -20,6 +20,7 @@ Read-only, no keys, open to any website.
 | [`/HealthInstitution/HealthInstiData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/HealthInstitution/HealthInstiData.json) | Health institutions and their services (e.g. SPMC Cancer Institute) | `Health_Insti` |
 | [`/MedicalSpecialist/MedicalSpecialistData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/MedicalSpecialist/MedicalSpecialistData.json) | Medical specialists (oncology and related fields) and their clinics | `Medical_Specialist` |
 | [`/SupportGroups/SupportGroupsData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/SupportGroups/SupportGroupsData.json) | Cancer support groups (e.g. AMUMA) | `Support_Group` |
+| `/images/<Folder>/<file>` | Images used by the data (see [Images](#images)) | — |
 
 Each data file has a schema next to it: replace `Data.json` with `Data.schema.json`, for example `/Feeds/FeedsData.schema.json` (JSON Schema draft 2020-12). The short names `FinancialInsti` and `HealthInsti` are on purpose: use the paths exactly as written.
 
@@ -37,6 +38,28 @@ const all = await Promise.all(datasets.map(d => fetch(d.data).then(r => r.json()
 ```
 
 **Use a plain GET with no custom request headers.** Any site can read the files (`Access-Control-Allow-Origin: *`). Cloudflare's static file layer doesn't answer CORS preflight (`OPTIONS` returns `405`), so adding headers like `Authorization` would make browsers block the request. Reading public JSON never needs them.
+
+### Images
+
+The image fields (`bgImageURL`, and `imageURL` for specialists) hold one of:
+
+| Value | Meaning | In your app |
+|---|---|---|
+| `"/images/MedicalSpecialist/dr-santos.webp"` | An image hosted by this API | Put the base URL in front |
+| `"https://…"` | An image on another site | Use as is (it may break if that site changes) |
+| `""` | No image | Show a fallback, like initials or an icon |
+
+```jsx
+const imageUrl = (path) => !path ? null : path.startsWith("/") ? BASE + path : path;
+
+{doctor.imageURL
+  ? <img src={imageUrl(doctor.imageURL)} alt={`${doctor.firstname} ${doctor.lastname}`} loading="lazy" />
+  : <div className="avatar">{doctor.firstname[0]}{doctor.lastname[0]}</div>}
+```
+
+`<img>` tags don't need CORS. Images also send `Access-Control-Allow-Origin: *`, so `fetch()` and `<canvas>` work too.
+
+**Adding an image:** put it in `images/<Folder>/` (rules in [images/README.md](images/README.md)), set the field to `/images/<Folder>/<file>`, run `npm run validate`, and push. The check fails if the file is missing, badly named, the wrong type, or over 5 MB.
 
 ### Responses
 
@@ -156,7 +179,7 @@ The small Worker script (`worker/src/index.js`) runs only for `/` (the dataset l
 ```
 edit data/ → push or merge to main → GitHub Actions
    1. validate:     every data file must pass its schema     (fails = nothing is deployed)
-   2. test-worker:  30 tests against a local copy of the Worker
+   2. test-worker:  34 tests against a local copy of the Worker
    3. deploy:       build worker/dist from data/, then wrangler deploy
    4. smoke:        fetch every file from the public URL       (200, same bytes, CORS header, JSON type)
    5. rollback:     only if smoke failed: put the previous version back live
@@ -218,7 +241,7 @@ If a setting is missing, the deploy job stops at once and names it. GitHub never
 node scripts/build-site.mjs   # from the repo root: data/ -> worker/dist/
 cd worker
 npm install
-npm test                      # 30 tests with Wrangler's local runner (real asset routing)
+npm test                      # 34 tests with Wrangler's local runner (real asset routing)
 npx wrangler login            # once per PC, only for a manual deploy
 npx wrangler deploy           # manual deploy (CI does this on every push to main)
 ```
@@ -229,7 +252,9 @@ npx wrangler deploy           # manual deploy (CI does this on every push to mai
 |---|---|
 | `data/` | The datasets and schemas |
 | `scripts/validate.mjs` | Checks each data file against its schema (Ajv, draft 2020-12) |
-| `scripts/build-site.mjs` | Builds `worker/dist/`: the data files, `index.json` and `_headers` |
+| `scripts/build-site.mjs` | Builds `worker/dist/`: the data files, images, `index.json` and `_headers` |
+| `scripts/images.mjs` | Image rules shared by validate and build (types, names, sizes) |
+| `images/` | Images served at `/images/...` (rules in `images/README.md`) |
 | `scripts/smoke-test.sh` | Checks the public URL after each deploy |
 | `worker/` | Worker config, the small script for `/`, and its tests |
 | `.github/workflows/deploy-data.yml` | The pipeline |

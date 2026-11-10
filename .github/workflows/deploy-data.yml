@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "data/**"
+      - "images/**"
       - "scripts/**"
       - "worker/**"
       - "package.json"
@@ -13,6 +14,7 @@ on:
   pull_request:
     paths:
       - "data/**"
+      - "images/**"
       - "scripts/**"
       - "worker/**"
   workflow_dispatch:

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Checks the public URL after a deploy, the way a browser app would see it.
-# For every JSON file in data/:
+# For every JSON file in data/ and every image in images/<Folder>/:
 #   - GET returns 200
 #   - the body is byte-for-byte the same as the repo file
 #   - Access-Control-Allow-Origin is sent (CORS works for other sites)
-#   - Content-Type is application/json
+#   - Content-Type is application/json (data) or image/* (images)
 # Plus one CORS preflight (OPTIONS) check.
 # Retries for up to ~2 minutes, because a new upload can take a moment to show.
 #
@@ -29,11 +29,23 @@ check_file() {   # $1 = local path; prints a reason and returns 1 on failure
   [[ "$code" == "200" ]] || { echo "status $code"; return 1; }
   cmp -s "$TMP/body" "$file" || { echo "content differs from repo"; return 1; }
   [[ "$acao" == "*" || "$acao" == "$ORIGIN" ]] || { echo "no CORS header (Access-Control-Allow-Origin: '${acao}')"; return 1; }
-  [[ "$ctype" == application/json* ]] || { echo "content-type is '$ctype'"; return 1; }
+  if [[ "$file" == *.json ]]; then
+    [[ "$ctype" == application/json* ]] || { echo "content-type is '$ctype'"; return 1; }
+  else
+    [[ "$ctype" == image/* ]] || { echo "content-type is '$ctype', expected image/*"; return 1; }
+  fi
   return 0
 }
 
-mapfile -d '' FILES < <(find data -type f -name '*.json' -print0 | sort -z)
+# Data files, plus images that follow the naming rules in scripts/images.mjs
+# (validate.mjs fails the build for anything else, so those are never deployed).
+mapfile -d '' FILES < <(
+  {
+    find data -type f -name '*.json' -print0
+    [[ -d images ]] && find images -mindepth 2 -maxdepth 2 -type f -size -5121k -regextype posix-extended \
+      -regex 'images/[A-Za-z0-9_-]+/[a-z0-9][a-z0-9._-]*\.(webp|avif|png|jpg|jpeg|gif)' -print0
+  } | sort -z
+)
 pending=("${FILES[@]}")
 
 for ((try = 1; try <= TRIES; try++)); do

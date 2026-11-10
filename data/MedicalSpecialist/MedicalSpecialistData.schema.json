@@ -30,8 +30,8 @@
           },
           "imageURL": {
             "type": "string",
-            "description": "Profile image URL.",
-            "format": "uri"
+            "description": "Profile image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL.",
+            "format": "uri-reference"
           },
           "source": {
             "type": "string",

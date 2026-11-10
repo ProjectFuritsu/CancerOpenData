@@ -21,8 +21,8 @@
           },
           "bgImageURL": {
             "type": "string",
-            "description": "Background image URL.",
-            "format": "uri"
+            "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL.",
+            "format": "uri-reference"
           },
           "source": {
             "type": "string",
