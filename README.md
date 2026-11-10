@@ -61,6 +61,7 @@ Do these once in the AWS console (account `722399422980`, region `ap-southeast-2
    - Provider URL: `https://token.actions.githubusercontent.com`
    - Audience: `sts.amazonaws.com`
 4. **Create the role.** IAM → Roles → Create role → Custom trust policy → paste `infra/trust-policy.json`. Only the `main` branch of `ProjectFuritsu/CancerOpenData` can use this role.
+   - This repo uses GitHub's **immutable subject** format, which includes the owner and repo IDs: `repo:ProjectFuritsu@189011255/CancerOpenData@1452119382:ref:refs/heads/main`. It keeps working if the repo is renamed, and a new repo with the same name can't use the role. To check the format, run `gh api repos/ProjectFuritsu/CancerOpenData/actions/oidc/customization/sub` and use its `sub_claim_prefix`.
 5. **Give the role its permissions.** On the role → Add permissions → Create inline policy → JSON → paste `infra/permission-policy.json`. It can only read and write `*.json` files inside the folders of this bucket.
 6. **Tell GitHub the role.** Copy the role ARN. In GitHub: repo → Settings → Secrets and variables → Actions → **Variables** tab → New variable:
    - Name: `AWS_ROLE_ARN`

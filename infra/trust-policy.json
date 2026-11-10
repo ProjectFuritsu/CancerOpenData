@@ -11,7 +11,7 @@
       "Condition": {
         "StringEquals": {
           "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-          "token.actions.githubusercontent.com:sub": "repo:ProjectFuritsu/CancerOpenData:ref:refs/heads/main"
+          "token.actions.githubusercontent.com:sub": "repo:ProjectFuritsu@189011255/CancerOpenData@1452119382:ref:refs/heads/main"
         }
       }
     }
