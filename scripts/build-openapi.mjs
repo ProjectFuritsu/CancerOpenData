@@ -147,7 +147,8 @@ export function buildOpenApi(datasets, schemas, version) {
 
   return {
     openapi: "3.1.0",
-    jsonSchemaDialect: "https://json-schema.org/draft/2020-12/schema",
+    // No jsonSchemaDialect: OpenAPI 3.1's default dialect already includes JSON Schema
+    // 2020-12, and Swagger UI shows a warning box for any other value.
     info: {
       title: "Cancer Open Data API",
       version: version ? version.slice(0, 7) : "local",
