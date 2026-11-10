@@ -23,9 +23,9 @@ concurrency:
   group: deploy-data
   cancel-in-progress: false
 
-env:
-  AWS_REGION: ap-southeast-2
-  BUCKET: cancerdata-722399422980-ap-southeast-2-an
+# Each deploy target runs only when its repo variable is set:
+#   S3: vars.AWS_ROLE_ARN    R2: vars.R2_BUCKET
+# Remove a variable to switch that target off. No code change needed.
 
 jobs:
   validate:
@@ -39,14 +39,18 @@ jobs:
       - run: npm ci
       - run: npm run validate
 
-  deploy:
+  deploy-s3:
     needs: validate
     # Pull requests are only checked. Only main uploads.
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.AWS_ROLE_ARN != ''
     runs-on: ubuntu-latest
     permissions:
       contents: read
       id-token: write   # lets GitHub get short-lived AWS credentials (OIDC)
+    env:
+      AWS_REGION: ap-southeast-2
+      BUCKET: cancerdata-722399422980-ap-southeast-2-an
+      TARGET_NAME: S3
     steps:
       - name: Check AWS_ROLE_ARN is set
         env:
@@ -63,4 +67,34 @@ jobs:
           role-to-assume: ${{ vars.AWS_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
       - name: Upload changed files to S3
+        run: bash scripts/upload-changed.sh
+
+  deploy-r2:
+    needs: validate
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.R2_BUCKET != ''
+    runs-on: ubuntu-latest
+    env:
+      BUCKET: ${{ vars.R2_BUCKET }}
+      TARGET_NAME: R2
+      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      AWS_DEFAULT_REGION: auto
+      # Avoid checksum errors newer AWS CLI versions can cause on S3-compatible storage.
+      AWS_REQUEST_CHECKSUM_CALCULATION: WHEN_REQUIRED
+      AWS_RESPONSE_CHECKSUM_VALIDATION: WHEN_REQUIRED
+    steps:
+      - name: Check R2 secrets are set
+        run: |
+          missing=""
+          [[ -n "$AWS_ACCESS_KEY_ID" ]] || missing="$missing R2_ACCESS_KEY_ID"
+          [[ -n "$AWS_SECRET_ACCESS_KEY" ]] || missing="$missing R2_SECRET_ACCESS_KEY"
+          [[ "$R2_ACCOUNT_ID" =~ ^[0-9a-f]{32}$ ]] || missing="$missing R2_ACCOUNT_ID(32-hex)"
+          if [[ -n "$missing" ]]; then
+            echo "::error title=R2 secrets missing or invalid::Add these repo secrets:$missing (Settings > Secrets and variables > Actions > Secrets). See README > Cloudflare R2 setup."
+            exit 1
+          fi
+          echo "S3_ENDPOINT_URL=https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com" >> "$GITHUB_ENV"
+      - uses: actions/checkout@v7
+      - name: Upload changed files to R2
         run: bash scripts/upload-changed.sh

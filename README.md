@@ -28,8 +28,9 @@ const { Feed } = await fetch(`${BASE}/Feeds/FeedsData.json`).then(r => r.json())
 ```
 edit data/ → push or merge to main → GitHub Actions
    1. validate: every data file must pass its schema   (fails = nothing is uploaded)
-   2. deploy:   upload only files that changed           (compares MD5 with S3 ETag)
-   3. S3 keeps the old copy as a past version
+   2. deploy:   upload only files that changed           (compares MD5 with the ETag)
+               to S3 and/or Cloudflare R2, whichever is switched on
+   3. S3 keeps the old copy as a past version (R2: Git history only)
 ```
 
 - **Pull requests** run the check only. Use them to review changes before they go live.
@@ -69,6 +70,34 @@ Do these once in the AWS console (account `722399422980`, region `ap-southeast-2
 
 No AWS access keys are stored in GitHub. Actions gets short-lived credentials for each run.
 
+> Note: on this AWS account, IAM identity providers need "advanced features" to be activated. Until then the S3 job can't log in, so it is switched off by leaving `AWS_ROLE_ARN` unset.
+
+## Cloudflare R2 setup
+
+The pipeline can also publish to Cloudflare R2 (bucket `cancer-open-data`). R2 has 10 GB free storage and free downloads.
+
+Each target runs only when its repo variable is set: S3 needs `AWS_ROLE_ARN`, R2 needs `R2_BUCKET`. Remove a variable to switch that target off.
+
+**In the Cloudflare dashboard** (Storage & databases → R2):
+1. **Create the bucket** `cancer-open-data`. Keep the default location and the **Standard** storage class.
+2. **Public test link:** bucket → Settings → **Public Development URL** → Enable. This `https://pub-….r2.dev` link is rate-limited and for testing only. For the live app, add a **Custom Domain** (bucket → Settings → Custom Domains) on a domain in the same Cloudflare account, then turn the `r2.dev` link off.
+3. **CORS:** bucket → Settings → CORS Policy → Add → JSON → paste `infra/r2-cors.json`.
+4. **API token:** R2 → Overview → API Tokens → **Manage** → Create **Account API token** → permission **Object Read & Write**, limited to the bucket `cancer-open-data`. Copy the **Access Key ID** and **Secret Access Key** right away (the secret is shown once). Also copy your **Account ID** (32 characters, under Account Details).
+
+**In GitHub** (repo → Settings → Secrets and variables → Actions):
+
+| Kind | Name | Value |
+|---|---|---|
+| Secret | `R2_ACCESS_KEY_ID` | Access Key ID from step 4 |
+| Secret | `R2_SECRET_ACCESS_KEY` | Secret Access Key from step 4 |
+| Secret | `R2_ACCOUNT_ID` | Your Cloudflare Account ID |
+| Variable | `R2_BUCKET` | `cancer-open-data` |
+
+Then run the workflow (Actions → Validate and deploy data → Run workflow). The first run uploads all 10 files. Later runs upload only changed files.
+
+- **Versioning on R2 is Git only.** R2 has no bucket versioning like S3, so roll back with `git revert`.
+- If a token leaks: delete it in Cloudflare, make a new one, and update the two secrets.
+
 ## Files
 
 | Path | What it does |
@@ -77,4 +106,4 @@ No AWS access keys are stored in GitHub. Actions gets short-lived credentials fo
 | `scripts/validate.mjs` | Checks each data file against its schema (Ajv, draft 2020-12) |
 | `scripts/upload-changed.sh` | Uploads only changed files, tagged with the commit |
 | `.github/workflows/deploy-data.yml` | The pipeline |
-| `infra/` | IAM and lifecycle policies to paste into AWS |
+| `infra/` | IAM and lifecycle policies for AWS, CORS policy for R2 |
