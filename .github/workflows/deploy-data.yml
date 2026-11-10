@@ -76,15 +76,7 @@ jobs:
         with:
           node-version: 24
           cache: npm
-          cache-dependency-path: |
-            package-lock.json
-            worker/package-lock.json
-      - run: npm ci
-      - name: Snapshot the live data (for the update email)
-        env:
-          PUBLIC_URL: ${{ vars.PUBLIC_URL }}
-          SNAPSHOT_DIR: ${{ runner.temp }}/before
-        run: node scripts/notify-update.mjs snapshot
+          cache-dependency-path: worker/package-lock.json
       - name: Build static files
         run: node scripts/build-site.mjs
       - name: Deploy Worker
@@ -101,14 +93,3 @@ jobs:
             exit 0
           fi
           bash scripts/smoke-test.sh
-      - name: Email the update notice
-        # Runs only after the smoke test passed. A mail problem shows as a
-        # warning; it doesn't mark the deploy as failed (the data is already live).
-        continue-on-error: true
-        env:
-          PUBLIC_URL: ${{ vars.PUBLIC_URL }}
-          SNAPSHOT_DIR: ${{ runner.temp }}/before
-          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          NOTIFY_EMAILS: ${{ secrets.NOTIFY_EMAILS }}
-        run: node scripts/notify-update.mjs send
