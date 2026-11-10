@@ -45,6 +45,7 @@ edit data/ → push or merge to main → GitHub Actions
    2. test-worker:  24 tests against a local copy of the Worker
    3. deploy:       build worker/dist from data/, then wrangler deploy
    4. smoke:        fetch every file from the public URL       (200, same bytes, CORS header, JSON type)
+   5. email:        tell the update list what changed          (only if data changed and smoke passed)
 ```
 
 - **Pull requests** run steps 1 and 2 only. Use them to review changes before they go live.
@@ -58,6 +59,27 @@ Check locally before you push:
 npm install
 npm run validate
 ```
+
+## Update emails
+
+After a deploy that changed data and passed the smoke test, `scripts/notify-update.mjs` emails the update list. Before deploying, it saves the live data. After deploying, it compares that copy with `data/` and lists, per dataset, the record count before and after, plus which records were added, changed or removed (by name). It also gives the commit message, the diff link and the API link.
+
+- **No change, no email.** Code-only deploys and re-runs send nothing.
+- **Recipients are Bcc**, so they don't see each other. They're stored as a secret and never printed in the (public) logs.
+- **A mail problem doesn't fail the deploy.** It shows as a warning, because the data is already live.
+- Sent through a **dedicated Gmail account** (SMTP with an app password). Don't use a personal Gmail.
+
+Try it without sending (prints the email):
+
+```bash
+PUBLIC_URL=https://cancer-open-data.capillanesjohnfritz.workers.dev node scripts/notify-update.mjs snapshot
+DRY_RUN=1 node scripts/notify-update.mjs send
+```
+
+**Gmail setup (once):**
+1. Create a new Gmail account just for alerts.
+2. Turn on **2-Step Verification**: Google Account → Security.
+3. Create an **app password**: Google Account → Security → 2-Step Verification → App passwords. Name it `cancer-open-data`. Copy the 16-character password.
 
 ## Versioning and rollback
 
@@ -83,6 +105,11 @@ npm run validate
 | Secret | `CLOUDFLARE_API_TOKEN` | The token from above |
 | Variable | `CLOUDFLARE_ACCOUNT_ID` | `bc15d41433f443043305b72bec679e32` |
 | Variable | `PUBLIC_URL` | `https://cancer-open-data.capillanesjohnfritz.workers.dev` (the smoke test checks this) |
+| Secret | `SMTP_USERNAME` | The alert Gmail address |
+| Secret | `SMTP_PASSWORD` | Its 16-character app password |
+| Secret | `NOTIFY_EMAILS` | Who gets update emails, comma-separated |
+
+Without the 3 email secrets, the email step only prints the email in the log, without recipients.
 
 If a setting is missing, the deploy job stops at once and names it. GitHub never passes secrets to pull requests from forks, and deploy runs only on `main`.
 
@@ -105,5 +132,6 @@ npx wrangler deploy           # manual deploy (CI does this on every push to mai
 | `scripts/validate.mjs` | Checks each data file against its schema (Ajv, draft 2020-12) |
 | `scripts/build-site.mjs` | Builds `worker/dist/`: the data files, `index.json` and `_headers` |
 | `scripts/smoke-test.sh` | Checks the public URL after each deploy |
+| `scripts/notify-update.mjs` | Emails the update list what changed |
 | `worker/` | Worker config, the small script for `/`, and its tests |
 | `.github/workflows/deploy-data.yml` | The pipeline |
