@@ -20,6 +20,41 @@ function json(status, body, extra = {}) {
   });
 }
 
+const KEY_PATTERN = /^[A-Za-z0-9_-]+\/[A-Za-z0-9_.-]+\.json$/;
+
+// Builds the root index from the bucket, so new datasets appear on their own.
+// One entry per folder: its data file and its schema file.
+async function endpointIndex(env, origin) {
+  const keys = [];
+  let cursor;
+  do {
+    const page = await env.DATA.list({ cursor, limit: 1000 });
+    for (const obj of page.objects) if (KEY_PATTERN.test(obj.key)) keys.push(obj);
+    cursor = page.truncated ? page.cursor : undefined;
+  } while (cursor);
+
+  const byFolder = new Map();
+  for (const obj of keys) {
+    const [folder, file] = obj.key.split("/");
+    const entry = byFolder.get(folder) ?? { name: folder };
+    const kind = file.endsWith(".schema.json") ? "schema" : "data";
+    entry[kind] = `${origin}/${obj.key}`;
+    if (kind === "data") {
+      entry.size = obj.size;
+      entry.updated = obj.uploaded.toISOString();
+    }
+    byFolder.set(folder, entry);
+  }
+
+  return {
+    name: "Cancer Open Data",
+    about: "Public data on cancer care resources in one place. Each dataset has a JSON data file and a JSON Schema.",
+    source: "https://github.com/ProjectFuritsu/CancerOpenData",
+    usage: `fetch("${origin}/<Folder>/<File>.json").then(r => r.json())`,
+    datasets: [...byFolder.values()].sort((a, b) => a.name.localeCompare(b.name)),
+  };
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -34,16 +69,11 @@ export default {
     const key = decodeURIComponent(url.pathname.slice(1));
 
     if (key === "") {
-      return json(200, {
-        name: "Cancer Open Data",
-        about: "Public data on cancer care resources. Fetch /<folder>/<file>.json",
-        example: `${url.origin}/Feeds/FeedsData.json`,
-        source: "https://github.com/ProjectFuritsu/CancerOpenData",
-      });
+      return json(200, await endpointIndex(env, url.origin), { "Cache-Control": "public, max-age=60" });
     }
 
     // Only <folder>/<file>.json, nothing else (no listing, no path tricks).
-    if (!/^[A-Za-z0-9_-]+\/[A-Za-z0-9_.-]+\.json$/.test(key) || key.includes("..")) {
+    if (!KEY_PATTERN.test(key) || key.includes("..")) {
       return json(404, { error: "Not found" });
     }
 

@@ -70,10 +70,27 @@ await test("HEAD has headers, no body", async () => {
   assert.equal((await r.arrayBuffer()).byteLength, 0);
 });
 
-await test("root returns info JSON", async () => {
+await test("root lists every dataset with data + schema URLs", async () => {
   const r = await mf.dispatchFetch(`${base}/`);
   assert.equal(r.status, 200);
-  assert.equal((await r.json()).name, "Cancer Open Data");
+  assert.equal(r.headers.get("access-control-allow-origin"), "*");
+  const body = await r.json();
+  assert.equal(body.name, "Cancer Open Data");
+  const folders = [...new Set(files.map(f => f.split("/")[0]))].sort();
+  assert.deepEqual(body.datasets.map(d => d.name), folders);
+  for (const d of body.datasets) {
+    assert.ok(files.includes(d.data.replace(`${base}/`, "")), `data URL for ${d.name}`);
+    assert.ok(files.includes(d.schema.replace(`${base}/`, "")), `schema URL for ${d.name}`);
+    assert.ok(d.size > 0 && d.updated, `size/updated for ${d.name}`);
+  }
+});
+
+await test("root ignores non-dataset keys", async () => {
+  await bucket.put("notes.txt", "x");
+  await bucket.put("Feeds/readme.md", "x");
+  const body = await (await mf.dispatchFetch(`${base}/`)).json();
+  const urls = body.datasets.flatMap(d => [d.data, d.schema]);
+  assert.ok(!urls.some(u => /notes\.txt|readme\.md/.test(u)));
 });
 
 for (const [path, why] of [
