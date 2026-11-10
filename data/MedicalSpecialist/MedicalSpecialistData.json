@@ -1,0 +1,619 @@
+{
+  "$schema": "./MedicalSpecialistData.schema.json",
+  "Medical_Specialist": [
+    {
+      "id": 1,
+      "firstname": "Soo Rah",
+      "lastname": "Chavez",
+      "specialty": "Internal Medicine",
+      "description": "I specialize in all adult disease (internal medicine) and also specialize in medical oncology (cancer care and treatment). I handle consultations virtually and face to face, administer vaccines and chemotherapy. I also do surveillance and screening of any adult cancer type.",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/soo-rah-kwak?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Metro Davao Medical and Research Center",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Friday",
+              "timeIN": "09:00 am",
+              "timeOUT": "01:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "firstname": "Miguel",
+      "lastname": "Villanueva",
+      "specialty": "General Surgery",
+      "description": "A General Surgeon/ Surgical Oncologist based in Davao City.",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/miguel-villanueva?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Davao Doctors Care Center - SM Lanang",
+          "location": "Ground Floor, SM Lanang, J.P. Laurel Ave, Agdao, Davao City, 8000 Davao del Sur",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "01:00 am",
+              "timeOUT": "05:00 am"
+            },
+            {
+              "day": "Friday to Saturday",
+              "timeIN": "01:00 am",
+              "timeOUT": "03:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "firstname": "John Paul",
+      "lastname": "Abrina",
+      "specialty": "Radiation Oncology",
+      "description": "Board-certified radiation oncologist practicing in the cities of Davao and Tagum",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/jpabrina?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Tuesday, Friday",
+              "timeIN": "08:00 am",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "firstname": "Perlita Joanne",
+      "lastname": "Yu-dela Cruz",
+      "specialty": "Internal Medicine",
+      "description": "",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/perlita-joanne-yudelacruz?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday, Wednesday and Friday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Tuesday and Thursday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Brokenshire Integrated Health Ministries, Inc.",
+          "location": "Madapo Hill, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Friday",
+              "timeIN": "12:00 pm",
+              "timeOUT": "02:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 3,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Metro Davao Medical and Research Center",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Tuesday and Thursday",
+              "timeIN": "09:00 am",
+              "timeOUT": "11:00 am"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "firstname": "Lauralee",
+      "lastname": "Leaño-Samonte",
+      "specialty": "Breast and Surgical Oncology",
+      "description": "A general surgeon and a surgical oncologist specializing in breast and other solid cancers",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/lauralee-leanosamonte?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Metro Davao Medical and Research Center",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday, Wednesday and Friday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "03:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Tagum Global Medical Center",
+          "location": "Daang Maharlika Hwy",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Tuesday and Thursday",
+              "timeIN": "10:00 am",
+              "timeOUT": "12:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "firstname": "Jay-R",
+      "lastname": "Enojo",
+      "specialty": "Oncologic Urology / General Urology",
+      "description": "Treats and manages Adrenal, Kidney, Ureter, Bladder, Prostate, Testicular and Penile Cancers and Genitourinary Stones",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/jpabrina?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Brokenshire Medical Center",
+          "location": "Madapo Hill, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday, Wednesday and Friday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "05:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Metro Davao Medical and Research Center",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Saturday",
+              "timeIN": "08:00 am",
+              "timeOUT": "12:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "firstname": "Chita",
+      "lastname": "Matunog",
+      "specialty": "Diplomate in Internal Medicine",
+      "description": "",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/chita-matunog?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%2520-%2520Medical%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Friday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Matunog Cancer Care Clinic",
+          "location": "Guzman Street",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Friday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "firstname": "Hannah Grace",
+      "lastname": "Segocio",
+      "specialty": "General Pediatrics and Oncology",
+      "description": "",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/hannah-grace-segocio?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday and Tuesday, Thursday and Saturday",
+              "timeIN": "09:00 am",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "11:00 am",
+              "timeOUT": "05:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "M300 Health Science Wellness Center",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Tuesday, Thursday and Saturday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "firstname": "Noel Rex",
+      "lastname": "Penaranda",
+      "specialty": "Orthopedic Oncology",
+      "description": "Orthopedic Oncologist, Musculoskeletal Tumor Surgeon and Sarcoma Surgeon",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/noel-rex-penaranda?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Orthopedic Center",
+          "location": "118 E, Quirino Avenue, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday, Wednesday and Friday",
+              "timeIN": "11:00 am",
+              "timeOUT": "12:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "firstname": "Charmaine Catherine",
+      "lastname": "Valdez",
+      "specialty": "General Surgery",
+      "description": "Orthopedic Oncologist, Musculoskeletal Tumor Surgeon and Sarcoma Surgeon",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/noel-rex-penaranda?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Sunday",
+              "timeIN": "10:00 am",
+              "timeOUT": "10:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Brokenshire Integrated Health Ministries, Inc",
+          "location": "Madapo Hill, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Friday",
+              "timeIN": "10:00 am",
+              "timeOUT": "12:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "firstname": "Aaron Paul",
+      "lastname": "Punzalan",
+      "specialty": "Orthopedic Oncology",
+      "description": "",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/noel-rex-penaranda?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Ecoland Medical and Wellness Center",
+          "location": "Quimpo Blvd. cor Tulip Drive, Ecoland",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Tuesday",
+              "timeIN": "08:00 am",
+              "timeOUT": "11:00 am"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "03:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "09:00 am",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Good Shepherd Hospital of Panabo City",
+          "location": "Km. 31 National Highway, New Pandan, Panabo, Philippines",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Wednesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "09:00 am",
+              "timeOUT": "11:30 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 3,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Davao Outpatient Surgery and Advanced Wound Care Center",
+          "location": "Km. 4 J.P. Laurel Avenue, Bajada",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "10:00 am",
+              "timeOUT": "12:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "firstname": "Michael Jonathan",
+      "lastname": "Latayan",
+      "specialty": "Urologic Oncology",
+      "description": "I am a urologist certified by the Philippine Board of Urology practicing in Davao City. I was trained in the National Kidney and Transplant Institute, the premier training institution in the field of Urology. I am an expert in minimally invasive and laparoscopic urologic surgeries as well as transplant urology. I treat diseases , tumors and stones of the KIDNEYS, URETER, URINARY BLADDER, PROSTATE and ADRENALS as well as disorders and problems of the MALE GENITALIA, TESTIS and SCROTUM.",
+      "imageURL": "https://seriousmd.com/doc/mlatayan?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D2",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Friday",
+              "timeIN": "05:00 pm",
+              "timeOUT": "06:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "10:00 am",
+              "timeOUT": "11:00 am"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Latayan Urology Clinic DMSF",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "11:30 am",
+              "timeOUT": "12:30 pm"
+            },
+            {
+              "day": "Tuesday to Friday",
+              "timeIN": "11:00 am",
+              "timeOUT": "12:30 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 3,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Latayan Urology Clinic MDMRC",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Friday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "03:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "firstname": "Danzon John",
+      "lastname": "De Castro",
+      "specialty": "ENT-HNS - Head & Neck Surgical Oncology",
+      "description": "Dr. Danzon John de Castro was born and raised in Butuan City, Agusan del Norte. He earned his bachelor's degree in Nutrition and Dietetics from Silliman University and his Doctor of Medicine degree from Southwestern University Matias H. Aznar Memorial College of Medicine. He is a licensed physician and a registered nutritionist-dietitian. His professional interests include head and neck oncology, free flap reconstruction, nutritional biochemistry, medical nutrition therapy, and surgical innovation.",
+      "imageURL": "https://i.pravatar.cc/150?u=elena",
+      "source": "https://seriousmd.com/doc/danzon-john-decastro?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D2",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday to Saturday",
+              "timeIN": "06:00 pm",
+              "timeOUT": "08:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "ENT Head & Neck Reconstructive Microsurgery Clinic",
+          "location": "Bajada, Davao City",
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Mobile",
+              "contact_details": "0918 426 3266"
+            }
+          ],
+          "schedule": [
+            {
+              "day": "Tuesday, Thursday and Saturday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "09:30 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "04:00 pm",
+              "timeOUT": "06:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 3,
+          "isWalkIns": false,
+          "canDoBoth": true,
+          "clinicName": "Integrated Clinics Of Otolaryngology - Head And Neck Surgery",
+          "location": "Quirno Avenue, Mayon St, Poblacion District, Davao City, 8000 Davao del Sur",
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Mobile",
+              "contact_details": "(082) 227 7343"
+            }
+          ],
+          "schedule": [
+            {
+              "day": "Friday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

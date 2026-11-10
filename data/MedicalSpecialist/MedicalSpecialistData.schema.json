@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "MedicalSpecialistData.schema.json",
+  "title": "MedicalSpecialistData",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "Medical_Specialist": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "specialty": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "imageURL": {
+            "type": "string",
+            "description": "Profile image URL.",
+            "format": "uri"
+          },
+          "source": {
+            "type": "string",
+            "description": "Source URL.",
+            "format": "uri"
+          },
+          "clinics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "clinicid": {
+                  "type": "integer"
+                },
+                "isWalkIns": {
+                  "type": "boolean"
+                },
+                "canDoBoth": {
+                  "type": "boolean"
+                },
+                "clinicName": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "contacts": {
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "contact_id": {
+                        "type": "integer"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "contact_details": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "contact_id",
+                      "type",
+                      "contact_details"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "schedule": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "day": {
+                        "type": "string"
+                      },
+                      "timeIN": {
+                        "type": "string",
+                        "description": "Start time, e.g. '09:00 am'."
+                      },
+                      "timeOUT": {
+                        "type": "string",
+                        "description": "End time, e.g. '01:00 pm'."
+                      }
+                    },
+                    "required": [
+                      "day",
+                      "timeIN",
+                      "timeOUT"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "clinicid",
+                "isWalkIns",
+                "canDoBoth",
+                "clinicName",
+                "location",
+                "contacts",
+                "schedule"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "firstname",
+          "lastname",
+          "specialty",
+          "description",
+          "imageURL",
+          "clinics"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "Medical_Specialist"
+  ],
+  "additionalProperties": false
+}

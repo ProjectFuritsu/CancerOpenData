@@ -1,0 +1,135 @@
+{
+  "$schema": "./HealthInstiData.schema.json",
+  "Health_Insti": [
+    {
+      "id": 1,
+      "name": "SPMC Cancer Institute",
+      "bgImageURL": "https://media.assettype.com/sunstar%2F2025-09-20%2F08lzbtjf%2FUntitled-1.jpg",
+      "source": "https://www.facebook.com/SouthernPhilippinesMedicalCenter",
+      "description": "The Southern Philippines Medical Center is the largest government hospital under the Department of Health of the Republic of the Philippines. It is located at the JP Laurel Ave, Bajada, Davao City. It began as the Davao Medical Center. Its name was changed on November 19, 2009, by Republic Act 9792.",
+      "type": "Public Institution",
+      "location": "J.P. Laurel Ave, Bajada, Davao City",
+      "latitude": 7.099167,
+      "longitude": 125.619722,
+      "schedule": {
+        "isWholeWeek": false,
+        "days": [
+          {
+            "day": "Monday",
+            "timeIn": "8:00 am",
+            "timeOut": "5:00 pm"
+          },
+          {
+            "day": "Tuesday",
+            "timeIn": "8:00 am",
+            "timeOut": "5:00 pm"
+          }
+        ]
+      },
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Mobile",
+          "contact_details": "09384376090"
+        },
+        {
+          "contact_id": 2,
+          "type": "Landline",
+          "contact_details": "(082) 295-2133"
+        },
+        {
+          "contact_id": 3,
+          "type": "Email",
+          "contact_details": "publicaffairs.pro11@philhealth.gov.ph"
+        }
+      ],
+      "services": [
+        {
+          "serviceID": 1,
+          "source": null,
+          "service_name": "Blood Chem",
+          "service_description": "Ang PhilHealth YAKAP ay programa ng gobyerno na naglalayong tulungan ang mga Pilipino na mapangalagaan ang kanilang kalusugan at maiwasan ang sakit.",
+          "service_schedule": [
+            {
+              "day": "Monday and Wednesday",
+              "timeIn": "3:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "A person must be registered to the chosen Yakap clinic."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Fill out the PMRF form"
+            },
+            {
+              "step": 2,
+              "instruction": "Prepare required documents"
+            },
+            {
+              "step": 3,
+              "instruction": "Submit documents to PhilHealth office"
+            }
+          ]
+        },
+        {
+          "serviceID": 2,
+          "source": null,
+          "service_name": "Blood Chem",
+          "service_description": "Ang PhilHealth YAKAP ay programa ng gobyerno na naglalayong tulungan ang mga Pilipino na mapangalagaan ang kanilang kalusugan at maiwasan ang sakit.",
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "A person must be registered to the chosen Yakap clinic."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Fill out the PMRF form"
+            },
+            {
+              "step": 2,
+              "instruction": "Prepare required documents"
+            },
+            {
+              "step": 3,
+              "instruction": "Submit documents to PhilHealth office"
+            }
+          ]
+        },
+        {
+          "serviceID": 3,
+          "source": null,
+          "service_name": "Blood Chem",
+          "service_description": "Ang PhilHealth YAKAP ay programa ng gobyerno na naglalayong tulungan ang mga Pilipino na mapangalagaan ang kanilang kalusugan at maiwasan ang sakit.",
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "A person must be registered to the chosen Yakap clinic."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Fill out the PMRF form"
+            },
+            {
+              "step": 2,
+              "instruction": "Prepare required documents"
+            },
+            {
+              "step": 3,
+              "instruction": "Submit documents to PhilHealth office"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Keep data files byte-for-byte, so the MD5 matches the S3 ETag on every OS.
+data/** -text
+# Shell scripts must keep LF to run on the Linux runner.
+*.sh text eol=lf

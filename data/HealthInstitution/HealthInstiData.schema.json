@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "HealthInstiData.schema.json",
+  "title": "HealthInstiData",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "Health_Insti": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image URL.",
+            "format": "uri"
+          },
+          "source": {
+            "type": "string",
+            "description": "Source URL.",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number",
+            "description": "Latitude (from Google Maps)."
+          },
+          "longitude": {
+            "type": "number",
+            "description": "Longitude (from Google Maps)."
+          },
+          "schedule": {
+            "type": "object",
+            "properties": {
+              "isWholeWeek": {
+                "type": "boolean"
+              },
+              "days": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "day": {
+                      "type": "string"
+                    },
+                    "timeIn": {
+                      "type": "string",
+                      "description": "Opening time, e.g. '8:00 am'."
+                    },
+                    "timeOut": {
+                      "type": "string",
+                      "description": "Closing time, e.g. '5:00 pm'."
+                    }
+                  },
+                  "required": [
+                    "day",
+                    "timeIn",
+                    "timeOut"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "isWholeWeek",
+              "days"
+            ],
+            "additionalProperties": false
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "contact_id": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "contact_details": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "contact_id",
+                "type",
+                "contact_details"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "serviceID": {
+                  "type": "integer"
+                },
+                "source": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "description": "Source URL.",
+                  "format": "uri"
+                },
+                "service_name": {
+                  "type": "string"
+                },
+                "service_description": {
+                  "type": "string"
+                },
+                "service_schedule": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "day": {
+                        "type": "string"
+                      },
+                      "timeIn": {
+                        "type": "string",
+                        "description": "Opening time, e.g. '8:00 am'."
+                      },
+                      "timeOut": {
+                        "type": "string",
+                        "description": "Closing time, e.g. '5:00 pm'."
+                      }
+                    },
+                    "required": [
+                      "day",
+                      "timeIn",
+                      "timeOut"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "requirements": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "requirement_id": {
+                        "type": "integer"
+                      },
+                      "requirement_description": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "requirement_id",
+                      "requirement_description"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "procedure": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "step": {
+                        "type": "integer"
+                      },
+                      "instruction": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "step",
+                      "instruction"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "serviceID",
+                "source",
+                "service_name",
+                "service_description",
+                "requirements",
+                "procedure"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "bgImageURL",
+          "source",
+          "description",
+          "type",
+          "location",
+          "latitude",
+          "longitude",
+          "schedule",
+          "contacts",
+          "services"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "Health_Insti"
+  ],
+  "additionalProperties": false
+}

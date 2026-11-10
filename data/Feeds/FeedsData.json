@@ -1,0 +1,25 @@
+{
+  "$schema": "./FeedsData.schema.json",
+  "Feed": [
+    {
+      "id": 1,
+      "title": "Philippine Cancer Society Delegation Prominent at UICC World Cancer Leaders’ Summit in Melbourne, Championing the New Global Declaration",
+      "bgImageURL": "https://www.philcancer.org.ph/images/uicc.png",
+      "category": "News",
+      "content": "Melbourne, Australia – November 20, 2025 – The Union for International Cancer Control (UICC) World Cancer Leaders’ Summit (WCLS) 2025, held in Melbourne, Australia from November 18 to 20, has successfully convened over 400 health leaders from 86 countries under the theme, “Bridging Divides, Building Futures,” to strengthen collective action against the global cancer epidemic. The Philippine delegation, comprising key figures in the national cancer control effort, played an active role in the high-level policy meeting. The Philippine delegation includes Dr. Corazon Ngelangel, President of the Philippine Cancer Society (PCS); Ma'am Carmen Auste, Chief Executive Officer of Cancer Warriors Foundation; and Dr. Warren Bacorro, President of the Philippine Society of Oncologists, Inc. (PSO), Crisann Celdran from iCanServe Foundation, demonstrating a united, multi-sectoral approach to global engagement. A key activity on Day 1 of the Summit was the critical panel discussion reflecting on the outcomes and follow-up actions from the UN High-Level Meeting on Non-Communicable Diseases (NCDs). Furthermore, the Philippine Cancer Society and its partners actively participated in the high-impact HPV workshop, collaborating with other nations to advance strategies for the elimination of cervical cancer through accelerated vaccination and screening programs. The WCLS serves as a vital platform for the Philippine delegation to share local expertise and advocate for equitable, people-centered cancer care aligned with the country's Integrated Cancer Control Act. The ongoing Summit marks the official inauguration of the monumental World Cancer Declaration 2025–2035, a framework designed to guide global cancer control efforts over the next decade. This new Declaration, which covers a ten-year horizon, was developed through multiple rounds of consultation to drive measurable progress in reducing the cancer burden. It is built around a comprehensive '5x5x5 by 2035' model, setting out five global targets, five action domains, and five core principles to inspire country-specific strategies that reflect local needs and capacities. The five ambitious global targets by 2035 aim to achieve a 25% reduction in global cancer mortality, a 30% reduction in exposure to major cancer risk factors, and ensure that 60% of cancers are diagnosed at an early stage. The Declaration also mandates that 80% of facilities providing cancer care have essential medicines, diagnostics, and technologies available, and that 50% of countries include essential cancer services in Universal Health Coverage (UHC) packages. To achieve these targets, the framework identifies five key action domains: developing and implementing Planning and implementation of comprehensive national cancer control plans , strengthening Cancer information systems to ensure robust data collection, increasing investment in Research and innovation, scaling up Education and training to build a skilled workforce , and actively engaging individuals and communities in People-centred care. All collective actions are united and guided by five core principles that reflect the values of the UICC community: Equity, ensuring programmes are accessible to all populations; Collaboration, promoting transparent partnerships across sectors; Evidence, grounding policies in robust scientific data; Sustainability, developing long-term, scalable solutions; and Accountability, securing political will and establishing monitoring mechanisms. The World Cancer Declaration 2025–2035 represents a renewed commitment to close the care gap and accelerate progress toward a future where every person, everywhere, has access to quality cancer prevention, treatment, and care.",
+      "author": "Philippine Cancer Society",
+      "publishDate": "21 November 2025",
+      "source": "https://www.philcancer.org.ph/about-us/announcements/latest-news/125-uicc-world-cancer-leaders-summit"
+    },
+    {
+      "id": 2,
+      "title": "DOST-ASTI Convenes National Stakeholders to Build the FIRST Philippine Cervical Image Bank and Advance AI-Driven Screening",
+      "bgImageURL": "https://www.philcancer.org.ph/images/dost1.png",
+      "category": "News",
+      "content": "TBA",
+      "author": "Philippine Cancer Society",
+      "publishDate": "20 November 2025",
+      "source": "https://www.philcancer.org.ph/about-us/announcements/latest-news/123-dost-asti-convenes"
+    }
+  ]
+}

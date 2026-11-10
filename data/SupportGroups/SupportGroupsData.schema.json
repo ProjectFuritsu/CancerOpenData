@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SupportGroupsData.schema.json",
+  "title": "SupportGroupsData",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "Support_Group": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "General Support Groups",
+              "Peer Support Groups",
+              "Therapeutic Support",
+              "Condition-Specific Support Groups",
+              "Online Support Groups",
+              "Family Support Groups",
+              "Educational Support Groups"
+            ]
+          },
+          "socmedURL": {
+            "type": "string",
+            "description": "Official social media page URL.",
+            "format": "uri"
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image URL.",
+            "format": "uri"
+          },
+          "location": {
+            "type": "string"
+          },
+          "longitude": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "description": "Longitude (from Google Maps)."
+          },
+          "latitude": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "description": "Latitude (from Google Maps)."
+          },
+          "founder": {
+            "type": "string"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "contact_id": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "General Support Groups",
+                    "Peer Support Groups",
+                    "Therapeutic Support",
+                    "Condition-Specific Support Groups",
+                    "Online Support Groups",
+                    "Family Support Groups",
+                    "Educational Support Groups",
+                    "Landline",
+                    "Mobile"
+                  ]
+                },
+                "contact_details": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "contact_id",
+                "type",
+                "contact_details"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type",
+          "socmedURL",
+          "bgImageURL",
+          "location",
+          "longitude",
+          "latitude",
+          "founder",
+          "contacts"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "Support_Group"
+  ],
+  "additionalProperties": false
+}

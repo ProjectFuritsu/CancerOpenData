@@ -1,0 +1,29 @@
+{
+  "$schema": "./SupportGroupsData.schema.json",
+  "Support_Group": [
+    {
+      "id": 1,
+      "name": "AMUMA",
+      "description": "AMUMA is a non-stock, non-profit foundation based in Davao City, Philippines. We are a group of dynamic and caring individuals committed to meeting the spiritual, emotional, and practical needs of cancer patients, their families and caregivers, by providing holistic care and support through building and maintaining a healing center for education, counseling, networking, and empowerment.",
+      "type": "General Support Groups",
+      "socmedURL": "https://www.facebook.com/groups/150208365000436",
+      "bgImageURL": "https://scontent.fdvo2-2.fna.fbcdn.net/v/t39.30808-6/463145363_10212795273632575_3109500721688362608_n.jpg?stp=dst-jpg_s720x720_tt6&_nc_cat=111&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFf1RuJ-Ab1fT8APkghxXpy61p6la-4A03rWnqVr7gDTVfRTZOr1IDMaXNq14pNWrbHPNpU0E164TgV1NsM3BgA&_nc_ohc=zwVwVQElvcAQ7kNvwEXbkcn&_nc_oc=Adn6YHsSdm0MU4SWKZztChJUaUxXvR-U0LuKsvlVgI-g0kHakOH45v2BIHIpJudRG7tBgmfHHpm0GwYr0CEEcZe0&_nc_zt=23&_nc_ht=scontent.fdvo2-2.fna&_nc_gid=gdKyf3i_QQMtKkSkn_YNxA&oh=00_AfrDGyRl9EmxWHLPC1uA0mv-gzC4lVn54DizaRWy37PjVg&oe=6977AC69",
+      "location": "Davao City",
+      "longitude": null,
+      "latitude": null,
+      "founder": "Dr. Jose Beltran",
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Mobile",
+          "contact_details": "09384376090"
+        },
+        {
+          "contact_id": 2,
+          "type": "Landline",
+          "contact_details": "(082) 295-2133"
+        }
+      ]
+    }
+  ]
+}

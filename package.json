@@ -1,0 +1,14 @@
+{
+  "name": "cancer-data",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Data and schemas for the cancer information system. Validated and uploaded to S3 by GitHub Actions.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "FeedsData.schema.json",
+  "title": "FeedsData",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "Feed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image URL.",
+            "format": "uri"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "News",
+              "Blog",
+              "Article"
+            ],
+            "description": "Feed type, e.g. News, Blog, Article."
+          },
+          "content": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "publishDate": {
+            "type": "string",
+            "description": "Publish date in 'DD Month YYYY' format, e.g. '21 November 2025'."
+          },
+          "source": {
+            "type": "string",
+            "description": "Source URL.",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "bgImageURL",
+          "category",
+          "content",
+          "author",
+          "publishDate",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "Feed"
+  ],
+  "additionalProperties": false
+}

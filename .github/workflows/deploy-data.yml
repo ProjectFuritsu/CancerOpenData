@@ -1,0 +1,57 @@
+name: Validate and deploy data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/deploy-data.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "scripts/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+# Never run two uploads at the same time.
+concurrency:
+  group: deploy-data
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: ap-southeast-2
+  BUCKET: cancerdata-722399422980-ap-southeast-2-an
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+
+  deploy:
+    needs: validate
+    # Pull requests are only checked. Only main uploads.
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write   # lets GitHub get short-lived AWS credentials (OIDC)
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Upload changed files to S3
+        run: bash scripts/upload-changed.sh

@@ -1,0 +1,289 @@
+{
+  "$schema": "./FinancialInstiData.schema.json",
+  "Financial_Insti": [
+    {
+      "id": 1,
+      "name": "PhilHealth",
+      "bgImageURL": "https://newsfortph.com/upload/media/posts/2022-07/10/philhealth-davao-region-intensifies-konsulta-campaign_1657399553-b.jpg",
+      "source": "https://www.philhealth.gov.ph/",
+      "description": "PhilHealth is the Philippines' government-owned health insurer, providing universal health coverage through a social insurance program. It pools funds from member contributions to subsidize medical costs, making healthcare affordable for hospitalizations and preventive care.",
+      "type": "Public Institution",
+      "location": "Valgosons Building, Bolton Extension, Poblacion, Davao City",
+      "latitude": 7.0655,
+      "longitude": 125.6128,
+      "schedule": {
+        "isWholeWeek": false,
+        "days": [
+          {
+            "day": "Monday-Friday",
+            "timeIn": "8:00 am",
+            "timeOut": "5:00 pm"
+          }
+        ]
+      },
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Landline",
+          "contact_details": "(082) 295-2133"
+        },
+        {
+          "contact_id": 2,
+          "type": "Email",
+          "contact_details": "publicaffairs.pro11@philhealth.gov.ph"
+        }
+      ],
+      "programs": [
+        {
+          "programID": 161213,
+          "program_name": "YAKAP (Konsulta) Program",
+          "eligibility": "All PhilHealth members",
+          "program_description": "A comprehensive outpatient benefits package that includes consultation, lab tests, and medicines.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Primary Care Checkup"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Laboratory tests (CBC, Urinalysis, etc.)"
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Free Maintenance Medicines"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Member must be registered to a chosen Konsulta/Yakap clinic."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Fill out the PhilHealth Member Registration Form (PMRF)."
+            },
+            {
+              "step": 2,
+              "instruction": "Submit the form and valid ID to the PhilHealth office or accredited clinic."
+            },
+            {
+              "step": 3,
+              "instruction": "Wait for confirmation of registration."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Social Security System (SSS)",
+      "bgImageURL": "https://www.sss.gov.ph/sss/images/SSS_Building.jpg",
+      "source": "https://www.sss.gov.ph/",
+      "description": "The SSS provides social security protection to workers in the private, professional, and informal sectors. It offers replacement income for contingencies like sickness, maternity, disability, retirement, and death.",
+      "type": "Public Institution",
+      "location": "SSS Building, J.P. Laurel Avenue, Bajada, Davao City",
+      "latitude": 7.0935,
+      "longitude": 125.6154,
+      "schedule": {
+        "isWholeWeek": false,
+        "days": [
+          {
+            "day": "Monday-Friday",
+            "timeIn": "8:00 am",
+            "timeOut": "5:00 pm"
+          }
+        ]
+      },
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Landline",
+          "contact_details": "(082) 221-2121"
+        },
+        {
+          "contact_id": 2,
+          "type": "Email",
+          "contact_details": "davao@sss.gov.ph"
+        }
+      ],
+      "programs": [
+        {
+          "programID": 202001,
+          "program_name": "Salary Loan",
+          "eligibility": "Members with at least 36 monthly contributions",
+          "program_description": "A cash loan designed to meet the member's short-term credit needs.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Cash assistance equivalent to one or two months salary"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Digitized SSS ID or UMID Card."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Log in to your My.SSS account."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to 'Loans' and select 'Apply for Salary Loan'."
+            },
+            {
+              "step": 3,
+              "instruction": "Submit and wait for employer certification."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Government Service Insurance System (GSIS)",
+      "bgImageURL": "https://www.gsis.gov.ph/wp-content/uploads/2021/01/GSIS-Davao.jpg",
+      "source": "https://www.gsis.gov.ph/",
+      "description": "GSIS manages the social insurance program for government employees in the Philippines. It provides life insurance, retirement, and disability benefits to those in public service.",
+      "type": "Public Institution",
+      "location": "McArthur Highway, Matina, Davao City",
+      "latitude": 7.0583,
+      "longitude": 125.5947,
+      "schedule": {
+        "isWholeWeek": false,
+        "days": [
+          {
+            "day": "Monday-Friday",
+            "timeIn": "8:00 am",
+            "timeOut": "5:00 pm"
+          }
+        ]
+      },
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Landline",
+          "contact_details": "(082) 299-0141"
+        },
+        {
+          "contact_id": 2,
+          "type": "Email",
+          "contact_details": "gsisdavao@gsis.gov.ph"
+        }
+      ],
+      "programs": [
+        {
+          "programID": 303001,
+          "program_name": "Multi-Purpose Loan (MPL)",
+          "eligibility": "Active government employees",
+          "program_description": "Consolidates all existing loans into one with lower interest and longer terms.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Lower interest rate (6% per annum)"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Waived surcharges on previous loans"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Duly accomplished application form and GSIS eCard."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Apply through the GSIS Touch mobile app or GW@PS kiosk."
+            },
+            {
+              "step": 2,
+              "instruction": "Wait for Agency Authorized Officer (AAO) approval."
+            },
+            {
+              "step": 3,
+              "instruction": "Loan proceeds are credited to the eCard/UMID account."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pag-IBIG Fund (HDMF)",
+      "bgImageURL": "https://www.pagibigfund.gov.ph/images/Davao_Branch.jpg",
+      "source": "https://www.pagibigfund.gov.ph/",
+      "description": "The Home Development Mutual Fund, known as Pag-IBIG, is a national savings program and affordable shelter financing for Filipino workers.",
+      "type": "Public Institution",
+      "location": "Pryce Tower, J.P. Laurel Ave, Bajada, Davao City",
+      "latitude": 7.0855,
+      "longitude": 125.6139,
+      "schedule": {
+        "isWholeWeek": false,
+        "days": [
+          {
+            "day": "Monday-Friday",
+            "timeIn": "8:00 am",
+            "timeOut": "5:00 pm"
+          }
+        ]
+      },
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Landline",
+          "contact_details": "(082) 227-0463"
+        },
+        {
+          "contact_id": 2,
+          "type": "Email",
+          "contact_details": "contactus@pagibigfund.gov.ph"
+        }
+      ],
+      "programs": [
+        {
+          "programID": 404001,
+          "program_name": "Housing Loan",
+          "eligibility": "Members with 24 months of contributions",
+          "program_description": "Financing for house purchase, construction, or home improvement.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Low interest rates"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Payment terms up to 30 years"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Income documents (ITR or Payslip) and TCT/CCT of the property."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Attend the Housing Loan Counseling (online or onsite)."
+            },
+            {
+              "step": 2,
+              "instruction": "Submit the Housing Loan Application (HLA) with requirements."
+            },
+            {
+              "step": 3,
+              "instruction": "Receive the Notice of Approval (NOA) and sign loan documents."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

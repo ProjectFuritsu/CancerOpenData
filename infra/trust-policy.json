@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "GitHubActionsMainBranchOnly",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::722399422980:oidc-provider/token.actions.githubusercontent.com"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+          "token.actions.githubusercontent.com:sub": "repo:ProjectFuritsu/CancerOpenData:ref:refs/heads/main"
+        }
+      }
+    }
+  ]
+}
