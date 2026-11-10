@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "cancer-open-data",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "r2_buckets": [
+    { "binding": "DATA", "bucket_name": "cancer-open-data" }
+  ],
+  "observability": { "enabled": true }
+}
