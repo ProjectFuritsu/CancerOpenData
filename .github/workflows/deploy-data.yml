@@ -52,7 +52,8 @@ jobs:
         env:
           ROLE_ARN: ${{ vars.AWS_ROLE_ARN }}
         run: |
-          if [[ ! "$ROLE_ARN" =~ ^arn:aws:iam::[0-9]{12}:role/.+ ]]; then
+          # Role names only allow letters, digits and + = , . @ _ - (and / for paths).
+          if [[ ! "$ROLE_ARN" =~ ^arn:aws:iam::[0-9]{12}:role/[A-Za-z0-9+=,.@_/-]+$ ]]; then
             echo "::error title=AWS_ROLE_ARN missing or invalid::Set the repo variable AWS_ROLE_ARN (Settings > Secrets and variables > Actions > Variables) to the IAM role ARN. See README > One-time AWS setup."
             exit 1
           fi
