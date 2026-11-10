@@ -1,0 +1,6 @@
+/* Small tweaks on top of Swagger UI's own styles. */
+body { margin: 0; background: #fafafa; }
+.swagger-ui .topbar { display: none; }
+.swagger-ui .info { margin: 32px 0 16px; }
+.swagger-ui .wrapper { padding: 0 16px; }
+.noscript { font: 16px/1.5 system-ui, sans-serif; max-width: 640px; margin: 48px auto; padding: 0 16px; }

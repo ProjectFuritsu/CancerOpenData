@@ -37,6 +37,7 @@ async function datasetList(url, env) {
   const index = await res.json();
   if (!Array.isArray(index.datasets)) throw new Error("index.json has no datasets list");
   // index.json stores paths; return full URLs for this host.
+  for (const k of ["docs", "openapi"]) if (typeof index[k] === "string") index[k] = url.origin + index[k];
   for (const d of index.datasets) {
     if (d.data) d.data = url.origin + d.data;
     if (d.schema) d.schema = url.origin + d.schema;

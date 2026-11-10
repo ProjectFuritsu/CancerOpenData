@@ -10,6 +10,8 @@ Edit the JSON here, push to `main`, and GitHub Actions checks it and deploys it 
 
 Read-only, no keys, open to any website.
 
+**Interactive docs:** [`/docs/`](https://cancer-open-data.capillanesjohnfritz.workers.dev/docs/) (Swagger UI: browse endpoints, see every field, try requests). **Spec:** [`/openapi.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/openapi.json) (OpenAPI 3.1, imports into Postman, Insomnia or code generators).
+
 ### Endpoints
 
 | Endpoint | Returns | Records key |
@@ -21,6 +23,8 @@ Read-only, no keys, open to any website.
 | [`/MedicalSpecialist/MedicalSpecialistData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/MedicalSpecialist/MedicalSpecialistData.json) | Medical specialists (oncology and related fields) and their clinics | `Medical_Specialist` |
 | [`/SupportGroups/SupportGroupsData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/SupportGroups/SupportGroupsData.json) | Cancer support groups (e.g. AMUMA) | `Support_Group` |
 | `/images/<Folder>/<file>` | Images used by the data (see [Images](#images)) | — |
+| [`/docs/`](https://cancer-open-data.capillanesjohnfritz.workers.dev/docs/) | Interactive API docs (Swagger UI) | — |
+| [`/openapi.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/openapi.json) | OpenAPI 3.1 spec | — |
 
 Each data file has a schema next to it: replace `Data.json` with `Data.schema.json`, for example `/Feeds/FeedsData.schema.json` (JSON Schema draft 2020-12). The short names `FinancialInsti` and `HealthInsti` are on purpose: use the paths exactly as written.
 
@@ -174,12 +178,19 @@ The data files are **Workers Static Assets**: Cloudflare's edge serves them dire
 
 The small Worker script (`worker/src/index.js`) runs only for `/` (the dataset list) and for paths with no file (`404`).
 
+### The docs
+
+- **`/openapi.json` is generated at build time** (`scripts/build-openapi.mjs`) from the real schema files. Change a schema, and the docs change on the next deploy, so they can't drift from the data. Dataset descriptions live in `DESCRIPTIONS` in that file; a new dataset without one gets a generic line.
+- **`/docs/` is Swagger UI, hosted here** (copied from the `swagger-ui-dist` package at build), with no CDN. The page files are in `docs/`.
+- `/docs/` sends a strict `Content-Security-Policy`: scripts only from this site, no framing, nothing sent elsewhere. Swagger's online validator is off, so the spec isn't sent to swagger.io.
+- Tests check that the spec is valid OpenAPI 3.1 and that each schema is embedded exactly as written. The smoke test checks that both routes respond after each deploy.
+
 ## How a change goes live
 
 ```
 edit data/ → push or merge to main → GitHub Actions
    1. validate:     every data file must pass its schema     (fails = nothing is deployed)
-   2. test-worker:  34 tests against a local copy of the Worker
+   2. test-worker:  41 tests against a local copy of the Worker
    3. deploy:       build worker/dist from data/, then wrangler deploy
    4. smoke:        fetch every file from the public URL       (200, same bytes, CORS header, JSON type)
    5. rollback:     only if smoke failed: put the previous version back live
@@ -241,7 +252,7 @@ If a setting is missing, the deploy job stops at once and names it. GitHub never
 node scripts/build-site.mjs   # from the repo root: data/ -> worker/dist/
 cd worker
 npm install
-npm test                      # 34 tests with Wrangler's local runner (real asset routing)
+npm test                      # 41 tests with Wrangler's local runner (real asset routing)
 npx wrangler login            # once per PC, only for a manual deploy
 npx wrangler deploy           # manual deploy (CI does this on every push to main)
 ```
@@ -254,6 +265,8 @@ npx wrangler deploy           # manual deploy (CI does this on every push to mai
 | `scripts/validate.mjs` | Checks each data file against its schema (Ajv, draft 2020-12) |
 | `scripts/build-site.mjs` | Builds `worker/dist/`: the data files, images, `index.json` and `_headers` |
 | `scripts/images.mjs` | Image rules shared by validate and build (types, names, sizes) |
+| `scripts/build-openapi.mjs` | Generates `/openapi.json` from the schemas |
+| `docs/` | The `/docs/` page (Swagger UI setup) |
 | `images/` | Images served at `/images/...` (rules in `images/README.md`) |
 | `scripts/smoke-test.sh` | Checks the public URL after each deploy |
 | `worker/` | Worker config, the small script for `/`, and its tests |

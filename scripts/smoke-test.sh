@@ -83,13 +83,29 @@ else
   pre_ok=2
 fi
 
+# Documentation: /openapi.json is an OpenAPI 3.1 spec, /docs/ is the Swagger UI page.
+docs_ok=1
+spec_code=$(curl -sS -m 20 -o "$TMP/spec" -w '%{http_code}' "$PUBLIC_URL/openapi.json" 2>/dev/null || echo 000)
+if [[ "$spec_code" == "200" ]] && grep -q '"openapi": *"3\.1' "$TMP/spec"; then
+  echo "PASS openapi.json"
+else
+  echo "FAIL openapi.json (status $spec_code)"; docs_ok=0
+fi
+docs_code=$(curl -sS -m 20 -o "$TMP/docs" -w '%{http_code}' "$PUBLIC_URL/docs/" 2>/dev/null || echo 000)
+if [[ "$docs_code" == "200" ]] && grep -q 'swagger-ui-bundle.js' "$TMP/docs"; then
+  echo "PASS docs/"
+else
+  echo "FAIL docs/ (status $docs_code)"; docs_ok=0
+fi
+
 total=${#FILES[@]}; bad=${#pending[@]}
 pre_text=$([[ $pre_ok == 1 ]] && echo OK || { [[ $pre_ok == 2 ]] && echo "not supported (warning)" || echo FAILED; })
-summary="**Smoke test** on \`$PUBLIC_URL\`: $((total - bad))/$total files OK, preflight $pre_text."
+summary="**Smoke test** on \`$PUBLIC_URL\`: $((total - bad))/$total files OK, docs $([[ $docs_ok == 1 ]] && echo OK || echo FAILED), preflight $pre_text."
 echo; echo "$summary"
 [[ -n "${GITHUB_STEP_SUMMARY:-}" ]] && echo "$summary" >> "$GITHUB_STEP_SUMMARY"
 
-if (( bad > 0 || pre_ok == 0 )); then
+if (( bad > 0 || pre_ok == 0 || docs_ok == 0 )); then
   for file in "${pending[@]}"; do echo "::error title=Smoke test failed::${file#data/}"; done
+  (( docs_ok == 0 )) && echo "::error title=Smoke test failed::docs/ or openapi.json"
   exit 1
 fi

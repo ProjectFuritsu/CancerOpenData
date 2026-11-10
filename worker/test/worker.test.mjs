@@ -11,6 +11,7 @@ import { execFileSync, spawnSync } from "node:child_process";
 import assert from "node:assert/strict";
 
 import workerModule from "../src/index.js";
+import { Validator } from "@seriousme/openapi-schema-validator";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..", "..");
@@ -110,6 +111,58 @@ try {
       await expectError(await fetch(`${base}/${path}`), 404);
     });
   }
+
+  // ---- Documentation ----
+  await test("/openapi.json is a valid OpenAPI 3.1 spec with every dataset", async () => {
+    const r = await fetch(`${base}/openapi.json`);
+    assert.equal(r.status, 200);
+    assert.match(r.headers.get("content-type") ?? "", /^application\/json/);
+    const spec = await r.json();
+    const result = await new Validator().validate(spec);
+    assert.ok(result.valid, JSON.stringify(result.errors)?.slice(0, 500));
+    assert.equal(spec.openapi, "3.1.0");
+    for (const d of index.datasets) {
+      assert.ok(spec.paths[d.data], `path ${d.data}`);
+      assert.ok(spec.paths[d.schema], `path ${d.schema}`);
+      const real = JSON.parse(readFileSync(join(root, "data", d.schema.slice(1)), "utf8"));
+      delete real.$schema; delete real.$id;
+      assert.deepEqual(spec.components.schemas[d.name], real, `${d.name} schema embedded as written`);
+    }
+    assert.ok(spec.paths["/images/{folder}/{file}"], "images path");
+  });
+
+  await test("/docs/ serves Swagger UI with a strict CSP", async () => {
+    const r = await fetch(`${base}/docs/`);
+    assert.equal(r.status, 200);
+    assert.match(r.headers.get("content-type") ?? "", /^text\/html/);
+    const csp = r.headers.get("content-security-policy") ?? "";
+    assert.match(csp, /script-src 'self'(;|$)/, "scripts only from this site");
+    assert.match(csp, /frame-ancestors 'none'/);
+    const html = await r.text();
+    assert.match(html, /swagger-ui-bundle\.js/);
+    assert.doesNotMatch(html, /<script>(?!<\/script>)/, "no inline scripts");
+  });
+
+  await test("/docs redirects to /docs/", async () => {
+    const r = await fetch(`${base}/docs`, { redirect: "manual" });
+    assert.ok([301, 302, 307, 308].includes(r.status), `status ${r.status}`);
+    assert.match(r.headers.get("location") ?? "", /\/docs\/$/);
+  });
+
+  for (const [file, type] of [["swagger-ui-bundle.js", /javascript/], ["init.js", /javascript/], ["swagger-ui.css", /^text\/css/]]) {
+    await test(`/docs/${file} loads (self-hosted)`, async () => {
+      const r = await fetch(`${base}/docs/${file}`);
+      assert.equal(r.status, 200);
+      assert.match(r.headers.get("content-type") ?? "", type);
+      await r.arrayBuffer();
+    });
+  }
+
+  await test("root links to docs and the spec", async () => {
+    const body = await (await fetch(`${base}/`)).json();
+    assert.equal(body.docs, `${base}/docs/`);
+    assert.equal(body.openapi, `${base}/openapi.json`);
+  });
 
   await test("304 when ETag matches", async () => {
     const first = await fetch(`${base}/${files[0]}`);
