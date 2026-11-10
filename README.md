@@ -31,7 +31,10 @@ const { Feed } = await fetch(`${BASE}/Feeds/FeedsData.json`).then(r => r.json())
 edit data/ → push or merge to main → GitHub Actions
    1. validate: every data file must pass its schema   (fails = nothing is uploaded)
    2. deploy:   upload only files that changed to R2     (compares MD5 with the ETag)
+   3. smoke:    fetch every file from the public URL     (200, same bytes, CORS header, JSON type)
 ```
+
+The smoke test (`scripts/smoke-test.sh`) checks the public URL the way a browser app sees it. It retries for about 2 minutes, then turns the run red if any file is missing, out of date, or has no CORS header. It reads the repo variable `R2_PUBLIC_URL` and is skipped with a warning if that's not set.
 
 - **Pull requests** run the check only. Use them to review changes before they go live.
 - **Each upload** gets the metadata `git-sha=<commit>`, so every file in R2 links back to a commit.
@@ -69,6 +72,7 @@ The 3 secrets live in the GitHub **Environment** named `R2_ACCESS_KEY_ID` (repo 
 | Secret | Environment `R2_ACCESS_KEY_ID` | `R2_SECRET_ACCESS_KEY` | Secret Access Key from step 4 |
 | Secret | Environment `R2_ACCESS_KEY_ID` | `R2_ACCOUNT_ID` | Your Cloudflare Account ID |
 | Variable | Repository | `R2_BUCKET` | `cancer-open-data` |
+| Variable | Repository | `R2_PUBLIC_URL` | `https://pub-7d27b33e4bca41dc83569af8c2bb56c8.r2.dev` (change to the custom domain later) |
 
 Then run the workflow (Actions → Validate and deploy data → Run workflow). The first run uploads all 10 files. Later runs upload only changed files. If a setting is missing, the deploy job stops at once and names it.
 
@@ -82,5 +86,6 @@ Then run the workflow (Actions → Validate and deploy data → Run workflow). T
 | `data/` | The datasets and schemas, same layout as the bucket |
 | `scripts/validate.mjs` | Checks each data file against its schema (Ajv, draft 2020-12) |
 | `scripts/upload-changed.sh` | Uploads only changed files, tagged with the commit |
+| `scripts/smoke-test.sh` | Checks the public URL after each deploy |
 | `.github/workflows/deploy-data.yml` | The pipeline |
 | `infra/r2-cors.json` | CORS policy to paste into R2 |
