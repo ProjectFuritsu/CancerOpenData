@@ -9,10 +9,56 @@ import { fileURLToPath } from "node:url";
 import { execFileSync, spawnSync } from "node:child_process";
 import assert from "node:assert/strict";
 
+import workerModule from "../src/index.js";
+
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..", "..");
-execFileSync("node", ["scripts/build-site.mjs"], { cwd: root, stdio: "inherit" });
 
+let passed = 0;
+async function test(name, fn) {
+  try { await fn(); passed++; console.log(`PASS ${name}`); }
+  catch (e) { console.error(`FAIL ${name}\n     ${e.message}`); process.exitCode = 1; }
+}
+
+async function expectError(res, status) {
+  assert.equal(res.status, status);
+  assert.equal(res.headers.get("access-control-allow-origin"), "*", "error has CORS");
+  assert.match(res.headers.get("content-type") ?? "", /^application\/json/);
+  const body = await res.json();
+  assert.equal(body.error?.status, status, "error.status");
+  assert.equal(typeof body.error?.message, "string", "error.message");
+  return body;
+}
+
+// ---- Unit tests: call the Worker code directly with a fake asset store ----
+const call = (path, assetsFetch, init) =>
+  workerModule.fetch(new Request(`https://api.test${path}`, init), { ASSETS: { fetch: assetsFetch } });
+const quiet = async fn => { const e = console.error; console.error = () => {}; try { return await fn(); } finally { console.error = e; } };
+
+await test("unit: index.json missing -> JSON 500 with CORS", () => quiet(async () => {
+  const body = await expectError(await call("/", async () => new Response("nope", { status: 404 })), 500);
+  assert.doesNotMatch(body.error.message, /index\.json/, "no internals in the message");
+}));
+await test("unit: asset store throws -> JSON 500 with CORS", () => quiet(async () => {
+  await expectError(await call("/", async () => { throw new Error("boom"); }), 500);
+}));
+await test("unit: broken index.json -> JSON 500 with CORS", () => quiet(async () => {
+  await expectError(await call("/", async () => new Response("{not json")), 500);
+  await expectError(await call("/", async () => Response.json({ name: "x" })), 500);
+}));
+await test("unit: 404 has the standard error shape", async () => {
+  const body = await expectError(await call("/nope", async () => new Response(null, { status: 404 })), 404);
+  assert.equal(body.error.path, "/nope");
+});
+await test("unit: 405 has the standard error shape and Allow", async () => {
+  const res = await call("/", async () => new Response(null), { method: "DELETE" });
+  assert.equal(res.headers.get("allow"), "GET, HEAD, OPTIONS");
+  const body = await expectError(res, 405);
+  assert.equal(body.error.method, "DELETE");
+});
+
+// ---- Integration tests: the real Worker with static assets ----
+execFileSync("node", ["scripts/build-site.mjs"], { cwd: root, stdio: "inherit" });
 const index = JSON.parse(readFileSync(join(here, "..", "dist", "index.json"), "utf8"));
 const files = index.datasets.flatMap(d => [d.data, d.schema]).map(p => p.slice(1));
 
@@ -22,12 +68,6 @@ const worker = await unstable_startWorker({
 });
 await worker.ready;
 const base = (await worker.url).origin;
-
-let passed = 0;
-async function test(name, fn) {
-  try { await fn(); passed++; console.log(`PASS ${name}`); }
-  catch (e) { console.error(`FAIL ${name}\n     ${e.message}`); process.exitCode = 1; }
-}
 
 try {
   for (const key of files) {
@@ -94,10 +134,8 @@ try {
     ["Feeds/FeedsData.txt", "non-JSON"],
     ["_headers", "headers file"],
   ]) {
-    await test(`404 for ${why} (${path})`, async () => {
-      const r = await fetch(`${base}/${path}`);
-      assert.equal(r.status, 404);
-      await r.arrayBuffer();
+    await test(`404 for ${why} (${path}), JSON with CORS`, async () => {
+      await expectError(await fetch(`${base}/${path}`), 404);
     });
   }
 
@@ -108,6 +146,10 @@ try {
       await r.arrayBuffer();
     });
   }
+
+  await test("POST to / -> JSON 405 with CORS", async () => {
+    await expectError(await fetch(`${base}/`, { method: "POST", body: "x" }), 405);
+  });
 
   await test("smoke-test.sh passes against the local Worker", async () => {
     const run = spawnSync("bash", ["scripts/smoke-test.sh"], {

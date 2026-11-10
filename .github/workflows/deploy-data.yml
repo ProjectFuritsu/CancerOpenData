@@ -15,7 +15,12 @@ on:
       - "data/**"
       - "scripts/**"
       - "worker/**"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      rollback_drill:
+        description: "Fire drill: deploy, then fail the smoke test on purpose to prove auto-rollback works"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -80,6 +85,7 @@ jobs:
       - name: Build static files
         run: node scripts/build-site.mjs
       - name: Deploy Worker
+        id: deploy
         working-directory: worker
         run: |
           npm ci
@@ -87,9 +93,30 @@ jobs:
       - name: Smoke test the public URL
         env:
           PUBLIC_URL: ${{ vars.PUBLIC_URL }}
+          DRILL: ${{ inputs.rollback_drill }}
         run: |
           if [[ -z "$PUBLIC_URL" ]]; then
             echo "::warning title=Smoke test skipped::Set the repo variable PUBLIC_URL to test the public URL after each deploy."
             exit 0
           fi
           bash scripts/smoke-test.sh
+          if [[ "$DRILL" == "true" ]]; then
+            echo "::warning title=Fire drill::Failing the smoke test on purpose to test auto-rollback."
+            exit 1
+          fi
+      # If the new version is live but broken, go back to the previous version.
+      # The run still ends red, so someone looks at it.
+      - name: Auto-rollback to the previous version
+        if: failure() && steps.deploy.outcome == 'success'
+        working-directory: worker
+        env:
+          PUBLIC_URL: ${{ vars.PUBLIC_URL }}
+        run: |
+          npx wrangler rollback -y -m "Auto-rollback: smoke test failed for commit ${GITHUB_SHA::7}"
+          echo "::error title=Rolled back::The deploy of ${GITHUB_SHA::7} failed the smoke test, so the previous version is live again. Fix the problem and push again."
+          if [[ -n "$PUBLIC_URL" ]]; then
+            sleep 10
+            live=$(curl -s -m 20 "$PUBLIC_URL/" | grep -o '"version": *"[^"]*"' || echo "unknown")
+            echo "Live now: $live"
+            echo "**Rolled back.** Smoke test failed for \`${GITHUB_SHA::7}\`; live now: $live" >> "$GITHUB_STEP_SUMMARY"
+          fi

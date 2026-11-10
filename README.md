@@ -75,8 +75,54 @@ A data file is an object with `$schema` (path to its schema) and one records key
 | `304` | The file hasn't changed since your copy (sent `If-None-Match` with its ETag) |
 | `404` | No such file. Folders like `/Feeds/` aren't listed |
 | `405` | Any method other than GET or HEAD, including `OPTIONS` (see above) |
+| `500` | Something broke on the server. Try again later |
 
 Files are cached for 5 minutes (`Cache-Control: public, max-age=300`), and the list for 1 minute.
+
+### Errors
+
+Errors are JSON with CORS headers, so your app can always read them:
+
+```json
+{ "error": { "status": 404, "message": "Not found. See / for the list of datasets.", "path": "/Feeds/Nope.json" } }
+```
+
+`status` and `message` are always there. `404` adds `path`, and `405` adds `method`. The one exception is `OPTIONS` on a data file: Cloudflare's own `405` has no JSON body.
+
+### Handling errors in your app
+
+Check the status, set a timeout, retry once, and keep the last good copy so the app still works offline or during an outage:
+
+```js
+const BASE = "https://cancer-open-data.capillanesjohnfritz.workers.dev";
+
+async function loadDataset(path, { retries = 1, timeoutMs = 8000 } = {}) {
+  const cacheKey = `cod:${path}`;
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const res = await fetch(`${BASE}${path}`, { signal: AbortSignal.timeout(timeoutMs) });
+      if (res.status === 404) throw Object.assign(new Error("Dataset not found"), { fatal: true });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      try { localStorage.setItem(cacheKey, JSON.stringify(data)); } catch {}
+      return { data, fromCache: false };
+    } catch (err) {
+      if (err.fatal || attempt === retries) {
+        const saved = (() => { try { return localStorage.getItem(cacheKey); } catch { return null; } })();
+        if (saved) return { data: JSON.parse(saved), fromCache: true };   // show "may be out of date"
+        throw err;                                                        // show an error message
+      }
+      await new Promise(r => setTimeout(r, 1000));                        // wait, then retry
+    }
+  }
+}
+
+const { data, fromCache } = await loadDataset("/MedicalSpecialist/MedicalSpecialistData.json");
+```
+
+- **Don't retry `404`.** The path is wrong, so retrying won't help.
+- **Network errors and timeouts** (`TypeError`, `TimeoutError`) and `5xx` are worth one retry.
+- When `fromCache` is `true`, tell the user the data may be out of date.
 
 ### Fields
 
@@ -110,10 +156,15 @@ The small Worker script (`worker/src/index.js`) runs only for `/` (the dataset l
 ```
 edit data/ → push or merge to main → GitHub Actions
    1. validate:     every data file must pass its schema     (fails = nothing is deployed)
-   2. test-worker:  24 tests against a local copy of the Worker
+   2. test-worker:  30 tests against a local copy of the Worker
    3. deploy:       build worker/dist from data/, then wrangler deploy
    4. smoke:        fetch every file from the public URL       (200, same bytes, CORS header, JSON type)
+   5. rollback:     only if smoke failed: put the previous version back live
 ```
+
+**Auto-rollback:** if a deploy goes live but fails the smoke test, CI runs `wrangler rollback`, so the last good version serves again within seconds. The run still ends red with a "Rolled back" error, so someone fixes the cause.
+
+**Fire drill:** to prove rollback works, run the workflow by hand (Actions → Validate and deploy data → Run workflow) with **rollback_drill** ticked. It deploys, fails the smoke test on purpose and rolls back. The data stays the same, so users notice nothing.
 
 - **Pull requests** run steps 1 and 2 only. Use them to review changes before they go live.
 - **Each deploy switches all files at once.** There's no moment where some files are new and some old.
@@ -167,7 +218,7 @@ If a setting is missing, the deploy job stops at once and names it. GitHub never
 node scripts/build-site.mjs   # from the repo root: data/ -> worker/dist/
 cd worker
 npm install
-npm test                      # 24 tests with Wrangler's local runner (real asset routing)
+npm test                      # 30 tests with Wrangler's local runner (real asset routing)
 npx wrangler login            # once per PC, only for a manual deploy
 npx wrangler deploy           # manual deploy (CI does this on every push to main)
 ```
