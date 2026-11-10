@@ -68,3 +68,12 @@ jobs:
       - uses: actions/checkout@v7
       - name: Upload changed files to R2
         run: bash scripts/upload-changed.sh
+      - name: Smoke test the public URL
+        env:
+          PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
+        run: |
+          if [[ -z "$PUBLIC_URL" ]]; then
+            echo "::warning title=Smoke test skipped::Set the repo variable R2_PUBLIC_URL to test the public URL after each deploy."
+            exit 0
+          fi
+          bash scripts/smoke-test.sh
