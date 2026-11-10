@@ -2,16 +2,14 @@
 
 Data and JSON schemas for the cancer information system: cancer care resources in one place.
 
-Edit the JSON here, push to `main`, and GitHub Actions checks it and uploads it to Cloudflare R2 (bucket `cancer-open-data`). No manual uploads.
+Edit the JSON here, push to `main`, and GitHub Actions checks it and deploys it to a Cloudflare Worker. No manual uploads.
 
-## Data
+## Public API
 
-**Public API:** https://cancer-open-data.capillanesjohnfritz.workers.dev
+**https://cancer-open-data.capillanesjohnfritz.workers.dev**
 
-- `GET /` lists every dataset with its data URL, schema URL, size and last update.
-- `GET /<folder>/<file>.json` returns one file, for example `/Feeds/FeedsData.json`.
-
-The API is a Cloudflare Worker (`worker/`) in front of the R2 bucket. It's read-only, serves only `.json` files, allows all sites (CORS) and answers `304` when a file hasn't changed. We use it instead of the bucket's `r2.dev` link, because some internet providers block `*.r2.dev`.
+- `GET /` lists every dataset with its data URL, schema URL, size and last change.
+- `GET /<Folder>/<File>.json` returns one file, for example `/Feeds/FeedsData.json`.
 
 | Folder | Data file | Records key |
 |---|---|---|
@@ -28,21 +26,31 @@ const BASE = "https://cancer-open-data.capillanesjohnfritz.workers.dev";
 const { Feed } = await fetch(`${BASE}/Feeds/FeedsData.json`).then(r => r.json());
 ```
 
+**Use a plain GET with no custom request headers.** Any site can read the files (`Access-Control-Allow-Origin: *`). Cloudflare's static file layer doesn't answer CORS preflight (`OPTIONS` returns `405`), so adding headers like `Authorization` would make browsers block the request. Reading public JSON never needs them.
+
+## How it's served
+
+The data files are **Workers Static Assets**: Cloudflare's edge serves them directly, without running any code.
+- Requests for static files are free and don't count toward the Workers daily request limit.
+- Files come from the Cloudflare location nearest each user.
+- Headers (CORS, `Cache-Control: public, max-age=300`, `nosniff`) come from `worker/dist/_headers`. ETag and `304` work automatically.
+
+The small Worker script (`worker/src/index.js`) runs only for `/` (the dataset list) and for paths with no file (`404`).
+
 ## How a change goes live
 
 ```
 edit data/ → push or merge to main → GitHub Actions
-   1. validate: every data file must pass its schema   (fails = nothing is uploaded)
-   2. deploy:   upload only files that changed to R2     (compares MD5 with the ETag)
-   3. smoke:    fetch every file from the public URL     (200, same bytes, CORS header, JSON type)
+   1. validate:     every data file must pass its schema     (fails = nothing is deployed)
+   2. test-worker:  24 tests against a local copy of the Worker
+   3. deploy:       build worker/dist from data/, then wrangler deploy
+   4. smoke:        fetch every file from the public URL       (200, same bytes, CORS header, JSON type)
 ```
 
-The smoke test (`scripts/smoke-test.sh`) checks the public URL the way a browser app sees it. It retries for about 2 minutes, then turns the run red if any file is missing, out of date, or has no CORS header. It reads the repo variable `R2_PUBLIC_URL` and is skipped with a warning if that's not set.
-
-- **Pull requests** run the check only. Use them to review changes before they go live.
-- **Each upload** gets the metadata `git-sha=<commit>`, so every file in R2 links back to a commit.
-- **Cache:** files are served with `Cache-Control: public, max-age=300`, so apps see changes within about 5 minutes.
-- **Nothing is deleted** from R2. If you remove a file here, delete it in R2 by hand.
+- **Pull requests** run steps 1 and 2 only. Use them to review changes before they go live.
+- **Each deploy switches all files at once.** There's no moment where some files are new and some old.
+- **Cache:** apps see changes within about 5 minutes.
+- **Removing a file** from `data/` removes it from the API on the next deploy.
 
 Check locally before you push:
 
@@ -53,58 +61,49 @@ npm run validate
 
 ## Versioning and rollback
 
-**Git is the version history.** R2 has no bucket versioning. Every change is a commit, with who, when, why and the exact diff. To roll back, run `git revert <commit>` and push; the pipeline uploads the old content again.
+1. **Git:** every change is a commit with who, when, why and the exact diff. `git revert <commit>` and push redeploys the old data.
+2. **Worker versions:** Cloudflare keeps every deploy. For an instant rollback without waiting for CI:
+   ```bash
+   cd worker
+   npx wrangler deployments list
+   npx wrangler rollback
+   ```
+   Then fix Git too, or the next push brings the bad data back.
 
-## Cloudflare R2 setup
+`GET /` shows the deployed commit in `version`.
 
-R2 has 10 GB of free storage and free downloads.
+## Deploy setup
 
-**In the Cloudflare dashboard** (Storage & databases → R2):
-1. **Create the bucket** `cancer-open-data`. Keep the default location and the **Standard** storage class.
-2. **Public test link:** bucket → Settings → **Public Development URL** → Enable. This `https://pub-….r2.dev` link is rate-limited and for testing only. For the live app, add a **Custom Domain** (bucket → Settings → Custom Domains) on a domain in the same Cloudflare account, then turn the `r2.dev` link off.
-3. **CORS:** bucket → Settings → CORS Policy → Add → JSON → paste `infra/r2-cors.json`.
-4. **API token:** R2 → Overview → API Tokens → **Manage** → Create **Account API token** → permission **Object Read & Write**, limited to the bucket `cancer-open-data`. Copy the **Access Key ID** and **Secret Access Key** right away (the secret is shown once). Also copy your **Account ID** (32 characters, under Account Details).
+**In Cloudflare:** My Profile → **API Tokens** → **Create Token** → template **Edit Cloudflare Workers** → limit it to your account → **Create Token**. Copy the token (shown once).
 
-**In GitHub:**
+**In GitHub** (repo → Settings → Secrets and variables → Actions):
 
-The 3 secrets live in the GitHub **Environment** named `R2_ACCESS_KEY_ID` (repo → Settings → Environments → `R2_ACCESS_KEY_ID` → Environment secrets). The deploy job uses that environment. The bucket name is a repository variable (Settings → Secrets and variables → Actions → Variables).
+| Kind | Name | Value |
+|---|---|---|
+| Secret | `CLOUDFLARE_API_TOKEN` | The token from above |
+| Variable | `CLOUDFLARE_ACCOUNT_ID` | `bc15d41433f443043305b72bec679e32` |
+| Variable | `PUBLIC_URL` | `https://cancer-open-data.capillanesjohnfritz.workers.dev` (the smoke test checks this) |
 
-| Kind | Where | Name | Value |
-|---|---|---|---|
-| Secret | Environment `R2_ACCESS_KEY_ID` | `R2_ACCESS_KEY_ID` | Access Key ID from step 4 |
-| Secret | Environment `R2_ACCESS_KEY_ID` | `R2_SECRET_ACCESS_KEY` | Secret Access Key from step 4 |
-| Secret | Environment `R2_ACCESS_KEY_ID` | `R2_ACCOUNT_ID` | Your Cloudflare Account ID |
-| Variable | Repository | `R2_BUCKET` | `cancer-open-data` |
-| Variable | Repository | `R2_PUBLIC_URL` | `https://cancer-open-data.capillanesjohnfritz.workers.dev` (the Worker; the smoke test checks this) |
+If a setting is missing, the deploy job stops at once and names it. GitHub never passes secrets to pull requests from forks, and deploy runs only on `main`.
 
-Then run the workflow (Actions → Validate and deploy data → Run workflow). The first run uploads all 10 files. Later runs upload only changed files. If a setting is missing, the deploy job stops at once and names it.
-
-- If a token leaks: delete it in Cloudflare, make a new one, and update the two key secrets.
-- GitHub never passes secrets to pull requests from forks, and deploy runs only on `main`.
-
-## The Worker (public API)
-
-Code in `worker/`. It reads the bucket through an R2 binding, so it needs no keys.
+## Working on the Worker
 
 ```bash
+node scripts/build-site.mjs   # from the repo root: data/ -> worker/dist/
 cd worker
 npm install
-npm test              # 23 tests in Miniflare with a simulated bucket
-npx wrangler login    # once per PC
-npx wrangler deploy
+npm test                      # 24 tests with Wrangler's local runner (real asset routing)
+npx wrangler login            # once per PC, only for a manual deploy
+npx wrangler deploy           # manual deploy (CI does this on every push to main)
 ```
-
-- Data changes **don't** need a Worker deploy: the Worker always reads the bucket.
-- Deploy only when `worker/src/index.js` changes. That deploy is manual for now.
 
 ## Files
 
 | Path | What it does |
 |---|---|
-| `data/` | The datasets and schemas, same layout as the bucket |
+| `data/` | The datasets and schemas |
 | `scripts/validate.mjs` | Checks each data file against its schema (Ajv, draft 2020-12) |
-| `scripts/upload-changed.sh` | Uploads only changed files, tagged with the commit |
+| `scripts/build-site.mjs` | Builds `worker/dist/`: the data files, `index.json` and `_headers` |
 | `scripts/smoke-test.sh` | Checks the public URL after each deploy |
+| `worker/` | Worker config, the small script for `/`, and its tests |
 | `.github/workflows/deploy-data.yml` | The pipeline |
-| `infra/r2-cors.json` | CORS policy to paste into R2 |
-| `worker/` | The public API (Cloudflare Worker) and its tests |

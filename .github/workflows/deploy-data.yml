@@ -6,6 +6,7 @@ on:
     paths:
       - "data/**"
       - "scripts/**"
+      - "worker/**"
       - "package.json"
       - "package-lock.json"
       - ".github/workflows/deploy-data.yml"
@@ -13,12 +14,13 @@ on:
     paths:
       - "data/**"
       - "scripts/**"
+      - "worker/**"
   workflow_dispatch: {}
 
 permissions:
   contents: read
 
-# Never run two uploads at the same time.
+# Never run two deploys at the same time.
 concurrency:
   group: deploy-data
   cancel-in-progress: false
@@ -35,45 +37,59 @@ jobs:
       - run: npm ci
       - run: npm run validate
 
+  test-worker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: worker/package-lock.json
+      - run: npm ci
+        working-directory: worker
+      - run: npm test
+        working-directory: worker
+
   deploy:
-    needs: validate
-    # Pull requests are only checked. Only main uploads.
+    needs: [validate, test-worker]
+    # Pull requests are only checked. Only main deploys.
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    # The R2 secrets live in this GitHub Environment (repo Settings > Environments).
-    environment: R2_ACCESS_KEY_ID
     env:
-      BUCKET: ${{ vars.R2_BUCKET }}
-      TARGET_NAME: R2
-      AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-      AWS_DEFAULT_REGION: auto
-      # Avoid checksum errors newer AWS CLI versions can cause on S3-compatible storage.
-      AWS_REQUEST_CHECKSUM_CALCULATION: WHEN_REQUIRED
-      AWS_RESPONSE_CHECKSUM_VALIDATION: WHEN_REQUIRED
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
     steps:
-      - name: Check R2 settings
+      - name: Check Cloudflare settings
         run: |
           missing=""
-          [[ -n "$BUCKET" ]] || missing="$missing variable:R2_BUCKET"
-          [[ -n "$AWS_ACCESS_KEY_ID" ]] || missing="$missing secret:R2_ACCESS_KEY_ID"
-          [[ -n "$AWS_SECRET_ACCESS_KEY" ]] || missing="$missing secret:R2_SECRET_ACCESS_KEY"
-          [[ "$R2_ACCOUNT_ID" =~ ^[0-9a-f]{32}$ ]] || missing="$missing secret:R2_ACCOUNT_ID(32-hex)"
+          [[ -n "$CLOUDFLARE_API_TOKEN" ]] || missing="$missing secret:CLOUDFLARE_API_TOKEN"
+          [[ "$CLOUDFLARE_ACCOUNT_ID" =~ ^[0-9a-f]{32}$ ]] || missing="$missing variable:CLOUDFLARE_ACCOUNT_ID(32-hex)"
           if [[ -n "$missing" ]]; then
-            echo "::error title=R2 settings missing or invalid::Add:$missing (repo Settings > Secrets and variables > Actions). See README > Cloudflare R2 setup."
+            echo "::error title=Cloudflare settings missing::Add:$missing (repo Settings > Secrets and variables > Actions). See README > Deploy setup."
             exit 1
           fi
-          echo "S3_ENDPOINT_URL=https://$R2_ACCOUNT_ID.r2.cloudflarestorage.com" >> "$GITHUB_ENV"
       - uses: actions/checkout@v7
-      - name: Upload changed files to R2
-        run: bash scripts/upload-changed.sh
+        with:
+          fetch-depth: 0   # full history, so index.json gets each file's last-changed date
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: worker/package-lock.json
+      - name: Build static files
+        run: node scripts/build-site.mjs
+      - name: Deploy Worker
+        working-directory: worker
+        run: |
+          npm ci
+          npx wrangler deploy --message "commit ${GITHUB_SHA::7}"
       - name: Smoke test the public URL
         env:
-          PUBLIC_URL: ${{ vars.R2_PUBLIC_URL }}
+          PUBLIC_URL: ${{ vars.PUBLIC_URL }}
         run: |
           if [[ -z "$PUBLIC_URL" ]]; then
-            echo "::warning title=Smoke test skipped::Set the repo variable R2_PUBLIC_URL to test the public URL after each deploy."
+            echo "::warning title=Smoke test skipped::Set the repo variable PUBLIC_URL to test the public URL after each deploy."
             exit 0
           fi
           bash scripts/smoke-test.sh

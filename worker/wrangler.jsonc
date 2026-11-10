@@ -4,8 +4,15 @@
   "main": "src/index.js",
   "compatibility_date": "2026-10-01",
   "workers_dev": true,
-  "r2_buckets": [
-    { "binding": "DATA", "bucket_name": "cancer-open-data" }
-  ],
+  // The data files are static assets: Cloudflare's edge serves them directly,
+  // without running the Worker (free, unlimited requests).
+  // The Worker code runs only for "/" (dataset list) and for paths with no file.
+  // Build dist first: node scripts/build-site.mjs (from the repo root)
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/"],
+    "not_found_handling": "none"
+  },
   "observability": { "enabled": true }
 }

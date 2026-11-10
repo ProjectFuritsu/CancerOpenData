@@ -59,14 +59,21 @@ pre=$(curl -sS -m 20 -o /dev/null -D - -X OPTIONS -H "Origin: $ORIGIN" \
   -H "Access-Control-Request-Method: GET" "$PUBLIC_URL/${FILES[0]#data/}" 2>&1)
 pre_code=$(printf '%s\n' "$pre" | awk 'toupper($1) ~ /^HTTP/ {c=$2} END {print c}')
 pre_acao=$(printf '%s\n' "$pre" | grep -ic '^access-control-allow-origin:')
+# Static assets on Workers answer OPTIONS with 405. Plain GET requests (no custom
+# headers) never send a preflight, so this is only a warning unless required.
 if [[ "$pre_code" =~ ^20[04]$ && "$pre_acao" -ge 1 ]]; then
   echo "PASS CORS preflight ($pre_code)"; pre_ok=1
-else
+elif [[ "${SMOKE_REQUIRE_PREFLIGHT:-0}" == "1" ]]; then
   echo "FAIL CORS preflight (status $pre_code, allow-origin header: $pre_acao)"; pre_ok=0
+else
+  echo "WARN CORS preflight not supported (status $pre_code). Plain GET without custom headers still works."
+  [[ -n "${GITHUB_ACTIONS:-}" ]] && echo "::warning title=No CORS preflight::OPTIONS returns $pre_code. Apps must use plain GET without custom headers."
+  pre_ok=2
 fi
 
 total=${#FILES[@]}; bad=${#pending[@]}
-summary="**Smoke test** on \`$PUBLIC_URL\`: $((total - bad))/$total files OK, preflight $([[ $pre_ok == 1 ]] && echo OK || echo FAILED)."
+pre_text=$([[ $pre_ok == 1 ]] && echo OK || { [[ $pre_ok == 2 ]] && echo "not supported (warning)" || echo FAILED; })
+summary="**Smoke test** on \`$PUBLIC_URL\`: $((total - bad))/$total files OK, preflight $pre_text."
 echo; echo "$summary"
 [[ -n "${GITHUB_STEP_SUMMARY:-}" ]] && echo "$summary" >> "$GITHUB_STEP_SUMMARY"
 
