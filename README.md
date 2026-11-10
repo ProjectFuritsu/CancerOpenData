@@ -6,27 +6,95 @@ Edit the JSON here, push to `main`, and GitHub Actions checks it and deploys it 
 
 ## Public API
 
-**https://cancer-open-data.capillanesjohnfritz.workers.dev**
+**Base URL:** https://cancer-open-data.capillanesjohnfritz.workers.dev
 
-- `GET /` lists every dataset with its data URL, schema URL, size and last change.
-- `GET /<Folder>/<File>.json` returns one file, for example `/Feeds/FeedsData.json`.
+Read-only, no keys, open to any website.
 
-| Folder | Data file | Records key |
+### Endpoints
+
+| Endpoint | Returns | Records key |
 |---|---|---|
-| `Feeds/` | `FeedsData.json` | `Feed` |
-| `FinancialInstitution/` | `FinancialInstiData.json` | `Financial_Insti` |
-| `HealthInstitution/` | `HealthInstiData.json` | `Health_Insti` |
-| `MedicalSpecialist/` | `MedicalSpecialistData.json` | `Medical_Specialist` |
-| `SupportGroups/` | `SupportGroupsData.json` | `Support_Group` |
+| [`/`](https://cancer-open-data.capillanesjohnfritz.workers.dev/) | List of all datasets | — |
+| [`/Feeds/FeedsData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/Feeds/FeedsData.json) | News, blogs and articles about cancer care | `Feed` |
+| [`/FinancialInstitution/FinancialInstiData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/FinancialInstitution/FinancialInstiData.json) | Financial institutions and their programs (e.g. PhilHealth, SSS, GSIS, Pag-IBIG) | `Financial_Insti` |
+| [`/HealthInstitution/HealthInstiData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/HealthInstitution/HealthInstiData.json) | Health institutions and their services (e.g. SPMC Cancer Institute) | `Health_Insti` |
+| [`/MedicalSpecialist/MedicalSpecialistData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/MedicalSpecialist/MedicalSpecialistData.json) | Medical specialists (oncology and related fields) and their clinics | `Medical_Specialist` |
+| [`/SupportGroups/SupportGroupsData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/SupportGroups/SupportGroupsData.json) | Cancer support groups (e.g. AMUMA) | `Support_Group` |
 
-Each folder also has `<Name>.schema.json` (JSON Schema draft 2020-12). The short names `FinancialInsti` and `HealthInsti` are on purpose.
+Each data file has a schema next to it: replace `Data.json` with `Data.schema.json`, for example `/Feeds/FeedsData.schema.json` (JSON Schema draft 2020-12). The short names `FinancialInsti` and `HealthInsti` are on purpose: use the paths exactly as written.
+
+### Using it
 
 ```js
 const BASE = "https://cancer-open-data.capillanesjohnfritz.workers.dev";
-const { Feed } = await fetch(`${BASE}/Feeds/FeedsData.json`).then(r => r.json());
+
+// One dataset
+const { Medical_Specialist } = await fetch(`${BASE}/MedicalSpecialist/MedicalSpecialistData.json`).then(r => r.json());
+
+// Everything, using the list at "/"
+const { datasets } = await fetch(`${BASE}/`).then(r => r.json());
+const all = await Promise.all(datasets.map(d => fetch(d.data).then(r => r.json())));
 ```
 
 **Use a plain GET with no custom request headers.** Any site can read the files (`Access-Control-Allow-Origin: *`). Cloudflare's static file layer doesn't answer CORS preflight (`OPTIONS` returns `405`), so adding headers like `Authorization` would make browsers block the request. Reading public JSON never needs them.
+
+### Responses
+
+`GET /` returns the dataset list:
+
+```json
+{
+  "name": "Cancer Open Data",
+  "about": "Public data on cancer care resources in one place. Each dataset has a JSON data file and a JSON Schema.",
+  "source": "https://github.com/ProjectFuritsu/CancerOpenData",
+  "version": "<commit that is live>",
+  "datasets": [
+    {
+      "name": "Feeds",
+      "data": "https://cancer-open-data.capillanesjohnfritz.workers.dev/Feeds/FeedsData.json",
+      "size": 4784,
+      "updated": "2026-11-10T10:35:27+08:00",
+      "schema": "https://cancer-open-data.capillanesjohnfritz.workers.dev/Feeds/FeedsData.schema.json"
+    }
+  ],
+  "usage": "fetch(\"https://cancer-open-data.capillanesjohnfritz.workers.dev/<Folder>/<File>.json\").then(r => r.json())"
+}
+```
+
+`size` is in bytes. `updated` is the time of the last commit that changed the data file.
+
+A data file is an object with `$schema` (path to its schema) and one records key that holds an array:
+
+```json
+{ "$schema": "./FeedsData.schema.json", "Feed": [ { "id": 1, "title": "…" } ] }
+```
+
+| Status | When |
+|---|---|
+| `200` | The file or the list |
+| `304` | The file hasn't changed since your copy (sent `If-None-Match` with its ETag) |
+| `404` | No such file. Folders like `/Feeds/` aren't listed |
+| `405` | Any method other than GET or HEAD, including `OPTIONS` (see above) |
+
+Files are cached for 5 minutes (`Cache-Control: public, max-age=300`), and the list for 1 minute.
+
+### Fields
+
+Every record has an integer `id`. Each schema file has the full rules. In short:
+
+| Records key | Fields |
+|---|---|
+| `Feed` | `id`, `title`, `bgImageURL`, `category` (`News`, `Blog` or `Article`), `content`, `author`, `publishDate` (text like `21 November 2025`), `source` |
+| `Financial_Insti` | `id`, `name`, `bgImageURL`, `source`, `description`, `type`, `location`, `latitude`, `longitude`, `schedule` {`isWholeWeek`, `days`[]}, `contacts`[], `programs`[] (with `benefits`, `requirements`, `procedure`) |
+| `Health_Insti` | Same as `Financial_Insti` up to `contacts`, then `services`[] (with `service_schedule`, `requirements`, `procedure`) |
+| `Medical_Specialist` | `id`, `firstname`, `lastname`, `specialty`, `description`, `imageURL`, `source` (optional), `clinics`[] {`clinicName`, `location`, `isWalkIns`, `canDoBoth`, `contacts`, `schedule`} |
+| `Support_Group` | `id`, `name`, `description`, `type`, `socmedURL`, `bgImageURL`, `location`, `latitude`, `longitude`, `founder`, `contacts`[] |
+
+Things that trip people up:
+- **Time keys:** `Medical_Specialist` clinics use `timeIN`/`timeOUT`; everywhere else it's `timeIn`/`timeOut`.
+- **Dates and times are display text**, not ISO (`8:00 am`, `21 November 2025`).
+- **Can be `null`:** a service's `source`, a clinic's `contacts`, a support group's `latitude`/`longitude`.
+- **Walk-in or appointment:** if `canDoBoth` is `true`, the clinic takes both. Otherwise `isWalkIns: true` means walk-in only, and `false` means appointment only.
 
 ## How it's served
 
@@ -58,6 +126,13 @@ Check locally before you push:
 npm install
 npm run validate
 ```
+
+### Adding a new dataset
+
+1. Make a folder in `data/`, for example `data/Hospice/`. Use letters, digits, `-` or `_`.
+2. Add the schema `HospiceData.schema.json` (JSON Schema draft 2020-12) and the data file `HospiceData.json`.
+3. Start the data file with `"$schema": "./HospiceData.schema.json"`. The check fails if this doesn't point to the schema next to it.
+4. Run `npm run validate`, then push. The new dataset appears at `/` by itself, with no code change.
 
 ## Versioning and rollback
 
