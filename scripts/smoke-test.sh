@@ -8,7 +8,7 @@
 # Plus one CORS preflight (OPTIONS) check.
 # Retries for up to ~2 minutes, because a new upload can take a moment to show.
 #
-#   PUBLIC_URL   e.g. https://pub-xxxx.r2.dev   (no trailing slash)
+#   PUBLIC_URL   e.g. https://cancer-open-data.capillanesjohnfritz.workers.dev   (no trailing slash)
 set -uo pipefail
 
 : "${PUBLIC_URL:?PUBLIC_URL is not set}"
