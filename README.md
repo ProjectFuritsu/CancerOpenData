@@ -6,9 +6,12 @@ Edit the JSON here, push to `main`, and GitHub Actions checks it and uploads it 
 
 ## Data
 
-Public read URL (testing): `https://pub-7d27b33e4bca41dc83569af8c2bb56c8.r2.dev/<folder>/<file>`
+**Public API:** https://cancer-open-data.capillanesjohnfritz.workers.dev
 
-This `r2.dev` link is rate-limited and meant for testing. For the live app, add a custom domain to the bucket and use that instead.
+- `GET /` lists every dataset with its data URL, schema URL, size and last update.
+- `GET /<folder>/<file>.json` returns one file, for example `/Feeds/FeedsData.json`.
+
+The API is a Cloudflare Worker (`worker/`) in front of the R2 bucket. It's read-only, serves only `.json` files, allows all sites (CORS) and answers `304` when a file hasn't changed. We use it instead of the bucket's `r2.dev` link, because some internet providers block `*.r2.dev`.
 
 | Folder | Data file | Records key |
 |---|---|---|
@@ -21,7 +24,7 @@ This `r2.dev` link is rate-limited and meant for testing. For the live app, add 
 Each folder also has `<Name>.schema.json` (JSON Schema draft 2020-12). The short names `FinancialInsti` and `HealthInsti` are on purpose.
 
 ```js
-const BASE = "https://pub-7d27b33e4bca41dc83569af8c2bb56c8.r2.dev"; // testing; switch to the custom domain for live
+const BASE = "https://cancer-open-data.capillanesjohnfritz.workers.dev";
 const { Feed } = await fetch(`${BASE}/Feeds/FeedsData.json`).then(r => r.json());
 ```
 
@@ -72,12 +75,27 @@ The 3 secrets live in the GitHub **Environment** named `R2_ACCESS_KEY_ID` (repo 
 | Secret | Environment `R2_ACCESS_KEY_ID` | `R2_SECRET_ACCESS_KEY` | Secret Access Key from step 4 |
 | Secret | Environment `R2_ACCESS_KEY_ID` | `R2_ACCOUNT_ID` | Your Cloudflare Account ID |
 | Variable | Repository | `R2_BUCKET` | `cancer-open-data` |
-| Variable | Repository | `R2_PUBLIC_URL` | `https://pub-7d27b33e4bca41dc83569af8c2bb56c8.r2.dev` (change to the custom domain later) |
+| Variable | Repository | `R2_PUBLIC_URL` | `https://cancer-open-data.capillanesjohnfritz.workers.dev` (the Worker; the smoke test checks this) |
 
 Then run the workflow (Actions → Validate and deploy data → Run workflow). The first run uploads all 10 files. Later runs upload only changed files. If a setting is missing, the deploy job stops at once and names it.
 
 - If a token leaks: delete it in Cloudflare, make a new one, and update the two key secrets.
 - GitHub never passes secrets to pull requests from forks, and deploy runs only on `main`.
+
+## The Worker (public API)
+
+Code in `worker/`. It reads the bucket through an R2 binding, so it needs no keys.
+
+```bash
+cd worker
+npm install
+npm test              # 23 tests in Miniflare with a simulated bucket
+npx wrangler login    # once per PC
+npx wrangler deploy
+```
+
+- Data changes **don't** need a Worker deploy: the Worker always reads the bucket.
+- Deploy only when `worker/src/index.js` changes. That deploy is manual for now.
 
 ## Files
 
@@ -89,3 +107,4 @@ Then run the workflow (Actions → Validate and deploy data → Run workflow). T
 | `scripts/smoke-test.sh` | Checks the public URL after each deploy |
 | `.github/workflows/deploy-data.yml` | The pipeline |
 | `infra/r2-cors.json` | CORS policy to paste into R2 |
+| `worker/` | The public API (Cloudflare Worker) and its tests |
