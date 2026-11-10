@@ -40,6 +40,8 @@ jobs:
     # Pull requests are only checked. Only main uploads.
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    # The R2 secrets live in this GitHub Environment (repo Settings > Environments).
+    environment: R2_ACCESS_KEY_ID
     env:
       BUCKET: ${{ vars.R2_BUCKET }}
       TARGET_NAME: R2

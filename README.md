@@ -57,14 +57,16 @@ R2 has 10 GB of free storage and free downloads.
 3. **CORS:** bucket → Settings → CORS Policy → Add → JSON → paste `infra/r2-cors.json`.
 4. **API token:** R2 → Overview → API Tokens → **Manage** → Create **Account API token** → permission **Object Read & Write**, limited to the bucket `cancer-open-data`. Copy the **Access Key ID** and **Secret Access Key** right away (the secret is shown once). Also copy your **Account ID** (32 characters, under Account Details).
 
-**In GitHub** (repo → Settings → Secrets and variables → Actions):
+**In GitHub:**
 
-| Kind | Name | Value |
-|---|---|---|
-| Secret | `R2_ACCESS_KEY_ID` | Access Key ID from step 4 |
-| Secret | `R2_SECRET_ACCESS_KEY` | Secret Access Key from step 4 |
-| Secret | `R2_ACCOUNT_ID` | Your Cloudflare Account ID |
-| Variable | `R2_BUCKET` | `cancer-open-data` |
+The 3 secrets live in the GitHub **Environment** named `R2_ACCESS_KEY_ID` (repo → Settings → Environments → `R2_ACCESS_KEY_ID` → Environment secrets). The deploy job uses that environment. The bucket name is a repository variable (Settings → Secrets and variables → Actions → Variables).
+
+| Kind | Where | Name | Value |
+|---|---|---|---|
+| Secret | Environment `R2_ACCESS_KEY_ID` | `R2_ACCESS_KEY_ID` | Access Key ID from step 4 |
+| Secret | Environment `R2_ACCESS_KEY_ID` | `R2_SECRET_ACCESS_KEY` | Secret Access Key from step 4 |
+| Secret | Environment `R2_ACCESS_KEY_ID` | `R2_ACCOUNT_ID` | Your Cloudflare Account ID |
+| Variable | Repository | `R2_BUCKET` | `cancer-open-data` |
 
 Then run the workflow (Actions → Validate and deploy data → Run workflow). The first run uploads all 10 files. Later runs upload only changed files. If a setting is missing, the deploy job stops at once and names it.
 
