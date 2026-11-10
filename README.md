@@ -6,7 +6,9 @@ Edit the JSON here, push to `main`, and GitHub Actions checks it and uploads it 
 
 ## Data
 
-Public read URL: `<R2 public URL>/<folder>/<file>`. Use the bucket's custom domain for the live app; the `https://pub-….r2.dev` link is for testing only.
+Public read URL (testing): `https://pub-7d27b33e4bca41dc83569af8c2bb56c8.r2.dev/<folder>/<file>`
+
+This `r2.dev` link is rate-limited and meant for testing. For the live app, add a custom domain to the bucket and use that instead.
 
 | Folder | Data file | Records key |
 |---|---|---|
@@ -19,7 +21,7 @@ Public read URL: `<R2 public URL>/<folder>/<file>`. Use the bucket's custom doma
 Each folder also has `<Name>.schema.json` (JSON Schema draft 2020-12). The short names `FinancialInsti` and `HealthInsti` are on purpose.
 
 ```js
-const BASE = "https://<your R2 public URL>";
+const BASE = "https://pub-7d27b33e4bca41dc83569af8c2bb56c8.r2.dev"; // testing; switch to the custom domain for live
 const { Feed } = await fetch(`${BASE}/Feeds/FeedsData.json`).then(r => r.json());
 ```
 
