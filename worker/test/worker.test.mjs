@@ -3,7 +3,7 @@
 // Ends by running scripts/smoke-test.sh against the local Worker.
 // Usage: npm test (in worker/)
 import { unstable_startWorker } from "wrangler";
-import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync, cpSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -59,12 +59,14 @@ await test("unit: 405 has the standard error shape and Allow", async () => {
 });
 
 // ---- Integration tests: the real Worker with static assets ----
-// Build with a temporary images folder: one valid PNG, and an SVG that must not be served.
+// Build with a temporary images folder: a copy of the real images/ (so the smoke test at
+// the end finds them) plus a test PNG, and an SVG that must not be served.
 const imgDir = mkdtempSync(join(tmpdir(), "cod-images-"));
+if (existsSync(join(root, "images"))) cpSync(join(root, "images"), imgDir, { recursive: true });
 const PNG = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==", "base64");
-mkdirSync(join(imgDir, "Feeds"));
-writeFileSync(join(imgDir, "Feeds", "pixel.png"), PNG);
-writeFileSync(join(imgDir, "Feeds", "logo.svg"), "<svg xmlns='http://www.w3.org/2000/svg'/>");
+mkdirSync(join(imgDir, "Feeds"), { recursive: true });
+writeFileSync(join(imgDir, "Feeds", "zz-test-fixture.png"), PNG);
+writeFileSync(join(imgDir, "Feeds", "zz-test-fixture.svg"), "<svg xmlns='http://www.w3.org/2000/svg'/>");
 execFileSync("node", ["scripts/build-site.mjs"], { cwd: root, stdio: "inherit", env: { ...process.env, IMAGES_DIR: imgDir } });
 rmSync(imgDir, { recursive: true, force: true });
 const index = JSON.parse(readFileSync(join(here, "..", "dist", "index.json"), "utf8"));
@@ -90,8 +92,8 @@ try {
     });
   }
 
-  await test("GET /images/Feeds/pixel.png (static image)", async () => {
-    const r = await fetch(`${base}/images/Feeds/pixel.png`, { headers: { Origin: "https://example.com" } });
+  await test("GET /images/Feeds/zz-test-fixture.png (static image)", async () => {
+    const r = await fetch(`${base}/images/Feeds/zz-test-fixture.png`, { headers: { Origin: "https://example.com" } });
     assert.equal(r.status, 200);
     assert.equal(r.headers.get("content-type"), "image/png");
     assert.equal(r.headers.get("access-control-allow-origin"), "*");
@@ -100,7 +102,7 @@ try {
   });
 
   for (const [path, why] of [
-    ["images/Feeds/logo.svg", "SVG (not copied)"],
+    ["images/Feeds/zz-test-fixture.svg", "SVG (not copied)"],
     ["images/Feeds/", "image folder listing"],
     ["images/", "images root"],
   ]) {
