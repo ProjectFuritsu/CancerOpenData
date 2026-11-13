@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "FinancialInstiData.schema.json",
   "title": "FinancialInstiData",
-  "description": "Cancer Open Data v2.",
+  "description": "Cancer Open Data v2. A null value or an empty list means the information is not available yet: apps should show \"Not available\".",
   "type": "object",
   "properties": {
     "$schema": {
@@ -67,7 +67,7 @@
                     "type": "string"
                   },
                   "uniqueItems": true,
-                  "description": "Who can get this program, one rule per item, as written by the source. Empty if not given (show \"Not given\")."
+                  "description": "Who can get this program, one rule per item, as written by the source. Empty if not given (show \"Not available\")."
                 },
                 "program_description": {
                   "type": "string"
@@ -262,7 +262,7 @@
               "type": "null"
             }
           ],
-          "description": "Open days and hours. null if not known (show \"Not given\")."
+          "description": "Open days and hours. null if not known (show \"Not available\")."
         },
         "contacts": {
           "$ref": "#/$defs/contacts"
@@ -286,7 +286,7 @@
         "format": "uri"
       },
       "uniqueItems": true,
-      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not available\")."
     },
     "cancerTypes": {
       "type": [
@@ -298,7 +298,7 @@
       },
       "minItems": 1,
       "uniqueItems": true,
-      "description": "Cancers this covers, e.g. ['Breast Cancer']. ['All cancers'] if it covers every cancer. null if the source doesn't say (show \"Not given\")."
+      "description": "Cancers this covers, e.g. ['Breast Cancer']. ['All cancers'] if it covers every cancer. null if the source doesn't say (show \"Not available\")."
     },
     "lastVerified": {
       "type": [

@@ -1,6 +1,6 @@
 // Converts the v1 data in data/ to the v2 shape in data-v2/.
 // Values are copied as written. Nothing is guessed: a value the v1 data
-// doesn't have becomes null or an empty list ("Not given").
+// doesn't have becomes null or an empty list ("Not available" in apps).
 //
 // Usage (from the repo root):
 //   node scripts/convert-v2.mjs [--provenance <staging>/provenance]

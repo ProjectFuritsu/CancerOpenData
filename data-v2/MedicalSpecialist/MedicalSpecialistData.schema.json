@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "MedicalSpecialistData.schema.json",
   "title": "MedicalSpecialistData",
-  "description": "Cancer Open Data v2.",
+  "description": "Cancer Open Data v2. A null value or an empty list means the information is not available yet: apps should show \"Not available\".",
   "type": "object",
   "properties": {
     "$schema": {
@@ -79,7 +79,7 @@
                     "Appointment only",
                     "Walk-in and appointment"
                   ],
-                  "description": "How patients are seen. null if not known (show \"Not given\")."
+                  "description": "How patients are seen. null if not known (show \"Not available\")."
                 },
                 "contacts": {
                   "$ref": "#/$defs/contacts"
@@ -195,7 +195,7 @@
         "format": "uri"
       },
       "uniqueItems": true,
-      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not available\")."
     },
     "lastVerified": {
       "type": [
