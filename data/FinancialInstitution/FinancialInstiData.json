@@ -41,41 +41,66 @@
       "programs": [
         {
           "programID": 161213,
-          "program_name": "YAKAP (Konsulta) Program",
-          "eligibility": "All PhilHealth members",
-          "program_description": "A comprehensive outpatient benefits package that includes consultation, lab tests, and medicines.",
+          "program_name": "PhilHealth YAKAP: Yaman ng Kalusugan Program",
+          "source": "https://www.philhealth.gov.ph/yakap/",
+          "eligibility": "Government and Private Employees; Kasambahay; Indigents; Persons with Disability; Self-Earning Individuals or Professional Practitioners; Lifetime Members; Pantawid Pamilyang Pilipino Program (4Ps); Infants and Children under 21 years old; Overseas Filipino Workers; Solo Parent; Senior Citizens",
+          "program_description": "Government program that helps Filipinos take care of their health and prevent illness. YAKAP Clinics watch over members' health, find illness early, and give the right medicines so the illness does not get worse and hospital stays are avoided.",
           "benefits": [
             {
               "benefit_id": 1,
-              "benefit_name": "Primary Care Checkup"
+              "benefit_name": "Primary Care Checkup (free)"
             },
             {
               "benefit_id": 2,
-              "benefit_name": "Laboratory tests (CBC, Urinalysis, etc.)"
+              "benefit_name": "Selected laboratory tests based on risk, age and health assessment: Complete Blood Count (CBC) with Platelet Count, Lipid Profile, Fasting Blood Sugar (FBS), Oral Glucose Tolerance Test (OGTT), Hemoglobin Test (HbA1c), Creatinine, Chest X-Ray, Sputum Microscopy, Electrocardiogram (ECG), Urinalysis, Pap Smear, Fecalysis, Fecal Occult Blood Test (FOBT), Upper Abdomen & Pelvic Ultrasound"
             },
             {
               "benefit_id": 3,
-              "benefit_name": "Free Maintenance Medicines"
+              "benefit_name": "Medicines under PhilHealth GAMOT"
+            },
+            {
+              "benefit_id": 4,
+              "benefit_name": "Breast cancer screening: Breast Ultrasound & Mammogram"
+            },
+            {
+              "benefit_id": 5,
+              "benefit_name": "Liver cancer screening: Alpha Fetoprotein Test & Liver Ultrasound"
+            },
+            {
+              "benefit_id": 6,
+              "benefit_name": "Colorectal cancer screening: Fecal Immunochemical Test, Fecal Occult Blood Test & Colonoscopy"
+            },
+            {
+              "benefit_id": 7,
+              "benefit_name": "Lung cancer screening: Low-dose Chest CT Scan"
             }
           ],
           "requirements": [
             {
               "requirement_id": 1,
-              "requirement_description": "Member must be registered to a chosen Konsulta/Yakap clinic."
+              "requirement_description": "PhilHealth Identification Number (PIN) with updated membership"
             }
           ],
           "procedure": [
             {
               "step": 1,
-              "instruction": "Fill out the PhilHealth Member Registration Form (PMRF)."
+              "instruction": "Register: make sure you have a PhilHealth Identification Number (PIN) and your membership is updated."
             },
             {
               "step": 2,
-              "instruction": "Submit the form and valid ID to the PhilHealth office or accredited clinic."
+              "instruction": "Choose a YAKAP Clinic using the eGovPH Super App, the PhilHealth Member Portal, or the nearest PhilHealth office."
             },
             {
               "step": 3,
-              "instruction": "Wait for confirmation of registration."
+              "instruction": "Have your First Patient Encounter (FPE): medical history, health screening and health education."
+            },
+            {
+              "step": 4,
+              "instruction": "Sign the form agreeing that your chosen YAKAP Clinic will keep caring for you."
+            },
+            {
+              "step": 5,
+              "instruction": "Keep seeing your YAKAP doctor for prescriptions, referrals for laboratory and/or cancer screening tests when needed, and follow-up checkups."
             }
           ]
         },
@@ -122,45 +147,13 @@
           "requirements": [
             {
               "requirement_id": 1,
-              "requirement_description": "Pre-authorization Checklist and Request Form (Annex A.2), submitted by the contracted health facility"
-            },
-            {
-              "requirement_id": 2,
-              "requirement_description": "Member Empowerment Form or ME Form (Annex B), accomplished together with the attending healthcare provider and signed jointly by the patient (or their guardian or representative) and the attending healthcare provider"
-            },
-            {
-              "requirement_id": 3,
-              "requirement_description": "MDT plan (treatment plan from the contracted health facility's multidisciplinary team)"
-            },
-            {
-              "requirement_id": 4,
-              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"Yes\" response. If \"No\", register or apply for a PhilHealth Identification Number (PIN) before pre-authorization"
+              "requirement_description": "PhilHealth ID"
             }
           ],
           "procedure": [
             {
               "step": 1,
-              "instruction": "Have a consultation and clinical breast examination at a Z Benefits contracted health facility."
-            },
-            {
-              "step": 2,
-              "instruction": "If you meet the criteria for diagnostic tests, the facility does not collect payment for them. Biopsy with histopathology is covered under All Case Rates."
-            },
-            {
-              "step": 3,
-              "instruction": "The facility's multidisciplinary team (MDT) assesses you and decides your treatment plan."
-            },
-            {
-              "step": 4,
-              "instruction": "Fill out the ME Form with your attending doctor. The facility explains any cost sharing; there is no co-payment in basic or ward accommodation."
-            },
-            {
-              "step": 5,
-              "instruction": "The facility submits the pre-authorization request (Annex A.2) with the ME Form and MDT plan to PhilHealth. Approval is valid for 60 calendar days if treatment has not started."
-            },
-            {
-              "step": 6,
-              "instruction": "Get treatment as prescribed by the MDT. The facility files the claims with PhilHealth."
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."
             }
           ]
         },
@@ -191,37 +184,13 @@
           "requirements": [
             {
               "requirement_id": 1,
-              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
-            },
-            {
-              "requirement_id": 2,
-              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient. For minors, the parent or guardian signs or puts a thumb print on behalf of the patient"
-            },
-            {
-              "requirement_id": 3,
-              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
+              "requirement_description": "PhilHealth ID"
             }
           ],
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
-            },
-            {
-              "step": 2,
-              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
-            },
-            {
-              "step": 3,
-              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
-            },
-            {
-              "step": 4,
-              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days. For leukemia, the request must be submitted before the end of the induction phase."
-            },
-            {
-              "step": 5,
-              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."
             }
           ]
         },
@@ -240,37 +209,13 @@
           "requirements": [
             {
               "requirement_id": 1,
-              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
-            },
-            {
-              "requirement_id": 2,
-              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient"
-            },
-            {
-              "requirement_id": 3,
-              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
+              "requirement_description": "PhilHealth ID"
             }
           ],
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
-            },
-            {
-              "step": 2,
-              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
-            },
-            {
-              "step": 3,
-              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
-            },
-            {
-              "step": 4,
-              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days."
-            },
-            {
-              "step": 5,
-              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."
             }
           ]
         },
@@ -293,41 +238,13 @@
           "requirements": [
             {
               "requirement_id": 1,
-              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
-            },
-            {
-              "requirement_id": 2,
-              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient"
-            },
-            {
-              "requirement_id": 3,
-              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
-            },
-            {
-              "requirement_id": 4,
-              "requirement_description": "Treatment plan from gynecologic oncologist"
+              "requirement_description": "PhilHealth ID"
             }
           ],
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
-            },
-            {
-              "step": 2,
-              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
-            },
-            {
-              "step": 3,
-              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
-            },
-            {
-              "step": 4,
-              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days."
-            },
-            {
-              "step": 5,
-              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."
             }
           ]
         },
@@ -362,49 +279,13 @@
           "requirements": [
             {
               "requirement_id": 1,
-              "requirement_description": "For colon cancer: Annex A1: Pre-authorization Checklist and Request for Colon Cancer, submitted by the contracted health facility"
-            },
-            {
-              "requirement_id": 2,
-              "requirement_description": "For rectal cancer: Annex A2: Pre-authorization Checklist and Request for Rectal Cancer, submitted by the contracted health facility"
-            },
-            {
-              "requirement_id": 3,
-              "requirement_description": "Member Empowerment Form or ME Form (Annex B), accomplished together with the attending healthcare provider and signed jointly by the patient (or their guardian or representative) and the attending healthcare provider"
-            },
-            {
-              "requirement_id": 4,
-              "requirement_description": "Photocopy of the MDT plan (treatment plan from the multidisciplinary team)"
-            },
-            {
-              "requirement_id": 5,
-              "requirement_description": "Diagnostic results. Colon cancer: colonoscopy, biopsy with histopathology, chest CT or chest x-ray, and abdominal CT scan, preferably with contrast. Rectal cancer: chest CT scan and abdominal CT scan, preferably with contrast. Results of colonoscopy, chest x-ray, CT scan and abdominal ultrasound are valid up to 60 calendar days before the pre-authorization request is submitted"
+              "requirement_description": "PhilHealth ID"
             }
           ],
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to a Z Benefits contracted health facility for colon and rectal cancers."
-            },
-            {
-              "step": 2,
-              "instruction": "Complete the required diagnostic tests. Results must not be older than 60 calendar days when the pre-authorization request is submitted."
-            },
-            {
-              "step": 3,
-              "instruction": "The facility's multidisciplinary team (at least a colorectal surgeon and a medical oncologist; plus a radio-oncologist for rectal cancer) agrees on your treatment plan."
-            },
-            {
-              "step": 4,
-              "instruction": "Fill out the ME Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
-            },
-            {
-              "step": 5,
-              "instruction": "The facility submits the pre-authorization request (Annex A) with the ME Form and MDT plan to PhilHealth. Approval is valid for 60 calendar days."
-            },
-            {
-              "step": 6,
-              "instruction": "Get treatment as planned by the MDT. The facility files the claims with PhilHealth."
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."
             }
           ]
         }
