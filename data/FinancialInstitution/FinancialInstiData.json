@@ -31,6 +31,11 @@
           "contact_id": 2,
           "type": "Email",
           "contact_details": "publicaffairs.pro11@philhealth.gov.ph"
+        },
+        {
+          "contact_id": 3,
+          "type": "Landline",
+          "contact_details": "(02) 866-225-88"
         }
       ],
       "programs": [
@@ -71,6 +76,335 @@
             {
               "step": 3,
               "instruction": "Wait for confirmation of registration."
+            }
+          ]
+        },
+        {
+          "programID": 101002,
+          "program_name": "Z Benefits: Breast Cancer (cStage 0 to IV)",
+          "source": "https://www.philhealth.gov.ph/circulars/2024/PC2024-0007.pdf",
+          "eligibility": "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval, and who meet the selection criteria: breast cancer clinical stage requiring treatments covered under the Z Benefits (Stage 0 Ductal Carcinoma in Situ (DCIS), Stage I, Stage II, Stage III or Stage IV), with management involving any or all of: Surgery; Chemotherapy (neo/adjuvant): patient has not initiated any chemotherapy treatment from any HF; Targeted therapy; Hormonotherapy; Surveillance. Diagnostic tests are covered when all of these are met: Positive (+) breast mass AND/OR palpable axillary lymph node; BI-RADS category 4 to 5 result of either mammogram or ultrasound; and Biopsy result of confirmed malignant breast cancer or ductal carcinoma in situ (DCIS).",
+          "program_description": "PhilHealth's Z Benefit package for breast cancer, up to P1.4 million (effective March 30, 2024). It covers diagnostic tests, surgery, hormonotherapy, chemotherapy, targeted therapy and surveillance after surgery, at Z Benefits contracted health facilities. Up to five (5) days are deducted from the 45-day annual benefit limit.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Up to P1.4 million"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Diagnostic tests and prognostication: Php 1,000 to Php 10,000.00"
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Surgical procedures (partial mastectomy to modified radical mastectomy): Php 30,000 – Php 140,000.00"
+            },
+            {
+              "benefit_id": 4,
+              "benefit_name": "Hormonotherapy: Php 2,700 or Php 18,000"
+            },
+            {
+              "benefit_id": 5,
+              "benefit_name": "Cytotoxic chemotherapy: Php 43,000 to Php 185,010"
+            },
+            {
+              "benefit_id": 6,
+              "benefit_name": "Targeted therapy: Php 333,336 for 18 maximum cycles"
+            },
+            {
+              "benefit_id": 7,
+              "benefit_name": "Surveillance: Php 5,000 (basic) and Php 9,000 (specific)"
+            },
+            {
+              "benefit_id": 8,
+              "benefit_name": "No co-payment for patients admitted in basic or ward-type accommodation"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Pre-authorization Checklist and Request Form (Annex A.2), submitted by the contracted health facility"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Member Empowerment Form or ME Form (Annex B), accomplished together with the attending healthcare provider and signed jointly by the patient (or their guardian or representative) and the attending healthcare provider"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "MDT plan (treatment plan from the contracted health facility's multidisciplinary team)"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"Yes\" response. If \"No\", register or apply for a PhilHealth Identification Number (PIN) before pre-authorization"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Have a consultation and clinical breast examination at a Z Benefits contracted health facility."
+            },
+            {
+              "step": 2,
+              "instruction": "If you meet the criteria for diagnostic tests, the facility does not collect payment for them. Biopsy with histopathology is covered under All Case Rates."
+            },
+            {
+              "step": 3,
+              "instruction": "The facility's multidisciplinary team (MDT) assesses you and decides your treatment plan."
+            },
+            {
+              "step": 4,
+              "instruction": "Fill out the ME Form with your attending doctor. The facility explains any cost sharing; there is no co-payment in basic or ward accommodation."
+            },
+            {
+              "step": 5,
+              "instruction": "The facility submits the pre-authorization request (Annex A.2) with the ME Form and MDT plan to PhilHealth. Approval is valid for 60 calendar days if treatment has not started."
+            },
+            {
+              "step": 6,
+              "instruction": "Get treatment as prescribed by the MDT. The facility files the claims with PhilHealth."
+            }
+          ]
+        },
+        {
+          "programID": 101003,
+          "program_name": "Z Benefits: Acute Lymphocytic / Lymphoblastic Leukemia (standard risk)",
+          "source": "https://www.philhealth.gov.ph/circulars/2017/circ2017-0016.pdf",
+          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: Age 1 to less than 10 years old and 364 days; White blood cell count ‹50,000/mcL; No CNS leukemia at diagnosis; There should be no testicular involvement of male patient at diagnosis; WHO Classification: B or T lymphoblastic leukemia immunophenotype (mature B-cell ALL or Burkitt leukemia are excluded). The membership category upon approval of the pre-authorization applies for the three years of the package.",
+          "program_description": "PhilHealth's Z Benefit package for children with standard-risk acute lymphoblastic leukemia: five hundred thousand pesos (Php 500,000) for the complete course of treatment for three (3) years, paid to the contracted health facility in three tranches. Pre-authorization must be submitted before the end of the induction phase.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Php 500,000 for the complete course of treatment for three (3) years"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Tranche 1: Php 300,000 (after the 1st induction phase)"
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Tranche 2: Php 125,000 (after the 3rd maintenance cycle)"
+            },
+            {
+              "benefit_id": 4,
+              "benefit_name": "Tranche 3: Php 75,000 (after the 7th maintenance cycle)"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient. For minors, the parent or guardian signs or puts a thumb print on behalf of the patient"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
+            },
+            {
+              "step": 2,
+              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
+            },
+            {
+              "step": 3,
+              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
+            },
+            {
+              "step": 4,
+              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days. For leukemia, the request must be submitted before the end of the induction phase."
+            },
+            {
+              "step": 5,
+              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+            }
+          ]
+        },
+        {
+          "programID": 101004,
+          "program_name": "Z Benefits: Prostate Cancer (low to intermediate risk)",
+          "source": "https://www.philhealth.gov.ph/benefits/",
+          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: Male patients age up to 70 years old; Clinical stage (T1a-T2c), PSA level 10 to 20 ng/ml, Tumor Grade (Gleason's score of 2-7) - Low risk: T1-T2a and Gleason score 2-6, and PSA ‹10 ng/ml - Intermediate risk: T2b to T2c, Gleason score of 7, and PSA 10-20 ng/ml; Localized prostate cancer; No uncontrolled co-morbid conditions.",
+          "program_description": "PhilHealth's Z Benefit package for localized low- to intermediate-risk prostate cancer, at Z Benefits contracted health facilities.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "P100,000"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
+            },
+            {
+              "step": 2,
+              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
+            },
+            {
+              "step": 3,
+              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
+            },
+            {
+              "step": 4,
+              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days."
+            },
+            {
+              "step": 5,
+              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+            }
+          ]
+        },
+        {
+          "programID": 101005,
+          "program_name": "Z Benefits: Cervical Cancer",
+          "source": "https://www.philhealth.gov.ph/benefits/",
+          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: No previous chemotherapy; No previous radiotherapy; No uncontrolled co-morbid conditions.",
+          "program_description": "PhilHealth's Z Benefit package for cervical cancer treatment (chemoradiation with brachytherapy, or primary surgery for early stages), at Z Benefits contracted health facilities.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Chemoradiation with Cobalt and Brachytherapy (low dose) or Primary surgery for Stage IA1, IA2 - IIA1: P120,000"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Chemoradiation with Linear Accelerator and Brachytherapy (high dose): P175,000"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "Treatment plan from gynecologic oncologist"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
+            },
+            {
+              "step": 2,
+              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
+            },
+            {
+              "step": 3,
+              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
+            },
+            {
+              "step": 4,
+              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days."
+            },
+            {
+              "step": 5,
+              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+            }
+          ]
+        },
+        {
+          "programID": 101006,
+          "program_name": "Z Benefits: Colorectal Cancer",
+          "source": "https://www.philhealth.gov.ph/circulars/2023/PC2023-0005.pdf",
+          "eligibility": "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval, with colon or rectal cancer stage I to III, who meet the selection criteria: Normal or with mild systemic disease (ASA I or II); Fully active, able to carry on all pre-disease performance without restriction, OR restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g light house work, office work, OR ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of working hours. Services needed after progression to stage IV are not covered.",
+          "program_description": "PhilHealth's Z Benefit package for colon and rectal cancer. The amount depends on the cancer, its stage and risk. Available at Z Benefits contracted health facilities. Up to five (5) days are deducted from the 45-day annual benefit limit.",
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Colon Cancer, Stage I to II (Low Risk): Php 150,000"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Colon Cancer, Stage II to III (High Risk): Php 300,000"
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Rectal Cancer, Stage I to II (Low Risk): Php 150,000"
+            },
+            {
+              "benefit_id": 4,
+              "benefit_name": "Rectal Cancer, Pre-operative Stage I, with Post-Operative Stage II to III: Php 400,000"
+            },
+            {
+              "benefit_id": 5,
+              "benefit_name": "Rectal Cancer, Stage II to III: Php 400,000"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "For colon cancer: Annex A1: Pre-authorization Checklist and Request for Colon Cancer, submitted by the contracted health facility"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "For rectal cancer: Annex A2: Pre-authorization Checklist and Request for Rectal Cancer, submitted by the contracted health facility"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "Member Empowerment Form or ME Form (Annex B), accomplished together with the attending healthcare provider and signed jointly by the patient (or their guardian or representative) and the attending healthcare provider"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "Photocopy of the MDT plan (treatment plan from the multidisciplinary team)"
+            },
+            {
+              "requirement_id": 5,
+              "requirement_description": "Diagnostic results. Colon cancer: colonoscopy, biopsy with histopathology, chest CT or chest x-ray, and abdominal CT scan, preferably with contrast. Rectal cancer: chest CT scan and abdominal CT scan, preferably with contrast. Results of colonoscopy, chest x-ray, CT scan and abdominal ultrasound are valid up to 60 calendar days before the pre-authorization request is submitted"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Go to a Z Benefits contracted health facility for colon and rectal cancers."
+            },
+            {
+              "step": 2,
+              "instruction": "Complete the required diagnostic tests. Results must not be older than 60 calendar days when the pre-authorization request is submitted."
+            },
+            {
+              "step": 3,
+              "instruction": "The facility's multidisciplinary team (at least a colorectal surgeon and a medical oncologist; plus a radio-oncologist for rectal cancer) agrees on your treatment plan."
+            },
+            {
+              "step": 4,
+              "instruction": "Fill out the ME Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
+            },
+            {
+              "step": 5,
+              "instruction": "The facility submits the pre-authorization request (Annex A) with the ME Form and MDT plan to PhilHealth. Approval is valid for 60 calendar days."
+            },
+            {
+              "step": 6,
+              "instruction": "Get treatment as planned by the MDT. The facility files the claims with PhilHealth."
             }
           ]
         }

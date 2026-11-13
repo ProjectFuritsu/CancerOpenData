@@ -35,8 +35,11 @@
             ]
           },
           "socmedURL": {
-            "type": "string",
-            "description": "Official social media page URL.",
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Official social media page URL, or null if not known.",
             "format": "uri"
           },
           "bgImageURL": {
@@ -62,7 +65,11 @@
             "description": "Latitude (from Google Maps)."
           },
           "founder": {
-            "type": "string"
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Founder's name, or null if not known."
           },
           "contacts": {
             "type": "array",

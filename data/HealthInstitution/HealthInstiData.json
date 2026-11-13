@@ -46,88 +46,27 @@
       "services": [
         {
           "serviceID": 1,
-          "source": null,
-          "service_name": "Blood Chem",
-          "service_description": "Ang PhilHealth YAKAP ay programa ng gobyerno na naglalayong tulungan ang mga Pilipino na mapangalagaan ang kanilang kalusugan at maiwasan ang sakit.",
-          "service_schedule": [
-            {
-              "day": "Monday and Wednesday",
-              "timeIn": "3:00 am",
-              "timeOut": "5:00 pm"
-            }
-          ],
-          "requirements": [
-            {
-              "requirement_id": 1,
-              "requirement_description": "A person must be registered to the chosen Yakap clinic."
-            }
-          ],
-          "procedure": [
-            {
-              "step": 1,
-              "instruction": "Fill out the PMRF form"
-            },
-            {
-              "step": 2,
-              "instruction": "Prepare required documents"
-            },
-            {
-              "step": 3,
-              "instruction": "Submit documents to PhilHealth office"
-            }
-          ]
+          "source": "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
+          "service_name": "Adult Cancer Clinic and Infusion Unit",
+          "service_description": "Opened on February 8, 2018 on the fourth floor of the Cancer Institute. It offers subsidized multidisciplinary care for all kinds of cancer. The hospital said most patients are free or subsidized charity, assisted through Lingap, PCSO and others.",
+          "requirements": [],
+          "procedure": []
         },
         {
           "serviceID": 2,
-          "source": null,
-          "service_name": "Blood Chem",
-          "service_description": "Ang PhilHealth YAKAP ay programa ng gobyerno na naglalayong tulungan ang mga Pilipino na mapangalagaan ang kanilang kalusugan at maiwasan ang sakit.",
-          "requirements": [
-            {
-              "requirement_id": 1,
-              "requirement_description": "A person must be registered to the chosen Yakap clinic."
-            }
-          ],
-          "procedure": [
-            {
-              "step": 1,
-              "instruction": "Fill out the PMRF form"
-            },
-            {
-              "step": 2,
-              "instruction": "Prepare required documents"
-            },
-            {
-              "step": 3,
-              "instruction": "Submit documents to PhilHealth office"
-            }
-          ]
+          "source": "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
+          "service_name": "Radiation Therapy (Linear Accelerator)",
+          "service_description": "The Cancer Institute's linear accelerator (Linac) for radiation therapy started operating with the adult cancer unit in 2018.",
+          "requirements": [],
+          "procedure": []
         },
         {
           "serviceID": 3,
-          "source": null,
-          "service_name": "Blood Chem",
-          "service_description": "Ang PhilHealth YAKAP ay programa ng gobyerno na naglalayong tulungan ang mga Pilipino na mapangalagaan ang kanilang kalusugan at maiwasan ang sakit.",
-          "requirements": [
-            {
-              "requirement_id": 1,
-              "requirement_description": "A person must be registered to the chosen Yakap clinic."
-            }
-          ],
-          "procedure": [
-            {
-              "step": 1,
-              "instruction": "Fill out the PMRF form"
-            },
-            {
-              "step": 2,
-              "instruction": "Prepare required documents"
-            },
-            {
-              "step": 3,
-              "instruction": "Submit documents to PhilHealth office"
-            }
-          ]
+          "source": "https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide",
+          "service_name": "Cancer Assistance Fund (CAF)",
+          "service_description": "Listed by the Department of Health as one of 36 Cancer Assistance Fund access sites nationwide (July 2026). The fund supports cancer care, from early screening and diagnosis to treatment.",
+          "requirements": [],
+          "procedure": []
         }
       ]
     }

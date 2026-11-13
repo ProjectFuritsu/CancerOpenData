@@ -24,6 +24,25 @@
           "contact_details": "(082) 295-2133"
         }
       ]
+    },
+    {
+      "id": 2,
+      "name": "House of Hope Foundation for Kids with Cancer Inc.",
+      "description": "Foundation in Davao City for children with cancer aged 19 and below who are admitted at the Southern Philippines Medical Center or its shared care facilities in Mindanao. It started in 2004 as Davao Children's with Cancer Fund Inc. and became the House of Hope Foundation in 2015. It runs transient homes for young patients and their families, and helps with diagnostics, medicines and treatment such as radiotherapy.",
+      "type": "Family Support Groups",
+      "socmedURL": null,
+      "bgImageURL": "",
+      "location": "Southern Philippines Medical Center Compound, J. P. Laurel Avenue, Poblacion Buhangin, Davao City, Davao del Sur 8000",
+      "longitude": null,
+      "latitude": null,
+      "founder": "Mae Dolendo",
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Mobile",
+          "contact_details": "0977 329 8496"
+        }
+      ]
     }
   ]
 }
