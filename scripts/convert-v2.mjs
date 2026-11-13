@@ -105,6 +105,50 @@ const REVIEW = {
     1: "https://www.facebook.com/amumasupport",
     2: "https://www.facebook.com/kidsofhopeorg",
   },
+  // Decision 10 (Fritz, 2026-11-13): YAKAP rewritten from https://www.philhealth.gov.ph/yakap/
+  // (read 2026-11-13). The page is mostly images in Filipino: description, requirement,
+  // steps and "Free" are translations; member groups and test names are as written.
+  programOverrides: {
+    161213: {
+      program_name: "PhilHealth YAKAP: Yaman ng Kalusugan Program",
+      eligibility: [
+        "Government and Private Employees",
+        "Kasambahay",
+        "Indigents",
+        "Persons with Disability",
+        "Self-Earning Individuals or Professional Practitioners",
+        "Lifetime Members",
+        "Pantawid Pamilyang Pilipino Program (4Ps)",
+        "Infants and Children under 21 years old",
+        "Overseas Filipino Workers",
+        "Solo Parent",
+        "Senior Citizens",
+      ],
+      program_description: "Government program that helps Filipinos take care of their health and prevent illness. YAKAP Clinics watch over members' health, find illness early, and give the right medicines so the illness does not get worse and hospital stays are avoided.",
+      cancerTypes: ["Breast Cancer", "Liver Cancer", "Colorectal Cancer", "Lung Cancer"],
+      applicationURL: null,
+      sources: ["https://www.philhealth.gov.ph/yakap/"],
+      benefits: [
+        { benefit_id: 1, benefit_name: "Primary Care Checkup", amount: "Free" },
+        { benefit_id: 2, benefit_name: "Selected laboratory tests based on risk, age and health assessment: Complete Blood Count (CBC) with Platelet Count, Lipid Profile, Fasting Blood Sugar (FBS), Oral Glucose Tolerance Test (OGTT), Hemoglobin Test (HbA1c), Creatinine, Chest X-Ray, Sputum Microscopy, Electrocardiogram (ECG), Urinalysis, Pap Smear, Fecalysis, Fecal Occult Blood Test (FOBT), Upper Abdomen & Pelvic Ultrasound", amount: null },
+        { benefit_id: 3, benefit_name: "Medicines under PhilHealth GAMOT", amount: null },
+        { benefit_id: 4, benefit_name: "Breast cancer screening: Breast Ultrasound & Mammogram", amount: null },
+        { benefit_id: 5, benefit_name: "Liver cancer screening: Alpha Fetoprotein Test & Liver Ultrasound", amount: null },
+        { benefit_id: 6, benefit_name: "Colorectal cancer screening: Fecal Immunochemical Test, Fecal Occult Blood Test & Colonoscopy", amount: null },
+        { benefit_id: 7, benefit_name: "Lung cancer screening: Low-dose Chest CT Scan", amount: null },
+      ],
+      requirements: [
+        { requirement_id: 1, requirement_description: "PhilHealth Identification Number (PIN) with updated membership" },
+      ],
+      procedure: [
+        { step: 1, instruction: "Register: make sure you have a PhilHealth Identification Number (PIN) and your membership is updated." },
+        { step: 2, instruction: "Choose a YAKAP Clinic using the eGovPH Super App, the PhilHealth Member Portal, or the nearest PhilHealth office." },
+        { step: 3, instruction: "Have your First Patient Encounter (FPE): medical history, health screening and health education." },
+        { step: 4, instruction: "Sign the form agreeing that your chosen YAKAP Clinic will keep caring for you." },
+        { step: 5, instruction: "Keep seeing your YAKAP doctor for prescriptions, referrals for laboratory and/or cancer screening tests when needed, and follow-up checkups." },
+      ],
+    },
+  },
 };
 
 const renumber = (items, key) => items.map((x, i) => ({ ...x, [key]: i + 1 }));
@@ -149,6 +193,10 @@ function applyReview(folder, records) {
       let split = 0, total = 0;
       for (const p of r.programs) {
         p.benefits = p.benefits.map((b) => { const s = splitBenefit(b); if (s.amount !== null) (s.benefit_name === "Total package" ? total++ : split++); return s; });
+        if (REVIEW.programOverrides[p.programID]) {
+          Object.assign(p, structuredClone(REVIEW.programOverrides[p.programID]));
+          log(`program ${p.programID}: replaced from its official page -> "${p.program_name}"`);
+        }
         if (REVIEW.eligibilityByProgram[p.programID]) {
           p.eligibility = REVIEW.eligibilityByProgram[p.programID];
           log(`program ${p.programID}: eligibility -> ${p.eligibility.length} items`);
