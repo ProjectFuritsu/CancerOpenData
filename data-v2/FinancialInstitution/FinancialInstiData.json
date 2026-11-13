@@ -1,0 +1,754 @@
+{
+  "$schema": "./FinancialInstiData.schema.json",
+  "Financial_Insti": [
+    {
+      "id": 1,
+      "name": "PhilHealth",
+      "bgImageURL": "https://newsfortph.com/upload/media/posts/2022-07/10/philhealth-davao-region-intensifies-konsulta-campaign_1657399553-b.jpg",
+      "source": "https://www.philhealth.gov.ph/",
+      "description": "PhilHealth is the Philippines' government-owned health insurer, providing universal health coverage through a social insurance program. It pools funds from member contributions to subsidize medical costs, making healthcare affordable for hospitalizations and preventive care.",
+      "type": "Public Institution",
+      "lastVerified": null,
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Hotline",
+          "contact_details": "(02) 866-225-88"
+        }
+      ],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Valgosons Building, Bolton Extension, Poblacion, Davao City",
+          "latitude": 7.0655,
+          "longitude": 125.6128,
+          "schedule": [
+            {
+              "day": "Monday-Friday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Landline",
+              "contact_details": "(082) 295-2133"
+            },
+            {
+              "contact_id": 2,
+              "type": "Email",
+              "contact_details": "publicaffairs.pro11@philhealth.gov.ph"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 161213,
+          "program_name": "YAKAP (Konsulta) Program",
+          "eligibility": "All PhilHealth members",
+          "program_description": "A comprehensive outpatient benefits package that includes consultation, lab tests, and medicines.",
+          "cancerTypes": null,
+          "applicationURL": null,
+          "sources": [],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Primary Care Checkup",
+              "amount": null
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Laboratory tests (CBC, Urinalysis, etc.)",
+              "amount": null
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Free Maintenance Medicines",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Member must be registered to a chosen Konsulta/Yakap clinic."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Fill out the PhilHealth Member Registration Form (PMRF)."
+            },
+            {
+              "step": 2,
+              "instruction": "Submit the form and valid ID to the PhilHealth office or accredited clinic."
+            },
+            {
+              "step": 3,
+              "instruction": "Wait for confirmation of registration."
+            }
+          ]
+        },
+        {
+          "programID": 101002,
+          "program_name": "Z Benefits: Breast Cancer (cStage 0 to IV)",
+          "eligibility": "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval, and who meet the selection criteria: breast cancer clinical stage requiring treatments covered under the Z Benefits (Stage 0 Ductal Carcinoma in Situ (DCIS), Stage I, Stage II, Stage III or Stage IV), with management involving any or all of: Surgery; Chemotherapy (neo/adjuvant): patient has not initiated any chemotherapy treatment from any HF; Targeted therapy; Hormonotherapy; Surveillance. Diagnostic tests are covered when all of these are met: Positive (+) breast mass AND/OR palpable axillary lymph node; BI-RADS category 4 to 5 result of either mammogram or ultrasound; and Biopsy result of confirmed malignant breast cancer or ductal carcinoma in situ (DCIS).",
+          "program_description": "PhilHealth's Z Benefit package for breast cancer, up to P1.4 million (effective March 30, 2024). It covers diagnostic tests, surgery, hormonotherapy, chemotherapy, targeted therapy and surveillance after surgery, at Z Benefits contracted health facilities. Up to five (5) days are deducted from the 45-day annual benefit limit.",
+          "cancerTypes": [
+            "Breast Cancer"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.philhealth.gov.ph/circulars/2024/PC2024-0007.pdf"
+          ],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Total package",
+              "amount": "Up to P1.4 million"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Diagnostic tests and prognostication",
+              "amount": "Php 1,000 to Php 10,000.00"
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Surgical procedures (partial mastectomy to modified radical mastectomy)",
+              "amount": "Php 30,000 – Php 140,000.00"
+            },
+            {
+              "benefit_id": 4,
+              "benefit_name": "Hormonotherapy",
+              "amount": "Php 2,700 or Php 18,000"
+            },
+            {
+              "benefit_id": 5,
+              "benefit_name": "Cytotoxic chemotherapy",
+              "amount": "Php 43,000 to Php 185,010"
+            },
+            {
+              "benefit_id": 6,
+              "benefit_name": "Targeted therapy",
+              "amount": "Php 333,336 for 18 maximum cycles"
+            },
+            {
+              "benefit_id": 7,
+              "benefit_name": "Surveillance",
+              "amount": "Php 5,000 (basic) and Php 9,000 (specific)"
+            },
+            {
+              "benefit_id": 8,
+              "benefit_name": "No co-payment for patients admitted in basic or ward-type accommodation",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "PhilHealth ID"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Pre-authorization Checklist and Request Form (Annex A.2), submitted by the contracted health facility"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "Member Empowerment Form or ME Form (Annex B), accomplished together with the attending healthcare provider and signed jointly by the patient (or their guardian or representative) and the attending healthcare provider"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "MDT plan (treatment plan from the contracted health facility's multidisciplinary team)"
+            },
+            {
+              "requirement_id": 5,
+              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"Yes\" response. If \"No\", register or apply for a PhilHealth Identification Number (PIN) before pre-authorization"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID and approach the hospital's Z Benefits coordinator for further assistance."
+            },
+            {
+              "step": 2,
+              "instruction": "Have a consultation and clinical breast examination at a Z Benefits contracted health facility."
+            },
+            {
+              "step": 3,
+              "instruction": "If you meet the criteria for diagnostic tests, the facility does not collect payment for them. Biopsy with histopathology is covered under All Case Rates."
+            },
+            {
+              "step": 4,
+              "instruction": "The facility's multidisciplinary team (MDT) assesses you and decides your treatment plan."
+            },
+            {
+              "step": 5,
+              "instruction": "Fill out the ME Form with your attending doctor. The facility explains any cost sharing; there is no co-payment in basic or ward accommodation."
+            },
+            {
+              "step": 6,
+              "instruction": "The facility submits the pre-authorization request (Annex A.2) with the ME Form and MDT plan to PhilHealth. Approval is valid for 60 calendar days if treatment has not started."
+            },
+            {
+              "step": 7,
+              "instruction": "Get treatment as prescribed by the MDT. The facility files the claims with PhilHealth."
+            }
+          ]
+        },
+        {
+          "programID": 101003,
+          "program_name": "Z Benefits: Acute Lymphocytic / Lymphoblastic Leukemia (standard risk)",
+          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: Age 1 to less than 10 years old and 364 days; White blood cell count ‹50,000/mcL; No CNS leukemia at diagnosis; There should be no testicular involvement of male patient at diagnosis; WHO Classification: B or T lymphoblastic leukemia immunophenotype (mature B-cell ALL or Burkitt leukemia are excluded). The membership category upon approval of the pre-authorization applies for the three years of the package.",
+          "program_description": "PhilHealth's Z Benefit package for children with standard-risk acute lymphoblastic leukemia: five hundred thousand pesos (Php 500,000) for the complete course of treatment for three (3) years, paid to the contracted health facility in three tranches. Pre-authorization must be submitted before the end of the induction phase.",
+          "cancerTypes": [
+            "Acute Lymphocytic / Lymphoblastic Leukemia"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.philhealth.gov.ph/circulars/2017/circ2017-0016.pdf"
+          ],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Total package",
+              "amount": "Php 500,000 for the complete course of treatment for three (3) years"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Tranche 1",
+              "amount": "Php 300,000 (after the 1st induction phase)"
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Tranche 2",
+              "amount": "Php 125,000 (after the 3rd maintenance cycle)"
+            },
+            {
+              "benefit_id": 4,
+              "benefit_name": "Tranche 3",
+              "amount": "Php 75,000 (after the 7th maintenance cycle)"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "PhilHealth ID"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient. For minors, the parent or guardian signs or puts a thumb print on behalf of the patient"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID and approach the hospital's Z Benefits coordinator for further assistance."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
+            },
+            {
+              "step": 3,
+              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
+            },
+            {
+              "step": 4,
+              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
+            },
+            {
+              "step": 5,
+              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days. For leukemia, the request must be submitted before the end of the induction phase."
+            },
+            {
+              "step": 6,
+              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+            }
+          ]
+        },
+        {
+          "programID": 101004,
+          "program_name": "Z Benefits: Prostate Cancer (low to intermediate risk)",
+          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: Male patients age up to 70 years old; Clinical stage (T1a-T2c), PSA level 10 to 20 ng/ml, Tumor Grade (Gleason's score of 2-7) - Low risk: T1-T2a and Gleason score 2-6, and PSA ‹10 ng/ml - Intermediate risk: T2b to T2c, Gleason score of 7, and PSA 10-20 ng/ml; Localized prostate cancer; No uncontrolled co-morbid conditions.",
+          "program_description": "PhilHealth's Z Benefit package for localized low- to intermediate-risk prostate cancer, at Z Benefits contracted health facilities.",
+          "cancerTypes": [
+            "Prostate Cancer"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.philhealth.gov.ph/benefits/"
+          ],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Total package",
+              "amount": "P100,000"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "PhilHealth ID"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID and approach the hospital's Z Benefits coordinator for further assistance."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
+            },
+            {
+              "step": 3,
+              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
+            },
+            {
+              "step": 4,
+              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
+            },
+            {
+              "step": 5,
+              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days."
+            },
+            {
+              "step": 6,
+              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+            }
+          ]
+        },
+        {
+          "programID": 101005,
+          "program_name": "Z Benefits: Cervical Cancer",
+          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: No previous chemotherapy; No previous radiotherapy; No uncontrolled co-morbid conditions.",
+          "program_description": "PhilHealth's Z Benefit package for cervical cancer treatment (chemoradiation with brachytherapy, or primary surgery for early stages), at Z Benefits contracted health facilities.",
+          "cancerTypes": [
+            "Cervical Cancer"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.philhealth.gov.ph/benefits/"
+          ],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Chemoradiation with Cobalt and Brachytherapy (low dose) or Primary surgery for Stage IA1, IA2 - IIA1",
+              "amount": "P120,000"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Chemoradiation with Linear Accelerator and Brachytherapy (high dose)",
+              "amount": "P175,000"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "PhilHealth ID"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Pre-authorization Checklist and Request (Annex A), filled out by the contracted health facility and signed by the patient (or parent or guardian) and the healthcare providers"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "Member Empowerment (ME) Form (Annex B), properly accomplished and signed. It is made in duplicate; one original copy is given to the patient"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "PhilHealth Benefit Eligibility Form (PBEF) with a \"YES\". If \"NO\", present the Member Data Record (MDR), Proof of Contributions, or a duly accomplished PhilHealth Claim Form 1 (CF1)"
+            },
+            {
+              "requirement_id": 5,
+              "requirement_description": "Treatment plan from gynecologic oncologist"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID and approach the hospital's Z Benefits coordinator for further assistance."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to a Z Benefits contracted health facility and ask for its Z Benefits Coordinator, who guides you and checks your eligibility before pre-authorization."
+            },
+            {
+              "step": 3,
+              "instruction": "If you are not yet registered with PhilHealth, complete member registration first."
+            },
+            {
+              "step": 4,
+              "instruction": "Fill out the Member Empowerment (ME) Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
+            },
+            {
+              "step": 5,
+              "instruction": "The facility submits the Pre-authorization Checklist and Request with the ME Form to PhilHealth. PhilHealth releases the decision within seven (7) working days."
+            },
+            {
+              "step": 6,
+              "instruction": "Once approved, get treatment from the facility's multidisciplinary team. The facility files the claims with PhilHealth."
+            }
+          ]
+        },
+        {
+          "programID": 101006,
+          "program_name": "Z Benefits: Colorectal Cancer",
+          "eligibility": "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval, with colon or rectal cancer stage I to III, who meet the selection criteria: Normal or with mild systemic disease (ASA I or II); Fully active, able to carry on all pre-disease performance without restriction, OR restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g light house work, office work, OR ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of working hours. Services needed after progression to stage IV are not covered.",
+          "program_description": "PhilHealth's Z Benefit package for colon and rectal cancer. The amount depends on the cancer, its stage and risk. Available at Z Benefits contracted health facilities. Up to five (5) days are deducted from the 45-day annual benefit limit.",
+          "cancerTypes": [
+            "Colorectal Cancer"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.philhealth.gov.ph/circulars/2023/PC2023-0005.pdf"
+          ],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Colon Cancer, Stage I to II (Low Risk)",
+              "amount": "Php 150,000"
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Colon Cancer, Stage II to III (High Risk)",
+              "amount": "Php 300,000"
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Rectal Cancer, Stage I to II (Low Risk)",
+              "amount": "Php 150,000"
+            },
+            {
+              "benefit_id": 4,
+              "benefit_name": "Rectal Cancer, Pre-operative Stage I, with Post-Operative Stage II to III",
+              "amount": "Php 400,000"
+            },
+            {
+              "benefit_id": 5,
+              "benefit_name": "Rectal Cancer, Stage II to III",
+              "amount": "Php 400,000"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "PhilHealth ID"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "For colon cancer: Annex A1: Pre-authorization Checklist and Request for Colon Cancer, submitted by the contracted health facility"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "For rectal cancer: Annex A2: Pre-authorization Checklist and Request for Rectal Cancer, submitted by the contracted health facility"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "Member Empowerment Form or ME Form (Annex B), accomplished together with the attending healthcare provider and signed jointly by the patient (or their guardian or representative) and the attending healthcare provider"
+            },
+            {
+              "requirement_id": 5,
+              "requirement_description": "Photocopy of the MDT plan (treatment plan from the multidisciplinary team)"
+            },
+            {
+              "requirement_id": 6,
+              "requirement_description": "Diagnostic results. Colon cancer: colonoscopy, biopsy with histopathology, chest CT or chest x-ray, and abdominal CT scan, preferably with contrast. Rectal cancer: chest CT scan and abdominal CT scan, preferably with contrast. Results of colonoscopy, chest x-ray, CT scan and abdominal ultrasound are valid up to 60 calendar days before the pre-authorization request is submitted"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID and approach the hospital's Z Benefits coordinator for further assistance."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to a Z Benefits contracted health facility for colon and rectal cancers."
+            },
+            {
+              "step": 3,
+              "instruction": "Complete the required diagnostic tests. Results must not be older than 60 calendar days when the pre-authorization request is submitted."
+            },
+            {
+              "step": 4,
+              "instruction": "The facility's multidisciplinary team (at least a colorectal surgeon and a medical oncologist; plus a radio-oncologist for rectal cancer) agrees on your treatment plan."
+            },
+            {
+              "step": 5,
+              "instruction": "Fill out the ME Form with your attending doctor. The facility explains any co-payment for amenities or upgrades not covered by the package."
+            },
+            {
+              "step": 6,
+              "instruction": "The facility submits the pre-authorization request (Annex A) with the ME Form and MDT plan to PhilHealth. Approval is valid for 60 calendar days."
+            },
+            {
+              "step": 7,
+              "instruction": "Get treatment as planned by the MDT. The facility files the claims with PhilHealth."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Social Security System (SSS)",
+      "bgImageURL": "https://www.sss.gov.ph/sss/images/SSS_Building.jpg",
+      "source": "https://www.sss.gov.ph/",
+      "description": "The SSS provides social security protection to workers in the private, professional, and informal sectors. It offers replacement income for contingencies like sickness, maternity, disability, retirement, and death.",
+      "type": "Public Institution",
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "SSS Building, J.P. Laurel Avenue, Bajada, Davao City",
+          "latitude": 7.0935,
+          "longitude": 125.6154,
+          "schedule": [
+            {
+              "day": "Monday-Friday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Landline",
+              "contact_details": "(082) 221-2121"
+            },
+            {
+              "contact_id": 2,
+              "type": "Email",
+              "contact_details": "davao@sss.gov.ph"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 202001,
+          "program_name": "Salary Loan",
+          "eligibility": "Members with at least 36 monthly contributions",
+          "program_description": "A cash loan designed to meet the member's short-term credit needs.",
+          "cancerTypes": null,
+          "applicationURL": null,
+          "sources": [],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Cash assistance equivalent to one or two months salary",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Digitized SSS ID or UMID Card."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Log in to your My.SSS account."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to 'Loans' and select 'Apply for Salary Loan'."
+            },
+            {
+              "step": 3,
+              "instruction": "Submit and wait for employer certification."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Government Service Insurance System (GSIS)",
+      "bgImageURL": "https://www.gsis.gov.ph/wp-content/uploads/2021/01/GSIS-Davao.jpg",
+      "source": "https://www.gsis.gov.ph/",
+      "description": "GSIS manages the social insurance program for government employees in the Philippines. It provides life insurance, retirement, and disability benefits to those in public service.",
+      "type": "Public Institution",
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "McArthur Highway, Matina, Davao City",
+          "latitude": 7.0583,
+          "longitude": 125.5947,
+          "schedule": [
+            {
+              "day": "Monday-Friday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Landline",
+              "contact_details": "(082) 299-0141"
+            },
+            {
+              "contact_id": 2,
+              "type": "Email",
+              "contact_details": "gsisdavao@gsis.gov.ph"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 303001,
+          "program_name": "Multi-Purpose Loan (MPL)",
+          "eligibility": "Active government employees",
+          "program_description": "Consolidates all existing loans into one with lower interest and longer terms.",
+          "cancerTypes": null,
+          "applicationURL": null,
+          "sources": [],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Lower interest rate (6% per annum)",
+              "amount": null
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Waived surcharges on previous loans",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Duly accomplished application form and GSIS eCard."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Apply through the GSIS Touch mobile app or GW@PS kiosk."
+            },
+            {
+              "step": 2,
+              "instruction": "Wait for Agency Authorized Officer (AAO) approval."
+            },
+            {
+              "step": 3,
+              "instruction": "Loan proceeds are credited to the eCard/UMID account."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pag-IBIG Fund (HDMF)",
+      "bgImageURL": "https://www.pagibigfund.gov.ph/images/Davao_Branch.jpg",
+      "source": "https://www.pagibigfund.gov.ph/",
+      "description": "The Home Development Mutual Fund, known as Pag-IBIG, is a national savings program and affordable shelter financing for Filipino workers.",
+      "type": "Public Institution",
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Pryce Tower, J.P. Laurel Ave, Bajada, Davao City",
+          "latitude": 7.0855,
+          "longitude": 125.6139,
+          "schedule": [
+            {
+              "day": "Monday-Friday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Landline",
+              "contact_details": "(082) 227-0463"
+            },
+            {
+              "contact_id": 2,
+              "type": "Email",
+              "contact_details": "contactus@pagibigfund.gov.ph"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 404001,
+          "program_name": "Housing Loan",
+          "eligibility": "Members with 24 months of contributions",
+          "program_description": "Financing for house purchase, construction, or home improvement.",
+          "cancerTypes": null,
+          "applicationURL": null,
+          "sources": [],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Low interest rates",
+              "amount": null
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Payment terms up to 30 years",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Income documents (ITR or Payslip) and TCT/CCT of the property."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Attend the Housing Loan Counseling (online or onsite)."
+            },
+            {
+              "step": 2,
+              "instruction": "Submit the Housing Loan Application (HLA) with requirements."
+            },
+            {
+              "step": 3,
+              "instruction": "Receive the Notice of Approval (NOA) and sign loan documents."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

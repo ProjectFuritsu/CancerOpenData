@@ -1,0 +1,87 @@
+{
+  "$schema": "./HealthInstiData.schema.json",
+  "Health_Insti": [
+    {
+      "id": 1,
+      "name": "SPMC Cancer Institute",
+      "bgImageURL": "https://media.assettype.com/sunstar%2F2025-09-20%2F08lzbtjf%2FUntitled-1.jpg",
+      "source": "https://www.facebook.com/SouthernPhilippinesMedicalCenter",
+      "description": "The Southern Philippines Medical Center is the largest government hospital under the Department of Health of the Republic of the Philippines. It is located at the JP Laurel Ave, Bajada, Davao City. It began as the Davao Medical Center. Its name was changed on November 19, 2009, by Republic Act 9792.",
+      "type": "Public Institution",
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "J.P. Laurel Ave, Bajada, Davao City",
+          "latitude": 7.099167,
+          "longitude": 125.619722,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "contacts": []
+        }
+      ],
+      "services": [
+        {
+          "serviceID": 1,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "Adult Cancer Clinic and Infusion Unit",
+          "service_description": "Opened on February 8, 2018 on the fourth floor of the Cancer Institute. It offers subsidized multidisciplinary care for all kinds of cancer. The hospital said most patients are free or subsidized charity, assisted through Lingap, PCSO and others.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit"
+          ],
+          "service_schedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 2,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "Radiation Therapy (Linear Accelerator)",
+          "service_description": "The Cancer Institute's linear accelerator (Linac) for radiation therapy started operating with the adult cancer unit in 2018.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit"
+          ],
+          "service_schedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 3,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "Cancer Assistance Fund (CAF)",
+          "service_description": "Listed by the Department of Health as one of 36 Cancer Assistance Fund access sites nationwide (July 2026). The fund supports cancer care, from early screening and diagnosis to treatment.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide"
+          ],
+          "service_schedule": null,
+          "requirements": [],
+          "procedure": []
+        }
+      ]
+    }
+  ]
+}

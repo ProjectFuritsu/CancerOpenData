@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "SupportGroupsData.schema.json",
+  "title": "SupportGroupsData",
+  "description": "Cancer Open Data v2.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "Support_Group": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "General Support Groups",
+              "Peer Support Groups",
+              "Therapeutic Support",
+              "Condition-Specific Support Groups",
+              "Online Support Groups",
+              "Family Support Groups",
+              "Educational Support Groups"
+            ]
+          },
+          "cancerTypes": {
+            "$ref": "#/$defs/cancerTypes"
+          },
+          "socmedURL": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uri",
+            "description": "Official social media page URL, or null if not known."
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL.",
+            "format": "uri-reference"
+          },
+          "location": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "description": "Latitude (from Google Maps). null if not known."
+          },
+          "longitude": {
+            "type": [
+              "null",
+              "number"
+            ],
+            "description": "Longitude (from Google Maps). null if not known."
+          },
+          "founders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Founders' names as written. Empty if not given."
+          },
+          "meetingSchedule": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "When the group meets, as written, e.g. 'Every 1st Saturday, 2:00 pm'. null if not given."
+          },
+          "sources": {
+            "$ref": "#/$defs/sources"
+          },
+          "lastVerified": {
+            "$ref": "#/$defs/lastVerified"
+          },
+          "contacts": {
+            "$ref": "#/$defs/contacts"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type",
+          "cancerTypes",
+          "socmedURL",
+          "bgImageURL",
+          "location",
+          "latitude",
+          "longitude",
+          "founders",
+          "meetingSchedule",
+          "sources",
+          "lastVerified",
+          "contacts"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "Support_Group"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "contact": {
+      "type": "object",
+      "properties": {
+        "contact_id": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Hotline",
+            "Landline",
+            "Mobile",
+            "Email",
+            "Website",
+            "Facebook",
+            "Other"
+          ],
+          "description": "Kind of contact. One fixed list for all datasets."
+        },
+        "contact_details": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contact_id",
+        "type",
+        "contact_details"
+      ],
+      "additionalProperties": false
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contact"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+    },
+    "cancerTypes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Cancers this covers, e.g. ['Breast Cancer']. ['All cancers'] if it covers every cancer. null if the source doesn't say (show \"Not given\")."
+    },
+    "lastVerified": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date",
+      "description": "Date the record was last checked against its sources, YYYY-MM-DD. null if not known."
+    }
+  }
+}

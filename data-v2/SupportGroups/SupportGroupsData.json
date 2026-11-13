@@ -1,0 +1,66 @@
+{
+  "$schema": "./SupportGroupsData.schema.json",
+  "Support_Group": [
+    {
+      "id": 1,
+      "name": "AMUMA",
+      "description": "AMUMA is a non-stock, non-profit foundation based in Davao City, Philippines. We are a group of dynamic and caring individuals committed to meeting the spiritual, emotional, and practical needs of cancer patients, their families and caregivers, by providing holistic care and support through building and maintaining a healing center for education, counseling, networking, and empowerment.",
+      "type": "General Support Groups",
+      "cancerTypes": null,
+      "socmedURL": "https://www.facebook.com/groups/150208365000436",
+      "bgImageURL": "/images/SupportGroups/amuma.jpg",
+      "location": "Davao City",
+      "latitude": null,
+      "longitude": null,
+      "founders": [
+        "Dr. Jose Beltran"
+      ],
+      "meetingSchedule": null,
+      "sources": [],
+      "lastVerified": null,
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Mobile",
+          "contact_details": "09384376090"
+        },
+        {
+          "contact_id": 2,
+          "type": "Landline",
+          "contact_details": "(082) 295-2133"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "House of Hope Foundation for Kids with Cancer Inc.",
+      "description": "Foundation in Davao City for children with cancer aged 19 and below who are admitted at the Southern Philippines Medical Center or its shared care facilities in Mindanao. It started in 2004 as Davao Children's with Cancer Fund Inc. and became the House of Hope Foundation in 2015. It runs transient homes for young patients and their families, and helps with diagnostics, medicines and treatment such as radiotherapy.",
+      "type": "Family Support Groups",
+      "cancerTypes": null,
+      "socmedURL": null,
+      "bgImageURL": "",
+      "location": "Southern Philippines Medical Center Compound, J. P. Laurel Avenue, Poblacion Buhangin, Davao City, Davao del Sur 8000",
+      "latitude": null,
+      "longitude": null,
+      "founders": [
+        "Mae Dolendo"
+      ],
+      "meetingSchedule": null,
+      "sources": [
+        "https://www.kidsofhope.org/contactus",
+        "https://www.kidsofhope.org",
+        "https://mindanews.com/top-stories/2023/10/house-of-hope-seeks-more-shared-care-centers-for-children-with-cancer/",
+        "https://www.sunstar.com.ph/more-articles/house-of-hope-living-up-to-its-name",
+        "https://www.stjude.org/inspire/series/around-the-world/philippines-dr-mae-dolendo-mindanao-house-of-hope-foundation.html"
+      ],
+      "lastVerified": "2026-11-10",
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Mobile",
+          "contact_details": "0977 329 8496"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "./FeedsData.schema.json",
+  "Feed": [
+    {
+      "id": 1,
+      "title": "Philippine Cancer Society Delegation Prominent at UICC World Cancer Leaders’ Summit in Melbourne, Championing the New Global Declaration",
+      "bgImageURL": "https://www.philcancer.org.ph/images/uicc.png",
+      "category": "News",
+      "tags": [],
+      "content": "The Philippine Cancer Society joined the UICC World Cancer Leaders' Summit in Melbourne, Australia, on 18–20 November 2025, together with other Filipino cancer groups. The delegation took part in talks on non-communicable diseases and in a workshop on ending cervical cancer through HPV vaccination and screening. The summit launched the World Cancer Declaration 2025–2035, which sets global goals for 2035, such as fewer cancer deaths and more cancers found early.",
+      "authors": [
+        "Philippine Cancer Society"
+      ],
+      "publishDate": "21 November 2025",
+      "source": "https://www.philcancer.org.ph/about-us/announcements/latest-news/125-uicc-world-cancer-leaders-summit"
+    },
+    {
+      "id": 2,
+      "title": "DOST-ASTI Convenes National Stakeholders to Build the FIRST Philippine Cervical Image Bank and Advance AI-Driven Screening",
+      "bgImageURL": "https://www.philcancer.org.ph/images/dost1.png",
+      "category": "News",
+      "tags": [],
+      "content": "On 17 November 2025, DOST-ASTI hosted \"AI Against Cervical Cancer,\" a hybrid meeting of research, government and civil society groups. They discussed building the first Philippine Cervical Image Bank for the Cerv.ai project, which makes AI tools to find early cervical cancer, and lower-cost HPV-DNA testing. The Philippine Cancer Society offered its mobile bus for screening in poor and far communities.",
+      "authors": [
+        "Philippine Cancer Society"
+      ],
+      "publishDate": "20 November 2025",
+      "source": "https://www.philcancer.org.ph/about-us/announcements/latest-news/123-dost-asti-convenes"
+    }
+  ]
+}

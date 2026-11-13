@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "FeedsData.schema.json",
+  "title": "FeedsData",
+  "description": "Cancer Open Data v2.",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "Feed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL.",
+            "format": "uri-reference"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "News",
+              "Blog",
+              "Article"
+            ],
+            "description": "Feed type: News, Blog or Article."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Topics, free text, e.g. 'Breast Cancer'. Can be empty."
+          },
+          "content": {
+            "type": "string"
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Writers or organizations, as written by the source."
+          },
+          "publishDate": {
+            "type": "string",
+            "description": "Publish date in 'DD Month YYYY' format, e.g. '21 November 2025'."
+          },
+          "source": {
+            "type": "string",
+            "description": "Source URL.",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "bgImageURL",
+          "category",
+          "tags",
+          "content",
+          "authors",
+          "publishDate",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "Feed"
+  ],
+  "additionalProperties": false,
+  "$defs": {}
+}
