@@ -26,23 +26,7 @@
           }
         ]
       },
-      "contacts": [
-        {
-          "contact_id": 1,
-          "type": "Mobile",
-          "contact_details": "09384376090"
-        },
-        {
-          "contact_id": 2,
-          "type": "Landline",
-          "contact_details": "(082) 295-2133"
-        },
-        {
-          "contact_id": 3,
-          "type": "Email",
-          "contact_details": "publicaffairs.pro11@philhealth.gov.ph"
-        }
-      ],
+      "contacts": [],
       "services": [
         {
           "serviceID": 1,
