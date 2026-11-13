@@ -25,7 +25,9 @@
         {
           "programID": 505001,
           "program_name": "Medical Assistance Program (MAP)",
-          "eligibility": "Individuals with health-related problems seeking financial help",
+          "eligibility": [
+            "Individuals with health-related problems seeking financial help"
+          ],
           "program_description": "Financial help for patients, given in partnership with government and private hospitals, health facilities, medicine retailers and other partners. Cancer treatment (chemotherapy drugs, immunotherapy and radiation therapy) is one of the types of help. If approved, the patient gets a Guarantee Letter (GL) for the hospital, health facility, medicine retailer or diagnostic center.",
           "cancerTypes": [
             "All cancers"
@@ -127,7 +129,10 @@
         {
           "programID": 606001,
           "program_name": "Medical Assistance for Indigent and Financially Incapacitated Patients (MAIFIP)",
-          "eligibility": "Indigent and financially incapacitated patients who cannot afford their medical expenses, including PhilHealth members whose remaining bill is still too big",
+          "eligibility": [
+            "Indigent and financially incapacitated patients who cannot afford their medical expenses",
+            "Including PhilHealth members whose remaining bill is still too big"
+          ],
           "program_description": "Covers the remaining out-of-pocket hospital bill after PhilHealth and other discounts. DOH Davao says there is no fixed maximum amount, and payment is targeted within 12 working days when documents are complete (2026). Cancer patients at SPMC have used it for laboratories, CT scans, procedures and medicines.",
           "cancerTypes": [
             "All cancers"

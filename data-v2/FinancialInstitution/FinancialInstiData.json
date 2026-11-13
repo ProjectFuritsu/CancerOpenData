@@ -48,7 +48,9 @@
         {
           "programID": 161213,
           "program_name": "YAKAP (Konsulta) Program",
-          "eligibility": "All PhilHealth members",
+          "eligibility": [
+            "All PhilHealth members"
+          ],
           "program_description": "A comprehensive outpatient benefits package that includes consultation, lab tests, and medicines.",
           "cancerTypes": null,
           "applicationURL": null,
@@ -94,7 +96,12 @@
         {
           "programID": 101002,
           "program_name": "Z Benefits: Breast Cancer (cStage 0 to IV)",
-          "eligibility": "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval, and who meet the selection criteria: breast cancer clinical stage requiring treatments covered under the Z Benefits (Stage 0 Ductal Carcinoma in Situ (DCIS), Stage I, Stage II, Stage III or Stage IV), with management involving any or all of: Surgery; Chemotherapy (neo/adjuvant): patient has not initiated any chemotherapy treatment from any HF; Targeted therapy; Hormonotherapy; Surveillance. Diagnostic tests are covered when all of these are met: Positive (+) breast mass AND/OR palpable axillary lymph node; BI-RADS category 4 to 5 result of either mammogram or ultrasound; and Biopsy result of confirmed malignant breast cancer or ductal carcinoma in situ (DCIS).",
+          "eligibility": [
+            "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval",
+            "Breast cancer clinical stage requiring treatments covered under the Z Benefits (Stage 0 Ductal Carcinoma in Situ (DCIS), Stage I, Stage II, Stage III or Stage IV), with management involving any or all of: Surgery; Chemotherapy (neo/adjuvant); Targeted therapy; Hormonotherapy; Surveillance",
+            "Chemotherapy (neo/adjuvant): patient has not initiated any chemotherapy treatment from any HF",
+            "Diagnostic tests are covered when all of these are met: Positive (+) breast mass AND/OR palpable axillary lymph node; BI-RADS category 4 to 5 result of either mammogram or ultrasound; and Biopsy result of confirmed malignant breast cancer or ductal carcinoma in situ (DCIS)"
+          ],
           "program_description": "PhilHealth's Z Benefit package for breast cancer, up to P1.4 million (effective March 30, 2024). It covers diagnostic tests, surgery, hormonotherapy, chemotherapy, targeted therapy and surveillance after surgery, at Z Benefits contracted health facilities. Up to five (5) days are deducted from the 45-day annual benefit limit.",
           "cancerTypes": [
             "Breast Cancer"
@@ -161,7 +168,17 @@
         {
           "programID": 101003,
           "program_name": "Z Benefits: Acute Lymphocytic / Lymphoblastic Leukemia (standard risk)",
-          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: Age 1 to less than 10 years old and 364 days; White blood cell count ‹50,000/mcL; No CNS leukemia at diagnosis; There should be no testicular involvement of male patient at diagnosis; WHO Classification: B or T lymphoblastic leukemia immunophenotype (mature B-cell ALL or Burkitt leukemia are excluded). The membership category upon approval of the pre-authorization applies for the three years of the package.",
+          "eligibility": [
+            "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+            "Patients not yet registered in PhilHealth must complete member registration first",
+            "Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+            "Age 1 to less than 10 years old and 364 days",
+            "White blood cell count ‹50,000/mcL",
+            "No CNS leukemia at diagnosis",
+            "There should be no testicular involvement of male patient at diagnosis",
+            "WHO Classification: B or T lymphoblastic leukemia immunophenotype (mature B-cell ALL or Burkitt leukemia are excluded)",
+            "The membership category upon approval of the pre-authorization applies for the three years of the package"
+          ],
           "program_description": "PhilHealth's Z Benefit package for children with standard-risk acute lymphoblastic leukemia: five hundred thousand pesos (Php 500,000) for the complete course of treatment for three (3) years, paid to the contracted health facility in three tranches. Pre-authorization must be submitted before the end of the induction phase.",
           "cancerTypes": [
             "Acute Lymphocytic / Lymphoblastic Leukemia"
@@ -208,7 +225,15 @@
         {
           "programID": 101004,
           "program_name": "Z Benefits: Prostate Cancer (low to intermediate risk)",
-          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: Male patients age up to 70 years old; Clinical stage (T1a-T2c), PSA level 10 to 20 ng/ml, Tumor Grade (Gleason's score of 2-7) - Low risk: T1-T2a and Gleason score 2-6, and PSA ‹10 ng/ml - Intermediate risk: T2b to T2c, Gleason score of 7, and PSA 10-20 ng/ml; Localized prostate cancer; No uncontrolled co-morbid conditions.",
+          "eligibility": [
+            "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+            "Patients not yet registered in PhilHealth must complete member registration first",
+            "Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+            "Male patients age up to 70 years old",
+            "Clinical stage (T1a-T2c), PSA level 10 to 20 ng/ml, Tumor Grade (Gleason's score of 2-7) - Low risk: T1-T2a and Gleason score 2-6, and PSA ‹10 ng/ml - Intermediate risk: T2b to T2c, Gleason score of 7, and PSA 10-20 ng/ml",
+            "Localized prostate cancer",
+            "No uncontrolled co-morbid conditions"
+          ],
           "program_description": "PhilHealth's Z Benefit package for localized low- to intermediate-risk prostate cancer, at Z Benefits contracted health facilities.",
           "cancerTypes": [
             "Prostate Cancer"
@@ -240,7 +265,14 @@
         {
           "programID": 101005,
           "program_name": "Z Benefits: Cervical Cancer",
-          "eligibility": "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization (patients not yet registered in PhilHealth must complete member registration first), with a newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package), who meet the selection criteria: No previous chemotherapy; No previous radiotherapy; No uncontrolled co-morbid conditions.",
+          "eligibility": [
+            "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+            "Patients not yet registered in PhilHealth must complete member registration first",
+            "Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+            "No previous chemotherapy",
+            "No previous radiotherapy",
+            "No uncontrolled co-morbid conditions"
+          ],
           "program_description": "PhilHealth's Z Benefit package for cervical cancer treatment (chemoradiation with brachytherapy, or primary surgery for early stages), at Z Benefits contracted health facilities.",
           "cancerTypes": [
             "Cervical Cancer"
@@ -277,7 +309,13 @@
         {
           "programID": 101006,
           "program_name": "Z Benefits: Colorectal Cancer",
-          "eligibility": "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval, with colon or rectal cancer stage I to III, who meet the selection criteria: Normal or with mild systemic disease (ASA I or II); Fully active, able to carry on all pre-disease performance without restriction, OR restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g light house work, office work, OR ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of working hours. Services needed after progression to stage IV are not covered.",
+          "eligibility": [
+            "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval",
+            "Colon or rectal cancer stage I to III",
+            "Normal or with mild systemic disease (ASA I or II)",
+            "Fully active, able to carry on all pre-disease performance without restriction, OR restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g light house work, office work, OR ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of working hours.",
+            "Services needed after progression to stage IV are not covered."
+          ],
           "program_description": "PhilHealth's Z Benefit package for colon and rectal cancer. The amount depends on the cancer, its stage and risk. Available at Z Benefits contracted health facilities. Up to five (5) days are deducted from the 45-day annual benefit limit.",
           "cancerTypes": [
             "Colorectal Cancer"
@@ -352,7 +390,9 @@
         {
           "programID": 505001,
           "program_name": "Medical Assistance Program (MAP)",
-          "eligibility": "Individuals with health-related problems seeking financial help",
+          "eligibility": [
+            "Individuals with health-related problems seeking financial help"
+          ],
           "program_description": "Financial help for patients, given in partnership with government and private hospitals, health facilities, medicine retailers and other partners. Cancer treatment (chemotherapy drugs, immunotherapy and radiation therapy) is one of the types of help. If approved, the patient gets a Guarantee Letter (GL) for the hospital, health facility, medicine retailer or diagnostic center.",
           "cancerTypes": [
             "All cancers"
@@ -454,7 +494,10 @@
         {
           "programID": 606001,
           "program_name": "Medical Assistance for Indigent and Financially Incapacitated Patients (MAIFIP)",
-          "eligibility": "Indigent and financially incapacitated patients who cannot afford their medical expenses, including PhilHealth members whose remaining bill is still too big",
+          "eligibility": [
+            "Indigent and financially incapacitated patients who cannot afford their medical expenses",
+            "Including PhilHealth members whose remaining bill is still too big"
+          ],
           "program_description": "Covers the remaining out-of-pocket hospital bill after PhilHealth and other discounts. DOH Davao says there is no fixed maximum amount, and payment is targeted within 12 working days when documents are complete (2026). Cancer patients at SPMC have used it for laboratories, CT scans, procedures and medicines.",
           "cancerTypes": [
             "All cancers"

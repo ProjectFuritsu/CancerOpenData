@@ -50,6 +50,52 @@ const REVIEW = {
   hotline: { instiId: 1, contact_details: "(02) 866-225-88" },
   // Decision 2: SPMC's 3 contacts belong to AMUMA and PhilHealth, so they are removed.
   clearBranchContacts: [{ instiId: 1, branchID: 1 }],
+  // Decision 9: eligibility as a list, split as written (no rule removed or reworded;
+  // only split where the source already separates parts). Programs not listed here
+  // keep their one v1 sentence as a one-item list.
+  eligibilityByProgram: {
+    101002: [
+      "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval",
+      "Breast cancer clinical stage requiring treatments covered under the Z Benefits (Stage 0 Ductal Carcinoma in Situ (DCIS), Stage I, Stage II, Stage III or Stage IV), with management involving any or all of: Surgery; Chemotherapy (neo/adjuvant); Targeted therapy; Hormonotherapy; Surveillance",
+      "Chemotherapy (neo/adjuvant): patient has not initiated any chemotherapy treatment from any HF",
+      "Diagnostic tests are covered when all of these are met: Positive (+) breast mass AND/OR palpable axillary lymph node; BI-RADS category 4 to 5 result of either mammogram or ultrasound; and Biopsy result of confirmed malignant breast cancer or ductal carcinoma in situ (DCIS)",
+    ],
+    101003: [
+      "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+      "Patients not yet registered in PhilHealth must complete member registration first",
+      "Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+      "Age 1 to less than 10 years old and 364 days",
+      "White blood cell count ‹50,000/mcL",
+      "No CNS leukemia at diagnosis",
+      "There should be no testicular involvement of male patient at diagnosis",
+      "WHO Classification: B or T lymphoblastic leukemia immunophenotype (mature B-cell ALL or Burkitt leukemia are excluded)",
+      "The membership category upon approval of the pre-authorization applies for the three years of the package",
+    ],
+    101004: [
+      "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+      "Patients not yet registered in PhilHealth must complete member registration first",
+      "Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+      "Male patients age up to 70 years old",
+      "Clinical stage (T1a-T2c), PSA level 10 to 20 ng/ml, Tumor Grade (Gleason's score of 2-7) - Low risk: T1-T2a and Gleason score 2-6, and PSA ‹10 ng/ml - Intermediate risk: T2b to T2c, Gleason score of 7, and PSA 10-20 ng/ml",
+      "Localized prostate cancer",
+      "No uncontrolled co-morbid conditions",
+    ],
+    101005: [
+      "PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+      "Patients not yet registered in PhilHealth must complete member registration first",
+      "Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+      "No previous chemotherapy",
+      "No previous radiotherapy",
+      "No uncontrolled co-morbid conditions",
+    ],
+    101006: [
+      "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval",
+      "Colon or rectal cancer stage I to III",
+      "Normal or with mild systemic disease (ASA I or II)",
+      "Fully active, able to carry on all pre-disease performance without restriction, OR restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g light house work, office work, OR ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of working hours.",
+      "Services needed after progression to stage IV are not covered.",
+    ],
+  },
   // Fritz (2026-11-13): no loans, to avoid adding financial burden. SSS (Salary Loan),
   // GSIS (Multi-Purpose Loan) and Pag-IBIG (Housing Loan) had only a loan, so the whole
   // institution is left out of v2. Their ids are not reused. They stay in the v1 data.
@@ -103,6 +149,10 @@ function applyReview(folder, records) {
       let split = 0, total = 0;
       for (const p of r.programs) {
         p.benefits = p.benefits.map((b) => { const s = splitBenefit(b); if (s.amount !== null) (s.benefit_name === "Total package" ? total++ : split++); return s; });
+        if (REVIEW.eligibilityByProgram[p.programID]) {
+          p.eligibility = REVIEW.eligibilityByProgram[p.programID];
+          log(`program ${p.programID}: eligibility -> ${p.eligibility.length} items`);
+        }
         if (REVIEW.cancerTypesByProgram[p.programID]) {
           p.cancerTypes = REVIEW.cancerTypesByProgram[p.programID];
           log(`program ${p.programID}: cancerTypes ${JSON.stringify(p.cancerTypes)}`);
@@ -212,7 +262,7 @@ function instiTop(r, p) {
     programs: r.programs.map((g) => ({
       programID: g.programID,
       program_name: g.program_name,
-      eligibility: g.eligibility,
+      eligibility: list(g.eligibility),
       program_description: g.program_description,
       cancerTypes: null,
       applicationURL: null,

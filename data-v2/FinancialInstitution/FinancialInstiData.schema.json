@@ -62,7 +62,12 @@
                   "type": "string"
                 },
                 "eligibility": {
-                  "type": "string"
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true,
+                  "description": "Who can get this program, one rule per item, as written by the source. Empty if not given (show \"Not given\")."
                 },
                 "program_description": {
                   "type": "string"
