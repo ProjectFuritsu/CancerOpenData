@@ -235,15 +235,29 @@
           "type": "string"
         },
         "latitude": {
-          "type": "number",
-          "description": "Latitude (from Google Maps)."
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Latitude (from Google Maps). null if not known."
         },
         "longitude": {
-          "type": "number",
-          "description": "Longitude (from Google Maps)."
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Longitude (from Google Maps). null if not known."
         },
         "schedule": {
-          "$ref": "#/$defs/schedule"
+          "anyOf": [
+            {
+              "$ref": "#/$defs/schedule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Open days and hours. null if not known (show \"Not given\")."
         },
         "contacts": {
           "$ref": "#/$defs/contacts"

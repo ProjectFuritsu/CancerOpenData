@@ -50,6 +50,15 @@ const REVIEW = {
   hotline: { instiId: 1, contact_details: "(02) 866-225-88" },
   // Decision 2: SPMC's 3 contacts belong to AMUMA and PhilHealth, so they are removed.
   clearBranchContacts: [{ instiId: 1, branchID: 1 }],
+  // Fritz (2026-11-13): no loans, to avoid adding financial burden. SSS (Salary Loan),
+  // GSIS (Multi-Purpose Loan) and Pag-IBIG (Housing Loan) had only a loan, so the whole
+  // institution is left out of v2. Their ids are not reused. They stay in the v1 data.
+  removeFinancialInstitutions: [2, 3, 4],
+  // Official Facebook pages given by Fritz (2026-11-13). AMUMA's replaces a Facebook group link.
+  socmedURLs: {
+    1: "https://www.facebook.com/amumasupport",
+    2: "https://www.facebook.com/kidsofhopeorg",
+  },
 };
 
 const renumber = (items, key) => items.map((x, i) => ({ ...x, [key]: i + 1 }));
@@ -76,6 +85,10 @@ function applyReview(folder, records) {
     }
   }
   if (folder === "FinancialInstitution") {
+    for (const id of REVIEW.removeFinancialInstitutions) {
+      const i = records.findIndex((r) => r.id === id);
+      if (i >= 0) { log(`removed ${records[i].name} (only program: ${records[i].programs.map((p) => p.program_name).join(", ")})`); records.splice(i, 1); }
+    }
     for (const r of records) {
       if (r.id === REVIEW.hotline.instiId) {
         const b = r.branches[0];
@@ -117,12 +130,31 @@ function applyReview(folder, records) {
     const ids = records.filter((r) => /i\.pravatar\.cc/.test(r.imageURL)).map((r) => { r.imageURL = ""; return r.id; });
     if (ids.length) log(`placeholder photos cleared: ${ids.join(", ")}`);
   }
+  if (folder === "SupportGroups") {
+    for (const r of records) {
+      const url = REVIEW.socmedURLs[r.id];
+      if (url && r.socmedURL !== url) { log(`${r.name}: socmedURL ${r.socmedURL ?? "null"} -> ${url}`); r.socmedURL = url; }
+    }
+  }
   // Decision 8: branch names stay null until the next source check (no change).
   return records;
 }
 
+// Records that exist only in v2 live in scripts/v2-additions/<Folder>.json (same records key).
+function addV2Only(folder, key, records) {
+  const p = join("scripts", "v2-additions", `${folder}.json`);
+  if (!existsSync(p)) return;
+  const taken = new Set(records.map((r) => r.id));
+  for (const r of read(p)[key] ?? []) {
+    if (taken.has(r.id)) throw new Error(`${p}: id ${r.id} is already used in ${folder}`);
+    records.push(r);
+    console.log(`  v2 only: added ${r.name ?? r.title ?? r.id} (id ${r.id})`);
+  }
+  records.sort((a, b) => a.id - b.id);
+}
+
 function write(folder, file, key, records) {
-  if (!args.includes("--no-review")) applyReview(folder, records);
+  if (!args.includes("--no-review")) { applyReview(folder, records); addV2Only(folder, key, records); }
   const out = { $schema: `./${file}.schema.json`, [key]: records };
   writeFileSync(join("data-v2", folder, `${file}.json`), JSON.stringify(out, null, 2) + "\n");
   console.log(`wrote data-v2/${folder}/${file}.json (${records.length} records)`);

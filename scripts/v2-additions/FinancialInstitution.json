@@ -1,0 +1,180 @@
+{
+  "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. Approved by Fritz on 2026-11-13; sources in CancerData-staging/provenance.",
+  "Financial_Insti": [
+    {
+      "id": 5,
+      "name": "Philippine Charity Sweepstakes Office (PCSO)",
+      "bgImageURL": "",
+      "source": "https://www.pcso.gov.ph/",
+      "description": "Government agency that gives financial help to people with health problems through its Medical Assistance Program, together with government and private hospitals, health facilities and medicine retailers.",
+      "type": "Public Institution",
+      "lastVerified": "2026-11-13",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Cabaguio Davao City (near NSO Office)",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "programs": [
+        {
+          "programID": 505001,
+          "program_name": "Medical Assistance Program (MAP)",
+          "eligibility": "Individuals with health-related problems seeking financial help",
+          "program_description": "Financial help for patients, given in partnership with government and private hospitals, health facilities, medicine retailers and other partners. Cancer treatment (chemotherapy drugs, immunotherapy and radiation therapy) is one of the types of help. If approved, the patient gets a Guarantee Letter (GL) for the hospital, health facility, medicine retailer or diagnostic center.",
+          "cancerTypes": [
+            "All cancers"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.pcso.gov.ph/ProgramsAndServices/CAD/MedicalAccessProgram.aspx"
+          ],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Cancer treatment: chemotherapeutic drugs and immunotherapy",
+              "amount": null
+            },
+            {
+              "benefit_id": 2,
+              "benefit_name": "Radiation therapy",
+              "amount": null
+            },
+            {
+              "benefit_id": 3,
+              "benefit_name": "Confinement assistance",
+              "amount": null
+            },
+            {
+              "benefit_id": 4,
+              "benefit_name": "Laboratory, diagnostic and imaging procedures (such as CT-Scan, MRI, PET Scan and biopsy)",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Duly Accomplished MAP Application Form"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Valid proof of identity of the patient (government-issued ID or other accepted ID)"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "Valid ID of the patient's next of kin, if applicable"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "For cancer treatment: updated clinical or medical abstract (issued within the past 3 months), medical prescription, and treatment protocol (chemotherapy) or treatment plan (radiation therapy), each with the full name, signature and license number of the attending physician"
+            },
+            {
+              "requirement_id": 5,
+              "requirement_description": "For cancer treatment: one quotation from the hospital willing to accept the GL, or official quotations from three different suppliers if the medicine is not available in the hospital"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Go to www.pcso.gov.ph, select \"E-Services\", then \"Online MAP Application\", and create an account."
+            },
+            {
+              "step": 2,
+              "instruction": "Log in with your name, date of birth and email, and enter the one-time code sent to your email."
+            },
+            {
+              "step": 3,
+              "instruction": "Click \"Apply Now\", choose the partner health facility, its city and the type of request, then get a queuing number."
+            },
+            {
+              "step": 4,
+              "instruction": "Upload all required documents as PDF files (not more than 2MB each) and submit the application."
+            },
+            {
+              "step": 5,
+              "instruction": "Wait for the result in your email or in your online account."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Department of Health (DOH)",
+      "bgImageURL": "",
+      "source": "https://doh.gov.ph/",
+      "description": "National government department for health. Its MAIFIP program helps pay the medical bills of patients who cannot afford them.",
+      "type": "Public Institution",
+      "lastVerified": "2026-11-13",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "PRRD Bldg Bajada, Davao City (infront SPMC Hospital)",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "programs": [
+        {
+          "programID": 606001,
+          "program_name": "Medical Assistance for Indigent and Financially Incapacitated Patients (MAIFIP)",
+          "eligibility": "Indigent and financially incapacitated patients who cannot afford their medical expenses, including PhilHealth members whose remaining bill is still too big",
+          "program_description": "Covers the remaining out-of-pocket hospital bill after PhilHealth and other discounts. DOH Davao says there is no fixed maximum amount, and payment is targeted within 12 working days when documents are complete (2026). Cancer patients at SPMC have used it for laboratories, CT scans, procedures and medicines.",
+          "cancerTypes": [
+            "All cancers"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.sunstar.com.ph/davao/maifip-program-eases-medical-cost-burden-for-struggling-families",
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/",
+            "https://ro2.doh.gov.ph/medical-assistance-for-indigent-and-financially-incapacitated-patients-maifip/"
+          ],
+          "benefits": [
+            {
+              "benefit_id": 1,
+              "benefit_name": "Remaining medical bill after PhilHealth and other discounts",
+              "amount": "No fixed cap"
+            }
+          ],
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Unified Intake Sheet (evaluated by a social worker)"
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Final bill or statement of account (in-patient), or price quotation and doctor's prescription (out-patient)"
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "Medical certificate or patient's clinical summary / medical abstract"
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "Copy of IDs (patient and/or patient's representative)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Ask the hospital's social worker to assess you for MAIFIP. The social worker evaluates your Unified Intake Sheet."
+            },
+            {
+              "step": 2,
+              "instruction": "Submit the documents the social worker asks for. Payment is faster when the documents are complete."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
