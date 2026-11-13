@@ -158,7 +158,7 @@ Every record has an integer `id`. Each schema file has the full rules. In short:
 | Records key | Fields |
 |---|---|
 | `Feed` | `id`, `title`, `bgImageURL`, `category` (`News`, `Blog` or `Article`), `content`, `author`, `publishDate` (text like `21 November 2025`), `source` |
-| `Financial_Insti` | `id`, `name`, `bgImageURL`, `source`, `description`, `type`, `location`, `latitude`, `longitude`, `schedule` {`isWholeWeek`, `days`[]}, `contacts`[], `programs`[] (with `benefits`, `requirements`, `procedure`) |
+| `Financial_Insti` | `id`, `name`, `bgImageURL`, `source`, `description`, `type`, `location`, `latitude`, `longitude`, `schedule` {`isWholeWeek`, `days`[]}, `contacts`[], `programs`[] (with `source` (optional, link to the program's official page), `benefits`, `requirements`, `procedure`) |
 | `Health_Insti` | Same as `Financial_Insti` up to `contacts`, then `services`[] (with `service_schedule`, `requirements`, `procedure`) |
 | `Medical_Specialist` | `id`, `firstname`, `lastname`, `specialty`, `description`, `imageURL`, `source` (optional), `clinics`[] {`clinicName`, `location`, `isWalkIns`, `canDoBoth`, `contacts`, `schedule`} |
 | `Support_Group` | `id`, `name`, `description`, `type`, `socmedURL`, `bgImageURL`, `location`, `latitude`, `longitude`, `founder`, `contacts`[] |
@@ -166,8 +166,16 @@ Every record has an integer `id`. Each schema file has the full rules. In short:
 Things that trip people up:
 - **Time keys:** `Medical_Specialist` clinics use `timeIN`/`timeOUT`; everywhere else it's `timeIn`/`timeOut`.
 - **Dates and times are display text**, not ISO (`8:00 am`, `21 November 2025`).
-- **Can be `null`:** a service's `source`, a clinic's `contacts`, a support group's `latitude`/`longitude`.
-- **Walk-in or appointment:** if `canDoBoth` is `true`, the clinic takes both. Otherwise `isWalkIns: true` means walk-in only, and `false` means appointment only.
+- **Can be `null`:** a service's `source`, a clinic's `contacts`, `isWalkIns` and `canDoBoth`, a support group's `latitude`/`longitude`, `founder` and `socmedURL`.
+- **Walk-in or appointment:** if `canDoBoth` is `true`, the clinic takes both. If `canDoBoth` is `false`, `isWalkIns: true` means walk-in only and `false` means appointment only. Any other case (a `null`) means not known: show "Not given". Check with `=== true` / `=== false`, because `null` is falsy and would otherwise read as "appointment only".
+
+```js
+const bookingMode = c =>
+  c.canDoBoth === true ? "Walk-in and appointment"
+  : c.canDoBoth === false && c.isWalkIns === true ? "Walk-in only"
+  : c.canDoBoth === false && c.isWalkIns === false ? "Appointment only"
+  : "Not given";
+```
 
 ## How it's served
 

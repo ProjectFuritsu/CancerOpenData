@@ -9,7 +9,7 @@ const DESCRIPTIONS = {
   Feeds: "News, blogs and articles about cancer care.",
   FinancialInstitution: "Financial institutions and their programs (e.g. PhilHealth, SSS, GSIS, Pag-IBIG): eligibility, benefits, requirements and steps to apply.",
   HealthInstitution: "Health institutions and their services (e.g. SPMC Cancer Institute): schedules, requirements and procedures.",
-  MedicalSpecialist: "Medical specialists (oncology and related fields) and their clinics. Clinic booking: if `canDoBoth` is true the clinic takes walk-ins and appointments; otherwise `isWalkIns: true` means walk-in only and `false` means appointment only.",
+  MedicalSpecialist: "Medical specialists (oncology and related fields) and their clinics. Clinic booking: if `canDoBoth` is true the clinic takes walk-ins and appointments; if it is false, `isWalkIns: true` means walk-in only and `false` means appointment only. A `null` in either field means not known (show \"Not given\").",
   SupportGroups: "Cancer support groups (e.g. AMUMA) and how to contact them.",
 };
 

@@ -118,6 +118,14 @@
                 "program_name": {
                   "type": "string"
                 },
+                "source": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "description": "Official page for this program (show it as a link). Optional; null if not known.",
+                  "format": "uri"
+                },
                 "eligibility": {
                   "type": "string"
                 },

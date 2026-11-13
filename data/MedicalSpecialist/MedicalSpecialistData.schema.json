@@ -47,10 +47,18 @@
                   "type": "integer"
                 },
                 "isWalkIns": {
-                  "type": "boolean"
+                  "type": [
+                    "null",
+                    "boolean"
+                  ],
+                  "description": "true = takes walk-ins. null if not known."
                 },
                 "canDoBoth": {
-                  "type": "boolean"
+                  "type": [
+                    "null",
+                    "boolean"
+                  ],
+                  "description": "true = takes both walk-ins and appointments (wins over isWalkIns). null if not known."
                 },
                 "clinicName": {
                   "type": "string"
