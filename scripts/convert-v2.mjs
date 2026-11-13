@@ -32,9 +32,12 @@ const REVIEW = {
     1: "The Philippine Cancer Society joined the UICC World Cancer Leaders' Summit in Melbourne, Australia, on 18–20 November 2025, together with other Filipino cancer groups. The delegation took part in talks on non-communicable diseases and in a workshop on ending cervical cancer through HPV vaccination and screening. The summit launched the World Cancer Declaration 2025–2035, which sets global goals for 2035, such as fewer cancer deaths and more cancers found early.",
     2: "On 17 November 2025, DOST-ASTI hosted \"AI Against Cervical Cancer,\" a hybrid meeting of research, government and civil society groups. They discussed building the first Philippine Cervical Image Bank for the Cerv.ai project, which makes AI tools to find early cervical cancer, and lower-cost HPV-DNA testing. The Philippine Cancer Society offered its mobile bus for screening in poor and far communities.",
   },
-  // Decision 1: from Fritz's phone call with a PhilHealth officer (2026-11-13), recorded in provenance.
-  zBenefitsRequirement: "PhilHealth ID",
-  zBenefitsStep1: "Regardless of the type of cancer, bring your PhilHealth ID and approach the hospital's Z Benefits coordinator for further assistance.",
+  // Decision 1 (simplified by Fritz later on 2026-11-13): from his phone call with a PhilHealth
+  // officer, recorded in provenance. Every Z Benefits program gets only this one requirement and
+  // this one step; the hospital's coordinator gives the full list. The official details stay
+  // in each program's sources (PhilHealth circulars) and in the v1 data.
+  zBenefitsRequirements: ["PhilHealth ID"],
+  zBenefitsSteps: ["Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."],
   // Decision 5: cancer types as named in each Z Benefits program name.
   cancerTypesByProgram: {
     101002: ["Breast Cancer"],
@@ -92,9 +95,10 @@ function applyReview(folder, records) {
           log(`program ${p.programID}: cancerTypes ${JSON.stringify(p.cancerTypes)}`);
         }
         if (p.program_name.startsWith("Z Benefits")) {
-          p.requirements = renumber([{ requirement_id: 0, requirement_description: REVIEW.zBenefitsRequirement }, ...p.requirements], "requirement_id");
-          p.procedure = renumber([{ step: 0, instruction: REVIEW.zBenefitsStep1 }, ...p.procedure], "step");
-          log(`program ${p.programID}: + requirement "${REVIEW.zBenefitsRequirement}", + step 1`);
+          const before = `${p.requirements.length} requirements, ${p.procedure.length} steps`;
+          p.requirements = REVIEW.zBenefitsRequirements.map((d, i) => ({ requirement_id: i + 1, requirement_description: d }));
+          p.procedure = REVIEW.zBenefitsSteps.map((s, i) => ({ step: i + 1, instruction: s }));
+          log(`program ${p.programID}: ${before} -> ${p.requirements.length} requirement, ${p.procedure.length} step`);
         }
       }
       if (split || total) log(`${r.name}: benefits split ${split}, "Total package" ${total}`);
