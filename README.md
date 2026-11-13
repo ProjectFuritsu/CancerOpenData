@@ -4,6 +4,14 @@ Data and JSON schemas for the cancer information system: cancer care resources i
 
 Edit the JSON here, push to `main`, and GitHub Actions checks it and deploys it to a Cloudflare Worker. No manual uploads.
 
+## Milestones
+
+| Done | Now | Next |
+|---|---|---|
+| ✅ Capstone data · ✅ Public API (v1) live · ✅ v1 growth and fixes (version `8d206e1`) | 🟡 v2 design and build · 🔴 Contract with apps | ⏳ Data completeness · ⏳ v2 release at `/v2/` · ⏳ Retire old v1 parts |
+
+Details, and what each milestone covers: [MILESTONES.md](MILESTONES.md). What changed in each version: [CHANGELOG.md](CHANGELOG.md).
+
 ## Public API
 
 **Base URL:** https://cancer-open-data.capillanesjohnfritz.workers.dev
