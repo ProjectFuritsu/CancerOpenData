@@ -1,42 +1,45 @@
-# Cancer Open Data
+<div align="center">
 
-Data and JSON schemas for the cancer information system: cancer care resources in one place.
+# 🎗️ Cancer Open Data
 
-Edit the JSON here, push to `main`, and GitHub Actions checks it and deploys it to a Cloudflare Worker. No manual uploads.
+**Cancer care resources in Davao City, Philippines, in one free and open API.**<br>
+Financial help, hospitals, specialists, support groups and news, as JSON with a schema for every file.
 
-## Milestones
+[![Validate and deploy data](https://github.com/ProjectFuritsu/CancerOpenData/actions/workflows/deploy-data.yml/badge.svg)](https://github.com/ProjectFuritsu/CancerOpenData/actions/workflows/deploy-data.yml)
+[![API](https://img.shields.io/badge/API-live-2ea44f)](https://cancer-open-data.capillanesjohnfritz.workers.dev/)
+[![OpenAPI 3.1](https://img.shields.io/badge/OpenAPI-3.1-6BA539?logo=openapiinitiative&logoColor=white)](https://cancer-open-data.capillanesjohnfritz.workers.dev/openapi.json)
+[![JSON Schema](https://img.shields.io/badge/JSON%20Schema-2020--12-blue)](https://json-schema.org/draft/2020-12)
+[![Cloudflare Workers](https://img.shields.io/badge/hosted%20on-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/workers/static-assets/)
 
-| Done | Now | Next |
-|---|---|---|
-| ✅ Capstone data · ✅ Public API (v1) live · ✅ v1 growth and fixes (version `8d206e1`) | 🟡 v2 design and build · 🔴 Contract with apps | ⏳ Data completeness · ⏳ v2 release at `/v2/` · ⏳ Retire old v1 parts |
+[**API**](https://cancer-open-data.capillanesjohnfritz.workers.dev/) ·
+[**Docs**](https://cancer-open-data.capillanesjohnfritz.workers.dev/docs/) ·
+[**API guide**](API-GUIDE.md) ·
+[**Milestones**](MILESTONES.md) ·
+[**Changelog**](CHANGELOG.md)
 
-Details, and what each milestone covers: [MILESTONES.md](MILESTONES.md). What changed in each version: [CHANGELOG.md](CHANGELOG.md).
+</div>
 
-## Public API
+---
 
-**Base URL:** https://cancer-open-data.capillanesjohnfritz.workers.dev
+## 📦 What's inside
 
-Read-only, no keys, open to any website.
+| | Dataset | Endpoint | Records key |
+|---|---|---|---|
+| 📰 | **Feeds**: news, blogs and articles | [`/Feeds/FeedsData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/Feeds/FeedsData.json) | `Feed` |
+| 💰 | **Financial institutions** and their programs | [`/FinancialInstitution/FinancialInstiData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/FinancialInstitution/FinancialInstiData.json) | `Financial_Insti` |
+| 🏥 | **Health institutions** and their services | [`/HealthInstitution/HealthInstiData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/HealthInstitution/HealthInstiData.json) | `Health_Insti` |
+| 🩺 | **Medical specialists** and their clinics | [`/MedicalSpecialist/MedicalSpecialistData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/MedicalSpecialist/MedicalSpecialistData.json) | `Medical_Specialist` |
+| 🤝 | **Support groups** and how to reach them | [`/SupportGroups/SupportGroupsData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/SupportGroups/SupportGroupsData.json) | `Support_Group` |
 
-**Interactive docs:** [`/docs/`](https://cancer-open-data.capillanesjohnfritz.workers.dev/docs/) (Swagger UI: browse endpoints, see every field, try requests). **Spec:** [`/openapi.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/openapi.json) (OpenAPI 3.1, imports into Postman, Insomnia or code generators).
+**Base URL:** `https://cancer-open-data.capillanesjohnfritz.workers.dev` · read-only, no keys, open to any website.
+Also: [`/`](https://cancer-open-data.capillanesjohnfritz.workers.dev/) lists every dataset, each file has a schema next to it (`…Data.schema.json`), [`/docs/`](https://cancer-open-data.capillanesjohnfritz.workers.dev/docs/) is Swagger UI and [`/openapi.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/openapi.json) is the OpenAPI 3.1 spec.
 
-### Endpoints
+> [!NOTE]
+> **Scope: Davao City.** Every record has at least one office, clinic or group in Davao City, or an online clinic for Davao City patients. National programs (like PhilHealth) are listed with their Davao City office. A doctor's other clinics outside the city (for example in Tagum or Panabo) may also be listed.
+>
+> This data helps people find care and help. It is not medical advice. Values are copied as written from their sources; check with the institution before you go.
 
-| Endpoint | Returns | Records key |
-|---|---|---|
-| [`/`](https://cancer-open-data.capillanesjohnfritz.workers.dev/) | List of all datasets | — |
-| [`/Feeds/FeedsData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/Feeds/FeedsData.json) | News, blogs and articles about cancer care | `Feed` |
-| [`/FinancialInstitution/FinancialInstiData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/FinancialInstitution/FinancialInstiData.json) | Financial institutions and their programs (e.g. PhilHealth, SSS, GSIS, Pag-IBIG) | `Financial_Insti` |
-| [`/HealthInstitution/HealthInstiData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/HealthInstitution/HealthInstiData.json) | Health institutions and their services (e.g. SPMC Cancer Institute) | `Health_Insti` |
-| [`/MedicalSpecialist/MedicalSpecialistData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/MedicalSpecialist/MedicalSpecialistData.json) | Medical specialists (oncology and related fields) and their clinics | `Medical_Specialist` |
-| [`/SupportGroups/SupportGroupsData.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/SupportGroups/SupportGroupsData.json) | Cancer support groups (e.g. AMUMA) | `Support_Group` |
-| `/images/<Folder>/<file>` | Images used by the data (see [Images](#images)) | — |
-| [`/docs/`](https://cancer-open-data.capillanesjohnfritz.workers.dev/docs/) | Interactive API docs (Swagger UI) | — |
-| [`/openapi.json`](https://cancer-open-data.capillanesjohnfritz.workers.dev/openapi.json) | OpenAPI 3.1 spec | — |
-
-Each data file has a schema next to it: replace `Data.json` with `Data.schema.json`, for example `/Feeds/FeedsData.schema.json` (JSON Schema draft 2020-12). The short names `FinancialInsti` and `HealthInsti` are on purpose: use the paths exactly as written.
-
-### Using it
+## 🚀 Quick start
 
 ```js
 const BASE = "https://cancer-open-data.capillanesjohnfritz.workers.dev";
@@ -49,241 +52,50 @@ const { datasets } = await fetch(`${BASE}/`).then(r => r.json());
 const all = await Promise.all(datasets.map(d => fetch(d.data).then(r => r.json())));
 ```
 
-**Use a plain GET with no custom request headers.** Any site can read the files (`Access-Control-Allow-Origin: *`). Cloudflare's static file layer doesn't answer CORS preflight (`OPTIONS` returns `405`), so adding headers like `Authorization` would make browsers block the request. Reading public JSON never needs them.
+> [!IMPORTANT]
+> **Use a plain GET with no custom request headers.** Cloudflare's static files don't answer CORS preflight, so a header like `Authorization` makes browsers block the request.
 
-### Images
+> [!WARNING]
+> Use the paths exactly as written. The short names `FinancialInsti` and `HealthInsti` are on purpose.
 
-The image fields (`bgImageURL`, and `imageURL` for specialists) hold one of:
+## 🧾 Fields
 
-| Value | Meaning | In your app |
-|---|---|---|
-| `"/images/MedicalSpecialist/dr-santos.webp"` | An image hosted by this API | Put the base URL in front |
-| `"https://…"` | An image on another site | Use as is (it may break if that site changes) |
-| `""` | No image | Show a fallback, like initials or an icon |
-
-```jsx
-const imageUrl = (path) => !path ? null : path.startsWith("/") ? BASE + path : path;
-
-{doctor.imageURL
-  ? <img src={imageUrl(doctor.imageURL)} alt={`${doctor.firstname} ${doctor.lastname}`} loading="lazy" />
-  : <div className="avatar">{doctor.firstname[0]}{doctor.lastname[0]}</div>}
-```
-
-`<img>` tags don't need CORS. Images also send `Access-Control-Allow-Origin: *`, so `fetch()` and `<canvas>` work too.
-
-**Adding an image:** put it in `images/<Folder>/` (rules in [images/README.md](images/README.md)), set the field to `/images/<Folder>/<file>`, run `npm run validate`, and push. The check fails if the file is missing, badly named, the wrong type, or over 5 MB.
-
-### Responses
-
-`GET /` returns the dataset list:
-
-```json
-{
-  "name": "Cancer Open Data",
-  "about": "Public data on cancer care resources in one place. Each dataset has a JSON data file and a JSON Schema.",
-  "source": "https://github.com/ProjectFuritsu/CancerOpenData",
-  "version": "<commit that is live>",
-  "datasets": [
-    {
-      "name": "Feeds",
-      "data": "https://cancer-open-data.capillanesjohnfritz.workers.dev/Feeds/FeedsData.json",
-      "size": 4784,
-      "updated": "2026-11-10T10:35:27+08:00",
-      "schema": "https://cancer-open-data.capillanesjohnfritz.workers.dev/Feeds/FeedsData.schema.json"
-    }
-  ],
-  "usage": "fetch(\"https://cancer-open-data.capillanesjohnfritz.workers.dev/<Folder>/<File>.json\").then(r => r.json())"
-}
-```
-
-`size` is in bytes. `updated` is the time of the last commit that changed the data file.
-
-A data file is an object with `$schema` (path to its schema) and one records key that holds an array:
-
-```json
-{ "$schema": "./FeedsData.schema.json", "Feed": [ { "id": 1, "title": "…" } ] }
-```
-
-| Status | When |
-|---|---|
-| `200` | The file or the list |
-| `304` | The file hasn't changed since your copy (sent `If-None-Match` with its ETag) |
-| `404` | No such file. Folders like `/Feeds/` aren't listed |
-| `405` | Any method other than GET or HEAD, including `OPTIONS` (see above) |
-| `500` | Something broke on the server. Try again later |
-
-Files are cached for 5 minutes (`Cache-Control: public, max-age=300`), and the list for 1 minute.
-
-### Errors
-
-Errors are JSON with CORS headers, so your app can always read them:
-
-```json
-{ "error": { "status": 404, "message": "Not found. See / for the list of datasets.", "path": "/Feeds/Nope.json" } }
-```
-
-`status` and `message` are always there. `404` adds `path`, and `405` adds `method`. The one exception is `OPTIONS` on a data file: Cloudflare's own `405` has no JSON body.
-
-### Handling errors in your app
-
-Check the status, set a timeout, retry once, and keep the last good copy so the app still works offline or during an outage:
-
-```js
-const BASE = "https://cancer-open-data.capillanesjohnfritz.workers.dev";
-
-async function loadDataset(path, { retries = 1, timeoutMs = 8000 } = {}) {
-  const cacheKey = `cod:${path}`;
-  for (let attempt = 0; attempt <= retries; attempt++) {
-    try {
-      const res = await fetch(`${BASE}${path}`, { signal: AbortSignal.timeout(timeoutMs) });
-      if (res.status === 404) throw Object.assign(new Error("Dataset not found"), { fatal: true });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      try { localStorage.setItem(cacheKey, JSON.stringify(data)); } catch {}
-      return { data, fromCache: false };
-    } catch (err) {
-      if (err.fatal || attempt === retries) {
-        const saved = (() => { try { return localStorage.getItem(cacheKey); } catch { return null; } })();
-        if (saved) return { data: JSON.parse(saved), fromCache: true };   // show "may be out of date"
-        throw err;                                                        // show an error message
-      }
-      await new Promise(r => setTimeout(r, 1000));                        // wait, then retry
-    }
-  }
-}
-
-const { data, fromCache } = await loadDataset("/MedicalSpecialist/MedicalSpecialistData.json");
-```
-
-- **Don't retry `404`.** The path is wrong, so retrying won't help.
-- **Network errors and timeouts** (`TypeError`, `TimeoutError`) and `5xx` are worth one retry.
-- When `fromCache` is `true`, tell the user the data may be out of date.
-
-### Fields
-
-Every record has an integer `id`. Each schema file has the full rules. In short:
+Every record has an integer `id`. Each schema file has the full rules.
 
 | Records key | Fields |
 |---|---|
-| `Feed` | `id`, `title`, `bgImageURL`, `category` (`News`, `Blog` or `Article`), `content`, `author`, `publishDate` (text like `21 November 2025`), `source` |
-| `Financial_Insti` | `id`, `name`, `bgImageURL`, `source`, `description`, `type`, `location`, `latitude`, `longitude`, `schedule` {`isWholeWeek`, `days`[]}, `contacts`[], `programs`[] (with `source` (optional, link to the program's official page), `benefits`, `requirements`, `procedure`) |
+| `Feed` | `id`, `title`, `bgImageURL`, `category` (`News`, `Blog` or `Article`), `content`, `author`, `publishDate`, `source` |
+| `Financial_Insti` | `id`, `name`, `bgImageURL`, `source`, `description`, `type`, `location`, `latitude`, `longitude`, `schedule` {`isWholeWeek`, `days`[]}, `contacts`[], `programs`[] (with `source`, `benefits`, `requirements`, `procedure`) |
 | `Health_Insti` | Same as `Financial_Insti` up to `contacts`, then `services`[] (with `service_schedule`, `requirements`, `procedure`) |
-| `Medical_Specialist` | `id`, `firstname`, `lastname`, `specialty`, `description`, `imageURL`, `source` (optional), `clinics`[] {`clinicName`, `location`, `isWalkIns`, `canDoBoth`, `contacts`, `schedule`} |
+| `Medical_Specialist` | `id`, `firstname`, `lastname`, `specialty`, `description`, `imageURL`, `source`, `clinics`[] {`clinicName`, `location`, `isWalkIns`, `canDoBoth`, `contacts`, `schedule`} |
 | `Support_Group` | `id`, `name`, `description`, `type`, `socmedURL`, `bgImageURL`, `location`, `latitude`, `longitude`, `founder`, `contacts`[] |
 
-Things that trip people up:
-- **Time keys:** `Medical_Specialist` clinics use `timeIN`/`timeOUT`; everywhere else it's `timeIn`/`timeOut`.
+> [!TIP]
+> **A `null`, an empty text or an empty list means "not available yet".** Show "Not available", and don't add limits on text length or require `true`/`false` beyond what the schema says.
+
+- **Time keys:** specialist clinics use `timeIN`/`timeOUT`; everywhere else it's `timeIn`/`timeOut`.
 - **Dates and times are display text**, not ISO (`8:00 am`, `21 November 2025`).
-- **Can be `null`:** a service's `source`, a clinic's `contacts`, `isWalkIns` and `canDoBoth`, a support group's `latitude`/`longitude`, `founder` and `socmedURL`.
-- **Walk-in or appointment:** if `canDoBoth` is `true`, the clinic takes both. If `canDoBoth` is `false`, `isWalkIns: true` means walk-in only and `false` means appointment only. Any other case (a `null`) means not known: show "Not given". Check with `=== true` / `=== false`, because `null` is falsy and would otherwise read as "appointment only".
+- **Walk-in or appointment:** check with `=== true` / `=== false`, because `null` is falsy:
 
 ```js
 const bookingMode = c =>
   c.canDoBoth === true ? "Walk-in and appointment"
   : c.canDoBoth === false && c.isWalkIns === true ? "Walk-in only"
   : c.canDoBoth === false && c.isWalkIns === false ? "Appointment only"
-  : "Not given";
+  : "Not available";
 ```
 
-## How it's served
+## 📚 More
 
-The data files are **Workers Static Assets**: Cloudflare's edge serves them directly, without running any code.
-- Requests for static files are free and don't count toward the Workers daily request limit.
-- Files come from the Cloudflare location nearest each user.
-- Headers (CORS, `Cache-Control: public, max-age=300`, `nosniff`) come from `worker/dist/_headers`. ETag and `304` work automatically.
-
-The small Worker script (`worker/src/index.js`) runs only for `/` (the dataset list) and for paths with no file (`404`).
-
-### The docs
-
-- **`/openapi.json` is generated at build time** (`scripts/build-openapi.mjs`) from the real schema files. Change a schema, and the docs change on the next deploy, so they can't drift from the data. Dataset descriptions live in `DESCRIPTIONS` in that file; a new dataset without one gets a generic line.
-- **`/docs/` is Swagger UI, hosted here** (copied from the `swagger-ui-dist` package at build), with no CDN. The page files are in `docs/`.
-- `/docs/` sends a strict `Content-Security-Policy`: scripts only from this site, no framing, nothing sent elsewhere. Swagger's online validator is off, so the spec isn't sent to swagger.io.
-- Tests check that the spec is valid OpenAPI 3.1 and that each schema is embedded exactly as written. The smoke test checks that both routes respond after each deploy.
-
-## How a change goes live
-
-```
-edit data/ → push or merge to main → GitHub Actions
-   1. validate:     every data file must pass its schema     (fails = nothing is deployed)
-   2. test-worker:  41 tests against a local copy of the Worker
-   3. deploy:       build worker/dist from data/, then wrangler deploy
-   4. smoke:        fetch every file from the public URL       (200, same bytes, CORS header, JSON type)
-   5. rollback:     only if smoke failed: put the previous version back live
-```
-
-**Auto-rollback:** if a deploy goes live but fails the smoke test, CI runs `wrangler rollback`, so the last good version serves again within seconds. The run still ends red with a "Rolled back" error, so someone fixes the cause.
-
-**Fire drill:** to prove rollback works, run the workflow by hand (Actions → Validate and deploy data → Run workflow) with **rollback_drill** ticked. It deploys, fails the smoke test on purpose and rolls back. The data stays the same, so users notice nothing.
-
-- **Pull requests** run steps 1 and 2 only. Use them to review changes before they go live.
-- **Each deploy switches all files at once.** There's no moment where some files are new and some old.
-- **Cache:** apps see changes within about 5 minutes.
-- **Removing a file** from `data/` removes it from the API on the next deploy.
-
-Check locally before you push:
-
-```bash
-npm install
-npm run validate
-```
-
-### Adding a new dataset
-
-1. Make a folder in `data/`, for example `data/Hospice/`. Use letters, digits, `-` or `_`.
-2. Add the schema `HospiceData.schema.json` (JSON Schema draft 2020-12) and the data file `HospiceData.json`.
-3. Start the data file with `"$schema": "./HospiceData.schema.json"`. The check fails if this doesn't point to the schema next to it.
-4. Run `npm run validate`, then push. The new dataset appears at `/` by itself, with no code change.
-
-## Versioning and rollback
-
-1. **Git:** every change is a commit with who, when, why and the exact diff. `git revert <commit>` and push redeploys the old data.
-2. **Worker versions:** Cloudflare keeps every deploy. For an instant rollback without waiting for CI:
-   ```bash
-   cd worker
-   npx wrangler deployments list
-   npx wrangler rollback
-   ```
-   Then fix Git too, or the next push brings the bad data back.
-
-`GET /` shows the deployed commit in `version`.
-
-## Deploy setup
-
-**In Cloudflare:** My Profile → **API Tokens** → **Create Token** → template **Edit Cloudflare Workers** → limit it to your account → **Create Token**. Copy the token (shown once).
-
-**In GitHub** (repo → Settings → Secrets and variables → Actions):
-
-| Kind | Name | Value |
-|---|---|---|
-| Secret | `CLOUDFLARE_API_TOKEN` | The token from above |
-| Variable | `CLOUDFLARE_ACCOUNT_ID` | `bc15d41433f443043305b72bec679e32` |
-| Variable | `PUBLIC_URL` | `https://cancer-open-data.capillanesjohnfritz.workers.dev` (the smoke test checks this) |
-
-If a setting is missing, the deploy job stops at once and names it. GitHub never passes secrets to pull requests from forks, and deploy runs only on `main`.
-
-## Working on the Worker
-
-```bash
-node scripts/build-site.mjs   # from the repo root: data/ -> worker/dist/
-cd worker
-npm install
-npm test                      # 41 tests with Wrangler's local runner (real asset routing)
-npx wrangler login            # once per PC, only for a manual deploy
-npx wrangler deploy           # manual deploy (CI does this on every push to main)
-```
-
-## Files
-
-| Path | What it does |
+| Read | For |
 |---|---|
-| `data/` | The datasets and schemas |
-| `scripts/validate.mjs` | Checks each data file against its schema (Ajv, draft 2020-12) |
-| `scripts/build-site.mjs` | Builds `worker/dist/`: the data files, images, `index.json` and `_headers` |
-| `scripts/images.mjs` | Image rules shared by validate and build (types, names, sizes) |
-| `scripts/build-openapi.mjs` | Generates `/openapi.json` from the schemas |
-| `docs/` | The `/docs/` page (Swagger UI setup) |
-| `images/` | Images served at `/images/...` (rules in `images/README.md`) |
-| `scripts/smoke-test.sh` | Checks the public URL after each deploy |
-| `worker/` | Worker config, the small script for `/`, and its tests |
-| `.github/workflows/deploy-data.yml` | The pipeline |
+| [API-GUIDE.md](API-GUIDE.md) | Images, responses and status codes, errors, and error handling with retry and offline copy |
+| [MAINTAINING.md](MAINTAINING.md) | How it's served, how a change goes live, rollback, changing the data, deploy setup |
+| [MILESTONES.md](MILESTONES.md) | Where the project is going: v1 is live, v2 is being built |
+| [CHANGELOG.md](CHANGELOG.md) | What changed in each version (`GET /` shows the live one in `version`) |
+
+---
+
+<div align="center">
+<sub>Made for patients, caregivers and the apps that serve them. Data from official and trusted sources, linked in each record.</sub>
+</div>
