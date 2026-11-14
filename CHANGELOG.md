@@ -14,6 +14,12 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - No loan programs. New: PCSO (Medical Assistance Program) and DOH (MAIFIP).
 - A `null` or empty value means "Not available".
 
+### Repo
+- Issue forms: wrong data, new resource, API problem, privacy or removal request. Blank issues are off.
+- Deploy emails: after each successful deploy, an email with the new version, the changes and the changed files goes to the people who build on the API (setup in [MAINTAINING.md](MAINTAINING.md#deploy-emails)).
+
+## 2026-11-14 · version `416aad5`
+
 ### Data
 - Clinics and schedules of 12 specialists (#1–#11, #13) updated from NowServing (read 2026-11-14): new clinics for #2, #3, #11 and #13, more days, and booking types as NowServing shows them. Schedules are now one line per day.
 

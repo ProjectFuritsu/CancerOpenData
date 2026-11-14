@@ -94,6 +94,8 @@ const bookingMode = c =>
 | [MILESTONES.md](MILESTONES.md) | Where the project is going: v1 is live, v2 is being built |
 | [CHANGELOG.md](CHANGELOG.md) | What changed in each version (`GET /` shows the live one in `version`) |
 
+**Found wrong data, a missing resource or an API problem?** [Open an issue](https://github.com/ProjectFuritsu/CancerOpenData/issues/new/choose): there is a form for each, including privacy and removal requests.
+
 ---
 
 <div align="center">

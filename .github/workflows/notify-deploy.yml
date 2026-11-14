@@ -1,0 +1,105 @@
+# Emails a short update after each successful deploy of the data to main:
+# the new version, the commits since the last deploy, and which data files changed.
+#
+# Setup (repo → Settings → Secrets and variables → Actions → Secrets):
+#   MAIL_USERNAME  the Gmail address that sends the email
+#   MAIL_PASSWORD  a Gmail App Password for that account (not the normal password)
+#   MAIL_TO        who gets it, comma-separated (kept secret: the repo is public)
+# Without these, the job skips and says so. Run it by hand (Actions → Email deploy update →
+# Run workflow) to send a test email about the latest deploy.
+name: Email deploy update
+
+on:
+  workflow_run:
+    workflows: ["Validate and deploy data"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  email:
+    # Only real deploys: a push to main whose pipeline passed. The rollback drill and
+    # pull request runs are left out.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check mail settings
+        id: cfg
+        env:
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+        run: |
+          if [ -z "$MAIL_USERNAME" ] || [ -z "$MAIL_PASSWORD" ] || [ -z "$MAIL_TO" ]; then
+            echo "::notice::Deploy email skipped: set the MAIL_USERNAME, MAIL_PASSWORD and MAIL_TO secrets to turn it on."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        if: steps.cfg.outputs.ready == 'true'
+        with:
+          fetch-depth: 0
+
+      - name: Write the update
+        id: summary
+        if: steps.cfg.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+          API: https://cancer-open-data.capillanesjohnfritz.workers.dev
+        run: |
+          set -euo pipefail
+          # The deploy before this one: the second newest successful push run of the pipeline.
+          PREV=$(gh api "repos/$REPO/actions/workflows/deploy-data.yml/runs?branch=main&event=push&status=success&per_page=10" \
+            --jq "[.workflow_runs[] | select(.head_sha != \"$HEAD_SHA\")][0].head_sha // empty")
+          if [ -z "$PREV" ] || ! git cat-file -e "$PREV^{commit}" 2>/dev/null; then PREV="$HEAD_SHA~1"; fi
+          SHORT=$(git rev-parse --short=7 "$HEAD_SHA")
+
+          {
+            echo "## Cancer Open Data updated: version \`$SHORT\`"
+            echo
+            echo "The new data is live at $API (apps see it within about 5 minutes)."
+            echo
+            echo "### What changed"
+            git log --no-merges --pretty='- %s (`%h`)' "$PREV..$HEAD_SHA" || true
+            echo
+            echo "### Files"
+            echo '```'
+            git diff --stat "$PREV" "$HEAD_SHA" -- data images | tail -n 25 || true
+            echo '```'
+            echo
+            echo "- Full list of changes: https://github.com/$REPO/blob/main/CHANGELOG.md"
+            echo "- Compare: https://github.com/$REPO/compare/$(git rev-parse --short=7 "$PREV")...$SHORT"
+            [ -n "$RUN_URL" ] && echo "- Deploy run: $RUN_URL"
+            echo
+            echo "Reminder for apps: a \`null\`, empty text or empty list means \"Not available\"."
+          } > update.md
+
+          echo "subject=Cancer Open Data updated: version $SHORT" >> "$GITHUB_OUTPUT"
+          cat update.md
+
+      - name: Send the email
+        if: steps.cfg.outputs.ready == 'true'
+        # Pinned to the commit of release v24, so the code that gets the mail password can't change.
+        uses: dawidd6/action-send-mail@27bf7a883db6de205849f760badd38a1a3ce0dd0
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: Cancer Open Data <${{ secrets.MAIL_USERNAME }}>
+          to: ${{ secrets.MAIL_TO }}
+          subject: ${{ steps.summary.outputs.subject }}
+          body: file://update.md
+          convert_markdown: true

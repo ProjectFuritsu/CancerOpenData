@@ -1,0 +1,45 @@
+name: Privacy or removal request
+description: You are listed (or represent someone listed) and want information or a photo removed or changed.
+title: "[Privacy] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We respect the Data Privacy Act of 2012 (RA 10173). A listed doctor or organization can ask us to remove or correct their information, or to remove a photo at any time.
+        **This page is public.** Do not write your phone number, home address or other private details here. Tell us only which record and what to change; we will reply in this issue.
+  - type: input
+    id: record
+    attributes:
+      label: Record
+      description: The record's id and name, as the API shows them.
+      placeholder: "e.g. #25 Anna Mariel Rivera"
+    validations:
+      required: true
+  - type: dropdown
+    id: request
+    attributes:
+      label: Request
+      options:
+        - Remove my photo
+        - Remove a contact detail
+        - Correct my information
+        - Remove my whole record
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What should be removed or changed. No private details, please.
+  - type: dropdown
+    id: relation
+    attributes:
+      label: You are
+      options:
+        - The listed doctor
+        - Staff of the listed clinic or organization
+        - Someone else
+    validations:
+      required: true

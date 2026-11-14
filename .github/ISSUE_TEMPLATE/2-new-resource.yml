@@ -1,0 +1,58 @@
+name: Suggest a new resource
+description: A cancer doctor, hospital service, financial help program, support group or article that is missing.
+title: "[New] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Scope: Davao City.** A new record needs at least one office, clinic or group in Davao City (or an online clinic for Davao City patients). National programs are listed with their Davao City office.
+        Loans are not listed, to avoid adding financial burden. Doctor photos are added only with the doctor's written consent.
+  - type: dropdown
+    id: dataset
+    attributes:
+      label: Type
+      options:
+        - Medical specialist
+        - Financial help program
+        - Health institution or service
+        - Support group
+        - News, blog or article
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: "e.g. Dr. Maria Santos, or PCSO Medical Assistance Program"
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Place in Davao City
+      description: Address of the clinic, office or group. Write "online" for an online clinic.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: An official page is best (the institution's own site, a government page, the hospital's doctor page).
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Anything the source says that patients need, for example specialty, schedule, eligibility, requirements, steps to apply.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: It has a place in Davao City (or an online clinic for Davao City patients).
+          required: true
+        - label: I did not include patient data or anyone's personal phone number or address.
+          required: true

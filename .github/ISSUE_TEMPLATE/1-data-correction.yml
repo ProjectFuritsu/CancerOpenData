@@ -1,0 +1,67 @@
+name: Wrong or outdated data
+description: A doctor, clinic, schedule, program, hospital service, support group or post has wrong or old information.
+title: "[Data] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping keep the data correct. Every change needs a **source** (an official page first), so please include a link.
+        **Do not post patient information or anyone's personal phone number or address.**
+  - type: dropdown
+    id: dataset
+    attributes:
+      label: Dataset
+      options:
+        - Medical specialists
+        - Financial institutions
+        - Health institutions
+        - Support groups
+        - Feeds
+    validations:
+      required: true
+  - type: input
+    id: record
+    attributes:
+      label: Record
+      description: The record's id and name, as the API shows them.
+      placeholder: "e.g. #11 Aaron Paul Punzalan"
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field
+      description: Which part is wrong?
+      placeholder: "e.g. clinic schedule at Metro Davao, program requirements, contacts"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What the data says now
+      placeholder: Copy the current value from the API or the app.
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should say
+      description: Write it exactly as the source shows it.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: An official page (the institution's site, a government page, the doctor's hospital page) is best.
+      placeholder: https://
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: The source is public, and I did not include patient data or anyone's personal phone number or address.
+          required: true
