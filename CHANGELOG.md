@@ -16,6 +16,9 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 
 ### Docs
 - Added [MILESTONES.md](MILESTONES.md) and this changelog.
+- README is now a short quick start. The full API reference moved to [API-GUIDE.md](API-GUIDE.md), and how the API is served and maintained to [MAINTAINING.md](MAINTAINING.md).
+- "Not given" is now "Not available" in the docs, the word apps should show for `null` or empty values.
+- Scope stated: **Davao City**. Every record has at least one place in Davao City (or an online clinic for Davao City patients); a doctor's other clinics outside the city may also be listed.
 
 ## 2026-11-13 · version `8d206e1`
 
