@@ -1,0 +1,41 @@
+name: API problem
+description: An endpoint is down, returns an error, has wrong headers, or breaks your app.
+title: "[API] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before you report: check the [API guide](https://github.com/ProjectFuritsu/CancerOpenData/blob/main/API-GUIDE.md). Use a plain GET with no custom headers, and treat `null`, empty text or an empty list as "Not available".
+  - type: input
+    id: endpoint
+    attributes:
+      label: Endpoint
+      placeholder: "e.g. /MedicalSpecialist/MedicalSpecialistData.json"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: API version
+      description: The `version` value from `GET /` when it happened.
+      placeholder: "e.g. 416aad5"
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened
+      description: Status code, error body, or what your app showed.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to see it
+      description: A request (curl or fetch) that shows the problem.
+      render: shell

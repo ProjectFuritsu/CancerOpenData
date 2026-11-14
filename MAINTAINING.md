@@ -9,6 +9,7 @@ How the API is served, how a change goes live, and how to change the data. For u
 - [Versioning and rollback](#versioning-and-rollback)
 - [Changing the data](#changing-the-data)
 - [Deploy setup](#deploy-setup)
+- [Deploy emails](#deploy-emails)
 - [Working on the Worker](#working-on-the-worker)
 - [Files](#files)
 
@@ -97,6 +98,24 @@ npm run validate
 
 If a setting is missing, the deploy job stops at once and names it. GitHub never passes secrets to pull requests from forks, and deploy runs only on `main`.
 
+## Deploy emails
+
+After each successful deploy to `main`, `.github/workflows/notify-deploy.yml` emails the people who build on the API: the new version, the commits since the last deploy, which data files changed, and links to the changelog and the compare view. The rollback drill and pull requests send nothing.
+
+**Turn it on** (repo → Settings → Secrets and variables → Actions → **Secrets**):
+
+| Secret | Value |
+|---|---|
+| `MAIL_USERNAME` | The Gmail address that sends the email |
+| `MAIL_PASSWORD` | A Gmail **App Password** for that account: Google Account → Security → 2-Step Verification (must be on) → App passwords → create one named "Cancer Open Data". Never the normal password |
+| `MAIL_TO` | Who gets it, comma-separated, e.g. `you@example.com, teammate@example.com` |
+
+- The addresses are **secrets**, not variables or code, because the repo is public.
+- Without all three, the job skips and leaves a notice in the run.
+- **Test it:** Actions → **Email deploy update** → **Run workflow**. It emails about the latest deploy.
+- **Stop it:** delete `MAIL_PASSWORD` (or revoke the App Password in the Google Account).
+- The email step uses `dawidd6/action-send-mail` pinned to an exact commit, so the code that receives the password can't change without a pull request here.
+
 ## Working on the Worker
 
 ```bash
@@ -122,5 +141,7 @@ npx wrangler deploy           # manual deploy (CI does this on every push to mai
 | `images/` | Images served at `/images/...` (rules in `images/README.md`) |
 | `worker/` | Worker config, the small script for `/`, and its tests |
 | `.github/workflows/deploy-data.yml` | The pipeline |
+| `.github/workflows/notify-deploy.yml` | Emails an update after each successful deploy (see [Deploy emails](#deploy-emails)) |
+| `.github/ISSUE_TEMPLATE/` | Issue forms: wrong data, new resource, API problem, privacy or removal request |
 | `README.md` · `API-GUIDE.md` · `MAINTAINING.md` | Quick start · full API guide · this file |
 | `MILESTONES.md` · `CHANGELOG.md` | Where the project is going · what changed in each version |

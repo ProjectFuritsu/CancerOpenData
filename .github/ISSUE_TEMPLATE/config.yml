@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: API guide
+    url: https://github.com/ProjectFuritsu/CancerOpenData/blob/main/API-GUIDE.md
+    about: Endpoints, images, errors and every value that can be empty.
+  - name: Interactive API docs
+    url: https://cancer-open-data.capillanesjohnfritz.workers.dev/docs/
+    about: Try the endpoints in Swagger UI.
