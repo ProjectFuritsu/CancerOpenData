@@ -12,12 +12,27 @@
       "clinics": [
         {
           "clinicid": 1,
-          "isWalkIns": false,
+          "isWalkIns": true,
           "canDoBoth": true,
           "clinicName": "Metro Davao Medical and Research Center",
           "location": "Bajada, Davao City",
           "contacts": null,
           "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "09:00 am",
+              "timeOUT": "01:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "01:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "09:00 am",
+              "timeOUT": "01:00 pm"
+            },
             {
               "day": "Friday",
               "timeIN": "09:00 am",
@@ -38,8 +53,8 @@
       "clinics": [
         {
           "clinicid": 1,
-          "isWalkIns": false,
-          "canDoBoth": true,
+          "isWalkIns": true,
+          "canDoBoth": false,
           "clinicName": "Davao Doctors Care Center - SM Lanang",
           "location": "Ground Floor, SM Lanang, J.P. Laurel Ave, Agdao, Davao City, 8000 Davao del Sur",
           "contacts": null,
@@ -55,9 +70,54 @@
               "timeOUT": "05:00 am"
             },
             {
-              "day": "Friday to Saturday",
+              "day": "Friday",
               "timeIN": "01:00 am",
+              "timeOUT": "03:00 am"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "01:00 am",
+              "timeOUT": "03:00 am"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Miguel Villanueva General Surgery and Surgical Oncology Clinic",
+          "location": "Room 204, 2nd Floro Jesusa Complex, Malvar Street Corner Mt. Apo Street, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "10:00 am",
               "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "10:00 am",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
             }
           ]
         }
@@ -75,13 +135,48 @@
         {
           "clinicid": 1,
           "isWalkIns": false,
-          "canDoBoth": true,
+          "canDoBoth": false,
+          "clinicName": "Davao Doctor's Hospital",
+          "location": "118 E, Quirino Avenue, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "08:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "08:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "08:00 am",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": false,
+          "canDoBoth": false,
           "clinicName": "Online Clinic",
           "location": "NowServing App",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday to Tuesday, Friday",
+              "day": "Monday",
+              "timeIN": "08:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "08:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIN": "08:00 am",
               "timeOUT": "04:00 pm"
             }
@@ -100,51 +195,91 @@
       "clinics": [
         {
           "clinicid": 1,
-          "isWalkIns": false,
-          "canDoBoth": true,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
-          "contacts": null,
-          "schedule": [
-            {
-              "day": "Monday, Wednesday and Friday",
-              "timeIN": "10:00 am",
-              "timeOUT": "04:00 pm"
-            },
-            {
-              "day": "Tuesday and Thursday",
-              "timeIN": "01:00 pm",
-              "timeOUT": "04:00 pm"
-            }
-          ]
-        },
-        {
-          "clinicid": 2,
-          "isWalkIns": false,
+          "isWalkIns": true,
           "canDoBoth": true,
           "clinicName": "Brokenshire Integrated Health Ministries, Inc.",
           "location": "Madapo Hill, Davao City",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday to Friday",
+              "day": "Monday",
+              "timeIN": "12:00 pm",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "12:00 pm",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "12:00 pm",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "12:00 pm",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIN": "12:00 pm",
               "timeOUT": "02:00 pm"
             }
           ]
         },
         {
-          "clinicid": 3,
-          "isWalkIns": false,
+          "clinicid": 2,
+          "isWalkIns": true,
           "canDoBoth": true,
           "clinicName": "Metro Davao Medical and Research Center",
           "location": "Bajada, Davao City",
           "contacts": null,
           "schedule": [
             {
-              "day": "Tuesday and Thursday",
+              "day": "Tuesday",
               "timeIN": "09:00 am",
               "timeOUT": "11:00 am"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "09:00 am",
+              "timeOUT": "11:00 am"
+            }
+          ]
+        },
+        {
+          "clinicid": 3,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
             }
           ]
         }
@@ -161,14 +296,24 @@
       "clinics": [
         {
           "clinicid": 1,
-          "isWalkIns": false,
+          "isWalkIns": true,
           "canDoBoth": true,
           "clinicName": "Metro Davao Medical and Research Center",
           "location": "Bajada, Davao City",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday, Wednesday and Friday",
+              "day": "Monday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIN": "01:00 pm",
               "timeOUT": "03:00 pm"
             }
@@ -176,14 +321,19 @@
         },
         {
           "clinicid": 2,
-          "isWalkIns": false,
+          "isWalkIns": true,
           "canDoBoth": true,
           "clinicName": "Tagum Global Medical Center",
-          "location": "Daang Maharlika Hwy",
+          "location": "Daang Maharlika Hwy,",
           "contacts": null,
           "schedule": [
             {
-              "day": "Tuesday and Thursday",
+              "day": "Tuesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
               "timeIN": "10:00 am",
               "timeOUT": "12:00 pm"
             }
@@ -203,13 +353,23 @@
         {
           "clinicid": 1,
           "isWalkIns": false,
-          "canDoBoth": true,
-          "clinicName": "Brokenshire Medical Center",
+          "canDoBoth": false,
+          "clinicName": "BROKENSHIRE MEDICAL CENTER",
           "location": "Madapo Hill, Davao City",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday, Wednesday and Friday",
+              "day": "Monday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIN": "01:00 pm",
               "timeOUT": "05:00 pm"
             }
@@ -218,7 +378,7 @@
         {
           "clinicid": 2,
           "isWalkIns": false,
-          "canDoBoth": true,
+          "canDoBoth": false,
           "clinicName": "Metro Davao Medical and Research Center",
           "location": "Bajada, Davao City",
           "contacts": null,
@@ -244,13 +404,33 @@
         {
           "clinicid": 1,
           "isWalkIns": false,
-          "canDoBoth": true,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
+          "canDoBoth": false,
+          "clinicName": "Matunog Cancer Care Clinic",
+          "location": "Guzman Street",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday to Friday",
+              "day": "Monday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIN": "10:00 am",
               "timeOUT": "04:00 pm"
             }
@@ -260,12 +440,32 @@
           "clinicid": 2,
           "isWalkIns": false,
           "canDoBoth": false,
-          "clinicName": "Matunog Cancer Care Clinic",
-          "location": "Guzman Street",
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday to Friday",
+              "day": "Monday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "10:00 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIN": "10:00 am",
               "timeOUT": "04:00 pm"
             }
@@ -284,15 +484,40 @@
       "clinics": [
         {
           "clinicid": 1,
-          "isWalkIns": false,
-          "canDoBoth": false,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "M300 Health Science Wellness Center",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Thursday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "03:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": true,
+          "canDoBoth": true,
           "clinicName": "Online Clinic",
           "location": "NowServing App",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday and Tuesday, Thursday and Saturday",
-              "timeIN": "09:00 am",
+              "day": "Monday",
+              "timeIN": "12:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "08:00 am",
               "timeOUT": "05:00 pm"
             },
             {
@@ -301,24 +526,19 @@
               "timeOUT": "05:00 pm"
             },
             {
-              "day": "Friday",
-              "timeIN": "11:00 am",
+              "day": "Thursday",
+              "timeIN": "08:00 am",
               "timeOUT": "05:00 pm"
-            }
-          ]
-        },
-        {
-          "clinicid": 2,
-          "isWalkIns": false,
-          "canDoBoth": true,
-          "clinicName": "M300 Health Science Wellness Center",
-          "location": "Bajada, Davao City",
-          "contacts": null,
-          "schedule": [
+            },
             {
-              "day": "Tuesday, Thursday and Saturday",
+              "day": "Friday",
+              "timeIN": "12:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Saturday",
               "timeIN": "09:00 am",
-              "timeOUT": "12:00 pm"
+              "timeOUT": "05:00 pm"
             }
           ]
         }
@@ -342,7 +562,17 @@
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday, Wednesday and Friday",
+              "day": "Monday",
+              "timeIN": "11:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "11:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIN": "11:00 am",
               "timeOUT": "12:00 pm"
             }
@@ -363,29 +593,79 @@
           "clinicid": 1,
           "isWalkIns": false,
           "canDoBoth": false,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
+          "clinicName": "Brokenshire Integrated Health Ministries, Inc.",
+          "location": "Madapo Hill, Davao City",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday to Sunday",
+              "day": "Monday",
               "timeIN": "10:00 am",
-              "timeOUT": "10:00 pm"
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "10:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "10:00 am",
+              "timeOUT": "12:00 pm"
             }
           ]
         },
         {
           "clinicid": 2,
-          "isWalkIns": false,
-          "canDoBoth": false,
-          "clinicName": "Brokenshire Integrated Health Ministries, Inc",
-          "location": "Madapo Hill, Davao City",
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
           "contacts": null,
           "schedule": [
             {
-              "day": "Monday to Friday",
+              "day": "Monday",
               "timeIN": "10:00 am",
-              "timeOUT": "12:00 pm"
+              "timeOUT": "10:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "10:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "10:00 am",
+              "timeOUT": "10:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "10:00 am",
+              "timeOUT": "10:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "10:00 am",
+              "timeOUT": "10:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "10:00 am",
+              "timeOUT": "10:00 pm"
+            },
+            {
+              "day": "Sunday",
+              "timeIN": "10:00 am",
+              "timeOUT": "10:00 pm"
             }
           ]
         }
@@ -402,7 +682,7 @@
       "clinics": [
         {
           "clinicid": 1,
-          "isWalkIns": false,
+          "isWalkIns": true,
           "canDoBoth": true,
           "clinicName": "Ecoland Medical and Wellness Center",
           "location": "Quimpo Blvd. cor Tulip Drive, Ecoland",
@@ -410,8 +690,8 @@
           "schedule": [
             {
               "day": "Tuesday",
-              "timeIN": "08:00 am",
-              "timeOUT": "11:00 am"
+              "timeIN": "02:00 pm",
+              "timeOUT": "04:00 pm"
             },
             {
               "day": "Wednesday",
@@ -420,7 +700,7 @@
             },
             {
               "day": "Thursday",
-              "timeIN": "09:00 am",
+              "timeIN": "01:00 pm",
               "timeOUT": "03:00 pm"
             },
             {
@@ -432,28 +712,28 @@
         },
         {
           "clinicid": 2,
-          "isWalkIns": false,
-          "canDoBoth": false,
+          "isWalkIns": true,
+          "canDoBoth": true,
           "clinicName": "Good Shepherd Hospital of Panabo City",
           "location": "Km. 31 National Highway, New Pandan, Panabo, Philippines",
           "contacts": null,
           "schedule": [
             {
-              "day": "Wednesday",
+              "day": "Monday",
               "timeIN": "09:00 am",
-              "timeOUT": "12:00 pm"
+              "timeOUT": "11:00 am"
             },
             {
               "day": "Saturday",
               "timeIN": "09:00 am",
-              "timeOUT": "11:30 pm"
+              "timeOUT": "11:30 am"
             }
           ]
         },
         {
           "clinicid": 3,
-          "isWalkIns": false,
-          "canDoBoth": false,
+          "isWalkIns": true,
+          "canDoBoth": true,
           "clinicName": "Davao Outpatient Surgery and Advanced Wound Care Center",
           "location": "Km. 4 J.P. Laurel Avenue, Bajada",
           "contacts": null,
@@ -462,11 +742,76 @@
               "day": "Monday",
               "timeIN": "02:00 pm",
               "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 4,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Metro Davao Medical and Research Center",
+          "location": "Bajada, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Wednesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "09:00 am",
+              "timeOUT": "10:30 am"
+            }
+          ]
+        },
+        {
+          "clinicid": 5,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Malta Medical Center, Inc.",
+          "location": "Kilometer 14 Mac Arthur Highway, Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Friday",
+              "timeIN": "01:30 pm",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 6,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "09:00 am",
+              "timeOUT": "07:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "07:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "09:00 am",
+              "timeOUT": "07:00 pm"
             },
             {
               "day": "Friday",
+              "timeIN": "09:00 am",
+              "timeOUT": "07:00 pm"
+            },
+            {
+              "day": "Saturday",
               "timeIN": "10:00 am",
-              "timeOUT": "12:00 pm"
+              "timeOUT": "03:00 pm"
             }
           ]
         }
@@ -548,22 +893,7 @@
       "clinics": [
         {
           "clinicid": 1,
-          "isWalkIns": false,
-          "canDoBoth": true,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
-          "contacts": null,
-          "schedule": [
-            {
-              "day": "Monday to Saturday",
-              "timeIN": "06:00 pm",
-              "timeOUT": "08:00 pm"
-            }
-          ]
-        },
-        {
-          "clinicid": 2,
-          "isWalkIns": false,
+          "isWalkIns": true,
           "canDoBoth": true,
           "clinicName": "ENT Head & Neck Reconstructive Microsurgery Clinic",
           "location": "Bajada, Davao City",
@@ -576,25 +906,35 @@
           ],
           "schedule": [
             {
-              "day": "Tuesday, Thursday and Saturday",
-              "timeIN": "09:00 am",
-              "timeOUT": "12:00 pm"
-            },
-            {
-              "day": "Friday",
-              "timeIN": "09:30 am",
-              "timeOUT": "12:00 pm"
-            },
-            {
-              "day": "Friday",
+              "day": "Monday",
               "timeIN": "04:00 pm",
               "timeOUT": "06:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "09:30 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "04:00 pm",
+              "timeOUT": "06:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "09:30 am",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "09:30 am",
+              "timeOUT": "04:00 pm"
             }
           ]
         },
         {
-          "clinicid": 3,
-          "isWalkIns": false,
+          "clinicid": 2,
+          "isWalkIns": true,
           "canDoBoth": true,
           "clinicName": "Integrated Clinics Of Otolaryngology - Head And Neck Surgery",
           "location": "Quirno Avenue, Mayon St, Poblacion District, Davao City, 8000 Davao del Sur",
@@ -610,6 +950,71 @@
               "day": "Friday",
               "timeIN": "01:00 pm",
               "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 3,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "San Pedro Hospital of Davao City",
+          "location": "G. Guzman, Guerrero St., Davao City",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "09:30 am",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "09:30 am",
+              "timeOUT": "03:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 4,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": null,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "06:00 pm",
+              "timeOUT": "08:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "06:00 pm",
+              "timeOUT": "08:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "06:00 pm",
+              "timeOUT": "08:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "06:00 pm",
+              "timeOUT": "08:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "06:00 pm",
+              "timeOUT": "08:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "06:00 pm",
+              "timeOUT": "08:00 pm"
             }
           ]
         }

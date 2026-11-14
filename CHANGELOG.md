@@ -15,6 +15,11 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - A `null` or empty value means "Not available".
 
 ### Data
+- Clinics and schedules of 12 specialists (#1–#11, #13) updated from NowServing (read 2026-11-14): new clinics for #2, #3, #11 and #13, more days, and booking types as NowServing shows them. Schedules are now one line per day.
+
+## 2026-11-14 · version `8abad69`
+
+### Data
 - 5 more medical specialists (ids 25–29), from the NowServing Davao City oncology listing: Anna Mariel Rivera, Jeannine Anjelica Ledesma-Quijada, Romulo Ong Abrantes, Kristine Kamille Nieto-Lorenzo and Adrian Lorenzo. Sources: their SeriousMD profile pages. No photos (consent needed); clinic contacts not copied (personal mobile numbers).
 - Fixed `source` of specialists #6, #10 and #11: each pointed to another doctor's page.
 
