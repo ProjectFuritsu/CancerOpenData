@@ -96,6 +96,7 @@ for (const f of listImageFiles()) {
   } else if (f.size > MAX_BYTES) { console.error(`FAIL ${at}: ${kb(f.size)} is over the ${kb(MAX_BYTES)} limit. Resize or compress it`); failed++; }
   else {
     if (f.size > WARN_BYTES) warn(`${at} is ${kb(f.size)}. Under ${kb(WARN_BYTES)} loads faster (try WebP, about 1200 px wide)`);
+    if (!f.rel.endsWith(".webp")) warn(`${at} is not WebP. The standard is WebP (see ${IMAGES_DIR}/README.md)`);
     images.add(f.rel);
   }
 }
