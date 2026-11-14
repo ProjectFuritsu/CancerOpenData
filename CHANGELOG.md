@@ -14,6 +14,11 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - No loan programs. New: PCSO (Medical Assistance Program) and DOH (MAIFIP).
 - A `null` or empty value means "Not available".
 
+### Images
+- PhilHealth, SPMC Cancer Institute and AMUMA now use images hosted by this API (`/images/…`, WebP) instead of links to other sites. AMUMA has a new image: `amuma.webp` replaces `amuma.jpg`.
+- Image standard ([images/README.md](images/README.md)): WebP; doctor photos square up to 800 × 800, other images 16:9 up to 1200 × 675. `npm run validate` warns about images that are not WebP.
+- Images for PCSO and DOH are ready for v2.
+
 ### Docs
 - Added [MILESTONES.md](MILESTONES.md) and this changelog.
 - README is now a short quick start. The full API reference moved to [API-GUIDE.md](API-GUIDE.md), and how the API is served and maintained to [MAINTAINING.md](MAINTAINING.md).
