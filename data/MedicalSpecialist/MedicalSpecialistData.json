@@ -198,7 +198,7 @@
       "specialty": "Oncologic Urology / General Urology",
       "description": "Treats and manages Adrenal, Kidney, Ureter, Bladder, Prostate, Testicular and Penile Cancers and Genitourinary Stones",
       "imageURL": "",
-      "source": "https://seriousmd.com/doc/jpabrina?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1",
+      "source": "https://seriousmd.com/doc/jay-r-enojo",
       "clinics": [
         {
           "clinicid": 1,
@@ -357,7 +357,7 @@
       "specialty": "General Surgery",
       "description": "Orthopedic Oncologist, Musculoskeletal Tumor Surgeon and Sarcoma Surgeon",
       "imageURL": "",
-      "source": "https://seriousmd.com/doc/noel-rex-penaranda?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1",
+      "source": "https://seriousmd.com/doc/charmaine-catherine-valdez",
       "clinics": [
         {
           "clinicid": 1,
@@ -398,7 +398,7 @@
       "specialty": "Orthopedic Oncology",
       "description": "",
       "imageURL": "",
-      "source": "https://seriousmd.com/doc/noel-rex-penaranda?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1",
+      "source": "https://seriousmd.com/doc/aaron-paul-punzalan",
       "clinics": [
         {
           "clinicid": 1,
@@ -1147,6 +1147,401 @@
             }
           ],
           "schedule": []
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "firstname": "Anna Mariel",
+      "lastname": "Rivera",
+      "specialty": "General Surgery, Head and Neck Surgery, Minimally Invasive Surgery",
+      "description": "",
+      "imageURL": "",
+      "source": "https://seriousmd.com/doc/anna-mariel-rivera",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Rivera Medical Center",
+          "location": "7302 San Francisco, Panabo City",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "09:00 am",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "11:00 am"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "09:00 am",
+              "timeOUT": "11:00 am"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "09:00 am",
+              "timeOUT": "03:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "09:00 am",
+              "timeOUT": "03:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Brokenshire Integrated Health Ministries, Inc.",
+          "location": "Madapo Hill, Davao City",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Tuesday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "firstname": "Jeannine Anjelica",
+      "lastname": "Ledesma-Quijada",
+      "specialty": "Breast Surgical Oncology and Oncoplastic Surgery, General Surgery",
+      "description": "Breast surgical oncology and oncoplastic surgery; General Surgery",
+      "imageURL": "",
+      "source": "https://seriousmd.com/doc/jeannine-anjelica-ledesma",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "San Pedro Hospital of Davao City",
+          "location": "G. Guzman, Guerrero St., Davao City",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Anda Riverview Medical Center (ARMCI)",
+          "location": "Magallanes St.,",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "10:00 am",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "10:00 am",
+              "timeOUT": "02:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "firstname": "Romulo",
+      "lastname": "Ong Abrantes",
+      "specialty": "Surgery, General Surgery, HepatoPancreatoBiliary Surgery",
+      "description": "",
+      "imageURL": "",
+      "source": "https://seriousmd.com/doc/rongabrantes",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Liver, Pancreas And Biliary Tree Clinic",
+          "location": "118 E, Quirino Avenue, Davao City",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "12:00 am",
+              "timeOUT": "11:30 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "12:00 am",
+              "timeOUT": "11:30 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "12:00 am",
+              "timeOUT": "11:30 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "12:00 am",
+              "timeOUT": "11:30 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "12:00 am",
+              "timeOUT": "11:30 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIN": "12:00 am",
+              "timeOUT": "11:30 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "firstname": "Kristine Kamille",
+      "lastname": "Nieto-Lorenzo",
+      "specialty": "General Surgery, Surgical Oncology",
+      "description": "",
+      "imageURL": "",
+      "source": "https://seriousmd.com/doc/kristine-kamille-nietolorenzo",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Clinica Tan",
+          "location": "18 Gempesaw Street",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Wednesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIN": "09:00 am",
+              "timeOUT": "02:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Lorenzo Surgical Clinic",
+          "location": "Demontano Building, Santiago Boulevard",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "01:00 pm",
+              "timeOUT": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 3,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "General Santos Doctor's Hospital",
+          "location": "National Highway, General Santos City",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Tuesday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 4,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "Dadiangas Medical Center",
+          "location": "Allado Compound, Leon Llido St, City Heights",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "09:00 am",
+              "timeOUT": "12:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "firstname": "Adrian",
+      "lastname": "Lorenzo",
+      "specialty": "General Surgery, Advanced Laparoscopic Surgery, Hepatobiliary and Pancreatic Surgery",
+      "description": "For any inquiries please reach me here:\n\nhttps://www.facebook.com/dr.adrianlorenzo",
+      "imageURL": "",
+      "source": "https://seriousmd.com/doc/adrianlorenzo",
+      "clinics": [
+        {
+          "clinicid": 1,
+          "isWalkIns": false,
+          "canDoBoth": false,
+          "clinicName": "Metro Davao Medical and Research Center",
+          "location": "Bajada, Davao City",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Saturday",
+              "timeIN": "08:00 am",
+              "timeOUT": "10:00 am"
+            }
+          ]
+        },
+        {
+          "clinicid": 2,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "GSDH Medical Suites Buidling",
+          "location": "National Highway, General Santos City",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIN": "08:00 am",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIN": "08:00 am",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "08:00 am",
+              "timeOUT": "02:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "08:00 am",
+              "timeOUT": "02:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicid": 3,
+          "isWalkIns": true,
+          "canDoBoth": true,
+          "clinicName": "St. Elizabeth Hospital",
+          "location": "National Highway, General Santos City",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Tuesday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIN": "02:00 pm",
+              "timeOUT": "05:00 pm"
+            }
+          ]
         }
       ]
     }
