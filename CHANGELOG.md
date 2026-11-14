@@ -14,6 +14,12 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - No loan programs. New: PCSO (Medical Assistance Program) and DOH (MAIFIP).
 - A `null` or empty value means "Not available".
 
+### Data
+- 5 more medical specialists (ids 25–29), from the NowServing Davao City oncology listing: Anna Mariel Rivera, Jeannine Anjelica Ledesma-Quijada, Romulo Ong Abrantes, Kristine Kamille Nieto-Lorenzo and Adrian Lorenzo. Sources: their SeriousMD profile pages. No photos (consent needed); clinic contacts not copied (personal mobile numbers).
+- Fixed `source` of specialists #6, #10 and #11: each pointed to another doctor's page.
+
+## 2026-11-14 · version `4f92f54`
+
 ### Images
 - PhilHealth, SPMC Cancer Institute and AMUMA now use images hosted by this API (`/images/…`, WebP) instead of links to other sites. AMUMA has a new image: `amuma.webp` replaces `amuma.jpg`.
 - Image standard ([images/README.md](images/README.md)): WebP; doctor photos square up to 800 × 800, other images 16:9 up to 1200 × 675. `npm run validate` warns about images that are not WebP.
