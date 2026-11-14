@@ -54,30 +54,48 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
-          HEAD_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+          RUN_HEAD: ${{ github.event.workflow_run.head_sha }}
           RUN_URL: ${{ github.event.workflow_run.html_url }}
           API: https://cancer-open-data.capillanesjohnfritz.workers.dev
         run: |
           set -euo pipefail
-          # The deploy before this one: the second newest successful push run of the pipeline.
-          PREV=$(gh api "repos/$REPO/actions/workflows/deploy-data.yml/runs?branch=main&event=push&status=success&per_page=10" \
-            --jq "[.workflow_runs[] | select(.head_sha != \"$HEAD_SHA\")][0].head_sha // empty")
+          # Successful deploys of the pipeline (push to main), newest first.
+          DEPLOYS=$(gh api "repos/$REPO/actions/workflows/deploy-data.yml/runs?branch=main&event=push&status=success&per_page=20" \
+            --jq '.workflow_runs[].head_sha')
+          # This deploy: the run that triggered us, or (when run by hand) the latest deploy,
+          # so a test email describes what is really live, not a docs-only commit.
+          HEAD_SHA="${RUN_HEAD:-$(echo "$DEPLOYS" | head -n 1)}"
+          # The deploy before it: the next one in the newest-first list (or, if this deploy is
+          # not listed yet, the newest other one).
+          PREV=$(echo "$DEPLOYS" | awk -v h="$HEAD_SHA" 'found { print; exit } $0 == h { found = 1 }')
+          [ -n "$PREV" ] || PREV=$(echo "$DEPLOYS" | grep -v "^$HEAD_SHA$" | head -n 1 || true)
           if [ -z "$PREV" ] || ! git cat-file -e "$PREV^{commit}" 2>/dev/null; then PREV="$HEAD_SHA~1"; fi
           SHORT=$(git rev-parse --short=7 "$HEAD_SHA")
+          DATA_COMMITS=$(git log --no-merges --pretty='- %s (`%h`)' "$PREV..$HEAD_SHA" -- data images || true)
+          OTHER_COMMITS=$(git log --no-merges --pretty='- %s (`%h`)' "$PREV..$HEAD_SHA" -- . ':!data' ':!images' || true)
+          FILES=$(git diff --stat "$PREV" "$HEAD_SHA" -- data images | tail -n 25 || true)
 
           {
             echo "## Cancer Open Data updated: version \`$SHORT\`"
             echo
             echo "The new data is live at $API (apps see it within about 5 minutes)."
             echo
-            echo "### What changed"
-            git log --no-merges --pretty='- %s (`%h`)' "$PREV..$HEAD_SHA" || true
+            echo "### Data changes"
+            if [ -n "$DATA_COMMITS" ]; then echo "$DATA_COMMITS"; else echo "No data or image files changed in this version."; fi
             echo
-            echo "### Files"
-            echo '```'
-            git diff --stat "$PREV" "$HEAD_SHA" -- data images | tail -n 25 || true
-            echo '```'
-            echo
+            if [ -n "$FILES" ]; then
+              echo "### Files"
+              echo
+              echo '```'
+              echo "$FILES"
+              echo '```'
+              echo
+            fi
+            if [ -n "$OTHER_COMMITS" ]; then
+              echo "### Other changes (docs, code)"
+              echo "$OTHER_COMMITS"
+              echo
+            fi
             echo "- Full list of changes: https://github.com/$REPO/blob/main/CHANGELOG.md"
             echo "- Compare: https://github.com/$REPO/compare/$(git rev-parse --short=7 "$PREV")...$SHORT"
             [ -n "$RUN_URL" ] && echo "- Deploy run: $RUN_URL"
@@ -101,5 +119,7 @@ jobs:
           from: Cancer Open Data <${{ secrets.MAIL_USERNAME }}>
           to: ${{ secrets.MAIL_TO }}
           subject: ${{ steps.summary.outputs.subject }}
+          # The action turns Markdown into HTML only for html_body; body is the plain-text copy.
           body: file://update.md
+          html_body: file://update.md
           convert_markdown: true
