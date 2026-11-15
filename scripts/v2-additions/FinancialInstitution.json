@@ -1,5 +1,5 @@
 {
-  "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. Approved by Fritz on 2026-11-13; sources in CancerData-staging/provenance.",
+  "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. Approved by Fritz on 2026-11-13; sources in CancerData-staging/provenance. Office details for PCSO and DOH (where to go) approved by Fritz on 2026-11-15 (money-help offices review).",
   "Financial_Insti": [
     {
       "id": 5,
@@ -13,12 +13,32 @@
       "branches": [
         {
           "branchID": 1,
-          "branchName": null,
-          "location": "Cabaguio Davao City (near NSO Office)",
+          "branchName": "Davao del Sur Branch",
+          "location": "G/F Maharlika Bldg., JP Cabaguio Ave., Davao City",
           "latitude": null,
           "longitude": null,
           "schedule": null,
           "contacts": []
+        },
+        {
+          "branchID": 2,
+          "branchName": "Mindanao Department",
+          "location": "Maharlika Center, J.P Cabagui Avenue, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Landline",
+              "contact_details": "(082) 282-0305"
+            },
+            {
+              "contact_id": 2,
+              "type": "Email",
+              "contact_details": "mindanao@pcso.gov.ph"
+            }
+          ]
         }
       ],
       "programs": [
@@ -32,9 +52,11 @@
           "cancerTypes": [
             "All cancers"
           ],
-          "applicationURL": null,
+          "applicationURL": "https://onlinemap.pcso.gov.ph/",
           "sources": [
-            "https://www.pcso.gov.ph/ProgramsAndServices/CAD/MedicalAccessProgram.aspx"
+            "https://www.pcso.gov.ph/ProgramsAndServices/CAD/MedicalAccessProgram.aspx",
+            "https://www.pcso.gov.ph/About/Directories/MindanaoDepartment.aspx",
+            "https://www.pcso.gov.ph/pcsofiles/infographics/pcsoadvisory/PCSOAdvisory2021121501.jpg"
           ],
           "benefits": [
             {
@@ -83,22 +105,26 @@
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to www.pcso.gov.ph, select \"E-Services\", then \"Online MAP Application\", and create an account."
+              "instruction": "Apply online through the Online MAP Application (steps 2 to 6), or go to a PCSO office (the Davao del Sur Branch or the Mindanao Department in Davao City), or to the PCSO or Malasakit Center desk of your hospital. In some areas, MAP can be accessed only through hospitals with a Malasakit Center."
             },
             {
               "step": 2,
-              "instruction": "Log in with your name, date of birth and email, and enter the one-time code sent to your email."
+              "instruction": "Go to www.pcso.gov.ph, select \"E-Services\", then \"Online MAP Application\", and create an account."
             },
             {
               "step": 3,
-              "instruction": "Click \"Apply Now\", choose the partner health facility, its city and the type of request, then get a queuing number."
+              "instruction": "Log in with your name, date of birth and email, and enter the one-time code sent to your email."
             },
             {
               "step": 4,
-              "instruction": "Upload all required documents as PDF files (not more than 2MB each) and submit the application."
+              "instruction": "Click \"Apply Now\", choose the partner health facility, its city and the type of request, then get a queuing number."
             },
             {
               "step": 5,
+              "instruction": "Upload all required documents as PDF files (not more than 2MB each) and submit the application."
+            },
+            {
+              "step": 6,
               "instruction": "Wait for the result in your email or in your online account."
             }
           ]
@@ -117,8 +143,17 @@
       "branches": [
         {
           "branchID": 1,
-          "branchName": null,
+          "branchName": "DOH MAIP",
           "location": "PRRD Bldg Bajada, Davao City (infront SPMC Hospital)",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        },
+        {
+          "branchID": 2,
+          "branchName": "Malasakit Center",
+          "location": "Malasakit Center, Bajada, Davao City (beside SPMC Hospital)",
           "latitude": null,
           "longitude": null,
           "schedule": null,
@@ -171,10 +206,14 @@
           "procedure": [
             {
               "step": 1,
-              "instruction": "Ask the hospital's social worker to assess you for MAIFIP. The social worker evaluates your Unified Intake Sheet."
+              "instruction": "Go to the Malasakit Center or the Medical Social Work Unit (MSW) of your hospital."
             },
             {
               "step": 2,
+              "instruction": "Ask the hospital's social worker to assess you for MAIFIP. The social worker evaluates your Unified Intake Sheet."
+            },
+            {
+              "step": 3,
               "instruction": "Submit the documents the social worker asks for. Payment is faster when the documents are complete."
             }
           ]

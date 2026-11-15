@@ -206,6 +206,35 @@ const REVIEW = {
       ]
     }
   },
+  // Decision 15 (Fritz, 2026-11-15, money-help offices review): where to go for PhilHealth,
+  // as written in PhilHealth's official Regional Offices Directory (PRO XI):
+  // https://www.philhealth.gov.ph/about_us/directory . Online: the eGovPH Super App
+  // (https://e.gov.ph/), which the YAKAP page already names.
+  financialInstitutionOffices: {
+    1: {
+      branchChanges: {
+        1: {
+          branchName: "Local Health Insurance Office (LHIO) Davao City",
+          location: "Valgosons Bldg., Bolton Ext., Poblacion District, Davao City, Davao del Sur",
+          contacts: [
+            { contact_id: 1, type: "Landline", contact_details: "(082) 295-2133 loc. 6328 to 30" },
+            { contact_id: 2, type: "Mobile", contact_details: "09457256139" },
+            { contact_id: 3, type: "Email", contact_details: "lhiodavao.onlinetransactions@gmail.com" },
+          ],
+        },
+      },
+      addBranches: [
+        { branchName: "PhilHealth Express Calinan", location: "Old Barangay Hall beside Police Station, Aurora-Quezon St., Calinan, Davao City", contacts: [{ contact_id: 1, type: "Email", contact_details: "pro11.fod.ossco@gmail.com" }] },
+        { branchName: "PhilHealth Express Toril", location: "Urban Health Center A, Agton St., Toril, Davao City, Davao del Sur", contacts: [{ contact_id: 1, type: "Mobile", contact_details: "0955 986 0938" }, { contact_id: 2, type: "Email", contact_details: "pro11.express.toril@gmail.com" }] },
+        { branchName: "One-Stop Service Center Office (OSSCO) Gaisano Mall Davao", location: "Fifth Floor, OSSCO, Gaisano Mall of Davao, Bajada, J.P. Laurel Ave., Davao City, Davao del Sur", contacts: [{ contact_id: 1, type: "Email", contact_details: "pro11.fod.ossco@gmail.com" }] },
+      ],
+      addContacts: [{ type: "Website", contact_details: "https://e.gov.ph/" }],
+      applicationURLs: { 161213: "https://e.gov.ph/" },
+    },
+  },
+  // (082) 295-2133 is PhilHealth Regional Office XI's trunkline (PhilHealth directory),
+  // so it is not AMUMA's number.
+  supportGroupWrongContacts: { 1: ["(082) 295-2133"] },
   // Decision 13 (Fritz, 2026-11-15): SPMC fees from its official Rates and Fees PDF
   // (tables "As of August 31, 2022": Radiation Oncology p. 19, Room and Board p. 31,
   // Health Services and Specialty Clinic p. 57, Operating Room/Delivery Room p. 88).
@@ -441,6 +470,25 @@ function applyReview(folder, records) {
         r.programs.splice(at, 0, merged);
         log(`${r.name}: ${zs.length} Z Benefits programs -> 1 "${m.program_name}" (${packages.length} benefits, ${eligibility.length} eligibility rules, ${merged.sources.length} sources)`);
       }
+      // Decision 15: where to go, from the institution's official office directory.
+      const u = REVIEW.financialInstitutionOffices[r.id];
+      if (u) {
+        for (const [bid, change] of Object.entries(u.branchChanges ?? {})) {
+          const b = r.branches.find((x) => x.branchID === Number(bid));
+          if (!b) throw new Error(`financialInstitutionOffices: no branch ${bid} in ${r.name}`);
+          Object.assign(b, structuredClone(change));
+        }
+        for (const nb of u.addBranches ?? []) {
+          r.branches.push({ branchID: r.branches.length + 1, branchName: nb.branchName, location: nb.location, latitude: null, longitude: null, schedule: [], contacts: structuredClone(nb.contacts) });
+        }
+        for (const c of u.addContacts ?? []) r.contacts.push({ contact_id: r.contacts.length + 1, ...c });
+        for (const [pid, url] of Object.entries(u.applicationURLs ?? {})) {
+          const p = r.programs.find((x) => x.programID === Number(pid));
+          if (!p) throw new Error(`financialInstitutionOffices: no program ${pid} in ${r.name}`);
+          p.applicationURL = url;
+        }
+        log(`${r.name}: offices from the official directory -> ${r.branches.length} branches, ${r.contacts.length} main contacts`);
+      }
     }
   }
   if (folder === "HealthInstitution") {
@@ -494,6 +542,11 @@ function applyReview(folder, records) {
     for (const r of records) {
       const url = REVIEW.socmedURLs[r.id];
       if (url && r.socmedURL !== url) { log(`${r.name}: socmedURL ${r.socmedURL ?? "null"} -> ${url}`); r.socmedURL = url; }
+      // Decision 15: contacts that belong to another organization.
+      const wrong = REVIEW.supportGroupWrongContacts[r.id] ?? [];
+      const before = r.contacts.length;
+      r.contacts = r.contacts.filter((c) => !wrong.includes(c.contact_details)).map((c, i) => ({ ...c, contact_id: i + 1 }));
+      if (r.contacts.length !== before) log(`${r.name}: removed ${before - r.contacts.length} contact(s) of another organization`);
     }
   }
   // Decision 8: branch names stay null until the next source check (no change).

@@ -14,13 +14,18 @@
           "contact_id": 1,
           "type": "Hotline",
           "contact_details": "(02) 866-225-88"
+        },
+        {
+          "contact_id": 2,
+          "type": "Website",
+          "contact_details": "https://e.gov.ph/"
         }
       ],
       "branches": [
         {
           "branchID": 1,
-          "branchName": null,
-          "location": "Valgosons Building, Bolton Extension, Poblacion, Davao City",
+          "branchName": "Local Health Insurance Office (LHIO) Davao City",
+          "location": "Valgosons Bldg., Bolton Ext., Poblacion District, Davao City, Davao del Sur",
           "latitude": 7.0655,
           "longitude": 125.6128,
           "schedule": [
@@ -34,12 +39,67 @@
             {
               "contact_id": 1,
               "type": "Landline",
-              "contact_details": "(082) 295-2133"
+              "contact_details": "(082) 295-2133 loc. 6328 to 30"
+            },
+            {
+              "contact_id": 2,
+              "type": "Mobile",
+              "contact_details": "09457256139"
+            },
+            {
+              "contact_id": 3,
+              "type": "Email",
+              "contact_details": "lhiodavao.onlinetransactions@gmail.com"
+            }
+          ]
+        },
+        {
+          "branchID": 2,
+          "branchName": "PhilHealth Express Calinan",
+          "location": "Old Barangay Hall beside Police Station, Aurora-Quezon St., Calinan, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "schedule": [],
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Email",
+              "contact_details": "pro11.fod.ossco@gmail.com"
+            }
+          ]
+        },
+        {
+          "branchID": 3,
+          "branchName": "PhilHealth Express Toril",
+          "location": "Urban Health Center A, Agton St., Toril, Davao City, Davao del Sur",
+          "latitude": null,
+          "longitude": null,
+          "schedule": [],
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Mobile",
+              "contact_details": "0955 986 0938"
             },
             {
               "contact_id": 2,
               "type": "Email",
-              "contact_details": "publicaffairs.pro11@philhealth.gov.ph"
+              "contact_details": "pro11.express.toril@gmail.com"
+            }
+          ]
+        },
+        {
+          "branchID": 4,
+          "branchName": "One-Stop Service Center Office (OSSCO) Gaisano Mall Davao",
+          "location": "Fifth Floor, OSSCO, Gaisano Mall of Davao, Bajada, J.P. Laurel Ave., Davao City, Davao del Sur",
+          "latitude": null,
+          "longitude": null,
+          "schedule": [],
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Email",
+              "contact_details": "pro11.fod.ossco@gmail.com"
             }
           ]
         }
@@ -68,7 +128,7 @@
             "Colorectal Cancer",
             "Lung Cancer"
           ],
-          "applicationURL": null,
+          "applicationURL": "https://e.gov.ph/",
           "sources": [
             "https://www.philhealth.gov.ph/yakap/"
           ],
@@ -317,12 +377,32 @@
       "branches": [
         {
           "branchID": 1,
-          "branchName": null,
-          "location": "Cabaguio Davao City (near NSO Office)",
+          "branchName": "Davao del Sur Branch",
+          "location": "G/F Maharlika Bldg., JP Cabaguio Ave., Davao City",
           "latitude": null,
           "longitude": null,
           "schedule": null,
           "contacts": []
+        },
+        {
+          "branchID": 2,
+          "branchName": "Mindanao Department",
+          "location": "Maharlika Center, J.P Cabagui Avenue, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contact_id": 1,
+              "type": "Landline",
+              "contact_details": "(082) 282-0305"
+            },
+            {
+              "contact_id": 2,
+              "type": "Email",
+              "contact_details": "mindanao@pcso.gov.ph"
+            }
+          ]
         }
       ],
       "programs": [
@@ -336,9 +416,11 @@
           "cancerTypes": [
             "All cancers"
           ],
-          "applicationURL": null,
+          "applicationURL": "https://onlinemap.pcso.gov.ph/",
           "sources": [
-            "https://www.pcso.gov.ph/ProgramsAndServices/CAD/MedicalAccessProgram.aspx"
+            "https://www.pcso.gov.ph/ProgramsAndServices/CAD/MedicalAccessProgram.aspx",
+            "https://www.pcso.gov.ph/About/Directories/MindanaoDepartment.aspx",
+            "https://www.pcso.gov.ph/pcsofiles/infographics/pcsoadvisory/PCSOAdvisory2021121501.jpg"
           ],
           "benefits": [
             {
@@ -387,22 +469,26 @@
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to www.pcso.gov.ph, select \"E-Services\", then \"Online MAP Application\", and create an account."
+              "instruction": "Apply online through the Online MAP Application (steps 2 to 6), or go to a PCSO office (the Davao del Sur Branch or the Mindanao Department in Davao City), or to the PCSO or Malasakit Center desk of your hospital. In some areas, MAP can be accessed only through hospitals with a Malasakit Center."
             },
             {
               "step": 2,
-              "instruction": "Log in with your name, date of birth and email, and enter the one-time code sent to your email."
+              "instruction": "Go to www.pcso.gov.ph, select \"E-Services\", then \"Online MAP Application\", and create an account."
             },
             {
               "step": 3,
-              "instruction": "Click \"Apply Now\", choose the partner health facility, its city and the type of request, then get a queuing number."
+              "instruction": "Log in with your name, date of birth and email, and enter the one-time code sent to your email."
             },
             {
               "step": 4,
-              "instruction": "Upload all required documents as PDF files (not more than 2MB each) and submit the application."
+              "instruction": "Click \"Apply Now\", choose the partner health facility, its city and the type of request, then get a queuing number."
             },
             {
               "step": 5,
+              "instruction": "Upload all required documents as PDF files (not more than 2MB each) and submit the application."
+            },
+            {
+              "step": 6,
               "instruction": "Wait for the result in your email or in your online account."
             }
           ]
@@ -421,8 +507,17 @@
       "branches": [
         {
           "branchID": 1,
-          "branchName": null,
+          "branchName": "DOH MAIP",
           "location": "PRRD Bldg Bajada, Davao City (infront SPMC Hospital)",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        },
+        {
+          "branchID": 2,
+          "branchName": "Malasakit Center",
+          "location": "Malasakit Center, Bajada, Davao City (beside SPMC Hospital)",
           "latitude": null,
           "longitude": null,
           "schedule": null,
@@ -475,10 +570,14 @@
           "procedure": [
             {
               "step": 1,
-              "instruction": "Ask the hospital's social worker to assess you for MAIFIP. The social worker evaluates your Unified Intake Sheet."
+              "instruction": "Go to the Malasakit Center or the Medical Social Work Unit (MSW) of your hospital."
             },
             {
               "step": 2,
+              "instruction": "Ask the hospital's social worker to assess you for MAIFIP. The social worker evaluates your Unified Intake Sheet."
+            },
+            {
+              "step": 3,
               "instruction": "Submit the documents the social worker asks for. Payment is faster when the documents are complete."
             }
           ]
