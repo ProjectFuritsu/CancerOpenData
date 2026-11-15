@@ -172,11 +172,13 @@
           "cancerTypes": [
             "All cancers"
           ],
-          "applicationURL": null,
+          "applicationURL": "https://e.gov.ph/",
           "sources": [
             "https://www.sunstar.com.ph/davao/maifip-program-eases-medical-cost-burden-for-struggling-families",
             "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/",
-            "https://ro2.doh.gov.ph/medical-assistance-for-indigent-and-financially-incapacitated-patients-maifip/"
+            "https://ro2.doh.gov.ph/medical-assistance-for-indigent-and-financially-incapacitated-patients-maifip/",
+            "https://ptvnews.ph/?p=251764",
+            "https://www.sunstar.com.ph/manila/doh-expands-emaifip-to-lgu-hospitals-32k-patients-served-in-1-month"
           ],
           "benefits": [
             {
@@ -206,7 +208,7 @@
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to the Malasakit Center or the Medical Social Work Unit (MSW) of your hospital."
+              "instruction": "Go to the Malasakit Center or the Medical Social Work Unit (MSW) of your hospital, or apply online through eMAIFIP in the eGovPH app. eMAIFIP started in DOH hospitals and is being extended to LGU hospitals."
             },
             {
               "step": 2,
