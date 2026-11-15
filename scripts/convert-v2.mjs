@@ -203,6 +203,26 @@ const REVIEW = {
       ]
     }
   },
+  // Decision 13 (Fritz, 2026-11-15): SPMC fees from its official Rates and Fees PDF
+  // (tables "As of August 31, 2022": Radiation Oncology p. 19, Room and Board p. 31,
+  // Health Services and Specialty Clinic p. 57, Operating Room/Delivery Room p. 88).
+  // Values as written, no peso sign (the PDF has none). The PDF link is added to sources.
+  healthInstitutionFees: {
+    1: {
+      "Radiation Therapy (Linear Accelerator)": {
+        fee: "LINAC Daily fee: 5,160.00 (Professional Fee 800.00 to 2,200.00); Conventional Radiotherapy (2D/3D) Session: 5,160.00 (Professional Fee 800.00 to 2,200.00); IMRT Treatment Session: 16,245.00 (Professional Fee 1,680.00 to 4,000.00); CT Simulation- IMRT: 57,730.00 (Professional Fee 11,546.00 to 27,430.00); Treatment Planning Dosimetry (Xray): 24,225.00 (Professional Fee 2,380.00 to 7,225.00); TREATMENT PLANNING SYSTEM (IMRT): 25,265.00 (Professional Fee 8,400.00 to 12,265.00). As of August 31, 2022.",
+        source: "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf",
+      },
+      "Adult Cancer Clinic and Infusion Unit": {
+        fee: "Adult Onco Unit room and board: 1,000.00. CHEMOTHERAPY (AVERAGE HCI FEES): 8,871.94 (Professional Fee 1,680.00 to 33,350.00). As of August 31, 2022.",
+        source: "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf",
+      },
+      "Breast Imaging": {
+        fee: "SCREENING MAMMOGRAM: 2,500.00. DIAGNOSTIC MAMMOGRAM: 3,500.00. As of August 31, 2022.",
+        source: "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf",
+      },
+    },
+  },
   // Decision 11 (Fritz, 2026-11-15): one Z Benefits program instead of one per cancer,
   // keeping ALL the v1 details (his choice "A: labeled lists"). Every benefit, every
   // eligibility rule and each cancer's description stay as written, each labeled
@@ -447,6 +467,18 @@ function applyReview(folder, records) {
         procedure: [],
       })));
       log(`${r.name}: source, ${r.contacts.length} contacts, services ${start} -> ${r.services.length}`);
+    }
+    // Decision 13: fees by service name (a renamed service stops the build instead of being skipped).
+    for (const [id, byName] of Object.entries(REVIEW.healthInstitutionFees)) {
+      const r = records.find((x) => x.id === Number(id));
+      if (!r) continue;
+      for (const [name, f] of Object.entries(byName)) {
+        const svc = r.services.find((x) => x.service_name === name);
+        if (!svc) throw new Error(`healthInstitutionFees: no service "${name}" in ${r.name}`);
+        svc.fee = f.fee;
+        if (f.source && !svc.sources.includes(f.source)) svc.sources.push(f.source);
+      }
+      log(`${r.name}: fees for ${Object.keys(byName).length} services`);
     }
   }
   if (folder === "MedicalSpecialist") {

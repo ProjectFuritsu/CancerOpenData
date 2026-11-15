@@ -13,6 +13,7 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - Benefit `amount` separate from the benefit name; clinic `bookingType` instead of `isWalkIns` and `canDoBoth`; `eligibility` as a list.
 - No loan programs. New: PCSO (Medical Assistance Program) and DOH (MAIFIP).
 - Health institutions: SPMC gets its official site as source, its main contacts, and 8 department cancer clinics with schedules (adult oncology and hematology, surgical oncology, gynecologic oncology, trophoblastic clinic, colposcopy and Pap smear, pediatric oncology, breast imaging). New: Davao Doctors Hospital with 6 cancer services (radiation oncology, external beam radiation, brachytherapy, in-patient chemotherapy, radioactive iodine therapy, long-term radiotherapy). Sources: spmc.doh.gov.ph and ddh.com.ph.
+- SPMC fees for radiation therapy, the adult cancer unit (room and board, average chemotherapy fees) and breast imaging, as written in SPMC's official Rates and Fees PDF (tables as of August 31, 2022). The PDF is listed in each service's sources.
 - PhilHealth Z Benefits is one program (`Z Benefits`) instead of five. Every benefit and amount, every eligibility rule and each cancer's description from v1 is kept, labeled with its cancer (for example "Breast Cancer (cStage 0 to IV): Total package").
 - A `null` or empty value means "Not available".
 - Served at `/v2/` next to v1: the files at `/v2/<Folder>/<File>.json`, the dataset list at `GET /v2/`, and its own spec at `/v2/openapi.json`. v1 paths don't change.

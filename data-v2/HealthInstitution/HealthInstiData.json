@@ -57,9 +57,10 @@
           "service_name": "Adult Cancer Clinic and Infusion Unit",
           "service_description": "Opened on February 8, 2018 on the fourth floor of the Cancer Institute. It offers subsidized multidisciplinary care for all kinds of cancer. The hospital said most patients are free or subsidized charity, assisted through Lingap, PCSO and others.",
           "cancerTypes": null,
-          "fee": null,
+          "fee": "Adult Onco Unit room and board: 1,000.00. CHEMOTHERAPY (AVERAGE HCI FEES): 8,871.94 (Professional Fee 1,680.00 to 33,350.00). As of August 31, 2022.",
           "sources": [
-            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit"
+            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
+            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
           ],
           "service_schedule": null,
           "requirements": [],
@@ -73,9 +74,10 @@
           "service_name": "Radiation Therapy (Linear Accelerator)",
           "service_description": "The Cancer Institute's linear accelerator (Linac) for radiation therapy started operating with the adult cancer unit in 2018.",
           "cancerTypes": null,
-          "fee": null,
+          "fee": "LINAC Daily fee: 5,160.00 (Professional Fee 800.00 to 2,200.00); Conventional Radiotherapy (2D/3D) Session: 5,160.00 (Professional Fee 800.00 to 2,200.00); IMRT Treatment Session: 16,245.00 (Professional Fee 1,680.00 to 4,000.00); CT Simulation- IMRT: 57,730.00 (Professional Fee 11,546.00 to 27,430.00); Treatment Planning Dosimetry (Xray): 24,225.00 (Professional Fee 2,380.00 to 7,225.00); TREATMENT PLANNING SYSTEM (IMRT): 25,265.00 (Professional Fee 8,400.00 to 12,265.00). As of August 31, 2022.",
           "sources": [
-            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit"
+            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
+            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
           ],
           "service_schedule": null,
           "requirements": [],
@@ -268,9 +270,10 @@
           "cancerTypes": [
             "Breast Cancer"
           ],
-          "fee": null,
+          "fee": "SCREENING MAMMOGRAM: 2,500.00. DIAGNOSTIC MAMMOGRAM: 3,500.00. As of August 31, 2022.",
           "sources": [
-            "https://spmc.doh.gov.ph/radiological-and-imaging-sciences/"
+            "https://spmc.doh.gov.ph/radiological-and-imaging-sciences/",
+            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
           ],
           "service_schedule": [
             {
