@@ -38,6 +38,18 @@ const REVIEW = {
   // in each program's sources (PhilHealth circulars) and in the v1 data.
   zBenefitsRequirements: ["PhilHealth ID"],
   zBenefitsSteps: ["Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."],
+  // Decision 11 (Fritz, 2026-11-15): one Z Benefits program instead of one per cancer,
+  // keeping ALL the v1 details (his choice "A: labeled lists"). Every benefit, every
+  // eligibility rule and each cancer's description stay as written, each labeled
+  // "<cancer>: ...". The general membership rule below comes first, unlabeled; a cancer's
+  // own copy of it is not repeated when it is word-for-word the same.
+  zBenefitsMerge: {
+    programID: 101002,
+    program_name: "Z Benefits",
+    // As written in the newer circulars (PC2024-0007, PC2023-0005).
+    eligibility: ["PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval"],
+    program_description: "PhilHealth's Z Benefits packages for selected cancers, at Z Benefits contracted health facilities. Each cancer has its own package and medical criteria; the hospital's Z Benefits coordinator checks them.",
+  },
   // Decision 5: cancer types as named in each Z Benefits program name.
   cancerTypesByProgram: {
     101002: ["Breast Cancer"],
@@ -213,6 +225,34 @@ function applyReview(folder, records) {
         }
       }
       if (split || total) log(`${r.name}: benefits split ${split}, "Total package" ${total}`);
+      // Decision 11: the Z Benefits programs become one, where the first one was.
+      const zs = r.programs.filter((p) => p.program_name.startsWith("Z Benefits:"));
+      if (zs.length > 1) {
+        const m = REVIEW.zBenefitsMerge;
+        const cancerOf = (p) => p.program_name.replace(/^Z Benefits:\s*/, "");
+        const packages = zs.flatMap((p) => p.benefits.map((b) => ({ benefit_name: `${cancerOf(p)}: ${b.benefit_name}`, amount: b.amount })));
+        const eligibility = [
+          ...m.eligibility,
+          ...zs.flatMap((p) => p.eligibility.filter((e) => !m.eligibility.includes(e)).map((e) => `${cancerOf(p)}: ${e}`)),
+        ];
+        const description = [m.program_description, ...zs.map((p) => `${cancerOf(p)}: ${p.program_description}`)].join("\n\n");
+        const merged = {
+          programID: m.programID,
+          program_name: m.program_name,
+          eligibility,
+          program_description: description,
+          cancerTypes: [...new Set(zs.flatMap((p) => p.cancerTypes ?? []))],
+          applicationURL: null,
+          sources: [...new Set(zs.flatMap((p) => p.sources ?? []))],
+          benefits: packages.map((b, i) => ({ benefit_id: i + 1, ...b })),
+          requirements: zs[0].requirements,
+          procedure: zs[0].procedure,
+        };
+        const at = r.programs.indexOf(zs[0]);
+        r.programs = r.programs.filter((p) => !zs.includes(p));
+        r.programs.splice(at, 0, merged);
+        log(`${r.name}: ${zs.length} Z Benefits programs -> 1 "${m.program_name}" (${packages.length} benefits, ${eligibility.length} eligibility rules, ${merged.sources.length} sources)`);
+      }
     }
   }
   if (folder === "HealthInstitution") {

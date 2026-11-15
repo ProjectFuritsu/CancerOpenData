@@ -12,6 +12,7 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - Lists of `sources`, `cancerTypes`, `lastVerified`, and one fixed list of contact types.
 - Benefit `amount` separate from the benefit name; clinic `bookingType` instead of `isWalkIns` and `canDoBoth`; `eligibility` as a list.
 - No loan programs. New: PCSO (Medical Assistance Program) and DOH (MAIFIP).
+- PhilHealth Z Benefits is one program (`Z Benefits`) instead of five. Every benefit and amount, every eligibility rule and each cancer's description from v1 is kept, labeled with its cancer (for example "Breast Cancer (cStage 0 to IV): Total package").
 - A `null` or empty value means "Not available".
 - Served at `/v2/` next to v1: the files at `/v2/<Folder>/<File>.json`, the dataset list at `GET /v2/`, and its own spec at `/v2/openapi.json`. v1 paths don't change.
 - The docs page has a version picker (v1 or v2); `/docs/?version=v2` opens v2.
