@@ -1,5 +1,5 @@
 {
-  "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. PSMO posts (https://www.psmo.ph/blog) approved by Fritz on 2026-11-15 (feeds review): titles, authors and dates as written, summaries in our own words.",
+  "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. PSMO posts (https://www.psmo.ph/blog) approved by Fritz on 2026-11-15 (feeds review): titles, authors and dates as written, summaries in our own words. Davao City cancer news (davaocity.gov.ph, SunStar Davao, MindaNews, Daily Tribune) approved by Fritz on 2026-11-15, same rules.",
   "Feed": [
     {
       "id": 3,
@@ -93,6 +93,123 @@
       ],
       "publishDate": "30 June 2025",
       "source": "https://www.psmo.ph/blog/news-2/philippine-society-of-medical-oncologists-a-vital-presence-at-the-1st-national-patient-navigation-conference-18"
+    },
+    {
+      "id": 9,
+      "title": "Davao City boosts anti cervical cancer drive",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Cervical Cancer",
+        "Screening"
+      ],
+      "content": "For Cervical Cancer Consciousness Month, the Davao City Health Office reminded women that free cervical cancer screening by visual inspection with acetic acid (VIA) and free HPV vaccination are available all year in the city's health centers. Some barangays also offer Pap smears; women can ask their health center for the schedule.",
+      "authors": [
+        "CIO Admin"
+      ],
+      "publishDate": "4 May 2026",
+      "source": "https://davaocity.gov.ph/health/davao-city-boosts-anti-cervical-cancer-drive/"
+    },
+    {
+      "id": 10,
+      "title": "Free breast cancer-screening available all-year-roundin health centers",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Breast Cancer",
+        "Screening"
+      ],
+      "content": "The Davao City Health Office reminded the public that breast cancer screening is free all year in health centers across the city. From January to September 2025 it screened 33,796 people and referred 364 with suspicious lumps for follow-up. It noted that breast cancer can affect women as young as 25, and most deaths are among women aged 60 and above.",
+      "authors": [
+        "CIO Admin"
+      ],
+      "publishDate": "23 October 2025",
+      "source": "https://davaocity.gov.ph/health/free-breast-cancer-screening-available-all-year-roundin-health-centers/"
+    },
+    {
+      "id": 11,
+      "title": "Davao City logs 197 breast cancer deaths in 2024",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Breast Cancer"
+      ],
+      "content": "The City Health Office recorded 197 breast cancer deaths in Davao City in 2024, including four men, and 161 more from January to September 2025. Most were aged 50 and above, though some were in their early 20s. The office urges all women aged 40 and above to get a yearly mammogram, even without symptoms.",
+      "authors": [
+        "Rojean Grace G. Patumbon"
+      ],
+      "publishDate": "24 October 2025",
+      "source": "https://www.sunstar.com.ph/davao/davao-city-logs-197-breast-cancer-deaths-in-2024"
+    },
+    {
+      "id": 12,
+      "title": "Cervical cancer deaths, screening rates decline",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Cervical Cancer",
+        "Screening"
+      ],
+      "content": "Cervical cancer deaths in Davao City fell from 88 in 2023 to 67 in 2024, the City Health Office said, but fewer women got screened: 7,137 in 2023 and 6,104 in 2024. Most cases are in women aged 40 to 50. The HPV vaccine is free at health centers for girls aged 9 to 14, given in two doses six months apart.",
+      "authors": [
+        "Rojean Grace G. Patumbon"
+      ],
+      "publishDate": "16 May 2025",
+      "source": "https://www.sunstar.com.ph/davao/cervical-cancer-deaths-screening-rates-decline"
+    },
+    {
+      "id": 13,
+      "title": "SPMC says child cancer patients skipping treatment down to 2%",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Childhood Cancer"
+      ],
+      "content": "Southern Philippines Medical Center says the share of children who stop their cancer treatment fell from 90 percent in 2004 to 2 percent last year. Dr. Mae Dolendo, head of SPMC's Children's Cancer Institute, credited the hospital's strategies and support from government and non-government groups.",
+      "authors": [
+        "CIO Admin"
+      ],
+      "publishDate": "19 September 2025",
+      "source": "https://davaocity.gov.ph/health/spmc-says-child-cancer-patients-skipping-treatment-down-to-2/"
+    },
+    {
+      "id": 14,
+      "title": "Davao City's SPMC now performing non-surgical procedure to remove brain tumors",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Radiation Therapy",
+        "Brain Tumor"
+      ],
+      "content": "The Cancer Institute of Southern Philippines Medical Center began offering stereotactic radiosurgery (SRS), a non-surgical treatment that aims high doses of radiation at a precise spot, making it the only government hospital in the country able to do it. Its first patient was a 27-year-old Davao City resident with a brain tumor (cranial meningioma), treated in five sessions.",
+      "authors": [
+        "Antonio L. Colina IV"
+      ],
+      "publishDate": "10 February 2026",
+      "source": "https://mindanews.com/top-stories/2026/02/davao-citys-spmc-now-performing-non-surgical-procedure-to-remove-brain-tumors/"
+    },
+    {
+      "id": 15,
+      "title": "Malasakit Center eases cancer treatment burden for North Cotabato midwife",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Breast Cancer",
+        "Financial Help"
+      ],
+      "content": "A midwife from Magpet, North Cotabato, diagnosed with Stage 2 breast cancer in 2024, had surgery, chemotherapy and radiation therapy at Southern Philippines Medical Center in Davao City. The story tells how the hospital's Malasakit Center helped with the cost of her treatment.",
+      "authors": [
+        "Daily Tribune"
+      ],
+      "publishDate": "26 August 2026",
+      "source": "https://tribune.net.ph/2026/08/26/malasakit-center-eases-cancer-treatment-burden-for-north-cotabato-midwife"
     }
   ]
 }
