@@ -44,6 +44,9 @@ const REVIEW = {
   // since v2 services have no location field. New services get the next serviceIDs, branch 1.
   healthInstitutionUpdates: {
     "1": {
+      // Decision 14 (Fritz, 2026-11-15): renamed from "SPMC Cancer Institute", because its
+      // cancer clinics are in several SPMC departments, not only the Cancer Institute.
+      "name": "Southern Philippines Medical Center",
       "source": "https://spmc.doh.gov.ph/",
       "contacts": [
         {
@@ -451,6 +454,7 @@ function applyReview(folder, records) {
     for (const [id, u] of Object.entries(REVIEW.healthInstitutionUpdates)) {
       const r = records.find((x) => x.id === Number(id));
       if (!r) continue;
+      if (u.name) { log(`${r.name} -> renamed "${u.name}"`); r.name = u.name; }
       if (u.source) r.source = u.source;
       if (u.contacts) r.contacts = structuredClone(u.contacts);
       const start = r.services.length;
