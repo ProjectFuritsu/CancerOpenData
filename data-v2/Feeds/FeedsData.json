@@ -26,6 +26,99 @@
       ],
       "publishDate": "20 November 2025",
       "source": "https://www.philcancer.org.ph/about-us/announcements/latest-news/123-dost-asti-convenes"
+    },
+    {
+      "id": 3,
+      "title": "NCCN Partners with Philippine Cancer Organizations to Develop Locally Adapted Cancer Treatment Guidelines",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Treatment Guidelines"
+      ],
+      "content": "The National Comprehensive Cancer Network (NCCN) is working with Philippine medical groups, including PSMO and the Society of Gynecological Oncologists of the Philippines, to adapt its cancer treatment guidelines to conditions in the Philippines. The planned guidelines cover 10 cancers: B-cell lymphomas, breast, colon, hepatocellular carcinoma (liver), lung, prostate, rectal, cervical, ovarian and uterine cancer. The aim is more consistent, evidence-based treatment for Filipino patients.",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "19 October 2026",
+      "source": "https://www.psmo.ph/blog/news-2/nccn-partners-with-philippine-cancer-organizations-to-develop-locally-adapted-cancer-treatment-guidelines-42"
+    },
+    {
+      "id": 4,
+      "title": "PANAG-ISTORYA: Conversations that matter in Cancer Care.",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Conference"
+      ],
+      "content": "PSMO announced its 24th Midyear Convention, set for 16–17 April 2026 at the Dusit Thani D2 Hotel in Davao City. The theme, Panag-istorya (a Visayan word for dialogue), is about how cancer doctors talk with patients and families during hard moments, with a communication skills workshop led by Dr. Antonio Sison, who trained in psycho-oncology.",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "18 February 2026",
+      "source": "https://www.psmo.ph/blog/news-2/panag-istorya-conversations-that-matter-in-cancer-care-38"
+    },
+    {
+      "id": 5,
+      "title": "A Unified Front in Systemic Care: PSMO Reinforces the National Cancer Alliance",
+      "bgImageURL": "",
+      "category": "Blog",
+      "tags": [
+        "Cancer Care Network"
+      ],
+      "content": "On World Cancer Day, 4 February 2026, PSMO joined the Philippine Cancer Society, the Philippine Society of Oncologists and the Philippine Medical Association at the PMA Auditorium. The groups signed a National Alliance memorandum of understanding on working together to make patient care pathways smoother, and launched a partnership between Quezon City and the City Cancer Challenge (C/Can).",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "10 February 2026",
+      "source": "https://www.psmo.ph/blog/blogs-5/a-unified-front-in-systemic-care-psmo-reinforces-the-national-cancer-alliance-37"
+    },
+    {
+      "id": 6,
+      "title": "BARANGAYAN GOES TO GINGOOG CITY!",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Cancer Awareness",
+        "Barangay Health Workers"
+      ],
+      "content": "On 16 August 2025, PSMO held a cancer awareness caravan for health workers at the Arturo S. Lugod Gymnasium in Gingoog City. Doctors, barangay health workers and cancer survivors talked about cancer basics, prevention, screening, treatment and common myths. It was done with the Department of Health, the Gingoog City government and the Philippine College of Physicians–Caraga Chapter.",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "21 August 2025",
+      "source": "https://www.psmo.ph/blog/news-2/barangayan-goes-to-gingoog-city-27"
+    },
+    {
+      "id": 7,
+      "title": "Ano ang Sarcoma?",
+      "bgImageURL": "",
+      "category": "Blog",
+      "tags": [
+        "Sarcoma"
+      ],
+      "content": "A short PSMO explainer in Filipino about sarcoma, a rare cancer that grows in bones and soft tissues such as muscle, fat, blood vessels, nerves, tendons and cartilage. It reminds readers that not every lump is cancer, but a swelling that lasts more than 2 weeks should be checked by a doctor.",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "31 July 2025",
+      "source": "https://www.psmo.ph/blog/blogs-5/ano-ang-sarcoma-24"
+    },
+    {
+      "id": 8,
+      "title": "Philippine Society of Medical Oncologists: A Vital Presence at the 1st National Patient Navigation Conference",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Patient Navigation"
+      ],
+      "content": "PSMO took part in the 1st National Patient Navigation Conference on 26–27 June 2025 at Casa Ibarra, Pasay City. It was organized by the DOH Cancer Control Division, Amang Rodriguez Memorial Medical Center and the Philippine Cancer Society, and ended a training program that trained 61 patient navigators, who guide patients through cancer care.",
+      "authors": [
+        "Herdee Gloriane C. Luna, MD",
+        "PSMO Digital"
+      ],
+      "publishDate": "30 June 2025",
+      "source": "https://www.psmo.ph/blog/news-2/philippine-society-of-medical-oncologists-a-vital-presence-at-the-1st-national-patient-navigation-conference-18"
     }
   ]
 }
