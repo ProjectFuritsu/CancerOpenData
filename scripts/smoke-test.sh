@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Checks the public URL after a deploy, the way a browser app would see it.
-# For every JSON file in data/ and every image in images/<Folder>/:
+# For every JSON file in data/ (and data-v2/, served at /v2/) and every image in images/<Folder>/:
 #   - GET returns 200
 #   - the body is byte-for-byte the same as the repo file
 #   - Access-Control-Allow-Origin is sent (CORS works for other sites)
@@ -19,8 +19,13 @@ WAIT="${SMOKE_WAIT:-15}"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
+url_path() {     # local path -> path in the API: data/X -> X, data-v2/X -> v2/X, images/X -> images/X
+  case "$1" in data-v2/*) echo "v2/${1#data-v2/}" ;; data/*) echo "${1#data/}" ;; *) echo "$1" ;; esac
+}
+
 check_file() {   # $1 = local path; prints a reason and returns 1 on failure
-  local file="$1" key="${1#data/}" headers code acao ctype
+  local file="$1" key headers code acao ctype
+  key=$(url_path "$1")
   headers=$(curl -sS -m 20 -D - -o "$TMP/body" -H "Origin: $ORIGIN" -H "Cache-Control: no-cache" \
     "$PUBLIC_URL/$key?smoke=${GITHUB_SHA:-local}" 2>&1) || { echo "request failed: $headers"; return 1; }
   code=$(printf '%s\n' "$headers" | awk 'toupper($1) ~ /^HTTP/ {c=$2} END {print c}')
@@ -42,6 +47,7 @@ check_file() {   # $1 = local path; prints a reason and returns 1 on failure
 mapfile -d '' FILES < <(
   {
     find data -type f -name '*.json' -print0
+    [[ -d data-v2 ]] && find data-v2 -type f -name '*.json' -print0
     [[ -d images ]] && find images -mindepth 2 -maxdepth 2 -type f -size -5121k -regextype posix-extended \
       -regex 'images/[A-Za-z0-9_-]+/[a-z0-9][a-z0-9._-]*\.(webp|avif|png|jpg|jpeg|gif)' -print0
   } | sort -z
@@ -52,10 +58,10 @@ for ((try = 1; try <= TRIES; try++)); do
   failed=()
   for file in "${pending[@]}"; do
     if reason=$(check_file "$file"); then
-      echo "PASS ${file#data/}"
+      echo "PASS $(url_path "$file")"
     else
       failed+=("$file")
-      echo "wait ${file#data/}: $reason"
+      echo "wait $(url_path "$file"): $reason"
     fi
   done
   pending=("${failed[@]}")
@@ -68,7 +74,7 @@ done
 
 # CORS preflight, as a browser sends before some cross-site requests.
 pre=$(curl -sS -m 20 -o /dev/null -D - -X OPTIONS -H "Origin: $ORIGIN" \
-  -H "Access-Control-Request-Method: GET" "$PUBLIC_URL/${FILES[0]#data/}" 2>&1)
+  -H "Access-Control-Request-Method: GET" "$PUBLIC_URL/$(url_path "${FILES[0]}")" 2>&1)
 pre_code=$(printf '%s\n' "$pre" | awk 'toupper($1) ~ /^HTTP/ {c=$2} END {print c}')
 pre_acao=$(printf '%s\n' "$pre" | grep -ic '^access-control-allow-origin:')
 # Static assets on Workers answer OPTIONS with 405. Plain GET requests (no custom
@@ -91,6 +97,14 @@ if [[ "$spec_code" == "200" ]] && grep -q '"openapi": *"3\.1' "$TMP/spec"; then
 else
   echo "FAIL openapi.json (status $spec_code)"; docs_ok=0
 fi
+if [[ -d data-v2 ]]; then
+  v2_code=$(curl -sS -m 20 -o "$TMP/spec2" -w '%{http_code}' "$PUBLIC_URL/v2/openapi.json" 2>/dev/null || echo 000)
+  if [[ "$v2_code" == "200" ]] && grep -q '"openapi": *"3.1' "$TMP/spec2"; then
+    echo "PASS v2/openapi.json"
+  else
+    echo "FAIL v2/openapi.json (status $v2_code)"; docs_ok=0
+  fi
+fi
 docs_code=$(curl -sS -m 20 -o "$TMP/docs" -w '%{http_code}' "$PUBLIC_URL/docs/" 2>/dev/null || echo 000)
 if [[ "$docs_code" == "200" ]] && grep -q 'swagger-ui-bundle.js' "$TMP/docs"; then
   echo "PASS docs/"
@@ -105,7 +119,7 @@ echo; echo "$summary"
 [[ -n "${GITHUB_STEP_SUMMARY:-}" ]] && echo "$summary" >> "$GITHUB_STEP_SUMMARY"
 
 if (( bad > 0 || pre_ok == 0 || docs_ok == 0 )); then
-  for file in "${pending[@]}"; do echo "::error title=Smoke test failed::${file#data/}"; done
-  (( docs_ok == 0 )) && echo "::error title=Smoke test failed::docs/ or openapi.json"
+  for file in "${pending[@]}"; do echo "::error title=Smoke test failed::$(url_path "$file")"; done
+  (( docs_ok == 0 )) && echo "::error title=Smoke test failed::docs/ or an openapi.json"
   exit 1
 fi

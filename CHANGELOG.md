@@ -13,6 +13,8 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - Benefit `amount` separate from the benefit name; clinic `bookingType` instead of `isWalkIns` and `canDoBoth`; `eligibility` as a list.
 - No loan programs. New: PCSO (Medical Assistance Program) and DOH (MAIFIP).
 - A `null` or empty value means "Not available".
+- Served at `/v2/` next to v1: the files at `/v2/<Folder>/<File>.json`, the dataset list at `GET /v2/`, and its own spec at `/v2/openapi.json`. v1 paths don't change.
+- The docs page has a version picker (v1 or v2); `/docs/?version=v2` opens v2.
 
 ### Repo
 - Issue forms: wrong data, new resource, API problem, privacy or removal request. Blank issues are off.

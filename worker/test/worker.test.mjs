@@ -32,6 +32,13 @@ async function expectError(res, status) {
   return body;
 }
 
+// A schema as build-openapi.mjs embeds it: local $refs ("#/$defs/x") point into
+// components.schemas.<name>; everything else as written.
+const asEmbedded = (schema, name) => {
+  const { $schema, $id, ...rest } = schema;
+  return JSON.parse(JSON.stringify(rest).replace(/"\$ref":"#(\/[^"]*)?"/g, (m, p) => `"$ref":"#/components/schemas/${name}${p ?? ""}"`));
+};
+
 // ---- Unit tests: call the Worker code directly with a fake asset store ----
 const call = (path, assetsFetch, init) =>
   workerModule.fetch(new Request(`https://api.test${path}`, init), { ASSETS: { fetch: assetsFetch } });
@@ -51,6 +58,20 @@ await test("unit: broken index.json -> JSON 500 with CORS", () => quiet(async ()
 await test("unit: 404 has the standard error shape", async () => {
   const body = await expectError(await call("/nope", async () => new Response(null, { status: 404 })), 404);
   assert.equal(body.error.path, "/nope");
+});
+await test("unit: /v2/ when v2 isn't built -> JSON 404 with CORS", async () => {
+  const body = await expectError(await call("/v2/", async () => new Response("nope", { status: 404 })), 404);
+  assert.equal(body.error.path, "/v2/");
+});
+await test("unit: /v2/ lists v2 datasets with full URLs", async () => {
+  const assets = async (req) => {
+    assert.equal(new URL(req.url ?? req).pathname, "/v2/index.json"); // the Worker passes a URL
+    return Response.json({ docs: "/docs/?version=v2", openapi: "/v2/openapi.json", datasets: [{ name: "Feeds", data: "/v2/Feeds/FeedsData.json", schema: "/v2/Feeds/FeedsData.schema.json" }] });
+  };
+  const body = await (await call("/v2", assets)).json();
+  assert.equal(body.datasets[0].data, "https://api.test/v2/Feeds/FeedsData.json");
+  assert.equal(body.openapi, "https://api.test/v2/openapi.json");
+  assert.match(body.usage, /api\.test\/v2\//);
 });
 await test("unit: 405 has the standard error shape and Allow", async () => {
   const res = await call("/", async () => new Response(null), { method: "DELETE" });
@@ -72,6 +93,10 @@ execFileSync("node", ["scripts/build-site.mjs"], { cwd: root, stdio: "inherit", 
 rmSync(imgDir, { recursive: true, force: true });
 const index = JSON.parse(readFileSync(join(here, "..", "dist", "index.json"), "utf8"));
 const files = index.datasets.flatMap(d => [d.data, d.schema]).map(p => p.slice(1));
+// v2 is built only when data-v2/ exists; its tests run only then.
+const hasV2 = existsSync(join(root, "data-v2"));
+const indexV2 = hasV2 ? JSON.parse(readFileSync(join(here, "..", "dist", "v2", "index.json"), "utf8")) : null;
+const filesV2 = hasV2 ? indexV2.datasets.flatMap(d => [d.data, d.schema]).map(p => p.slice(1)) : [];
 
 const worker = await unstable_startWorker({
   config: join(here, "..", "wrangler.jsonc"),
@@ -90,6 +115,17 @@ try {
       assert.equal(r.headers.get("cache-control"), "public, max-age=300");
       assert.ok(r.headers.get("etag"), "has ETag");
       assert.deepEqual(Buffer.from(await r.arrayBuffer()), readFileSync(join(root, "data", key)));
+    });
+  }
+
+  for (const key of filesV2) {
+    await test(`GET ${key} (v2 static asset)`, async () => {
+      const r = await fetch(`${base}/${key}`, { headers: { Origin: "https://example.com" } });
+      assert.equal(r.status, 200);
+      assert.equal(r.headers.get("access-control-allow-origin"), "*");
+      assert.match(r.headers.get("content-type") ?? "", /^application\/json/);
+      assert.equal(r.headers.get("cache-control"), "public, max-age=300");
+      assert.deepEqual(Buffer.from(await r.arrayBuffer()), readFileSync(join(root, "data-v2", key.slice("v2/".length))));
     });
   }
 
@@ -125,10 +161,63 @@ try {
       assert.ok(spec.paths[d.data], `path ${d.data}`);
       assert.ok(spec.paths[d.schema], `path ${d.schema}`);
       const real = JSON.parse(readFileSync(join(root, "data", d.schema.slice(1)), "utf8"));
-      delete real.$schema; delete real.$id;
-      assert.deepEqual(spec.components.schemas[d.name], real, `${d.name} schema embedded as written`);
+      assert.deepEqual(spec.components.schemas[d.name], asEmbedded(real, d.name), `${d.name} schema embedded as written`);
     }
     assert.ok(spec.paths["/images/{folder}/{file}"], "images path");
+  });
+
+  if (hasV2) {
+    await test("/v2/openapi.json is a valid OpenAPI 3.1 spec with every v2 dataset", async () => {
+      const r = await fetch(`${base}/v2/openapi.json`);
+      assert.equal(r.status, 200);
+      const spec = await r.json();
+      const result = await new Validator().validate(spec);
+      assert.ok(result.valid, JSON.stringify(result.errors)?.slice(0, 500));
+      assert.match(spec.info.title, /v2/);
+      assert.ok(spec.paths["/v2/"], "v2 list path");
+      for (const d of indexV2.datasets) {
+        assert.ok(spec.paths[d.data], `path ${d.data}`);
+        assert.ok(spec.paths[d.schema], `path ${d.schema}`);
+        const real = JSON.parse(readFileSync(join(root, "data-v2", d.schema.slice("/v2/".length)), "utf8"));
+        assert.deepEqual(spec.components.schemas[d.name], asEmbedded(real, d.name), `${d.name} v2 schema embedded as written`);
+      }
+    });
+
+    for (const path of ["/v2/", "/v2"]) {
+      await test(`${path} lists every v2 dataset with full URLs`, async () => {
+        const r = await fetch(`${base}${path}`);
+        assert.equal(r.status, 200);
+        assert.equal(r.headers.get("access-control-allow-origin"), "*");
+        const body = await r.json();
+        assert.equal(body.apiVersion, "v2");
+        assert.equal(body.datasets.length, 5);
+        assert.equal(body.openapi, `${base}/v2/openapi.json`);
+        assert.equal(body.docs, `${base}/docs/?version=v2`);
+        for (const d of body.datasets) {
+          assert.ok(d.data.startsWith(`${base}/v2/`) && d.schema.startsWith(`${base}/v2/`), `full v2 URLs for ${d.name}`);
+          const back = await fetch(d.data);
+          assert.equal(back.status, 200, `${d.data} loads`);
+          await back.arrayBuffer();
+        }
+      });
+    }
+  }
+
+  await test("/docs/versions.json lists the versions the picker offers, and each spec loads", async () => {
+    const r = await fetch(`${base}/docs/versions.json`);
+    assert.equal(r.status, 200);
+    const versions = await r.json();
+    assert.deepEqual(versions.map(v => v.id), hasV2 ? ["v1", "v2"] : ["v1"]);
+    for (const v of versions) {
+      const spec = await fetch(`${base}${v.spec}`);
+      assert.equal(spec.status, 200, `${v.spec} loads`);
+      await spec.arrayBuffer();
+    }
+  });
+
+  await test("/docs/ has the version picker", async () => {
+    const html = await (await fetch(`${base}/docs/`)).text();
+    assert.match(html, /id="api-version"/);
   });
 
   await test("/docs/ serves Swagger UI with a strict CSP", async () => {
