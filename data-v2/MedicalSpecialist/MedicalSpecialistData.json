@@ -23,6 +23,21 @@
           "contacts": [],
           "schedule": [
             {
+              "day": "Monday",
+              "timeIn": "09:00 am",
+              "timeOut": "01:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "09:00 am",
+              "timeOut": "01:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "09:00 am",
+              "timeOut": "01:00 pm"
+            },
+            {
               "day": "Friday",
               "timeIn": "09:00 am",
               "timeOut": "01:00 pm"
@@ -49,7 +64,7 @@
           "location": "Ground Floor, SM Lanang, J.P. Laurel Ave, Agdao, Davao City, 8000 Davao del Sur",
           "latitude": null,
           "longitude": null,
-          "bookingType": "Walk-in and appointment",
+          "bookingType": "Walk-in only",
           "contacts": [],
           "schedule": [
             {
@@ -63,9 +78,55 @@
               "timeOut": "05:00 am"
             },
             {
-              "day": "Friday to Saturday",
+              "day": "Friday",
               "timeIn": "01:00 am",
+              "timeOut": "03:00 am"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "01:00 am",
+              "timeOut": "03:00 am"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "Miguel Villanueva General Surgery and Surgical Oncology Clinic",
+          "location": "Room 204, 2nd Floro Jesusa Complex, Malvar Street Corner Mt. Apo Street, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "10:00 am",
               "timeOut": "03:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "10:00 am",
+              "timeOut": "03:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
             }
           ]
         }
@@ -85,15 +146,51 @@
       "clinics": [
         {
           "clinicID": 1,
+          "clinicName": "Davao Doctor's Hospital",
+          "location": "118 E, Quirino Avenue, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Appointment only",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "08:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "08:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "08:00 am",
+              "timeOut": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
           "clinicName": "Online Clinic",
           "location": "NowServing App",
           "latitude": null,
           "longitude": null,
-          "bookingType": "Walk-in and appointment",
+          "bookingType": "Appointment only",
           "contacts": [],
           "schedule": [
             {
-              "day": "Monday to Tuesday, Friday",
+              "day": "Monday",
+              "timeIn": "08:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "08:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIn": "08:00 am",
               "timeOut": "04:00 pm"
             }
@@ -115,27 +212,6 @@
       "clinics": [
         {
           "clinicID": 1,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
-          "latitude": null,
-          "longitude": null,
-          "bookingType": "Walk-in and appointment",
-          "contacts": [],
-          "schedule": [
-            {
-              "day": "Monday, Wednesday and Friday",
-              "timeIn": "10:00 am",
-              "timeOut": "04:00 pm"
-            },
-            {
-              "day": "Tuesday and Thursday",
-              "timeIn": "01:00 pm",
-              "timeOut": "04:00 pm"
-            }
-          ]
-        },
-        {
-          "clinicID": 2,
           "clinicName": "Brokenshire Integrated Health Ministries, Inc.",
           "location": "Madapo Hill, Davao City",
           "latitude": null,
@@ -144,14 +220,34 @@
           "contacts": [],
           "schedule": [
             {
-              "day": "Monday to Friday",
+              "day": "Monday",
+              "timeIn": "12:00 pm",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "12:00 pm",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "12:00 pm",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "12:00 pm",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIn": "12:00 pm",
               "timeOut": "02:00 pm"
             }
           ]
         },
         {
-          "clinicID": 3,
+          "clinicID": 2,
           "clinicName": "Metro Davao Medical and Research Center",
           "location": "Bajada, Davao City",
           "latitude": null,
@@ -160,9 +256,50 @@
           "contacts": [],
           "schedule": [
             {
-              "day": "Tuesday and Thursday",
+              "day": "Tuesday",
               "timeIn": "09:00 am",
               "timeOut": "11:00 am"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "09:00 am",
+              "timeOut": "11:00 am"
+            }
+          ]
+        },
+        {
+          "clinicID": 3,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
             }
           ]
         }
@@ -190,7 +327,17 @@
           "contacts": [],
           "schedule": [
             {
-              "day": "Monday, Wednesday and Friday",
+              "day": "Monday",
+              "timeIn": "01:00 pm",
+              "timeOut": "03:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "01:00 pm",
+              "timeOut": "03:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIn": "01:00 pm",
               "timeOut": "03:00 pm"
             }
@@ -199,14 +346,19 @@
         {
           "clinicID": 2,
           "clinicName": "Tagum Global Medical Center",
-          "location": "Daang Maharlika Hwy",
+          "location": "Daang Maharlika Hwy,",
           "latitude": null,
           "longitude": null,
           "bookingType": "Walk-in and appointment",
           "contacts": [],
           "schedule": [
             {
-              "day": "Tuesday and Thursday",
+              "day": "Tuesday",
+              "timeIn": "10:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
               "timeIn": "10:00 am",
               "timeOut": "12:00 pm"
             }
@@ -222,21 +374,31 @@
       "description": "Treats and manages Adrenal, Kidney, Ureter, Bladder, Prostate, Testicular and Penile Cancers and Genitourinary Stones",
       "imageURL": "",
       "sources": [
-        "https://seriousmd.com/doc/jpabrina?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1"
+        "https://seriousmd.com/doc/jay-r-enojo"
       ],
       "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
-          "clinicName": "Brokenshire Medical Center",
+          "clinicName": "BROKENSHIRE MEDICAL CENTER",
           "location": "Madapo Hill, Davao City",
           "latitude": null,
           "longitude": null,
-          "bookingType": "Walk-in and appointment",
+          "bookingType": "Appointment only",
           "contacts": [],
           "schedule": [
             {
-              "day": "Monday, Wednesday and Friday",
+              "day": "Monday",
+              "timeIn": "01:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "01:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIn": "01:00 pm",
               "timeOut": "05:00 pm"
             }
@@ -248,7 +410,7 @@
           "location": "Bajada, Davao City",
           "latitude": null,
           "longitude": null,
-          "bookingType": "Walk-in and appointment",
+          "bookingType": "Appointment only",
           "contacts": [],
           "schedule": [
             {
@@ -274,22 +436,6 @@
       "clinics": [
         {
           "clinicID": 1,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
-          "latitude": null,
-          "longitude": null,
-          "bookingType": "Walk-in and appointment",
-          "contacts": [],
-          "schedule": [
-            {
-              "day": "Monday to Friday",
-              "timeIn": "10:00 am",
-              "timeOut": "04:00 pm"
-            }
-          ]
-        },
-        {
-          "clinicID": 2,
           "clinicName": "Matunog Cancer Care Clinic",
           "location": "Guzman Street",
           "latitude": null,
@@ -298,7 +444,63 @@
           "contacts": [],
           "schedule": [
             {
-              "day": "Monday to Friday",
+              "day": "Monday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Appointment only",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "10:00 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIn": "10:00 am",
               "timeOut": "04:00 pm"
             }
@@ -320,32 +522,6 @@
       "clinics": [
         {
           "clinicID": 1,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
-          "latitude": null,
-          "longitude": null,
-          "bookingType": "Appointment only",
-          "contacts": [],
-          "schedule": [
-            {
-              "day": "Monday and Tuesday, Thursday and Saturday",
-              "timeIn": "09:00 am",
-              "timeOut": "05:00 pm"
-            },
-            {
-              "day": "Wednesday",
-              "timeIn": "01:00 pm",
-              "timeOut": "05:00 pm"
-            },
-            {
-              "day": "Friday",
-              "timeIn": "11:00 am",
-              "timeOut": "05:00 pm"
-            }
-          ]
-        },
-        {
-          "clinicID": 2,
           "clinicName": "M300 Health Science Wellness Center",
           "location": "Bajada, Davao City",
           "latitude": null,
@@ -354,9 +530,55 @@
           "contacts": [],
           "schedule": [
             {
-              "day": "Tuesday, Thursday and Saturday",
+              "day": "Thursday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "01:00 pm",
+              "timeOut": "03:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "12:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "08:00 am",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "01:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "08:00 am",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "12:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Saturday",
               "timeIn": "09:00 am",
-              "timeOut": "12:00 pm"
+              "timeOut": "05:00 pm"
             }
           ]
         }
@@ -384,7 +606,17 @@
           "contacts": [],
           "schedule": [
             {
-              "day": "Monday, Wednesday and Friday",
+              "day": "Monday",
+              "timeIn": "11:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "11:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Friday",
               "timeIn": "11:00 am",
               "timeOut": "12:00 pm"
             }
@@ -400,29 +632,13 @@
       "description": "Orthopedic Oncologist, Musculoskeletal Tumor Surgeon and Sarcoma Surgeon",
       "imageURL": "",
       "sources": [
-        "https://seriousmd.com/doc/noel-rex-penaranda?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1"
+        "https://seriousmd.com/doc/charmaine-catherine-valdez"
       ],
       "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
-          "latitude": null,
-          "longitude": null,
-          "bookingType": "Appointment only",
-          "contacts": [],
-          "schedule": [
-            {
-              "day": "Monday to Sunday",
-              "timeIn": "10:00 am",
-              "timeOut": "10:00 pm"
-            }
-          ]
-        },
-        {
-          "clinicID": 2,
-          "clinicName": "Brokenshire Integrated Health Ministries, Inc",
+          "clinicName": "Brokenshire Integrated Health Ministries, Inc.",
           "location": "Madapo Hill, Davao City",
           "latitude": null,
           "longitude": null,
@@ -430,9 +646,75 @@
           "contacts": [],
           "schedule": [
             {
-              "day": "Monday to Friday",
+              "day": "Monday",
               "timeIn": "10:00 am",
               "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "10:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "10:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "10:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "10:00 am",
+              "timeOut": "12:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "10:00 am",
+              "timeOut": "10:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "10:00 am",
+              "timeOut": "10:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "10:00 am",
+              "timeOut": "10:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "10:00 am",
+              "timeOut": "10:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "10:00 am",
+              "timeOut": "10:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "10:00 am",
+              "timeOut": "10:00 pm"
+            },
+            {
+              "day": "Sunday",
+              "timeIn": "10:00 am",
+              "timeOut": "10:00 pm"
             }
           ]
         }
@@ -446,7 +728,7 @@
       "description": "",
       "imageURL": "",
       "sources": [
-        "https://seriousmd.com/doc/noel-rex-penaranda?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1"
+        "https://seriousmd.com/doc/aaron-paul-punzalan"
       ],
       "lastVerified": null,
       "clinics": [
@@ -461,8 +743,8 @@
           "schedule": [
             {
               "day": "Tuesday",
-              "timeIn": "08:00 am",
-              "timeOut": "11:00 am"
+              "timeIn": "02:00 pm",
+              "timeOut": "04:00 pm"
             },
             {
               "day": "Wednesday",
@@ -471,7 +753,7 @@
             },
             {
               "day": "Thursday",
-              "timeIn": "09:00 am",
+              "timeIn": "01:00 pm",
               "timeOut": "03:00 pm"
             },
             {
@@ -487,18 +769,18 @@
           "location": "Km. 31 National Highway, New Pandan, Panabo, Philippines",
           "latitude": null,
           "longitude": null,
-          "bookingType": "Appointment only",
+          "bookingType": "Walk-in and appointment",
           "contacts": [],
           "schedule": [
             {
-              "day": "Wednesday",
+              "day": "Monday",
               "timeIn": "09:00 am",
-              "timeOut": "12:00 pm"
+              "timeOut": "11:00 am"
             },
             {
               "day": "Saturday",
               "timeIn": "09:00 am",
-              "timeOut": "11:30 pm"
+              "timeOut": "11:30 am"
             }
           ]
         },
@@ -508,18 +790,86 @@
           "location": "Km. 4 J.P. Laurel Avenue, Bajada",
           "latitude": null,
           "longitude": null,
-          "bookingType": "Appointment only",
+          "bookingType": "Walk-in and appointment",
           "contacts": [],
           "schedule": [
             {
               "day": "Monday",
               "timeIn": "02:00 pm",
               "timeOut": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 4,
+          "clinicName": "Metro Davao Medical and Research Center",
+          "location": "Bajada, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Wednesday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "09:00 am",
+              "timeOut": "10:30 am"
+            }
+          ]
+        },
+        {
+          "clinicID": 5,
+          "clinicName": "Malta Medical Center, Inc.",
+          "location": "Kilometer 14 Mac Arthur Highway, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Friday",
+              "timeIn": "01:30 pm",
+              "timeOut": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 6,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "09:00 am",
+              "timeOut": "07:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "09:00 am",
+              "timeOut": "07:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "09:00 am",
+              "timeOut": "07:00 pm"
             },
             {
               "day": "Friday",
+              "timeIn": "09:00 am",
+              "timeOut": "07:00 pm"
+            },
+            {
+              "day": "Saturday",
               "timeIn": "10:00 am",
-              "timeOut": "12:00 pm"
+              "timeOut": "03:00 pm"
             }
           ]
         }
@@ -609,22 +959,6 @@
       "clinics": [
         {
           "clinicID": 1,
-          "clinicName": "Online Clinic",
-          "location": "NowServing App",
-          "latitude": null,
-          "longitude": null,
-          "bookingType": "Walk-in and appointment",
-          "contacts": [],
-          "schedule": [
-            {
-              "day": "Monday to Saturday",
-              "timeIn": "06:00 pm",
-              "timeOut": "08:00 pm"
-            }
-          ]
-        },
-        {
-          "clinicID": 2,
           "clinicName": "ENT Head & Neck Reconstructive Microsurgery Clinic",
           "location": "Bajada, Davao City",
           "latitude": null,
@@ -639,24 +973,34 @@
           ],
           "schedule": [
             {
-              "day": "Tuesday, Thursday and Saturday",
-              "timeIn": "09:00 am",
-              "timeOut": "12:00 pm"
-            },
-            {
-              "day": "Friday",
-              "timeIn": "09:30 am",
-              "timeOut": "12:00 pm"
-            },
-            {
-              "day": "Friday",
+              "day": "Monday",
               "timeIn": "04:00 pm",
               "timeOut": "06:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "09:30 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "04:00 pm",
+              "timeOut": "06:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "09:30 am",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "09:30 am",
+              "timeOut": "04:00 pm"
             }
           ]
         },
         {
-          "clinicID": 3,
+          "clinicID": 2,
           "clinicName": "Integrated Clinics Of Otolaryngology - Head And Neck Surgery",
           "location": "Quirno Avenue, Mayon St, Poblacion District, Davao City, 8000 Davao del Sur",
           "latitude": null,
@@ -674,6 +1018,73 @@
               "day": "Friday",
               "timeIn": "01:00 pm",
               "timeOut": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 3,
+          "clinicName": "San Pedro Hospital of Davao City",
+          "location": "G. Guzman, Guerrero St., Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "09:30 am",
+              "timeOut": "03:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "02:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "09:30 am",
+              "timeOut": "03:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 4,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "06:00 pm",
+              "timeOut": "08:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "06:00 pm",
+              "timeOut": "08:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "06:00 pm",
+              "timeOut": "08:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "06:00 pm",
+              "timeOut": "08:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "06:00 pm",
+              "timeOut": "08:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "06:00 pm",
+              "timeOut": "08:00 pm"
             }
           ]
         }
@@ -1256,6 +1667,429 @@
             }
           ],
           "schedule": []
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "firstname": "Anna Mariel",
+      "lastname": "Rivera",
+      "specialty": "General Surgery, Head and Neck Surgery, Minimally Invasive Surgery",
+      "description": "",
+      "imageURL": "",
+      "sources": [
+        "https://seriousmd.com/doc/anna-mariel-rivera"
+      ],
+      "lastVerified": "2026-11-14",
+      "clinics": [
+        {
+          "clinicID": 1,
+          "clinicName": "Rivera Medical Center",
+          "location": "7302 San Francisco, Panabo City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "09:00 am",
+              "timeOut": "03:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "09:00 am",
+              "timeOut": "11:00 am"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "09:00 am",
+              "timeOut": "03:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "09:00 am",
+              "timeOut": "11:00 am"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "09:00 am",
+              "timeOut": "03:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "09:00 am",
+              "timeOut": "03:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "Brokenshire Integrated Health Ministries, Inc.",
+          "location": "Madapo Hill, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Tuesday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "firstname": "Jeannine Anjelica",
+      "lastname": "Ledesma-Quijada",
+      "specialty": "Breast Surgical Oncology and Oncoplastic Surgery, General Surgery",
+      "description": "Breast surgical oncology and oncoplastic surgery; General Surgery",
+      "imageURL": "",
+      "sources": [
+        "https://seriousmd.com/doc/jeannine-anjelica-ledesma"
+      ],
+      "lastVerified": "2026-11-14",
+      "clinics": [
+        {
+          "clinicID": 1,
+          "clinicName": "San Pedro Hospital of Davao City",
+          "location": "G. Guzman, Guerrero St., Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "02:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "02:00 pm",
+              "timeOut": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "Anda Riverview Medical Center (ARMCI)",
+          "location": "Magallanes St.,",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "10:00 am",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "10:00 am",
+              "timeOut": "02:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "firstname": "Romulo",
+      "lastname": "Ong Abrantes",
+      "specialty": "Surgery, General Surgery, HepatoPancreatoBiliary Surgery",
+      "description": "",
+      "imageURL": "",
+      "sources": [
+        "https://seriousmd.com/doc/rongabrantes"
+      ],
+      "lastVerified": "2026-11-14",
+      "clinics": [
+        {
+          "clinicID": 1,
+          "clinicName": "Liver, Pancreas And Biliary Tree Clinic",
+          "location": "118 E, Quirino Avenue, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "12:00 am",
+              "timeOut": "11:30 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "12:00 am",
+              "timeOut": "11:30 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "12:00 am",
+              "timeOut": "11:30 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "Online Clinic",
+          "location": "NowServing App",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "12:00 am",
+              "timeOut": "11:30 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "12:00 am",
+              "timeOut": "11:30 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Saturday",
+              "timeIn": "12:00 am",
+              "timeOut": "11:30 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "firstname": "Kristine Kamille",
+      "lastname": "Nieto-Lorenzo",
+      "specialty": "General Surgery, Surgical Oncology",
+      "description": "",
+      "imageURL": "",
+      "sources": [
+        "https://seriousmd.com/doc/kristine-kamille-nietolorenzo"
+      ],
+      "lastVerified": "2026-11-14",
+      "clinics": [
+        {
+          "clinicID": 1,
+          "clinicName": "Clinica Tan",
+          "location": "18 Gempesaw Street",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Wednesday",
+              "timeIn": "09:00 am",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Friday",
+              "timeIn": "09:00 am",
+              "timeOut": "02:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "Lorenzo Surgical Clinic",
+          "location": "Demontano Building, Santiago Boulevard",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "01:00 pm",
+              "timeOut": "04:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 3,
+          "clinicName": "General Santos Doctor's Hospital",
+          "location": "National Highway, General Santos City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Tuesday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 4,
+          "clinicName": "Dadiangas Medical Center",
+          "location": "Allado Compound, Leon Llido St, City Heights",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "09:00 am",
+              "timeOut": "12:00 pm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "firstname": "Adrian",
+      "lastname": "Lorenzo",
+      "specialty": "General Surgery, Advanced Laparoscopic Surgery, Hepatobiliary and Pancreatic Surgery",
+      "description": "For any inquiries please reach me here:\n\nhttps://www.facebook.com/dr.adrianlorenzo",
+      "imageURL": "",
+      "sources": [
+        "https://seriousmd.com/doc/adrianlorenzo"
+      ],
+      "lastVerified": "2026-11-14",
+      "clinics": [
+        {
+          "clinicID": 1,
+          "clinicName": "Metro Davao Medical and Research Center",
+          "location": "Bajada, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Appointment only",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Saturday",
+              "timeIn": "08:00 am",
+              "timeOut": "10:00 am"
+            }
+          ]
+        },
+        {
+          "clinicID": 2,
+          "clinicName": "GSDH Medical Suites Buidling",
+          "location": "National Highway, General Santos City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "08:00 am",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "08:00 am",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "08:00 am",
+              "timeOut": "02:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "08:00 am",
+              "timeOut": "02:00 pm"
+            }
+          ]
+        },
+        {
+          "clinicID": 3,
+          "clinicName": "St. Elizabeth Hospital",
+          "location": "National Highway, General Santos City",
+          "latitude": null,
+          "longitude": null,
+          "bookingType": "Walk-in and appointment",
+          "contacts": [],
+          "schedule": [
+            {
+              "day": "Tuesday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Wednesday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            },
+            {
+              "day": "Thursday",
+              "timeIn": "02:00 pm",
+              "timeOut": "05:00 pm"
+            }
+          ]
         }
       ]
     }

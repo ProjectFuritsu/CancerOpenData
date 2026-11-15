@@ -4,7 +4,7 @@
     {
       "id": 5,
       "name": "Philippine Charity Sweepstakes Office (PCSO)",
-      "bgImageURL": "",
+      "bgImageURL": "/images/FinancialInstitution/pcso.webp",
       "source": "https://www.pcso.gov.ph/",
       "description": "Government agency that gives financial help to people with health problems through its Medical Assistance Program, together with government and private hospitals, health facilities and medicine retailers.",
       "type": "Public Institution",
@@ -108,7 +108,7 @@
     {
       "id": 6,
       "name": "Department of Health (DOH)",
-      "bgImageURL": "",
+      "bgImageURL": "/images/FinancialInstitution/doh.webp",
       "source": "https://doh.gov.ph/",
       "description": "National government department for health. Its MAIFIP program helps pay the medical bills of patients who cannot afford them.",
       "type": "Public Institution",

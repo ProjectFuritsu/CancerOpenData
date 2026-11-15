@@ -4,7 +4,7 @@
     {
       "id": 1,
       "name": "PhilHealth",
-      "bgImageURL": "https://newsfortph.com/upload/media/posts/2022-07/10/philhealth-davao-region-intensifies-konsulta-campaign_1657399553-b.jpg",
+      "bgImageURL": "/images/FinancialInstitution/philhealth.webp",
       "source": "https://www.philhealth.gov.ph/",
       "description": "PhilHealth is the Philippines' government-owned health insurer, providing universal health coverage through a social insurance program. It pools funds from member contributions to subsidize medical costs, making healthcare affordable for hospitalizations and preventive care.",
       "type": "Public Institution",
@@ -414,7 +414,7 @@
     {
       "id": 5,
       "name": "Philippine Charity Sweepstakes Office (PCSO)",
-      "bgImageURL": "",
+      "bgImageURL": "/images/FinancialInstitution/pcso.webp",
       "source": "https://www.pcso.gov.ph/",
       "description": "Government agency that gives financial help to people with health problems through its Medical Assistance Program, together with government and private hospitals, health facilities and medicine retailers.",
       "type": "Public Institution",
@@ -518,7 +518,7 @@
     {
       "id": 6,
       "name": "Department of Health (DOH)",
-      "bgImageURL": "",
+      "bgImageURL": "/images/FinancialInstitution/doh.webp",
       "source": "https://doh.gov.ph/",
       "description": "National government department for health. Its MAIFIP program helps pay the medical bills of patients who cannot afford them.",
       "type": "Public Institution",
