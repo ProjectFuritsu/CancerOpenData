@@ -1,0 +1,226 @@
+{
+  "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. Davao Doctors Hospital approved by Fritz on 2026-11-15 (hospitals review); sources in each service's sources and in CancerData-staging/provenance.",
+  "Health_Insti": [
+    {
+      "id": 2,
+      "name": "Davao Doctors Hospital",
+      "bgImageURL": "",
+      "source": "https://ddh.com.ph/",
+      "description": "Davao Doctors Hospital soon opened its doors to the public in 1969, starting with a 50-bed capacity. Over time, DDH continued to foster many other firsts in the region as its Radiation Oncology Department became fully operational, among other notable innovations.",
+      "type": "Private Institution",
+      "lastVerified": "2026-11-15",
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Landline",
+          "contact_details": "(+6382) 222-8000"
+        },
+        {
+          "contact_id": 2,
+          "type": "Landline",
+          "contact_details": "(+6382) 222 - 7948"
+        },
+        {
+          "contact_id": 3,
+          "type": "Email",
+          "contact_details": "info@ddh.com.ph"
+        }
+      ],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "118 E. Quirino Avenue, Davao City Philippines 8000",
+          "latitude": null,
+          "longitude": null,
+          "schedule": [],
+          "contacts": []
+        }
+      ],
+      "services": [
+        {
+          "serviceID": 1,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "Radiation Oncology Department",
+          "service_description": "The oncology Center uses clinical and holistic approaches for the management of cancer. We aim to cure- to eradicate the tumor and prevent its recurrence, as well as to relieve pain and other discomforts of cancer. Equipment: Dual Energy Linear Accelerator; the Elekta Synergy linear Accelerator- the first IMRT/IGRT facility. Services Offered: Radiation Consultation Evaluation; Treatment Planning; External Beam Radiography; Low Dose Rate (LDR) Brachytherapy; Blood Irradiation. Location: Ground Level, Oncology Building. Office Hours: 6:00am - 6:00pm. Contact: (082) 222 8000 local 8158 | radonco@ddh.com.ph",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/radiation-oncology-department/"
+          ],
+          "service_schedule": null,
+          "requirements": [
+            {
+              "requirement_id": 1,
+              "requirement_description": "Referral letter and a short clinical abstract."
+            },
+            {
+              "requirement_id": 2,
+              "requirement_description": "Histopathologic report."
+            },
+            {
+              "requirement_id": 3,
+              "requirement_description": "Laboratory and Imaging work-ups with results and radiographs."
+            },
+            {
+              "requirement_id": 4,
+              "requirement_description": "Complete blood count preferably normal or least 100 grams/dl. hemoglobin"
+            },
+            {
+              "requirement_id": 5,
+              "requirement_description": "Dental clearance for head and neck tumors."
+            },
+            {
+              "requirement_id": 6,
+              "requirement_description": "Steroid coverage for brain and spinal cord irradiation."
+            }
+          ],
+          "procedure": []
+        },
+        {
+          "serviceID": 2,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "External Beam Radiation Therapy",
+          "service_description": "Curative: Destroy tumors that have not spread the other parts of the body and cure you of disease reduce the risk that cancer will return after you undergo surgery or systemic/chemotherapy by killing small amounts of remaining cancer cells shrink cancer before surgery. Palliative: Shrink tumors that are interfering with your quality of life, such as lung tumor that is causing shortness of breath to relieve pain by reducing the size of a tumor and other unpleasant symptoms, thus improving the quality of life and prolongation of survival. Radiation Therapy usually takes from a week to eight weeks, depending on the goal, either curative or palliative. It is given daily from Monday to Friday lasting only for a few minutes, based on the prescribed dose and number of treatment fields. Who can avail? It has clinical applications for patients diagnosed with malignant tumors and occasionally benign diseases. Location: Ground floor of Oncology Building. Contact: +63 82 222 8000 local 8158 | +63 82 222 7992 | radonco@ddh.com.ph",
+          "cancerTypes": [
+            "Brain / spinal cord tumors",
+            "Head and neck tumors",
+            "Lung cancer",
+            "Breast cancer",
+            "Cervix/ Endometrial / Ovarian",
+            "Vulvar cancer",
+            "Rectal cancer",
+            "Lymphoma",
+            "soft tissue tumors"
+          ],
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/external-beam-radiation-therapy/"
+          ],
+          "service_schedule": [
+            {
+              "day": "Mondays - Fridays",
+              "timeIn": "6:00am",
+              "timeOut": "6:00pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 3,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "Brachytherapy",
+          "service_description": "Brachytherapy is a procedure that involves placing radioactive material inside your body. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "cancerTypes": [
+            "Cervical Cancer",
+            "Endometrial Cancer",
+            "Vaginal Cancer"
+          ],
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/nursing-service/"
+          ],
+          "service_schedule": null,
+          "requirements": [],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Scheduling & pre – operative preparations c/o cancer center"
+            },
+            {
+              "step": 2,
+              "instruction": "Direct to room admission (with prior doctors orders)"
+            },
+            {
+              "step": 3,
+              "instruction": "Confined in a private deluxe for 2 – 3 days"
+            }
+          ]
+        },
+        {
+          "serviceID": 4,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "In-patient Chemotherapy",
+          "service_description": "Hemotherapy is a drug treatment that uses powerful chemicals to kill fast-growing cells in your body. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/nursing-service/"
+          ],
+          "service_schedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 5,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "Radioactive Iodine Therapy (RAI)",
+          "service_description": "Low dose and high dose radioactive iodine (RAI) therapy c/o physician on – board. Uses: Hyperthyroidism (Grave's Disease, solitary autonomous nodule); Ablation of thyroid remnants after thyroidectomy; Treatment of Metastatic Thyroid Carcinoma. Location: Ground Level, Oncology Building. Contact Info: (6382) 222 - 8000 loc. 8143",
+          "cancerTypes": [
+            "Papillary Thyroid Cancer",
+            "Follicular Thyroid Cancer"
+          ],
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/nursing-service/",
+            "https://ddh.com.ph/services-and-centers/nuclear-medicine/"
+          ],
+          "service_schedule": [
+            {
+              "day": "Mondays - Fridays",
+              "timeIn": "7:00am",
+              "timeOut": "6:00pm"
+            },
+            {
+              "day": "Saturdays",
+              "timeIn": "7:00 am",
+              "timeOut": "3:00 pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Scheduling c/o Nuclear Medicine Department"
+            },
+            {
+              "step": 2,
+              "instruction": "Direct – to – room admission (with prior doctors orders)"
+            },
+            {
+              "step": 3,
+              "instruction": "Confined in a private deluxe for 2 – 3 days"
+            }
+          ]
+        },
+        {
+          "serviceID": 6,
+          "branchIDs": [
+            1
+          ],
+          "service_name": "Long Term Radiotherapy",
+          "service_description": "Clients located far from the city may opt to be admitted in the unit to complete the recommended number of RT treatments. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/nursing-service/"
+          ],
+          "service_schedule": null,
+          "requirements": [],
+          "procedure": []
+        }
+      ]
+    }
+  ]
+}

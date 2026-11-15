@@ -38,6 +38,171 @@ const REVIEW = {
   // in each program's sources (PhilHealth circulars) and in the v1 data.
   zBenefitsRequirements: ["PhilHealth ID"],
   zBenefitsSteps: ["Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."],
+  // Decision 12 (Fritz, 2026-11-15, hospitals review): SPMC gets its official site as source,
+  // its main contacts (Contact Us page) and 8 department cancer clinics with their schedules,
+  // as written on spmc.doh.gov.ph. A service's location goes at the end of its description,
+  // since v2 services have no location field. New services get the next serviceIDs, branch 1.
+  healthInstitutionUpdates: {
+    "1": {
+      "source": "https://spmc.doh.gov.ph/",
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Landline",
+          "contact_details": "(082) 227-2731"
+        },
+        {
+          "contact_id": 2,
+          "type": "Other",
+          "contact_details": "TELEFAX: (082) 221-7029"
+        },
+        {
+          "contact_id": 3,
+          "type": "Email",
+          "contact_details": "coh.spmc@gmail.com"
+        }
+      ],
+      "addServices": [
+        {
+          "service_name": "Oncology Clinic (Internal Medicine)",
+          "service_description": "dedicated to the diagnosis, treatment and care of adults with cancer. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/internal-medicine/"
+          ],
+          "service_schedule": [
+            {
+              "day": "Tuesday and Thursday",
+              "timeIn": "1 pm",
+              "timeOut": "5 pm"
+            }
+          ]
+        },
+        {
+          "service_name": "Hematology Clinic (Internal Medicine)",
+          "service_description": "provides assessment and treatment as well as co-ordination of clinical care for patients with blood diseases and blood-related cancers. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/internal-medicine/"
+          ],
+          "service_schedule": [
+            {
+              "day": "Tuesday and Thursday",
+              "timeIn": "1 pm",
+              "timeOut": "5 pm"
+            }
+          ]
+        },
+        {
+          "service_name": "Surgical Oncology",
+          "service_description": "Location: Cancer Institute – 2nd Floor.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/surgery/"
+          ],
+          "service_schedule": [
+            {
+              "day": "Monday to Friday",
+              "timeIn": "8AM",
+              "timeOut": "5PM"
+            }
+          ]
+        },
+        {
+          "service_name": "Gynecologic Oncology",
+          "service_description": "Caters to patients diagnosed with cancer in the reproductive organs",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
+          ],
+          "service_schedule": [
+            {
+              "day": "weekdays",
+              "timeIn": "1:00 pm",
+              "timeOut": "5:00 pm"
+            }
+          ]
+        },
+        {
+          "service_name": "Trophoblastic Service Clinic",
+          "service_description": "Specializes in dealing with a group of conditions involving tumor growth in the womb.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
+          ],
+          "service_schedule": [
+            {
+              "day": "weekdays",
+              "timeIn": "1:00 pm",
+              "timeOut": "5:00 pm"
+            }
+          ]
+        },
+        {
+          "service_name": "Colposcopy / Pap’s Smear",
+          "service_description": "Screening procedure for detecting cervical cancer.",
+          "cancerTypes": [
+            "Cervical Cancer"
+          ],
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
+          ],
+          "service_schedule": [
+            {
+              "day": "Tuesday and Thursday",
+              "timeIn": "1:00 pm",
+              "timeOut": "7:00 pm"
+            }
+          ]
+        },
+        {
+          "service_name": "Oncology Clinic (Pediatrics)",
+          "service_description": "Specializes on diagnoses, treatment and management of cancer.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/pediatrics-2/"
+          ],
+          "service_schedule": [
+            {
+              "day": "Monday and Wednesday",
+              "timeIn": "2:00",
+              "timeOut": "4:00 PM"
+            },
+            {
+              "day": "Tuesday, Thursday and Friday",
+              "timeIn": "8:00 AM",
+              "timeOut": "12:00 PM"
+            }
+          ]
+        },
+        {
+          "service_name": "Breast Imaging",
+          "service_description": "Involves the use of mammography, sonomammography and elastography. Imaging exam dedicated for screening breast cancer.",
+          "cancerTypes": [
+            "Breast Cancer"
+          ],
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/radiological-and-imaging-sciences/"
+          ],
+          "service_schedule": [
+            {
+              "day": "weekdays (OPD)",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ]
+        }
+      ]
+    }
+  },
   // Decision 11 (Fritz, 2026-11-15): one Z Benefits program instead of one per cancer,
   // keeping ALL the v1 details (his choice "A: labeled lists"). Every benefit, every
   // eligibility rule and each cancer's description stay as written, each labeled
@@ -261,6 +426,27 @@ function applyReview(folder, records) {
         const b = r.id === instiId && r.branches.find((x) => x.branchID === branchID);
         if (b && b.contacts.length) { log(`${r.name} branch ${branchID}: removed ${b.contacts.length} contacts`); b.contacts = []; }
       }
+    }
+    // Decision 12: official source, contacts and extra services, per institution id.
+    for (const [id, u] of Object.entries(REVIEW.healthInstitutionUpdates)) {
+      const r = records.find((x) => x.id === Number(id));
+      if (!r) continue;
+      if (u.source) r.source = u.source;
+      if (u.contacts) r.contacts = structuredClone(u.contacts);
+      const start = r.services.length;
+      r.services.push(...u.addServices.map((s, i) => ({
+        serviceID: start + i + 1,
+        branchIDs: [1],
+        service_name: s.service_name,
+        service_description: s.service_description,
+        cancerTypes: s.cancerTypes,
+        fee: s.fee ?? null,
+        sources: s.sources,
+        service_schedule: s.service_schedule,
+        requirements: [],
+        procedure: [],
+      })));
+      log(`${r.name}: source, ${r.contacts.length} contacts, services ${start} -> ${r.services.length}`);
     }
   }
   if (folder === "MedicalSpecialist") {
