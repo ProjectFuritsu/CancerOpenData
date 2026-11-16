@@ -16,6 +16,7 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 
 ### Repo
 - Issue forms: wrong data, new resource, API problem, privacy or removal request. Blank issues are off.
+- Pull request template: every pull request starts with the kind of change, its sources, and a checklist of the data rules (values as written, a source for every value, no personal data, no medical advice) and checks (validate, Worker tests, images, schema notice, changelog).
 - [ACCESSIBILITY.md](ACCESSIBILITY.md): what the API does for accessibility, a checklist for app builders, known limits (the docs page is not audited yet; the goal is WCAG 2.2 Level AA), and how to report a problem.
 - Deploy emails: after each successful deploy, an email with the new version, the changes and the changed files goes to the people who build on the API (setup in [MAINTAINING.md](MAINTAINING.md#deploy-emails)).
 
