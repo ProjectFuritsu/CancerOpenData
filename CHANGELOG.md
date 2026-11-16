@@ -6,6 +6,9 @@ Dates are Philippine time (UTC+8). See [MILESTONES.md](MILESTONES.md) for the bi
 
 ## Unreleased
 
+### Data
+- Specialist #12 (Michael Jonathan Latayan): his SeriousMD profile link was in `imageURL` and he had no `source`. `imageURL` is now empty (no photo without consent) and `source` is `https://seriousmd.com/doc/mlatayan` (issue #10).
+
 ### v2 (in development, not public)
 A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unchanged by it.
 - Institutions get `branches` (address, map point, hours and contacts per office).
