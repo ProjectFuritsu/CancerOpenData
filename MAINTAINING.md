@@ -143,6 +143,7 @@ npx wrangler deploy           # manual deploy (CI does this on every push to mai
 | `.github/workflows/deploy-data.yml` | The pipeline |
 | `.github/workflows/notify-deploy.yml` | Emails an update after each successful deploy (see [Deploy emails](#deploy-emails)) |
 | `.github/ISSUE_TEMPLATE/` | Issue forms: wrong data, new resource, API problem, privacy or removal request |
+| `.github/pull_request_template.md` | The checklist every pull request starts with: kind of change, sources, data rules and checks |
 | `README.md` · `API-GUIDE.md` · `MAINTAINING.md` | Quick start · full API guide · this file |
 | `MILESTONES.md` · `CHANGELOG.md` | Where the project is going · what changed in each version |
 | `ACCESSIBILITY.md` | What the API does for accessibility, a checklist for app builders, known limits |
