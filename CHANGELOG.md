@@ -19,7 +19,7 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - Where to go for financial help, from official directories: PhilHealth's LHIO Davao City, PhilHealth Express Calinan and Toril, and the Gaisano Mall service desk, plus the eGovPH Super App (YAKAP's apply-online link); PCSO's Davao del Sur Branch and Mindanao Department, its Online MAP Application link, and a first step listing the online, office and hospital Malasakit options; DOH MAIFIP at the hospital's Malasakit Center or Medical Social Work Unit, or online through eMAIFIP in the eGovPH app (PTV News and PNA, August–September 2026).
 - Support groups: removed (082) 295-2133 from AMUMA. PhilHealth's directory lists it as PhilHealth Regional Office XI's trunkline.
 - PhilHealth Z Benefits is one program (`Z Benefits`) instead of five. Every benefit and amount, every eligibility rule and each cancer's description from v1 is kept, labeled with its cancer (for example "Breast Cancer (cStage 0 to IV): Total package").
-- A `null` or empty value means "Not available".
+- A `null` or empty value means "Not given".
 - Served at `/v2/` next to v1: the files at `/v2/<Folder>/<File>.json`, the dataset list at `GET /v2/`, and its own spec at `/v2/openapi.json`. v1 paths don't change.
 - The docs page has a version picker (v1 or v2); `/docs/?version=v2` opens v2.
 

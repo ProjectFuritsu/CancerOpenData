@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "FeedsData.schema.json",
   "title": "FeedsData",
-  "description": "Cancer Open Data v2. A null value or an empty list means the information is not available yet: apps should show \"Not available\".",
+  "description": "Cancer Open Data v2. A null value or an empty list means the information is not given yet: apps should show \"Not given\".",
   "type": "object",
   "properties": {
     "$schema": {

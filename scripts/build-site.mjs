@@ -101,7 +101,7 @@ if (existsSync(DATA_V2)) {
     name: "Cancer Open Data",
     apiVersion: "v2",
     status: "preview",
-    about: "Version 2 of the data: branches, sources, cancer types, amounts and booking type. A null or empty value means \"Not available\".",
+    about: "Version 2 of the data: branches, sources, cancer types, amounts and booking type. A null or empty value means \"Not given\".",
     source: SOURCE,
     version,
     docs: "/docs/?version=v2",

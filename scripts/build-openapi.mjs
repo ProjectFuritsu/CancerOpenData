@@ -17,7 +17,7 @@ const DESCRIPTIONS = {
     Feeds: "News, blogs and articles about cancer care, with tags and a list of authors.",
     FinancialInstitution: "Financial help that does not have to be paid back (PhilHealth, PCSO, DOH): who qualifies (`eligibility` list), benefits with their `amount`, requirements, steps, cancer types, and the Davao City `branches` with hours and contacts.",
     HealthInstitution: "Health institutions (e.g. SPMC Cancer Institute), their `branches` and services: fees, schedules, requirements and steps.",
-    MedicalSpecialist: "Medical specialists and their clinics. Each clinic's `bookingType` says how to book (for example \"Walk-in and appointment\"); `null` means not known (show \"Not available\").",
+    MedicalSpecialist: "Medical specialists and their clinics. Each clinic's `bookingType` says how to book (for example \"Walk-in and appointment\"); `null` means not known (show \"Not given\").",
     SupportGroups: "Cancer support groups: the cancer types they serve, founders, meeting schedule, contacts and sources.",
   },
 };
@@ -29,7 +29,7 @@ const INTRO = {
     note: [
       "**Preview of version 2.** The data shape can still change before release. Version 1 stays at the same links.",
       "- **New in v2:** office `branches` with their own hours and contacts, lists of `sources`, `cancerTypes`, `lastVerified`, benefit `amount`, clinic `bookingType`, and `eligibility` as a list. No loan programs; PCSO and DOH added.",
-      "- **A `null`, empty text or empty list means \"Not available\".**",
+      "- **A `null`, empty text or empty list means \"Not given\".**",
       "",
     ],
   },

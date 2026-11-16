@@ -1,4 +1,4 @@
-// Lists every value in data-v2/ that is not available yet (null or an empty list/text),
+// Lists every value in data-v2/ that is not given yet (null or an empty list/text),
 // record by record, with where to look for it. Prints a Markdown checklist.
 // Usage (from the repo root): node scripts/missing-v2.mjs > missing.md
 import { readFileSync } from "node:fs";
@@ -90,9 +90,9 @@ section("Feeds", FD.map((r) => ({ ...r, label: `#${r.id} ${r.title}` })), (r) =>
   check("Feed", r.title, r, ["bgImageURL", "tags", "content", "authors", "source"]));
 
 const summary = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, n]) => `| ${k} | ${n} |`).join("\n");
-console.log(`# Missing data in v2 (not available yet)
+console.log(`# Missing data in v2 (not given yet)
 
-${total} values are not available yet. In the data they are \`null\` or empty; apps show "Not available".
+${total} values are not given yet. In the data they are \`null\` or empty; apps show "Not given".
 Tick an item when the value is found and added with its source. Re-run \`node scripts/missing-v2.mjs\` to refresh this list.
 
 | Dataset · field | Missing |
