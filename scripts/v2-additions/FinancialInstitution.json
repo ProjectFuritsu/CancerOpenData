@@ -13,16 +13,7 @@
       "branches": [
         {
           "branchID": 1,
-          "branchName": "Davao del Sur Branch",
-          "location": "G/F Maharlika Bldg., JP Cabaguio Ave., Davao City",
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        },
-        {
-          "branchID": 2,
-          "branchName": "Mindanao Department",
+          "branchName": "Davao City Branch",
           "location": "Maharlika Center, J.P Cabagui Avenue, Davao City",
           "latitude": null,
           "longitude": null,
@@ -105,7 +96,7 @@
           "procedure": [
             {
               "step": 1,
-              "instruction": "Apply online through the Online MAP Application (steps 2 to 6), or go to a PCSO office (the Davao del Sur Branch or the Mindanao Department in Davao City), or to the PCSO or Malasakit Center desk of your hospital. In some areas, MAP can be accessed only through hospitals with a Malasakit Center."
+              "instruction": "Apply online through the Online MAP Application (steps 2 to 6), or go to the PCSO Davao City Branch, or to the PCSO or Malasakit Center desk of your hospital. In some areas, MAP can be accessed only through hospitals with a Malasakit Center."
             },
             {
               "step": 2,
@@ -143,7 +134,7 @@
       "branches": [
         {
           "branchID": 1,
-          "branchName": "DOH MAIP",
+          "branchName": "DOH Office Davao City",
           "location": "PRRD Bldg Bajada, Davao City (infront SPMC Hospital)",
           "latitude": null,
           "longitude": null,
