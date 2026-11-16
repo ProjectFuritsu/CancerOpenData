@@ -90,6 +90,7 @@ const bookingMode = c =>
 | Read | For |
 |---|---|
 | [API-GUIDE.md](API-GUIDE.md) | Images, responses and status codes, errors, and error handling with retry and offline copy |
+| [ACCESSIBILITY.md](ACCESSIBILITY.md) | What the API does for accessibility, a checklist for app builders, known limits, and how to report a problem |
 | [MAINTAINING.md](MAINTAINING.md) | How it's served, how a change goes live, rollback, changing the data, deploy setup |
 | [MILESTONES.md](MILESTONES.md) | Where the project is going: v1 is live, v2 is being built |
 | [CHANGELOG.md](CHANGELOG.md) | What changed in each version (`GET /` shows the live one in `version`) |

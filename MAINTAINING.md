@@ -145,3 +145,4 @@ npx wrangler deploy           # manual deploy (CI does this on every push to mai
 | `.github/ISSUE_TEMPLATE/` | Issue forms: wrong data, new resource, API problem, privacy or removal request |
 | `README.md` · `API-GUIDE.md` · `MAINTAINING.md` | Quick start · full API guide · this file |
 | `MILESTONES.md` · `CHANGELOG.md` | Where the project is going · what changed in each version |
+| `ACCESSIBILITY.md` | What the API does for accessibility, a checklist for app builders, known limits |
