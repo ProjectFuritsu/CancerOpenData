@@ -18,6 +18,8 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - Issue forms: wrong data, new resource, API problem, privacy or removal request. Blank issues are off.
 - Pull request template: every pull request starts with the kind of change, its sources, and a checklist of the data rules (values as written, a source for every value, no personal data, no medical advice) and checks (validate, Worker tests, images, schema notice, changelog).
 - [ACCESSIBILITY.md](ACCESSIBILITY.md): what the API does for accessibility, a checklist for app builders, known limits (the docs page is not audited yet; the goal is WCAG 2.2 Level AA), and how to report a problem.
+- **License:** code under the [MIT License](LICENSE); data in the public domain under [CC0 1.0](LICENSE-DATA.md). Logos and photos in `images/` stay with their owners.
+- [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) (private reports through GitHub's private vulnerability reporting, now turned on) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) (Contributor Covenant 2.1).
 - Deploy emails: after each successful deploy, an email with the new version, the changes and the changed files goes to the people who build on the API (setup in [MAINTAINING.md](MAINTAINING.md#deploy-emails)).
 
 ## 2026-11-14 · version `416aad5`

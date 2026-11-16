@@ -147,3 +147,5 @@ npx wrangler deploy           # manual deploy (CI does this on every push to mai
 | `README.md` · `API-GUIDE.md` · `MAINTAINING.md` | Quick start · full API guide · this file |
 | `MILESTONES.md` · `CHANGELOG.md` | Where the project is going · what changed in each version |
 | `ACCESSIBILITY.md` | What the API does for accessibility, a checklist for app builders, known limits |
+| `CONTRIBUTING.md` · `SECURITY.md` · `CODE_OF_CONDUCT.md` | How to help · how to report a security problem privately · how we treat each other |
+| `LICENSE` · `LICENSE-DATA.md` | MIT License for the code · CC0 1.0 (public domain) for the data |

@@ -94,8 +94,13 @@ const bookingMode = c =>
 | [MAINTAINING.md](MAINTAINING.md) | How it's served, how a change goes live, rollback, changing the data, deploy setup |
 | [MILESTONES.md](MILESTONES.md) | Where the project is going: v1 is live, v2 is being built |
 | [CHANGELOG.md](CHANGELOG.md) | What changed in each version (`GET /` shows the live one in `version`) |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to help: issue forms, data rules, and how to make a pull request |
+| [SECURITY.md](SECURITY.md) | How to report a security problem privately |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | How we treat each other (Contributor Covenant 2.1) |
 
 **Found wrong data, a missing resource or an API problem?** [Open an issue](https://github.com/ProjectFuritsu/CancerOpenData/issues/new/choose): there is a form for each, including privacy and removal requests.
+
+**License:** the code is under the [MIT License](LICENSE); the data is in the public domain under [CC0 1.0](LICENSE-DATA.md). Logos and photos in `images/` belong to their owners.
 
 ---
 
