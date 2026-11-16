@@ -228,6 +228,40 @@
       ],
       "publishDate": "30 September 2026",
       "source": "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+    },
+    {
+      "id": 17,
+      "title": "List of Accredited Providers for Selected Outpatient Cancer Screening Tests for CY 2026 Updated as of September 30, 2026",
+      "bgImageURL": "",
+      "category": "Article",
+      "tags": [
+        "Davao City",
+        "PhilHealth",
+        "Cancer Screening"
+      ],
+      "content": "PhilHealth's list of 415 health facilities accredited for selected outpatient cancer screening tests in 2026, updated as of 30 September 2026. The tests on the list are breast ultrasound, low-dose chest CT scan, liver ultrasound, mammography, alpha-fetoprotein and colonoscopy. In Davao City, six facilities are on the list: Alterado General Hospital, Davao Medical School Foundation, Ernesto Guadalupe Community Hospital, Holy Spirit Community Hospital of Davao, Malta Medical Center and Southern Philippines Medical Center. Southern Philippines Medical Center is accredited for all six tests.",
+      "authors": [
+        "PhilHealth"
+      ],
+      "publishDate": "30 September 2026",
+      "source": "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/CancerScreening.pdf"
+    },
+    {
+      "id": 18,
+      "title": "List of Accredited YAKAP Clinics for CY 2026 Updated as of September 30, 2026",
+      "bgImageURL": "",
+      "category": "Article",
+      "tags": [
+        "Davao City",
+        "PhilHealth",
+        "YAKAP"
+      ],
+      "content": "PhilHealth's list of 4,138 clinics accredited for YAKAP (Yaman ng Kalusugan Program) in 2026, updated as of 30 September 2026. Davao City has 56 of them: 22 government and 34 private. They include City Government of Davao health centers, Southern Philippines Medical Center, hospitals, clinics and diagnostic laboratories.",
+      "authors": [
+        "PhilHealth"
+      ],
+      "publishDate": "30 September 2026",
+      "source": "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/YAKAP.pdf"
     }
   ]
 }
