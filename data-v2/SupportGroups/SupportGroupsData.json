@@ -4,7 +4,7 @@
     "title": "Support groups",
     "description": "Cancer support groups for patients, survivors and families.",
     "apiVersion": "v2",
-    "lastUpdated": "2026-11-15",
+    "lastUpdated": "2026-11-19",
     "recordCount": 2,
     "coverage": "Davao City, Philippines",
     "language": "en",
@@ -31,7 +31,6 @@
       ],
       "meetingSchedule": null,
       "sources": [],
-      "lastVerified": null,
       "contacts": [
         {
           "contact_id": 1,
@@ -62,7 +61,6 @@
         "https://www.sunstar.com.ph/more-articles/house-of-hope-living-up-to-its-name",
         "https://www.stjude.org/inspire/series/around-the-world/philippines-dr-mae-dolendo-mindanao-house-of-hope-foundation.html"
       ],
-      "lastVerified": "2026-11-10",
       "contacts": [
         {
           "contact_id": 1,

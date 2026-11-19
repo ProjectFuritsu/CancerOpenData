@@ -22,7 +22,6 @@
       "source": "https://spmc.doh.gov.ph/",
       "description": "The Southern Philippines Medical Center is the largest government hospital under the Department of Health of the Republic of the Philippines. It is located at the JP Laurel Ave, Bajada, Davao City. It began as the Davao Medical Center. Its name was changed on November 19, 2009, by Republic Act 9792.",
       "type": "Public Institution",
-      "lastVerified": null,
       "contacts": [
         {
           "contact_id": 1,
@@ -351,7 +350,6 @@
       "source": "https://ddh.com.ph/",
       "description": "Davao Doctors Hospital soon opened its doors to the public in 1969, starting with a 50-bed capacity. Over time, DDH continued to foster many other firsts in the region as its Radiation Oncology Department became fully operational, among other notable innovations.",
       "type": "Private Institution",
-      "lastVerified": "2026-11-15",
       "contacts": [
         {
           "contact_id": 1,

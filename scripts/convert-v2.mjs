@@ -4,9 +4,9 @@
 //
 // Usage (from the repo root):
 //   node scripts/convert-v2.mjs [--provenance <staging>/provenance]
-// --provenance is optional. When given, it adds two things that were
-// reviewed at import time: lastVerified = the "retrieved" date of records
-// that were added from a source, and support group sources.
+// --provenance is optional. When given, it adds the support group sources
+// that were reviewed at import time. (Records have no lastVerified since
+// 2026-11-19: each file's meta.lastUpdated says when its records changed.)
 // --no-review skips Fritz's review decisions (to see the plain conversion).
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
@@ -21,7 +21,6 @@ const prov = (folder) => {
   const p = join(provDir, `${folder}.json`);
   return existsSync(p) ? read(p) : {};
 };
-const lastVerified = (p, id) => (p[id]?.action === "added" && p[id]?.retrieved) || null;
 const list = (v) => (v === null || v === undefined || v === "" ? [] : [v]);
 
 // ---- Fritz's review decisions (2026-11-13) ----
@@ -700,7 +699,6 @@ function instiTop(r, p) {
     source: r.source,
     description: r.description,
     type: r.type,
-    lastVerified: lastVerified(p, r.id),
     // v1 has one address per institution; its contacts belong to that address,
     // so they move into branch 1. Main (institution-wide) contacts are decided by hand.
     contacts: [],
@@ -775,7 +773,6 @@ const bookingType = (c) =>
     description: r.description,
     imageURL: r.imageURL,
     sources: list(r.source),
-    lastVerified: lastVerified(p, r.id),
     clinics: r.clinics.map((c) => ({
       clinicID: c.clinicid,
       clinicName: c.clinicName,
@@ -807,7 +804,6 @@ const bookingType = (c) =>
     founders: list(r.founder),
     meetingSchedule: null,
     sources: [...new Set((p[r.id]?.sources ?? []).map((s) => s.url).filter(Boolean))],
-    lastVerified: lastVerified(p, r.id),
     contacts: r.contacts,
   })));
 }

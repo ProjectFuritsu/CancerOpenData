@@ -20,7 +20,6 @@ const WHERE = {
   sources: "the official page the facts come from",
   amount: "the official circular or program page",
   fee: "the hospital's billing office or price list",
-  lastVerified: "set the date when someone checks the record against its sources",
   meetingSchedule: "the group's Facebook page or a message to the group",
   tags: "write 1–3 topics from the post",
   bookingType: "the hospital's doctor page or a call to the clinic",
@@ -59,7 +58,7 @@ function section(dataset, records, fn) {
 }
 
 const insti = (dataset, r, extra) => [
-  ...check(dataset, r.name, r, ["bgImageURL", "lastVerified", "contacts"]),
+  ...check(dataset, r.name, r, ["bgImageURL", "contacts"]),
   ...r.branches.flatMap((b) => check(dataset, r.name, b, ["branchName", "latitude", "longitude", "schedule", "contacts"], `Branch ${b.branchID} › `)),
   ...extra,
 ];
@@ -77,7 +76,7 @@ section("Health institutions", H.map((r) => ({ ...r, label: `#${r.id} ${r.name}`
 
 const M = read("data-v2/MedicalSpecialist/MedicalSpecialistData.json").Medical_Specialist;
 section("Medical specialists", M.map((r) => ({ ...r, label: `#${r.id} ${r.firstname} ${r.lastname}` })), (r) => [
-  ...check("Specialist", r.lastname, r, ["description", "imageURL", "sources", "lastVerified"]),
+  ...check("Specialist", r.lastname, r, ["description", "imageURL", "sources"]),
   ...r.clinics.flatMap((c) => check("Specialist", r.lastname, c, ["latitude", "longitude", "bookingType", "contacts", "schedule"], `${c.clinicName} › `)),
 ]);
 

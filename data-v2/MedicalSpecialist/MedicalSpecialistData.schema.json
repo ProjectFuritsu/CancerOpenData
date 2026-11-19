@@ -108,9 +108,6 @@
           "sources": {
             "$ref": "#/$defs/sources"
           },
-          "lastVerified": {
-            "$ref": "#/$defs/lastVerified"
-          },
           "clinics": {
             "type": "array",
             "items": {
@@ -181,7 +178,6 @@
           "description",
           "imageURL",
           "sources",
-          "lastVerified",
           "clinics"
         ],
         "additionalProperties": false
@@ -268,14 +264,6 @@
       },
       "uniqueItems": true,
       "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
-    },
-    "lastVerified": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "format": "date",
-      "description": "Date the record was last checked against its sources, YYYY-MM-DD. null if not known."
     }
   }
 }

@@ -28,7 +28,7 @@ const INTRO = {
     title: "Cancer Open Data API v2 (preview)",
     note: [
       "**Preview of version 2.** The data shape can still change before release. Version 1 stays at the same links.",
-      "- **New in v2:** office `branches` with their own hours and contacts, lists of `sources`, `cancerTypes`, `lastVerified`, benefit `amount`, clinic `bookingType`, and `eligibility` as a list. No loan programs; PCSO and DOH added.",
+      "- **New in v2:** office `branches` with their own hours and contacts, lists of `sources` and `cancerTypes`, a `meta` block with `lastUpdated` in each file, benefit `amount`, clinic `bookingType`, and `eligibility` as a list. No loan programs; PCSO and DOH added.",
       "- **A `null`, empty text or empty list means \"Not given\".**",
       "",
     ],
@@ -41,7 +41,7 @@ const errorResponse = description => ({
 });
 
 // Keep the schema as written, minus keys that only make sense in a standalone file.
-// Local $refs (like "#/$defs/lastVerified", used by the v2 schemas) point into the
+// Local $refs (like "#/$defs/sources", used by the v2 schemas) point into the
 // standalone file; inside the spec they must point into components.schemas.<name>.
 function embed(schema, name) {
   const { $schema, $id, ...rest } = schema;

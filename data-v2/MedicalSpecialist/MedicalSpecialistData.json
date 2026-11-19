@@ -4,7 +4,7 @@
     "title": "Medical specialists",
     "description": "Cancer doctors in Davao City, with their clinics, schedules and booking.",
     "apiVersion": "v2",
-    "lastUpdated": "2026-11-15",
+    "lastUpdated": "2026-11-19",
     "recordCount": 29,
     "coverage": "Davao City, Philippines",
     "language": "en",
@@ -25,7 +25,6 @@
       "sources": [
         "https://seriousmd.com/doc/soo-rah-kwak?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -70,7 +69,6 @@
       "sources": [
         "https://seriousmd.com/doc/miguel-villanueva?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -156,7 +154,6 @@
       "sources": [
         "https://seriousmd.com/doc/jpabrina?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -222,7 +219,6 @@
       "sources": [
         "https://seriousmd.com/doc/perlita-joanne-yudelacruz?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -329,7 +325,6 @@
       "sources": [
         "https://seriousmd.com/doc/lauralee-leanosamonte?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%26page%3D1"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -390,7 +385,6 @@
       "sources": [
         "https://seriousmd.com/doc/jay-r-enojo"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -446,7 +440,6 @@
       "sources": [
         "https://seriousmd.com/doc/chita-matunog?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26specializations%3DOncology%2520-%2520Medical%26page%3D1"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -532,7 +525,6 @@
       "sources": [
         "https://seriousmd.com/doc/hannah-grace-segocio?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -608,7 +600,6 @@
       "sources": [
         "https://seriousmd.com/doc/noel-rex-penaranda?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D1"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -648,7 +639,6 @@
       "sources": [
         "https://seriousmd.com/doc/charmaine-catherine-valdez"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -744,7 +734,6 @@
       "sources": [
         "https://seriousmd.com/doc/aaron-paul-punzalan"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -897,7 +886,6 @@
       "description": "I am a urologist certified by the Philippine Board of Urology practicing in Davao City. I was trained in the National Kidney and Transplant Institute, the premier training institution in the field of Urology. I am an expert in minimally invasive and laparoscopic urologic surgeries as well as transplant urology. I treat diseases , tumors and stones of the KIDNEYS, URETER, URINARY BLADDER, PROSTATE and ADRENALS as well as disorders and problems of the MALE GENITALIA, TESTIS and SCROTUM.",
       "imageURL": "https://seriousmd.com/doc/mlatayan?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D2",
       "sources": [],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -969,7 +957,6 @@
       "sources": [
         "https://seriousmd.com/doc/danzon-john-decastro?referrer=NSWEB&origin=https%3A%2F%2Fnowserving.ph%2Fsearch%2F%3Flocations%3DDavao%2520City%2C%2520Davao%2520del%2520Sur%26name%3Doncology%26page%3D2"
       ],
-      "lastVerified": null,
       "clinics": [
         {
           "clinicID": 1,
@@ -1114,7 +1101,6 @@
       "sources": [
         "https://ddh.com.ph/doctors/lapus-felycette-gay-m-m-d/"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1160,7 +1146,6 @@
       "sources": [
         "https://ddh.com.ph/doctors/demegillo-kenny-jun-n-m-d/"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1216,7 +1201,6 @@
       "sources": [
         "https://ddh.com.ph/doctors/abarquez-honey-sarita-j-m-d/"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1272,7 +1256,6 @@
       "sources": [
         "https://ddh.com.ph/doctors/mangaoil-james-edward-r-m-d/"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1328,7 +1311,6 @@
       "sources": [
         "https://ddh.com.ph/doctors/chiu-roland-victor-a-m-d/"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1426,7 +1408,6 @@
       "sources": [
         "https://ddh.com.ph/doctors/flavier-carol-marjorie-p-m-d/"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1482,7 +1463,6 @@
       "sources": [
         "https://ddh.com.ph/doctors/rayel-concepcion-d-m-d/"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1538,7 +1518,6 @@
       "sources": [
         "https://ddh.com.ph/doctors/garcia-manuel-r-jr-m-d/"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1594,7 +1573,6 @@
       "sources": [
         "https://brokenshiremed.com/doctors-directory"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1629,7 +1607,6 @@
       "sources": [
         "https://brokenshiremed.com/doctors-directory"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1659,7 +1636,6 @@
       "sources": [
         "https://brokenshiremed.com/doctors-directory"
       ],
-      "lastVerified": "2026-11-10",
       "clinics": [
         {
           "clinicID": 1,
@@ -1694,7 +1670,6 @@
       "sources": [
         "https://seriousmd.com/doc/anna-mariel-rivera"
       ],
-      "lastVerified": "2026-11-14",
       "clinics": [
         {
           "clinicID": 1,
@@ -1770,7 +1745,6 @@
       "sources": [
         "https://seriousmd.com/doc/jeannine-anjelica-ledesma"
       ],
-      "lastVerified": "2026-11-14",
       "clinics": [
         {
           "clinicID": 1,
@@ -1846,7 +1820,6 @@
       "sources": [
         "https://seriousmd.com/doc/rongabrantes"
       ],
-      "lastVerified": "2026-11-14",
       "clinics": [
         {
           "clinicID": 1,
@@ -1942,7 +1915,6 @@
       "sources": [
         "https://seriousmd.com/doc/kristine-kamille-nietolorenzo"
       ],
-      "lastVerified": "2026-11-14",
       "clinics": [
         {
           "clinicID": 1,
@@ -2030,7 +2002,6 @@
       "sources": [
         "https://seriousmd.com/doc/adrianlorenzo"
       ],
-      "lastVerified": "2026-11-14",
       "clinics": [
         {
           "clinicID": 1,

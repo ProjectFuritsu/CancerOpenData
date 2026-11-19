@@ -9,7 +9,7 @@ Dates are Philippine time (UTC+8). See [MILESTONES.md](MILESTONES.md) for the bi
 ### v2 (in development, not public)
 A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unchanged by it.
 - Institutions get `branches` (address, map point, hours and contacts per office).
-- Lists of `sources`, `cancerTypes`, `lastVerified`, and one fixed list of contact types.
+- Lists of `sources` and `cancerTypes`, and one fixed list of contact types. (Records have no `lastVerified`; each file's `meta.lastUpdated` says when its records last changed.)
 - Benefit `amount` separate from the benefit name; clinic `bookingType` instead of `isWalkIns` and `canDoBoth`; `eligibility` as a list.
 - No loan programs. New: PCSO (Medical Assistance Program) and DOH (MAIFIP).
 - Feeds: 6 posts from the Philippine Society of Medical Oncology (psmo.ph): NCCN's locally adapted treatment guidelines, PANAG-ISTORYA (Davao City), the National Cancer Alliance, Barangayan in Gingoog City, "Ano ang Sarcoma?" and the 1st National Patient Navigation Conference. Titles, authors and dates as written; short summaries in our own words, with a link to each post.

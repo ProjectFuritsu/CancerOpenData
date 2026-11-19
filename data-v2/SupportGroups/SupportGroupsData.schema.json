@@ -157,9 +157,6 @@
           "sources": {
             "$ref": "#/$defs/sources"
           },
-          "lastVerified": {
-            "$ref": "#/$defs/lastVerified"
-          },
           "contacts": {
             "$ref": "#/$defs/contacts"
           }
@@ -178,7 +175,6 @@
           "founders",
           "meetingSchedule",
           "sources",
-          "lastVerified",
           "contacts"
         ],
         "additionalProperties": false
@@ -247,14 +243,6 @@
       "minItems": 1,
       "uniqueItems": true,
       "description": "Cancers this covers, e.g. ['Breast Cancer']. ['All cancers'] if it covers every cancer. null if the source doesn't say (show \"Not given\")."
-    },
-    "lastVerified": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "format": "date",
-      "description": "Date the record was last checked against its sources, YYYY-MM-DD. null if not known."
     }
   }
 }
