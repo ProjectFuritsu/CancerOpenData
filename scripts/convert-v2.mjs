@@ -255,6 +255,44 @@ const REVIEW = {
       },
     },
   },
+  // Decision 16 (Fritz, 2026-11-19, hospital coverage review, shape "A: linked"): what each
+  // hospital accepts or is accredited for. programID links to a money-help program; null when
+  // that program is not in the API (it stays on the hospital side only). Davao Doctors' coverage
+  // is in scripts/v2-additions/HealthInstitution.json.
+  healthInstitutionCoverage: {
+    1: [
+      {
+        programID: 101002,
+        name: "Z Benefit Packages",
+        details: "Contracted for Acute Lymphocytic (Lymphoblastic) Leukemia (ALL), Breast Cancer, Cervical Cancer, Prostate Cancer, Colon Cancer and Rectum Cancer, as of September 30, 2026.",
+        sources: ["https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"],
+      },
+      {
+        programID: null,
+        name: "Selected Outpatient Cancer Screening Tests",
+        details: "Accredited for breast ultrasound, low-dose chest CT scan, liver ultrasound, mammography, alpha-fetoprotein and colonoscopy. Accreditation expires 12/31/2026.",
+        sources: ["https://www.philhealth.gov.ph/partners/providers/facilities/accredited/CancerScreening.pdf"],
+      },
+      {
+        programID: 161213,
+        name: "YAKAP",
+        details: "Accredited YAKAP clinic. Accreditation expires 12/31/2026.",
+        sources: ["https://www.philhealth.gov.ph/partners/providers/facilities/accredited/YAKAP.pdf"],
+      },
+      {
+        programID: 606002,
+        name: "Cancer Assistance Fund",
+        details: "One of 36 DOH Cancer Assistance Fund access sites (July 2026).",
+        sources: ["https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide"],
+      },
+      {
+        programID: 606001,
+        name: "MAIFIP",
+        details: "Cancer patients at SPMC have used MAIFIP for laboratories, CT scans, procedures and medicines (2026).",
+        sources: ["https://www.sunstar.com.ph/davao/maifip-program-eases-medical-cost-burden-for-struggling-families"],
+      },
+    ],
+  },
   // Decision 11 (Fritz, 2026-11-15): one Z Benefits program instead of one per cancer,
   // keeping ALL the v1 details (his choice "A: labeled lists"). Every benefit, every
   // eligibility rule and each cancer's description stay as written, each labeled
@@ -532,6 +570,13 @@ function applyReview(folder, records) {
       }
       log(`${r.name}: fees for ${Object.keys(byName).length} services`);
     }
+    // Decision 16: coverage (programs the hospital accepts or is accredited for).
+    for (const [id, items] of Object.entries(REVIEW.healthInstitutionCoverage)) {
+      const r = records.find((x) => x.id === Number(id));
+      if (!r) continue;
+      r.coverage = structuredClone(items);
+      log(`${r.name}: coverage, ${items.length} items`);
+    }
   }
   if (folder === "MedicalSpecialist") {
     // Decision 6: placeholder faces look like real doctors; no photo until there is a consented one.
@@ -654,6 +699,7 @@ function instiTop(r, p) {
       requirements: s.requirements,
       procedure: s.procedure,
     })),
+    coverage: [],
   })));
 }
 

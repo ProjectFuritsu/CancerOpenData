@@ -285,6 +285,48 @@
           "requirements": [],
           "procedure": []
         }
+      ],
+      "coverage": [
+        {
+          "programID": 101002,
+          "name": "Z Benefit Packages",
+          "details": "Contracted for Acute Lymphocytic (Lymphoblastic) Leukemia (ALL), Breast Cancer, Cervical Cancer, Prostate Cancer, Colon Cancer and Rectum Cancer, as of September 30, 2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+          ]
+        },
+        {
+          "programID": null,
+          "name": "Selected Outpatient Cancer Screening Tests",
+          "details": "Accredited for breast ultrasound, low-dose chest CT scan, liver ultrasound, mammography, alpha-fetoprotein and colonoscopy. Accreditation expires 12/31/2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/CancerScreening.pdf"
+          ]
+        },
+        {
+          "programID": 161213,
+          "name": "YAKAP",
+          "details": "Accredited YAKAP clinic. Accreditation expires 12/31/2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/YAKAP.pdf"
+          ]
+        },
+        {
+          "programID": 606002,
+          "name": "Cancer Assistance Fund",
+          "details": "One of 36 DOH Cancer Assistance Fund access sites (July 2026).",
+          "sources": [
+            "https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide"
+          ]
+        },
+        {
+          "programID": 606001,
+          "name": "MAIFIP",
+          "details": "Cancer patients at SPMC have used MAIFIP for laboratories, CT scans, procedures and medicines (2026).",
+          "sources": [
+            "https://www.sunstar.com.ph/davao/maifip-program-eases-medical-cost-burden-for-struggling-families"
+          ]
+        }
       ]
     },
     {
@@ -505,6 +547,48 @@
           "service_schedule": null,
           "requirements": [],
           "procedure": []
+        }
+      ],
+      "coverage": [
+        {
+          "programID": 101002,
+          "name": "Z Benefit Packages",
+          "details": "Contracted for Breast Cancer, as of September 30, 2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+          ]
+        },
+        {
+          "programID": null,
+          "name": "LINGAP – City Government of Davao",
+          "details": "Accredited government financial medical assistance (as of November 2024). Office: Malasakit Center, Bajada, Davao City (beside SPMC Hospital).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": null,
+          "name": "DSWD – Department of Social Welfare & Development",
+          "details": "Accredited government financial medical assistance (as of November 2024). Office: Ramon Magsaysay, Davao City (near DPWH Office).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": 505001,
+          "name": "PCSO – Philippine Charity Sweepstakes Office",
+          "details": "Accredited government financial medical assistance (as of November 2024).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": 606001,
+          "name": "DOH MAIP – Department of Health",
+          "details": "Accredited government financial medical assistance (as of November 2024). For out-patient help, the hospital asks for a Certificate of Procedure's Non-Availability from SPMC Hospital.",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
         }
       ]
     }

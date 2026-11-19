@@ -117,6 +117,43 @@
               ],
               "additionalProperties": false
             }
+          },
+          "coverage": {
+            "type": "array",
+            "description": "Payment and financial-help programs this hospital accepts or is accredited for. Empty if not given (show \"Not given\").",
+            "items": {
+              "type": "object",
+              "properties": {
+                "programID": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "description": "The program in FinancialInstiData (programs[].programID), so apps can link to it. null when that program is not in this API."
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Program or agency name, as written by the source."
+                },
+                "details": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "What the source says about it at this hospital, e.g. packages, tests or office. null if not given."
+                },
+                "sources": {
+                  "$ref": "#/$defs/sources"
+                }
+              },
+              "required": [
+                "programID",
+                "name",
+                "details",
+                "sources"
+              ],
+              "additionalProperties": false
+            }
           }
         },
         "required": [
@@ -129,7 +166,8 @@
           "lastVerified",
           "contacts",
           "branches",
-          "services"
+          "services",
+          "coverage"
         ],
         "additionalProperties": false
       }

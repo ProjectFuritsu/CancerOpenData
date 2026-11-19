@@ -220,6 +220,48 @@
           "requirements": [],
           "procedure": []
         }
+      ],
+      "coverage": [
+        {
+          "programID": 101002,
+          "name": "Z Benefit Packages",
+          "details": "Contracted for Breast Cancer, as of September 30, 2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+          ]
+        },
+        {
+          "programID": null,
+          "name": "LINGAP – City Government of Davao",
+          "details": "Accredited government financial medical assistance (as of November 2024). Office: Malasakit Center, Bajada, Davao City (beside SPMC Hospital).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": null,
+          "name": "DSWD – Department of Social Welfare & Development",
+          "details": "Accredited government financial medical assistance (as of November 2024). Office: Ramon Magsaysay, Davao City (near DPWH Office).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": 505001,
+          "name": "PCSO – Philippine Charity Sweepstakes Office",
+          "details": "Accredited government financial medical assistance (as of November 2024).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": 606001,
+          "name": "DOH MAIP – Department of Health",
+          "details": "Accredited government financial medical assistance (as of November 2024). For out-patient help, the hospital asks for a Certificate of Procedure's Non-Availability from SPMC Hospital.",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        }
       ]
     }
   ]
