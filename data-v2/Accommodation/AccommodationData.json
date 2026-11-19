@@ -27,7 +27,7 @@
           "branchID": 1,
           "branchName": "House of Hope (SPMC compound)",
           "location": "Southern Philippines Medical Center Compound, J. P. Laurel Avenue, Poblacion Buhangin, Davao City, Davao del Sur 8000",
-          "landmark": null,
+          "landmark": "inside the Southern Philippines Medical Center (SPMC)",
           "latitude": null,
           "longitude": null,
           "schedule": null,
@@ -117,7 +117,7 @@
           "branchID": 1,
           "branchName": "Capernaum",
           "location": "Inside the Southern Philippines Medical Center compound, J.P. Laurel Ave., Bajada, Davao City",
-          "landmark": null,
+          "landmark": "inside the hospital compound",
           "latitude": null,
           "longitude": null,
           "schedule": null,
@@ -160,7 +160,7 @@
           "branchID": 1,
           "branchName": "Red Planet Davao",
           "location": "JP LAUREL AVE., BUHANGIN (POB), BUHANGIN DISTRICT 8000 DAVAO CITY DAVAO DEL SUR PHILIPPINES",
-          "landmark": null,
+          "landmark": "just 2 minutes from SM Lanang Premier",
           "latitude": null,
           "longitude": null,
           "schedule": null,
@@ -179,6 +179,307 @@
       "sources": [
         "https://www.redplanethotels.com/hotel/red-planet-davao"
       ]
+    },
+    {
+      "id": 5,
+      "name": "Hop Inn Hotel Davao",
+      "bgImageURL": "",
+      "source": null,
+      "description": "Paid place to stay near Southern Philippines Medical Center.",
+      "type": "Hotel",
+      "operator": null,
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Lot 1175 C1-C3 J.P. Laurel Avenue, Barrio Bajada, Davao City",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        1
+      ],
+      "eligibility": [],
+      "cost": "Paid.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": []
+    },
+    {
+      "id": 6,
+      "name": "Seda Abreeza",
+      "bgImageURL": "",
+      "source": "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao",
+      "description": "Paid place to stay near Southern Philippines Medical Center.",
+      "type": "Hotel",
+      "operator": "Seda Hotels",
+      "lastVerified": "2026-11-19",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Abreeza Ayala Business Park, J.P. Laurel Ave., Bajada, Davao City",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        1
+      ],
+      "eligibility": [],
+      "cost": "Paid. Rates on the hotel's website.",
+      "provides": [],
+      "capacity": "181 refreshed rooms",
+      "requirements": [],
+      "procedure": [],
+      "sources": [
+        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Park Inn by Radisson Davao",
+      "bgImageURL": "",
+      "source": "https://www.radissonhotels.com/en-us/hotels/park-inn-davao",
+      "description": "Paid place to stay near Southern Philippines Medical Center.",
+      "type": "Hotel",
+      "operator": "Park Inn by Radisson",
+      "lastVerified": "2026-11-19",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "J.P. Laurel Ave, Agdao",
+          "landmark": "Accessible to SM Lanang Premier via footbridge",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        1
+      ],
+      "eligibility": [],
+      "cost": "Paid. Rates on the hotel's website.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": [
+        "https://www.radissonhotels.com/en-us/hotels/park-inn-davao"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Acacia Hotel Davao",
+      "bgImageURL": "",
+      "source": null,
+      "description": "Paid place to stay near Southern Philippines Medical Center.",
+      "type": "Hotel",
+      "operator": null,
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "71 J.P. Laurel Street Lanang, Davao City 8000 Philippines",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        1
+      ],
+      "eligibility": [],
+      "cost": "Paid.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": []
+    },
+    {
+      "id": 9,
+      "name": "RedDoorz near Davao Doctors Hospital",
+      "bgImageURL": "",
+      "source": null,
+      "description": "Paid place to stay near Davao Doctors Hospital.",
+      "type": "Hotel",
+      "operator": null,
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Elpidio Quirino Ave., Poblacion District, Davao, Davao del Sur",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        2
+      ],
+      "eligibility": [],
+      "cost": "Paid.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": []
+    },
+    {
+      "id": 10,
+      "name": "Rogen Inn",
+      "bgImageURL": "",
+      "source": null,
+      "description": "Paid place to stay near Davao Doctors Hospital.",
+      "type": "Inn",
+      "operator": null,
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Mt. Apo, Cor Lopez Jaena St, Davao City, 8000 Davao del Sur",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        2
+      ],
+      "eligibility": [],
+      "cost": "Paid.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": []
+    },
+    {
+      "id": 11,
+      "name": "D'Morvie Suites - Davao",
+      "bgImageURL": "",
+      "source": null,
+      "description": "Paid place to stay near Davao Doctors Hospital.",
+      "type": "Hotel",
+      "operator": null,
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "224 San Pedro St, Poblacion District, Davao City, 8000 Davao del Sur",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        2
+      ],
+      "eligibility": [],
+      "cost": "Paid.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": []
+    },
+    {
+      "id": 12,
+      "name": "The Bourke Hotel",
+      "bgImageURL": "",
+      "source": null,
+      "description": "Paid place to stay near Davao Doctors Hospital.",
+      "type": "Hotel",
+      "operator": null,
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "115 P Pelayo St, Poblacion District, Davao City, 8000 Davao del Sur",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        2
+      ],
+      "eligibility": [],
+      "cost": "Paid.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": []
+    },
+    {
+      "id": 13,
+      "name": "Apo View Hotel",
+      "bgImageURL": "",
+      "source": null,
+      "description": "Paid place to stay near Davao Doctors Hospital.",
+      "type": "Hotel",
+      "operator": null,
+      "lastVerified": null,
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "4-A, Barangay, J. Camus St, Poblacion District, Davao City, 8000 Davao del Sur",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        2
+      ],
+      "eligibility": [],
+      "cost": "Paid.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": []
     }
   ]
 }

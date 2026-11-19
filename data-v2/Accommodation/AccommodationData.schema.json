@@ -26,8 +26,11 @@
             "format": "uri-reference"
           },
           "source": {
-            "type": "string",
-            "description": "Main page of the place, or the best page about it.",
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The place's own website, or the best page about it. null if it has no website.",
             "format": "uri"
           },
           "description": {
