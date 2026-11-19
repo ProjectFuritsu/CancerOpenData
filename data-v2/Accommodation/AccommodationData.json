@@ -2,125 +2,6 @@
   "$schema": "./AccommodationData.schema.json",
   "Accommodation": [
     {
-      "id": 1,
-      "name": "House of Hope",
-      "bgImageURL": "",
-      "source": "https://www.kidsofhope.org",
-      "description": "Temporary lodging for young cancer patients treated at Southern Philippines Medical Center, and their families. Over 200 pediatric cancer patients come to the SPMC Cancer Institute each year, from Mindanao and also Central Visayas and Bicol.",
-      "type": "Halfway house",
-      "operator": "House of Hope Foundation for Kids with Cancer Inc.",
-      "lastVerified": "2026-11-19",
-      "contacts": [
-        {
-          "contact_id": 1,
-          "type": "Email",
-          "contact_details": "contact@kidsofhope.org"
-        },
-        {
-          "contact_id": 2,
-          "type": "Mobile",
-          "contact_details": "0977 329 8496"
-        }
-      ],
-      "branches": [
-        {
-          "branchID": 1,
-          "branchName": "House of Hope (SPMC compound)",
-          "location": "Southern Philippines Medical Center Compound, J. P. Laurel Avenue, Poblacion Buhangin, Davao City, Davao del Sur 8000",
-          "landmark": "inside the Southern Philippines Medical Center (SPMC)",
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        },
-        {
-          "branchID": 2,
-          "branchName": "Margarita Village halfway house",
-          "location": "Margarita Village along J.P. Laurel Avenue, Davao City",
-          "landmark": null,
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        }
-      ],
-      "cost": null,
-      "amenities": [
-        "kitchen",
-        "common area",
-        "play area"
-      ],
-      "capacity": "SPMC house: four bedrooms, three bathrooms, a kitchen, a common area, and a play area (2019). Up to three families share one room (2023).",
-      "sources": [
-        "https://www.kidsofhope.org/contactus",
-        "https://www.sunstar.com.ph/davao/local-news/newly-refurbished-house-of-hope-opened",
-        "https://www.sunstar.com.ph/davao/local-news/duterte-donates-house-to-house-of-hope",
-        "https://www.stjude.org/inspire/series/around-the-world/philippines-dr-mae-dolendo-mindanao-house-of-hope-foundation.html"
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Balay Dalangpan",
-      "bgImageURL": "",
-      "source": "https://southcotabato.gov.ph/?p=134350",
-      "description": "Free temporary shelter in Davao City for South Cotabato patients receiving care at Southern Philippines Medical Center, and their caregivers, for those who cannot afford to rent a boarding house.",
-      "type": "Shelter",
-      "operator": "An ancestral home of the Tamayo family, kept open by South Cotabato Governor Reynaldo S. Tamayo, Jr.",
-      "lastVerified": "2026-11-19",
-      "contacts": [],
-      "branches": [
-        {
-          "branchID": 1,
-          "branchName": "Balay Dalangpan",
-          "location": "Davao City",
-          "landmark": null,
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        }
-      ],
-      "cost": "Free",
-      "amenities": [
-        "Free water",
-        "Free electricity",
-        "Free ambulance services for patient transport between South Cotabato and Davao City"
-      ],
-      "capacity": null,
-      "sources": [
-        "https://southcotabato.gov.ph/?p=134350"
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Capernaum",
-      "bgImageURL": "",
-      "source": "https://www.sunstar.com.ph/davao/breast-cancer-patients-journey-2nd-of-two-part-series",
-      "description": "Care facility inside the SPMC compound. Cancer patients coming from far away are offered free board and lodging.",
-      "type": "Care facility",
-      "operator": "Southern Philippines Medical Center",
-      "lastVerified": "2026-11-19",
-      "contacts": [],
-      "branches": [
-        {
-          "branchID": 1,
-          "branchName": "Capernaum",
-          "location": "Inside the Southern Philippines Medical Center compound, J.P. Laurel Ave., Bajada, Davao City",
-          "landmark": "inside the hospital compound",
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        }
-      ],
-      "cost": "Free board and lodging",
-      "amenities": [],
-      "capacity": null,
-      "sources": [
-        "https://www.sunstar.com.ph/davao/breast-cancer-patients-journey-2nd-of-two-part-series"
-      ]
-    },
-    {
       "id": 4,
       "name": "Red Planet Davao",
       "bgImageURL": "",
@@ -150,7 +31,10 @@
       ],
       "cost": "Paid. Rates on the hotel's website.",
       "amenities": [],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": [
         "https://www.redplanethotels.com/hotel/red-planet-davao"
       ]
@@ -179,7 +63,10 @@
       ],
       "cost": "Paid.",
       "amenities": [],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": []
     },
     {
@@ -187,7 +74,7 @@
       "name": "Seda Abreeza",
       "bgImageURL": "",
       "source": "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao",
-      "description": "Paid place to stay near Southern Philippines Medical Center.",
+      "description": "Paid place to stay near Southern Philippines Medical Center. 181 refreshed rooms.",
       "type": "Hotel",
       "operator": "Seda Hotels",
       "lastVerified": "2026-11-19",
@@ -206,7 +93,10 @@
       ],
       "cost": "Paid. Rates on the hotel's website.",
       "amenities": [],
-      "capacity": "181 refreshed rooms",
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": [
         "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao"
       ]
@@ -243,7 +133,10 @@
         "VANDA restaurant",
         "24/7 DASH self-service counter"
       ],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": 4
+      },
       "sources": [
         "https://www.radissonhotels.com/en-us/hotels/park-inn-davao"
       ]
@@ -272,7 +165,10 @@
       ],
       "cost": "Paid.",
       "amenities": [],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": []
     },
     {
@@ -299,7 +195,10 @@
       ],
       "cost": "Paid.",
       "amenities": [],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": []
     },
     {
@@ -326,7 +225,10 @@
       ],
       "cost": "Paid.",
       "amenities": [],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": []
     },
     {
@@ -353,7 +255,10 @@
       ],
       "cost": "Paid.",
       "amenities": [],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": []
     },
     {
@@ -380,7 +285,10 @@
       ],
       "cost": "Paid.",
       "amenities": [],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": []
     },
     {
@@ -407,7 +315,10 @@
       ],
       "cost": "Paid.",
       "amenities": [],
-      "capacity": null,
+      "roomCapacity": {
+        "min": null,
+        "max": null
+      },
       "sources": []
     }
   ]

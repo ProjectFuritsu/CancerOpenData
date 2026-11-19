@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "AccommodationData.schema.json",
   "title": "AccommodationData",
-  "description": "Cancer Open Data v2. Places where cancer patients and their companions can stay near the hospitals: free shelters and halfway houses, and paid places with an official page. A null value or an empty list means the information is not given yet: apps should show \"Not given\".",
+  "description": "Cancer Open Data v2. Places where cancer patients and their companions can stay near the hospitals: free shelters and halfway houses, and paid hotels and inns. A null value or an empty list means the information is not given yet: apps should show \"Not given\".",
   "type": "object",
   "properties": {
     "$schema": {
@@ -77,12 +77,32 @@
             "uniqueItems": true,
             "description": "What the place has or gives, one item each, as written by the source, e.g. kitchen, Wi-Fi, parking, free water. Empty if not given."
           },
-          "capacity": {
-            "type": [
-              "string",
-              "null"
+          "roomCapacity": {
+            "type": "object",
+            "description": "How many people can stay in one room, as a range. Each number is null if not given (show \"Not given\").",
+            "properties": {
+              "min": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "description": "Fewest people per room. null if not given."
+              },
+              "max": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "description": "Most people per room. null if not given."
+              }
+            },
+            "required": [
+              "min",
+              "max"
             ],
-            "description": "Rooms, beds or families, as written. null if not given."
+            "additionalProperties": false
           },
           "sources": {
             "$ref": "#/$defs/sources"
@@ -101,7 +121,7 @@
           "branches",
           "cost",
           "amenities",
-          "capacity",
+          "roomCapacity",
           "sources"
         ],
         "additionalProperties": false

@@ -123,6 +123,15 @@ if (v2Fin && v2Hos) {
   }
 }
 
+// ---- v2: a room capacity range can't be upside down ----
+const v2Acc = join("data-v2", "Accommodation", "AccommodationData.json");
+for (const a of v2Read(v2Acc)?.Accommodation ?? []) {
+  const { min, max } = a.roomCapacity ?? {};
+  if (min != null && max != null && min > max) {
+    console.error(`FAIL ${v2Acc}: ${a.name} has roomCapacity min ${min} above max ${max}`); failed++;
+  }
+}
+
 // ---- Images ----
 const kb = n => `${Math.round(n / 1024)} KB`;
 const images = new Set();
