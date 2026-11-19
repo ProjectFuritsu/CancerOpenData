@@ -62,14 +62,6 @@
             "minItems": 1,
             "description": "Each house or building where people stay."
           },
-          "eligibility": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "uniqueItems": true,
-            "description": "Who can stay, one rule per item, as written by the source. Empty if not given (show \"Not given\"), or if it is open to the public."
-          },
           "cost": {
             "type": [
               "string",
@@ -77,13 +69,13 @@
             ],
             "description": "Cost as written, e.g. 'Free'. null if not given."
           },
-          "provides": {
+          "amenities": {
             "type": "array",
             "items": {
               "type": "string"
             },
             "uniqueItems": true,
-            "description": "What is given besides the room, e.g. water, electricity, transport, as written. Empty if not given."
+            "description": "What the place has or gives, one item each, as written by the source, e.g. kitchen, Wi-Fi, parking, free water. Empty if not given."
           },
           "capacity": {
             "type": [
@@ -91,12 +83,6 @@
               "null"
             ],
             "description": "Rooms, beds or families, as written. null if not given."
-          },
-          "requirements": {
-            "$ref": "#/$defs/requirements"
-          },
-          "procedure": {
-            "$ref": "#/$defs/procedure"
           },
           "sources": {
             "$ref": "#/$defs/sources"
@@ -113,12 +99,9 @@
           "lastVerified",
           "contacts",
           "branches",
-          "eligibility",
           "cost",
-          "provides",
+          "amenities",
           "capacity",
-          "requirements",
-          "procedure",
           "sources"
         ],
         "additionalProperties": false
@@ -276,44 +259,6 @@
       ],
       "format": "date",
       "description": "Date the record was last checked against its sources, YYYY-MM-DD. null if not known."
-    },
-    "requirements": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "requirement_id": {
-            "type": "integer"
-          },
-          "requirement_description": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "requirement_id",
-          "requirement_description"
-        ],
-        "additionalProperties": false
-      }
-    },
-    "procedure": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "step": {
-            "type": "integer"
-          },
-          "instruction": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "step",
-          "instruction"
-        ],
-        "additionalProperties": false
-      }
     }
   }
 }

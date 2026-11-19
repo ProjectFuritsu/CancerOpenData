@@ -43,14 +43,13 @@
           "contacts": []
         }
       ],
-      "eligibility": [
-        "young cancer patients seeking medical treatment inside the SPMC"
-      ],
       "cost": null,
-      "provides": [],
+      "amenities": [
+        "kitchen",
+        "common area",
+        "play area"
+      ],
       "capacity": "SPMC house: four bedrooms, three bathrooms, a kitchen, a common area, and a play area (2019). Up to three families share one room (2023).",
-      "requirements": [],
-      "procedure": [],
       "sources": [
         "https://www.kidsofhope.org/contactus",
         "https://www.sunstar.com.ph/davao/local-news/newly-refurbished-house-of-hope-opened",
@@ -80,17 +79,13 @@
           "contacts": []
         }
       ],
-      "eligibility": [
-        "Patients and their caregivers who are receiving care at the Southern Philippine Medical Center",
-        "Patients from South Cotabato"
-      ],
       "cost": "Free",
-      "provides": [
-        "Free water, electricity, and ambulance services for patient transport between South Cotabato and Davao City"
+      "amenities": [
+        "Free water",
+        "Free electricity",
+        "Free ambulance services for patient transport between South Cotabato and Davao City"
       ],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": [
         "https://southcotabato.gov.ph/?p=134350"
       ]
@@ -117,14 +112,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [
-        "Cancer patients coming from afar"
-      ],
       "cost": "Free board and lodging",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": [
         "https://www.sunstar.com.ph/davao/breast-cancer-patients-journey-2nd-of-two-part-series"
       ]
@@ -157,12 +147,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid. Rates on the hotel's website.",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": [
         "https://www.redplanethotels.com/hotel/red-planet-davao"
       ]
@@ -189,12 +176,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid.",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": []
     },
     {
@@ -219,12 +203,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid. Rates on the hotel's website.",
-      "provides": [],
+      "amenities": [],
       "capacity": "181 refreshed rooms",
-      "requirements": [],
-      "procedure": [],
       "sources": [
         "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao"
       ]
@@ -251,12 +232,17 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid. Rates on the hotel's website.",
-      "provides": [],
+      "amenities": [
+        "Complimentary parking",
+        "Business services",
+        "Unlimited Wi-Fi",
+        "Outdoor pool",
+        "Fitness center, open 24 hours a day",
+        "VANDA restaurant",
+        "24/7 DASH self-service counter"
+      ],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": [
         "https://www.radissonhotels.com/en-us/hotels/park-inn-davao"
       ]
@@ -283,12 +269,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid.",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": []
     },
     {
@@ -313,12 +296,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid.",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": []
     },
     {
@@ -343,12 +323,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid.",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": []
     },
     {
@@ -373,12 +350,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid.",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": []
     },
     {
@@ -403,12 +377,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid.",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": []
     },
     {
@@ -433,12 +404,9 @@
           "contacts": []
         }
       ],
-      "eligibility": [],
       "cost": "Paid.",
-      "provides": [],
+      "amenities": [],
       "capacity": null,
-      "requirements": [],
-      "procedure": [],
       "sources": []
     }
   ]
