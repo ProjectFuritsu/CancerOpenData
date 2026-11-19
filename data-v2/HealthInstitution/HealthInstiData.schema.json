@@ -260,19 +260,26 @@
         "location": {
           "type": "string"
         },
+        "landmark": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "A landmark that helps people find it, as written by the source, e.g. 'infront SPMC Hospital'. null if not given."
+        },
         "latitude": {
           "type": [
             "null",
             "number"
           ],
-          "description": "Latitude (from Google Maps). null if not known."
+          "description": "Latitude in decimal degrees (WGS 84), from an official source or an on-site GPS reading. null if not known."
         },
         "longitude": {
           "type": [
             "null",
             "number"
           ],
-          "description": "Longitude (from Google Maps). null if not known."
+          "description": "Longitude in decimal degrees (WGS 84), from an official source or an on-site GPS reading. null if not known."
         },
         "schedule": {
           "anyOf": [
@@ -293,6 +300,7 @@
         "branchID",
         "branchName",
         "location",
+        "landmark",
         "latitude",
         "longitude",
         "schedule",

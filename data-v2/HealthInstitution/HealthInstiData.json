@@ -31,6 +31,7 @@
           "branchID": 1,
           "branchName": null,
           "location": "J.P. Laurel Ave, Bajada, Davao City",
+          "landmark": null,
           "latitude": 7.099167,
           "longitude": 125.619722,
           "schedule": [
@@ -359,6 +360,7 @@
           "branchID": 1,
           "branchName": null,
           "location": "118 E. Quirino Avenue, Davao City Philippines 8000",
+          "landmark": null,
           "latitude": null,
           "longitude": null,
           "schedule": [],

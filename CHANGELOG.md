@@ -27,6 +27,7 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - Feeds 16 to 18: PhilHealth's lists of hospitals contracted for Z Benefits, accredited cancer screening providers and accredited YAKAP clinics, all as of September 30, 2026, with the Davao City facilities in each summary.
 - Health institutions get `coverage`: the programs each hospital accepts or is accredited for. Each item has a `programID` that links to a financial program, or `null` when that program isn't in the API.
 - New dataset `Accommodation` (`/v2/Accommodation/AccommodationData.json`): places where patients and companions can stay near the hospitals, linked by `hospitalIDs`. Free: House of Hope, Balay Dalangpan, SPMC's Capernaum. Paid: Red Planet Davao. Paid places are added only with an official page that gives the address and a nearby hospital.
+- Every branch (financial offices, hospitals, places to stay) gets `landmark`: a landmark that helps people find it, as written, or `null`. Addresses that already include a landmark stay as written. `latitude` and `longitude` are described as decimal degrees from an official source or an on-site GPS reading.
 
 ### Repo
 - Issue forms: wrong data, new resource, API problem, privacy or removal request. Blank issues are off.

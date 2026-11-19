@@ -611,8 +611,19 @@ function addV2Only(folder, key, records) {
   records.sort((a, b) => a.id - b.id);
 }
 
+// Decision 18 (Fritz, 2026-11-19): every branch has a landmark, as written by a source, or null.
+// The key order is fixed here, so branches from v1, the review and v2-additions all look the same.
+const BRANCH_KEYS = ["branchID", "branchName", "location", "landmark", "latitude", "longitude", "schedule", "contacts"];
+function withLandmarks(records) {
+  for (const r of records) {
+    if (!Array.isArray(r.branches)) continue;
+    r.branches = r.branches.map((b) => Object.fromEntries(BRANCH_KEYS.map((k) => [k, k === "landmark" ? (b.landmark ?? null) : b[k]])));
+  }
+}
+
 function write(folder, file, key, records) {
   if (!args.includes("--no-review")) { applyReview(folder, records); addV2Only(folder, key, records); }
+  withLandmarks(records);
   const out = { $schema: `./${file}.schema.json`, [key]: records };
   writeFileSync(join("data-v2", folder, `${file}.json`), JSON.stringify(out, null, 2) + "\n");
   console.log(`wrote data-v2/${folder}/${file}.json (${records.length} records)`);
