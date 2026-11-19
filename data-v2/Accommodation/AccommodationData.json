@@ -1,0 +1,179 @@
+{
+  "$schema": "./AccommodationData.schema.json",
+  "Accommodation": [
+    {
+      "id": 1,
+      "name": "House of Hope",
+      "bgImageURL": "",
+      "source": "https://www.kidsofhope.org",
+      "description": "Temporary lodging for young cancer patients treated at Southern Philippines Medical Center, and their families. Over 200 pediatric cancer patients come to the SPMC Cancer Institute each year, from Mindanao and also Central Visayas and Bicol.",
+      "type": "Halfway house",
+      "operator": "House of Hope Foundation for Kids with Cancer Inc.",
+      "lastVerified": "2026-11-19",
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Email",
+          "contact_details": "contact@kidsofhope.org"
+        },
+        {
+          "contact_id": 2,
+          "type": "Mobile",
+          "contact_details": "0977 329 8496"
+        }
+      ],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "House of Hope (SPMC compound)",
+          "location": "Southern Philippines Medical Center Compound, J. P. Laurel Avenue, Poblacion Buhangin, Davao City, Davao del Sur 8000",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        },
+        {
+          "branchID": 2,
+          "branchName": "Margarita Village halfway house",
+          "location": "Margarita Village along J.P. Laurel Avenue, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        1
+      ],
+      "eligibility": [
+        "young cancer patients seeking medical treatment inside the SPMC"
+      ],
+      "cost": null,
+      "provides": [],
+      "capacity": "SPMC house: four bedrooms, three bathrooms, a kitchen, a common area, and a play area (2019). Up to three families share one room (2023).",
+      "requirements": [],
+      "procedure": [],
+      "sources": [
+        "https://www.kidsofhope.org/contactus",
+        "https://www.sunstar.com.ph/davao/local-news/newly-refurbished-house-of-hope-opened",
+        "https://www.sunstar.com.ph/davao/local-news/duterte-donates-house-to-house-of-hope",
+        "https://www.stjude.org/inspire/series/around-the-world/philippines-dr-mae-dolendo-mindanao-house-of-hope-foundation.html"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Balay Dalangpan",
+      "bgImageURL": "",
+      "source": "https://southcotabato.gov.ph/?p=134350",
+      "description": "Free temporary shelter in Davao City for South Cotabato patients receiving care at Southern Philippines Medical Center, and their caregivers, for those who cannot afford to rent a boarding house.",
+      "type": "Shelter",
+      "operator": "An ancestral home of the Tamayo family, kept open by South Cotabato Governor Reynaldo S. Tamayo, Jr.",
+      "lastVerified": "2026-11-19",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "Balay Dalangpan",
+          "location": "Davao City",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        1
+      ],
+      "eligibility": [
+        "Patients and their caregivers who are receiving care at the Southern Philippine Medical Center",
+        "Patients from South Cotabato"
+      ],
+      "cost": "Free",
+      "provides": [
+        "Free water, electricity, and ambulance services for patient transport between South Cotabato and Davao City"
+      ],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": [
+        "https://southcotabato.gov.ph/?p=134350"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Capernaum",
+      "bgImageURL": "",
+      "source": "https://www.sunstar.com.ph/davao/breast-cancer-patients-journey-2nd-of-two-part-series",
+      "description": "Care facility inside the SPMC compound. Cancer patients coming from far away are offered free board and lodging.",
+      "type": "Care facility",
+      "operator": "Southern Philippines Medical Center",
+      "lastVerified": "2026-11-19",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "Capernaum",
+          "location": "Inside the Southern Philippines Medical Center compound, J.P. Laurel Ave., Bajada, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        1
+      ],
+      "eligibility": [
+        "Cancer patients coming from afar"
+      ],
+      "cost": "Free board and lodging",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": [
+        "https://www.sunstar.com.ph/davao/breast-cancer-patients-journey-2nd-of-two-part-series"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Red Planet Davao",
+      "bgImageURL": "",
+      "source": "https://www.redplanethotels.com/hotel/red-planet-davao",
+      "description": "Budget hotel on J.P. Laurel Avenue. Its official page says \"Damosa IT Park and Davao Medical Center are nearby\" (Davao Medical Center is SPMC's former name).",
+      "type": "Hotel",
+      "operator": "Red Planet Hotels",
+      "lastVerified": "2026-11-19",
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Landline",
+          "contact_details": "+63 (082) 224 0577"
+        }
+      ],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "Red Planet Davao",
+          "location": "JP LAUREL AVE., BUHANGIN (POB), BUHANGIN DISTRICT 8000 DAVAO CITY DAVAO DEL SUR PHILIPPINES",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": []
+        }
+      ],
+      "hospitalIDs": [
+        1
+      ],
+      "eligibility": [],
+      "cost": "Paid. Rates on the hotel's website.",
+      "provides": [],
+      "capacity": null,
+      "requirements": [],
+      "procedure": [],
+      "sources": [
+        "https://www.redplanethotels.com/hotel/red-planet-davao"
+      ]
+    }
+  ]
+}

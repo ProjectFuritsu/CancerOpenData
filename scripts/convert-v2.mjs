@@ -757,3 +757,9 @@ const bookingType = (c) =>
     contacts: r.contacts,
   })));
 }
+
+// ---- Accommodation (v2 only) ----
+// Decision 17 (Fritz, 2026-11-19, accommodation review): places where patients and companions can
+// stay near the hospitals. A new dataset with no v1 file: all records are in
+// scripts/v2-additions/Accommodation.json.
+write("Accommodation", "AccommodationData", "Accommodation", []);

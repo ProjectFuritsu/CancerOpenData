@@ -190,7 +190,7 @@ try {
         assert.equal(r.headers.get("access-control-allow-origin"), "*");
         const body = await r.json();
         assert.equal(body.apiVersion, "v2");
-        assert.equal(body.datasets.length, 5);
+        assert.equal(body.datasets.length, 6); // v1's 5 plus Accommodation (v2 only)
         assert.equal(body.openapi, `${base}/v2/openapi.json`);
         assert.equal(body.docs, `${base}/docs/?version=v2`);
         for (const d of body.datasets) {

@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AccommodationData.schema.json",
+  "title": "AccommodationData",
+  "description": "Cancer Open Data v2. Places where cancer patients and their companions can stay near the hospitals: free shelters and halfway houses, and paid places with an official page. A null value or an empty list means the information is not given yet: apps should show \"Not given\".",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "Accommodation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL. Empty if none.",
+            "format": "uri-reference"
+          },
+          "source": {
+            "type": "string",
+            "description": "Main page of the place, or the best page about it.",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "description": "Kind of place, e.g. Halfway house, Shelter, Care facility, Hotel."
+          },
+          "operator": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Who runs it, as written by the source. null if not given."
+          },
+          "lastVerified": {
+            "$ref": "#/$defs/lastVerified"
+          },
+          "contacts": {
+            "$ref": "#/$defs/contacts",
+            "description": "Organization contacts only (no personal numbers of private people). Branch contacts are inside each branch."
+          },
+          "branches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/branch"
+            },
+            "minItems": 1,
+            "description": "Each house or building where people stay."
+          },
+          "hospitalIDs": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "uniqueItems": true,
+            "minItems": 1,
+            "description": "The hospitals it serves or is near: ids in HealthInstiData (Health_Insti[].id)."
+          },
+          "eligibility": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Who can stay, one rule per item, as written by the source. Empty if not given (show \"Not given\"), or if it is open to the public."
+          },
+          "cost": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Cost as written, e.g. 'Free'. null if not given."
+          },
+          "provides": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "What is given besides the room, e.g. water, electricity, transport, as written. Empty if not given."
+          },
+          "capacity": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Rooms, beds or families, as written. null if not given."
+          },
+          "requirements": {
+            "$ref": "#/$defs/requirements"
+          },
+          "procedure": {
+            "$ref": "#/$defs/procedure"
+          },
+          "sources": {
+            "$ref": "#/$defs/sources"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "bgImageURL",
+          "source",
+          "description",
+          "type",
+          "operator",
+          "lastVerified",
+          "contacts",
+          "branches",
+          "hospitalIDs",
+          "eligibility",
+          "cost",
+          "provides",
+          "capacity",
+          "requirements",
+          "procedure",
+          "sources"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "Accommodation"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "contact": {
+      "type": "object",
+      "properties": {
+        "contact_id": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Hotline",
+            "Landline",
+            "Mobile",
+            "Email",
+            "Website",
+            "Facebook",
+            "Other"
+          ],
+          "description": "Kind of contact. One fixed list for all datasets."
+        },
+        "contact_details": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contact_id",
+        "type",
+        "contact_details"
+      ],
+      "additionalProperties": false
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contact"
+      }
+    },
+    "scheduleEntry": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "string",
+          "description": "Day or days as written by the source, e.g. 'Monday' or 'Monday-Friday'. A day can appear twice for split hours."
+        },
+        "timeIn": {
+          "type": "string",
+          "description": "Opening or start time, e.g. '8:00 am'."
+        },
+        "timeOut": {
+          "type": "string",
+          "description": "Closing or end time, e.g. '5:00 pm'."
+        }
+      },
+      "required": [
+        "day",
+        "timeIn",
+        "timeOut"
+      ],
+      "additionalProperties": false
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scheduleEntry"
+      },
+      "description": "Open days and hours. Closed days are left out."
+    },
+    "branch": {
+      "type": "object",
+      "properties": {
+        "branchID": {
+          "type": "integer"
+        },
+        "branchName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Name of the branch, e.g. 'Davao City Branch'. null if not given."
+        },
+        "location": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Latitude (from Google Maps). null if not known."
+        },
+        "longitude": {
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Longitude (from Google Maps). null if not known."
+        },
+        "schedule": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/schedule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Open days and hours. null if not known (show \"Not given\")."
+        },
+        "contacts": {
+          "$ref": "#/$defs/contacts"
+        }
+      },
+      "required": [
+        "branchID",
+        "branchName",
+        "location",
+        "latitude",
+        "longitude",
+        "schedule",
+        "contacts"
+      ],
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+    },
+    "lastVerified": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date",
+      "description": "Date the record was last checked against its sources, YYYY-MM-DD. null if not known."
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirement_id": {
+            "type": "integer"
+          },
+          "requirement_description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "requirement_id",
+          "requirement_description"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "procedure": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step": {
+            "type": "integer"
+          },
+          "instruction": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "step",
+          "instruction"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}
