@@ -43,9 +43,6 @@
           "contacts": []
         }
       ],
-      "hospitalIDs": [
-        1
-      ],
       "eligibility": [
         "young cancer patients seeking medical treatment inside the SPMC"
       ],
@@ -83,9 +80,6 @@
           "contacts": []
         }
       ],
-      "hospitalIDs": [
-        1
-      ],
       "eligibility": [
         "Patients and their caregivers who are receiving care at the Southern Philippine Medical Center",
         "Patients from South Cotabato"
@@ -122,9 +116,6 @@
           "schedule": null,
           "contacts": []
         }
-      ],
-      "hospitalIDs": [
-        1
       ],
       "eligibility": [
         "Cancer patients coming from afar"
@@ -166,9 +157,6 @@
           "contacts": []
         }
       ],
-      "hospitalIDs": [
-        1
-      ],
       "eligibility": [],
       "cost": "Paid. Rates on the hotel's website.",
       "provides": [],
@@ -201,9 +189,6 @@
           "contacts": []
         }
       ],
-      "hospitalIDs": [
-        1
-      ],
       "eligibility": [],
       "cost": "Paid.",
       "provides": [],
@@ -233,9 +218,6 @@
           "schedule": null,
           "contacts": []
         }
-      ],
-      "hospitalIDs": [
-        1
       ],
       "eligibility": [],
       "cost": "Paid. Rates on the hotel's website.",
@@ -269,9 +251,6 @@
           "contacts": []
         }
       ],
-      "hospitalIDs": [
-        1
-      ],
       "eligibility": [],
       "cost": "Paid. Rates on the hotel's website.",
       "provides": [],
@@ -304,9 +283,6 @@
           "contacts": []
         }
       ],
-      "hospitalIDs": [
-        1
-      ],
       "eligibility": [],
       "cost": "Paid.",
       "provides": [],
@@ -336,9 +312,6 @@
           "schedule": null,
           "contacts": []
         }
-      ],
-      "hospitalIDs": [
-        2
       ],
       "eligibility": [],
       "cost": "Paid.",
@@ -370,9 +343,6 @@
           "contacts": []
         }
       ],
-      "hospitalIDs": [
-        2
-      ],
       "eligibility": [],
       "cost": "Paid.",
       "provides": [],
@@ -402,9 +372,6 @@
           "schedule": null,
           "contacts": []
         }
-      ],
-      "hospitalIDs": [
-        2
       ],
       "eligibility": [],
       "cost": "Paid.",
@@ -436,9 +403,6 @@
           "contacts": []
         }
       ],
-      "hospitalIDs": [
-        2
-      ],
       "eligibility": [],
       "cost": "Paid.",
       "provides": [],
@@ -468,9 +432,6 @@
           "schedule": null,
           "contacts": []
         }
-      ],
-      "hospitalIDs": [
-        2
       ],
       "eligibility": [],
       "cost": "Paid.",

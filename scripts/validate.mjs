@@ -108,11 +108,10 @@ if (existsSync(v2Health)) {
 }
 
 // ---- v2: links between datasets must point to records that exist ----
-// Hospital coverage -> financial programs (programID, unless null), accommodation -> hospitals (hospitalIDs).
+// Hospital coverage -> financial programs (programID, unless null).
 const v2Read = (p) => { try { return existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null; } catch { return null; } };
 const v2Fin = v2Read(join("data-v2", "FinancialInstitution", "FinancialInstiData.json"));
 const v2Hos = v2Read(v2Health);
-const v2Acc = join("data-v2", "Accommodation", "AccommodationData.json");
 if (v2Fin && v2Hos) {
   const programIDs = new Set(v2Fin.Financial_Insti.flatMap(r => (r.programs ?? []).map(p => p.programID)));
   for (const h of v2Hos.Health_Insti) {
@@ -120,15 +119,6 @@ if (v2Fin && v2Hos) {
       if (c.programID !== null && !programIDs.has(c.programID)) {
         console.error(`FAIL ${v2Health}: ${h.name}, coverage "${c.name}" uses programID ${c.programID}, which no financial program has`); failed++;
       }
-    }
-  }
-}
-const accData = v2Read(v2Acc);
-if (accData && v2Hos) {
-  const hospitalIDs = new Set(v2Hos.Health_Insti.map(h => h.id));
-  for (const a of accData.Accommodation) {
-    for (const id of a.hospitalIDs ?? []) {
-      if (!hospitalIDs.has(id)) { console.error(`FAIL ${v2Acc}: ${a.name} uses hospitalID ${id}, which no health institution has`); failed++; }
     }
   }
 }
