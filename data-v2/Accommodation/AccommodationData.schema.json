@@ -118,9 +118,6 @@
             ],
             "description": "Who runs it, as written by the source. null if not given."
           },
-          "lastVerified": {
-            "$ref": "#/$defs/lastVerified"
-          },
           "contacts": {
             "$ref": "#/$defs/contacts",
             "description": "Organization contacts only (no personal numbers of private people). Branch contacts are inside each branch."
@@ -187,7 +184,6 @@
           "description",
           "type",
           "operator",
-          "lastVerified",
           "contacts",
           "branches",
           "cost",
@@ -343,14 +339,6 @@
       },
       "uniqueItems": true,
       "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
-    },
-    "lastVerified": {
-      "type": [
-        "null",
-        "string"
-      ],
-      "format": "date",
-      "description": "Date the record was last checked against its sources, YYYY-MM-DD. null if not known."
     }
   }
 }

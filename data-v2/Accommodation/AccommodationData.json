@@ -23,7 +23,6 @@
       "description": "Budget hotel on J.P. Laurel Avenue. Its official page says \"Damosa IT Park and Davao Medical Center are nearby\" (Davao Medical Center is SPMC's former name).",
       "type": "Hotel",
       "operator": "Red Planet Hotels",
-      "lastVerified": "2026-11-19",
       "contacts": [
         {
           "contact_id": 1,
@@ -61,7 +60,6 @@
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": null,
-      "lastVerified": null,
       "contacts": [],
       "branches": [
         {
@@ -91,7 +89,6 @@
       "description": "Paid place to stay near Southern Philippines Medical Center. 181 refreshed rooms.",
       "type": "Hotel",
       "operator": "Seda Hotels",
-      "lastVerified": "2026-11-19",
       "contacts": [],
       "branches": [
         {
@@ -123,7 +120,6 @@
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": "Park Inn by Radisson",
-      "lastVerified": "2026-11-19",
       "contacts": [],
       "branches": [
         {
@@ -163,7 +159,6 @@
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": null,
-      "lastVerified": null,
       "contacts": [],
       "branches": [
         {
@@ -193,7 +188,6 @@
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
-      "lastVerified": null,
       "contacts": [],
       "branches": [
         {
@@ -223,7 +217,6 @@
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Inn",
       "operator": null,
-      "lastVerified": null,
       "contacts": [],
       "branches": [
         {
@@ -253,7 +246,6 @@
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
-      "lastVerified": null,
       "contacts": [],
       "branches": [
         {
@@ -283,7 +275,6 @@
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
-      "lastVerified": null,
       "contacts": [],
       "branches": [
         {
@@ -313,7 +304,6 @@
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
-      "lastVerified": null,
       "contacts": [],
       "branches": [
         {
