@@ -1,5 +1,19 @@
 {
   "$schema": "./MedicalSpecialistData.schema.json",
+  "meta": {
+    "title": "Medical specialists",
+    "description": "Cancer doctors in Davao City, with their clinics, schedules and booking.",
+    "apiVersion": "v2",
+    "lastUpdated": "2026-11-15",
+    "recordCount": 29,
+    "coverage": "Davao City, Philippines",
+    "language": "en",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "publisher": "Cancer Open Data (ProjectFuritsu)",
+    "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
+    "schema": "./MedicalSpecialistData.schema.json"
+  },
   "Medical_Specialist": [
     {
       "id": 1,

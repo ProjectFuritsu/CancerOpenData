@@ -10,6 +10,7 @@
 // --no-review skips Fritz's review decisions (to see the plain conversion).
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { execFileSync } from "node:child_process";
 
 const args = process.argv.slice(2);
 const provDir = args.includes("--provenance") ? args[args.indexOf("--provenance") + 1] : null;
@@ -621,12 +622,54 @@ function withLandmarks(records) {
   }
 }
 
+// Decision 19 (Fritz, 2026-11-19): every v2 file starts with a "meta" block.
+// lastUpdated changes only when the records change: same records as the file already on disk
+// keep its date; a file without meta yet takes the date of its last Git commit.
+const META = {
+  Feeds: ["Feeds", "News, articles and announcements about cancer care in Davao City, with a short summary and a link to each source."],
+  FinancialInstitution: ["Financial help", "Programs that help cancer patients pay for care: where to go, who can apply, benefits, requirements and steps."],
+  HealthInstitution: ["Hospitals", "Hospitals with cancer services in Davao City: services, schedules, fees and the programs they accept."],
+  MedicalSpecialist: ["Medical specialists", "Cancer doctors in Davao City, with their clinics, schedules and booking."],
+  SupportGroups: ["Support groups", "Cancer support groups for patients, survivors and families."],
+  Accommodation: ["Accommodation", "Places where cancer patients and their companions can stay near the hospitals."],
+};
+const today = () => new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Manila" }); // YYYY-MM-DD
+function lastUpdated(path, records, key) {
+  if (existsSync(path)) {
+    const old = read(path);
+    if (old.meta?.lastUpdated && JSON.stringify(old[key]) === JSON.stringify(records)) return old.meta.lastUpdated;
+    if (!old.meta && JSON.stringify(old[key]) === JSON.stringify(records)) {
+      try {
+        const d = execFileSync("git", ["log", "-1", "--format=%cs", "--", path], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim();
+        if (d) return d;
+      } catch { /* not a Git checkout: use today */ }
+    }
+  }
+  return today();
+}
+
 function write(folder, file, key, records) {
   if (!args.includes("--no-review")) { applyReview(folder, records); addV2Only(folder, key, records); }
   withLandmarks(records);
-  const out = { $schema: `./${file}.schema.json`, [key]: records };
-  writeFileSync(join("data-v2", folder, `${file}.json`), JSON.stringify(out, null, 2) + "\n");
-  console.log(`wrote data-v2/${folder}/${file}.json (${records.length} records)`);
+  const path = join("data-v2", folder, `${file}.json`);
+  const [title, description] = META[folder] ?? [folder, ""];
+  const meta = {
+    title,
+    description,
+    apiVersion: "v2",
+    lastUpdated: lastUpdated(path, records, key),
+    recordCount: records.length,
+    coverage: "Davao City, Philippines",
+    language: "en",
+    license: "CC0-1.0",
+    licenseURL: "https://creativecommons.org/publicdomain/zero/1.0/",
+    publisher: "Cancer Open Data (ProjectFuritsu)",
+    contact: "https://github.com/ProjectFuritsu/CancerOpenData/issues",
+    schema: `./${file}.schema.json`,
+  };
+  const out = { $schema: `./${file}.schema.json`, meta, [key]: records };
+  writeFileSync(path, JSON.stringify(out, null, 2) + "\n");
+  console.log(`wrote ${path} (${records.length} records, last updated ${meta.lastUpdated})`);
 }
 
 // ---- Feeds ----

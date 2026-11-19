@@ -9,6 +9,77 @@
       "type": "string",
       "description": "Path to this file's JSON Schema."
     },
+    "meta": {
+      "type": "object",
+      "description": "About this file: what it is, when its records last changed, how many there are, and its license. Written by scripts/convert-v2.mjs.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Short name of the dataset."
+        },
+        "description": {
+          "type": "string",
+          "description": "What the dataset holds."
+        },
+        "apiVersion": {
+          "const": "v2",
+          "description": "API version of this file."
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date (YYYY-MM-DD, Philippine time) the records last changed. Rebuilding without changes keeps the date."
+        },
+        "recordCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of records in this file."
+        },
+        "coverage": {
+          "type": "string",
+          "description": "Area the data covers."
+        },
+        "language": {
+          "type": "string",
+          "description": "Language of the text (BCP 47 code)."
+        },
+        "license": {
+          "const": "CC0-1.0",
+          "description": "License of the data (SPDX id). Logos and photos in images/ belong to their owners."
+        },
+        "licenseURL": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where to report wrong data or ask questions."
+        },
+        "schema": {
+          "const": "./FeedsData.schema.json",
+          "description": "This file's JSON Schema."
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "apiVersion",
+        "lastUpdated",
+        "recordCount",
+        "coverage",
+        "language",
+        "license",
+        "licenseURL",
+        "publisher",
+        "contact",
+        "schema"
+      ],
+      "additionalProperties": false
+    },
     "Feed": {
       "type": "array",
       "items": {
@@ -80,6 +151,7 @@
     }
   },
   "required": [
+    "meta",
     "Feed"
   ],
   "additionalProperties": false,

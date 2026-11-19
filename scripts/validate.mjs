@@ -132,6 +132,20 @@ for (const a of v2Read(v2Acc)?.Accommodation ?? []) {
   }
 }
 
+// ---- v2: meta.recordCount must match the records in the file ----
+if (existsSync("data-v2")) {
+  for (const dir of readdirSync("data-v2", { withFileTypes: true }).filter(d => d.isDirectory())) {
+    for (const f of readdirSync(join("data-v2", dir.name)).filter(n => n.endsWith(".json") && !n.endsWith(".schema.json"))) {
+      const p = join("data-v2", dir.name, f);
+      const d = v2Read(p);
+      if (!d?.meta) continue; // the schema check reports a missing meta
+      const key = Object.keys(d).find(k => k !== "$schema" && k !== "meta");
+      const n = Array.isArray(d[key]) ? d[key].length : 0;
+      if (d.meta.recordCount !== n) { console.error(`FAIL ${p}: meta.recordCount is ${d.meta.recordCount}, but the file has ${n} records`); failed++; }
+    }
+  }
+}
+
 // ---- Images ----
 const kb = n => `${Math.round(n / 1024)} KB`;
 const images = new Set();

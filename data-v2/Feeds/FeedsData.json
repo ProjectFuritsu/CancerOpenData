@@ -1,5 +1,19 @@
 {
   "$schema": "./FeedsData.schema.json",
+  "meta": {
+    "title": "Feeds",
+    "description": "News, articles and announcements about cancer care in Davao City, with a short summary and a link to each source.",
+    "apiVersion": "v2",
+    "lastUpdated": "2026-11-16",
+    "recordCount": 18,
+    "coverage": "Davao City, Philippines",
+    "language": "en",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "publisher": "Cancer Open Data (ProjectFuritsu)",
+    "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
+    "schema": "./FeedsData.schema.json"
+  },
   "Feed": [
     {
       "id": 1,

@@ -1,5 +1,19 @@
 {
   "$schema": "./SupportGroupsData.schema.json",
+  "meta": {
+    "title": "Support groups",
+    "description": "Cancer support groups for patients, survivors and families.",
+    "apiVersion": "v2",
+    "lastUpdated": "2026-11-15",
+    "recordCount": 2,
+    "coverage": "Davao City, Philippines",
+    "language": "en",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "publisher": "Cancer Open Data (ProjectFuritsu)",
+    "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
+    "schema": "./SupportGroupsData.schema.json"
+  },
   "Support_Group": [
     {
       "id": 1,
