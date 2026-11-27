@@ -12,6 +12,9 @@ Dates are Philippine time (UTC+8). See [MILESTONES.md](MILESTONES.md) for the bi
 - AMUMA: removed the landline (082) 295-2133. PhilHealth's official directory lists it as PhilHealth Regional Office XI's trunkline.
 - SSS (Financial #2): `bgImageURL` is now empty. The old link (https://www.sss.gov.ph/sss/images/SSS_Building.jpg) returns 404 (checked 2026-11-27). Apps show no background image until an official one is found.
 
+### Repo: v2 is the main version
+- `data-v2/` is now the source of truth: v2 is edited directly, and validate and the Worker tests require it. `data/` (v1) is frozen and stays online read-only until a stop date is agreed. `scripts/convert-v2.mjs` is frozen (it stops unless run with `--unfreeze`); its last run after PR #18 changed nothing.
+
 ### v2 (in development, not public)
 A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unchanged by it.
 - Institutions get `branches` (address, map point, hours and contacts per office).

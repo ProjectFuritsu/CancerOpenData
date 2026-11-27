@@ -13,6 +13,8 @@ import {
 
 const DATA_DIR = "data";
 // v2 data (served at /v2/) lives in data-v2/ with the same layout and rules.
+// v2 is the main version since 2026-11-27, so data-v2/ must exist. v1 (data/) is frozen.
+if (!existsSync("data-v2")) { console.error("FAIL data-v2/ is missing: v2 is the main version"); process.exit(1); }
 const DATA_DIRS = [DATA_DIR, "data-v2"].filter(d => existsSync(d));
 const datasetDirs = () => DATA_DIRS.flatMap(base =>
   readdirSync(base, { withFileTypes: true }).filter(f => f.isDirectory()).map(f => join(base, f.name)));

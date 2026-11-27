@@ -68,6 +68,8 @@ The smoke test fetches every file from the public URL and checks status `200`, t
 
 ## Changing the data
 
+**v2 is the source of truth (since 2026-11-27).** Edit `data-v2/` and its schemas directly. `data/` (v1) and `scripts/convert-v2.mjs` are frozen: v1 stays online read-only, marked deprecated, until a stop date agreed with the app team. The converter stops unless run with `--unfreeze`, because a re-run would undo v2 edits. Validate and the Worker tests fail if `data-v2/` is missing.
+
 Check locally before you push:
 
 ```bash
