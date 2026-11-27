@@ -569,33 +569,41 @@
           "requirements": [
             {
               "requirementID": 1,
-              "requirementDescription": "Unified Intake Sheet (evaluated by a social worker)"
+              "requirementDescription": "In-patients: Hospital bill or charges or fees or statement of account (SOA)"
             },
             {
               "requirementID": 2,
-              "requirementDescription": "Final bill or statement of account (in-patient), or price quotation and doctor's prescription (out-patient)"
+              "requirementDescription": "In-patients: Copy of valid ID of the patient or medical social services-issued ID or barangay-issued Certificate of Residence (for GIDA areas) or Certification from Indigenous People (IP) representatives (for IPs) or valid ID of next of kin, if applicable."
             },
             {
               "requirementID": 3,
-              "requirementDescription": "Medical certificate or patient's clinical summary / medical abstract"
+              "requirementDescription": "Out-patients: Prescription of drugs and medicines or treatment protocol or laboratory or diagnostic request issued by referring facilities, if applicable."
             },
             {
               "requirementID": 4,
-              "requirementDescription": "Copy of IDs (patient and/or patient's representative)"
+              "requirementDescription": "Out-patients: Copy of valid ID of the patient or medical social services-issued ID or barangay-issued Certificate of Residence (for GIDA areas) or Certification from Indigenous People (IP) representatives (for IPs) or valid ID of next of kin, if applicable."
             }
           ],
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to the Malasakit Center or the Medical Social Work Unit (MSW) of your hospital."
+              "instruction": "Get a consultation or treatment at a hospital that has a Malasakit Center."
             },
             {
               "step": 2,
-              "instruction": "Ask the hospital's social worker to assess you for MAIFIP. The social worker evaluates your Unified Intake Sheet."
+              "instruction": "Go to the Malasakit Center office inside the hospital for your medical or financial needs."
             },
             {
               "step": 3,
-              "instruction": "Submit the documents the social worker asks for. Payment is faster when the documents are complete."
+              "instruction": "Have an interview and assessment with the assigned social worker."
+            },
+            {
+              "step": 4,
+              "instruction": "Submit the required documents to receive the benefits."
+            },
+            {
+              "step": 5,
+              "instruction": "Receive the approved medical or financial benefit."
             }
           ]
         },
