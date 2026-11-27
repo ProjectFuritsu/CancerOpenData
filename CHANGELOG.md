@@ -39,6 +39,7 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - Specialists: no SeriousMD page gives a booking type for an online clinic, so all 9 online clinics have `bookingType` `null`.
 - DOH programs use official sources instead of news: the DOH Malasakit Program Office pages (MAIFIP requirements, how to apply, eMAIFIP access sites), DOH Davao's Citizen's Charter 2025, and DOH's own releases on CAF and CSPMAP. Facts that only news gave are removed until an official source is found: MAIFIP's "no fixed cap" and 12-working-day payment, applying through the eGovPH app, and CAF's "up to P150,000" (both amounts are now "Not given").
 - Display rule for apps: when a program's or service's `requirements` or `procedure` is empty, show "Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about the requirements." (or "…about the steps."). The text is in the schemas and the v2 OpenAPI spec; the data stays empty, so the missing-data list still shows these gaps.
+- Same display rule for an empty money-help `eligibility`: show "Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about who can apply." (first used by DOH's CSPMAP, 606003).
 - DOH has one branch, the Malasakit Center (beside SPMC). The "DOH Office Davao City" branch (PRRD Bldg) is removed: DOH's MAIFIP steps send patients to the Malasakit Center, and no listed source says to apply at that office. MAIP is written MAIFIP everywhere.
 
 ### Repo

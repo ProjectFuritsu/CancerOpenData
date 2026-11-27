@@ -135,7 +135,7 @@
                     "type": "string"
                   },
                   "uniqueItems": true,
-                  "description": "Who can get this program, one rule per item, as written by the source. Empty if not given (show \"Not given\")."
+                  "description": "Who can get this program, one rule per item, as written by the source. Empty if not given. Apps: when empty, show \"Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about who can apply.\""
                 },
                 "programDescription": {
                   "type": "string"
