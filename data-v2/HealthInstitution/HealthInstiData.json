@@ -121,6 +121,22 @@
           "branchIDs": [
             1
           ],
+          "serviceName": "Chemotherapy",
+          "serviceDescription": "Chemotherapy is listed in the hospital's official Rates and Fees (as of August 31, 2022).",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 5,
+          "branchIDs": [
+            1
+          ],
           "serviceName": "Oncology Clinic (Internal Medicine)",
           "serviceDescription": "dedicated to the diagnosis, treatment and care of adults with cancer. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
           "cancerTypes": null,
@@ -139,7 +155,7 @@
           "procedure": []
         },
         {
-          "serviceID": 5,
+          "serviceID": 6,
           "branchIDs": [
             1
           ],
@@ -161,7 +177,7 @@
           "procedure": []
         },
         {
-          "serviceID": 6,
+          "serviceID": 7,
           "branchIDs": [
             1
           ],
@@ -183,7 +199,7 @@
           "procedure": []
         },
         {
-          "serviceID": 7,
+          "serviceID": 8,
           "branchIDs": [
             1
           ],
@@ -205,7 +221,7 @@
           "procedure": []
         },
         {
-          "serviceID": 8,
+          "serviceID": 9,
           "branchIDs": [
             1
           ],
@@ -227,7 +243,7 @@
           "procedure": []
         },
         {
-          "serviceID": 9,
+          "serviceID": 10,
           "branchIDs": [
             1
           ],
@@ -251,7 +267,7 @@
           "procedure": []
         },
         {
-          "serviceID": 10,
+          "serviceID": 11,
           "branchIDs": [
             1
           ],
@@ -278,7 +294,7 @@
           "procedure": []
         },
         {
-          "serviceID": 11,
+          "serviceID": 12,
           "branchIDs": [
             1
           ],

@@ -51,6 +51,14 @@
           "service_description": "Listed by the Department of Health as one of 36 Cancer Assistance Fund access sites nationwide (July 2026). The fund supports cancer care, from early screening and diagnosis to treatment.",
           "requirements": [],
           "procedure": []
+        },
+        {
+          "serviceID": 4,
+          "source": "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf",
+          "service_name": "Chemotherapy",
+          "service_description": "Chemotherapy is listed in the hospital's official Rates and Fees (as of August 31, 2022).",
+          "requirements": [],
+          "procedure": []
         }
       ]
     }
