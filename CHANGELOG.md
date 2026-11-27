@@ -11,6 +11,7 @@ Dates are Philippine time (UTC+8). See [MILESTONES.md](MILESTONES.md) for the bi
 - Specialist #12: clinic "Latayan Urology Clinic DMSF" is now "Davao Medical School Foundation Hospital", as his SeriousMD page names it (checked 2026-11-16). His 3 clinics' schedules and booking already matched the page.
 - AMUMA: removed the landline (082) 295-2133. PhilHealth's official directory lists it as PhilHealth Regional Office XI's trunkline.
 - SSS (Financial #2): `bgImageURL` is now empty. The old link (https://www.sss.gov.ph/sss/images/SSS_Building.jpg) returns 404 (checked 2026-11-27). Apps show no background image until an official one is found.
+- Red Planet Davao (Accommodation #4): `cost` is now "Estimated ₱1,764 to ₱2,200 per night (as of 27 November 2026)" (regular rate, 2 adults, 1 room, total incl. taxes and fees, checked on the official booking engine for the night of 10 December 2026); `roomCapacity` 2 to 2; 12 `amenities` and the photo link from the official page; map point 7.0994106, 125.6212232 (checked by Fritz on Google Maps); description notes the Senior Citizen & PWD rate. Booking engine added to `sources`.
 
 ### Repo: v2 is the main version
 - MAINTAINING.md: rules for facts with no link (personal communication): who counts, what to write down, how the CHANGELOG cites them, privacy, proof, conflicts and rechecks.
