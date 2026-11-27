@@ -389,7 +389,9 @@
       "name": "Philippine Charity Sweepstakes Office (PCSO)",
       "bgImageURL": "/images/FinancialInstitution/pcso.webp",
       "sources": [
-        "https://www.pcso.gov.ph/"
+        "https://www.pcso.gov.ph/",
+        "https://lawphil.net/statutes/repacts/ra2019/ra_11463_2019.html",
+        "https://doh.gov.ph/mpo/mc-directory/"
       ],
       "description": "Government agency that gives financial help to people with health problems through its Medical Assistance Program, together with government and private hospitals, health facilities and medicine retailers.",
       "type": "Public Institution",
@@ -413,6 +415,27 @@
               "contactID": 2,
               "type": "Email",
               "contactDetails": "mindanao@pcso.gov.ph"
+            }
+          ]
+        },
+        {
+          "branchID": 2,
+          "branchName": "Malasakit Center",
+          "location": "Malasakit Center, Bajada, Davao City (beside SPMC Hospital)",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "227-2731 loc 4103"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "medicaassistanceprogramspmc@gmail.com"
             }
           ]
         }
@@ -512,7 +535,8 @@
       "name": "Department of Health (DOH)",
       "bgImageURL": "/images/FinancialInstitution/doh.webp",
       "sources": [
-        "https://doh.gov.ph/"
+        "https://doh.gov.ph/",
+        "https://doh.gov.ph/mpo/mc-directory/"
       ],
       "description": "National government department for health. Its MAIFIP program helps pay the medical bills of patients who cannot afford them, and its Cancer Assistance Fund (CAF) and CSPMAP help cancer patients with treatment and free medicines.",
       "type": "Public Institution",
@@ -526,7 +550,18 @@
           "latitude": null,
           "longitude": null,
           "schedule": null,
-          "contacts": []
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "227-2731 loc 4103"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "medicaassistanceprogramspmc@gmail.com"
+            }
+          ]
         }
       ],
       "programs": [
