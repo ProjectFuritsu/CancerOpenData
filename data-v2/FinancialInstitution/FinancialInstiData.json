@@ -544,25 +544,42 @@
           "programID": 606001,
           "programName": "Medical Assistance for Indigent and Financially Incapacitated Patients (MAIFIP)",
           "eligibility": [
-            "Indigent and financially incapacitated patients who cannot afford their medical expenses",
-            "Including PhilHealth members whose remaining bill is still too big"
+            "Every Filipino who is an indigent patient",
+            "Every Filipino who is a financially incapacitated patient: a patient facing serious money problems in paying for long-term treatment or costs"
           ],
-          "programDescription": "Covers the remaining out-of-pocket hospital bill after PhilHealth and other discounts.",
+          "programDescription": "DOH medical and financial help given at Malasakit Centers, inside DOH hospitals, state university and college hospitals, the Department of National Defense hospital, the Philippine National Police hospital, and selected LGU hospitals.",
           "cancerTypes": [
             "All cancers"
           ],
           "applicationURL": null,
           "sources": [
-            "https://ro2.doh.gov.ph/medical-assistance-for-indigent-and-financially-incapacitated-patients-maifip/",
             "https://doh.gov.ph/mpo/list-of-documentary-requirements-in-availing-maifip-program-medical-assistance/",
-            "https://doh.gov.ph/mpo/process-of-availing-of-medical-assistance/",
-            "https://doh.gov.ph/mpo/emaifip-access-sites/",
-            "https://ro11.doh.gov.ph/wp-content/uploads/2025/12/citizens-charter_compressed.pdf"
+            "https://doh.gov.ph/mpo/process-of-availing-of-medical-assistance/"
           ],
           "benefits": [
             {
               "benefitID": 1,
-              "benefitName": "Remaining medical bill after PhilHealth and other discounts",
+              "benefitName": "Medicines in the Philippine National Drug Formulary (PNDF), or medicines for compassionate use",
+              "amount": null
+            },
+            {
+              "benefitID": 2,
+              "benefitName": "Blood products",
+              "amount": null
+            },
+            {
+              "benefitID": 3,
+              "benefitName": "Medical procedures and supplies",
+              "amount": null
+            },
+            {
+              "benefitID": 4,
+              "benefitName": "Support for mental health, psychosocial and rehabilitation services",
+              "amount": null
+            },
+            {
+              "benefitID": 5,
+              "benefitName": "Hospital bill",
               "amount": null
             }
           ],
