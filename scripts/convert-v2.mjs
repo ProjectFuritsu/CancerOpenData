@@ -282,8 +282,8 @@ const REVIEW = {
       {
         programID: 606002,
         name: "Cancer Assistance Fund",
-        details: "One of 36 DOH Cancer Assistance Fund access sites (July 2026).",
-        sources: ["https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide"],
+        details: "One of 34 CAF access sites in DOH's 2025 list.",
+        sources: ["https://drive.google.com/file/d/12qWZNvJ9XFXUns86mqCTYgk1KgaqlOFs/view"],
       },
       {
         programID: 606001,
