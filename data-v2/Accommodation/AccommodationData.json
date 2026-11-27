@@ -116,10 +116,11 @@
     {
       "id": 6,
       "name": "Seda Abreeza",
-      "bgImageURL": "",
+      "bgImageURL": "https://cdn.sanity.io/images/4f3ey4m9/hospitality-production/7d46449b1573cdc056bbbeff9d4172459ebfb069-1600x1066.jpg?w=1600&fm=jpg",
       "sources": [
         "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao",
-        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao/contact-us"
+        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao/contact-us",
+        "https://booking.ayalalandhospitality.com/?chain=33724&hotel=50203&level=hotel&locale=en-US"
       ],
       "description": "Paid place to stay near Southern Philippines Medical Center. 181 refreshed rooms.",
       "type": "Hotel",
@@ -141,18 +142,18 @@
           "branchID": 1,
           "branchName": null,
           "location": "Abreeza Ayala Business Park, J.P. Laurel Ave., Bajada, Davao City",
-          "landmark": null,
-          "latitude": null,
-          "longitude": null,
+          "landmark": "Beside Abreeza Mall",
+          "latitude": 7.0894738,
+          "longitude": 125.6076706,
           "schedule": null,
           "contacts": []
         }
       ],
-      "cost": "Paid. Rates on the hotel's website.",
+      "cost": "Estimated ₱6,605 to ₱14,267 per night, excluding taxes and fees (as of 27 November 2026)",
       "amenities": [],
       "roomCapacity": {
-        "min": null,
-        "max": null
+        "min": 4,
+        "max": 4
       }
     },
     {
