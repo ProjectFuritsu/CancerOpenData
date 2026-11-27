@@ -162,9 +162,7 @@
             "Every Filipino who is a financially incapacitated patient: a patient facing serious money problems in paying for long-term treatment or costs"
           ],
           "programDescription": "DOH medical and financial help given at Malasakit Centers, inside DOH hospitals, state university and college hospitals, the Department of National Defense hospital, the Philippine National Police hospital, and selected LGU hospitals.",
-          "cancerTypes": [
-            "All cancers"
-          ],
+          "cancerTypes": null,
           "applicationURL": null,
           "sources": [
             "https://doh.gov.ph/mpo/list-of-documentary-requirements-in-availing-maifip-program-medical-assistance/",
