@@ -257,7 +257,8 @@
       "name": "Rogen Inn",
       "bgImageURL": "",
       "sources": [
-        "https://www.sunstar.com.ph/davao/feature/rogen-inn-not-a-hotel-but-feels-like-it"
+        "https://www.sunstar.com.ph/davao/feature/rogen-inn-not-a-hotel-but-feels-like-it",
+        "https://www.facebook.com/profile.php?id=100083386980295"
       ],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Inn",
@@ -287,7 +288,13 @@
         }
       ],
       "cost": "Paid.",
-      "amenities": [],
+      "amenities": [
+        "Fully Airconditioned Bedrooms",
+        "Hot and Cold Shower",
+        "Cable TV",
+        "Free WIFI",
+        "Cafe & Bar Lounge"
+      ],
       "roomCapacity": {
         "min": null,
         "max": null
