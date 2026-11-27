@@ -10,6 +10,7 @@ Images here are served by the API at `/images/<Folder>/<file>`, for example
 | Doctor photo | `MedicalSpecialist/` | Square **1:1**, up to **800 × 800** px | `dr-<first>-<last>.webp`, e.g. `dr-felycette-gay-lapus.webp` |
 | Institution logo or building | `FinancialInstitution/`, `HealthInstitution/` | Wide **16:9**, up to **1200 × 675** px | `<name>.webp`, e.g. `philhealth.webp` |
 | Support group logo or photo | `SupportGroups/` | Wide **16:9**, up to **1200 × 675** px | `<name>.webp`, e.g. `amuma.webp` |
+| Place to stay photo | `Accommodation/` | Wide **16:9**, up to **1200 × 675** px | `<name>.webp`, e.g. `red-planet-davao.webp` |
 | Feed cover | `Feeds/` | Wide **16:9**, up to **1200 × 675** px | `feed-<id>.webp`, e.g. `feed-1.webp` |
 
 - **Format: WebP**, quality about 80. It is the smallest for the same quality, keeps transparency for logos, and works in every current browser.
