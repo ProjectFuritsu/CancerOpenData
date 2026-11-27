@@ -208,10 +208,11 @@
     {
       "id": 8,
       "name": "Acacia Hotel Davao",
-      "bgImageURL": "",
+      "bgImageURL": "https://acaciahotelsdavao-com.b-cdn.net/wp-content/uploads/2024/09/FACADE-PORTRAIT-1.jpg",
       "sources": [
         "https://acaciahotelsdavao.com/",
-        "https://acaciahotelsdavao.com/contact-us/"
+        "https://acaciahotelsdavao.com/contact-us/",
+        "https://acaciahotelsdavao.com/accommodation/"
       ],
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
@@ -246,7 +247,14 @@
         }
       ],
       "cost": "Paid.",
-      "amenities": [],
+      "amenities": [
+        "Fibre Internet",
+        "Room Service",
+        "Breakfast Buffet",
+        "Pick Up & Drop Off",
+        "Health & Wellness",
+        "Parking Space"
+      ],
       "roomCapacity": {
         "min": null,
         "max": null

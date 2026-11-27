@@ -19,6 +19,7 @@ Dates are Philippine time (UTC+8). See [MILESTONES.md](MILESTONES.md) for the bi
 - Rogen Inn (Accommodation #10): its official Facebook page added to `sources` (it has no website); it confirms the mobile number and email. 5 `amenities` as written on that page. Price and room capacity are not given there, so they stay Not given.
 - Apo View Hotel (Accommodation #13): `cost` is now "Estimated ₱4,018 to ₱6,938 per night (as of 27 November 2026)" (the price shown on its official booking page, Superior Twin to Family Room, no code needed; crossed-out list prices ₱5,375 to ₱7,825; taxes not stated); `roomCapacity` 2 to 4 ("Maximum of Two (2) occupants" to "Maximum of four (4) occupants"). 4 `amenities` shared by all rooms, as written on the booking page. Rooms and booking pages added to `sources`.
 - Map points for Park Inn (#7) 7.0973367, 125.6175165; Acacia (#8) 7.0996126, 125.623302; Rogen Inn (#10) 7.0732165, 125.6023387; Apo View (#13) 7.0694497, 125.6052029 (given by Fritz, checked on Google Maps). All 7 places to stay now have a map point.
+- Acacia Hotel Davao (Accommodation #8): 6 `amenities` (its "Hotel Facilities" list) and the photo link (building front), both from its official website; accommodation page added to `sources`. Price and room capacity are not given there, so they stay Not given.
 
 ### Repo: v2 is the main version
 - MAINTAINING.md: rules for facts with no link (personal communication): who counts, what to write down, how the CHANGELOG cites them, privacy, proof, conflicts and rechecks.
