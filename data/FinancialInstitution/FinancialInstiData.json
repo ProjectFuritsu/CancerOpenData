@@ -294,7 +294,7 @@
     {
       "id": 2,
       "name": "Social Security System (SSS)",
-      "bgImageURL": "https://www.sss.gov.ph/sss/images/SSS_Building.jpg",
+      "bgImageURL": "",
       "source": "https://www.sss.gov.ph/",
       "description": "The SSS provides social security protection to workers in the private, professional, and informal sectors. It offers replacement income for contingencies like sickness, maternity, disability, retirement, and death.",
       "type": "Public Institution",
