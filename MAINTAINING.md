@@ -26,6 +26,7 @@ The small Worker script (`worker/src/index.js`) runs only for `/` (the dataset l
 
 - **`/openapi.json` is generated at build time** (`scripts/build-openapi.mjs`) from the real schema files. Change a schema, and the docs change on the next deploy, so they can't drift from the data. Dataset descriptions live in `DESCRIPTIONS` in that file; a new dataset without one gets a generic line.
 - **`/docs/` is Swagger UI, hosted here** (copied from the `swagger-ui-dist` package at build), with no CDN. The page files are in `docs/`.
+- **Two versions.** When `data-v2/` exists, the build also serves it at `/v2/` with its own spec (`/v2/openapi.json`) and list (`GET /v2/`). The docs page's version picker reads `docs/versions.json`, written by the build; `/docs/?version=v2` opens v2.
 - `/docs/` sends a strict `Content-Security-Policy`: scripts only from this site, no framing, nothing sent elsewhere. Swagger's online validator is off, so the spec isn't sent to swagger.io.
 - Tests check that the spec is valid OpenAPI 3.1 and that each schema is embedded exactly as written. The smoke test checks that both routes respond after each deploy.
 

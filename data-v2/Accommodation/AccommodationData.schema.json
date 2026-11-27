@@ -1,0 +1,335 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "AccommodationData.schema.json",
+  "title": "AccommodationData",
+  "description": "Cancer Open Data v2. Places where cancer patients and their companions can stay near the hospitals: free shelters and halfway houses, and paid hotels and inns. A null value or an empty list means the information is not given yet: apps should show \"Not given\".",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "meta": {
+      "type": "object",
+      "description": "About this file: what it is, when its records last changed, how many there are, and its license. Written by scripts/convert-v2.mjs.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Short name of the dataset."
+        },
+        "description": {
+          "type": "string",
+          "description": "What the dataset holds."
+        },
+        "apiVersion": {
+          "const": "v2",
+          "description": "API version of this file."
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date (YYYY-MM-DD, Philippine time) the records last changed. Rebuilding without changes keeps the date."
+        },
+        "recordCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of records in this file."
+        },
+        "coverage": {
+          "type": "string",
+          "description": "Area the data covers."
+        },
+        "language": {
+          "type": "string",
+          "description": "Language of the text (BCP 47 code)."
+        },
+        "license": {
+          "const": "CC0-1.0",
+          "description": "License of the data (SPDX id). Logos and photos in images/ belong to their owners."
+        },
+        "licenseURL": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where to report wrong data or ask questions."
+        },
+        "schema": {
+          "const": "./AccommodationData.schema.json",
+          "description": "This file's JSON Schema."
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "apiVersion",
+        "lastUpdated",
+        "recordCount",
+        "coverage",
+        "language",
+        "license",
+        "licenseURL",
+        "publisher",
+        "contact",
+        "schema"
+      ],
+      "additionalProperties": false
+    },
+    "accommodation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL. Empty if none.",
+            "format": "uri-reference"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "description": "Kind of place, e.g. Halfway house, Shelter, Care facility, Hotel."
+          },
+          "operator": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Who runs it, as written by the source. null if not given."
+          },
+          "contacts": {
+            "$ref": "#/$defs/contacts",
+            "description": "Organization contacts only (no personal numbers of private people). Branch contacts are inside each branch."
+          },
+          "branches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/branch"
+            },
+            "minItems": 1,
+            "description": "Each house or building where people stay."
+          },
+          "cost": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Cost as written, e.g. 'Free'. null if not given."
+          },
+          "amenities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "What the place has or gives, one item each, as written by the source, e.g. kitchen, Wi-Fi, parking, free water. Empty if not given."
+          },
+          "roomCapacity": {
+            "type": "object",
+            "description": "How many people can stay in one room, as a range. Each number is null if not given (show \"Not given\").",
+            "properties": {
+              "min": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "description": "Fewest people per room. null if not given."
+              },
+              "max": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1,
+                "description": "Most people per room. null if not given."
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ],
+            "additionalProperties": false
+          },
+          "sources": {
+            "$ref": "#/$defs/sources"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "bgImageURL",
+          "sources",
+          "description",
+          "type",
+          "operator",
+          "contacts",
+          "branches",
+          "cost",
+          "amenities",
+          "roomCapacity"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "accommodation"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "contact": {
+      "type": "object",
+      "properties": {
+        "contactID": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Hotline",
+            "Landline",
+            "Mobile",
+            "Email",
+            "Website",
+            "Facebook",
+            "Other"
+          ],
+          "description": "Kind of contact. One fixed list for all datasets."
+        },
+        "contactDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contactID",
+        "type",
+        "contactDetails"
+      ],
+      "additionalProperties": false
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contact"
+      }
+    },
+    "scheduleEntry": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "string",
+          "description": "Day or days as written by the source, e.g. 'Monday' or 'Monday-Friday'. A day can appear twice for split hours."
+        },
+        "timeIn": {
+          "type": "string",
+          "description": "Opening or start time, e.g. '8:00 am'."
+        },
+        "timeOut": {
+          "type": "string",
+          "description": "Closing or end time, e.g. '5:00 pm'."
+        }
+      },
+      "required": [
+        "day",
+        "timeIn",
+        "timeOut"
+      ],
+      "additionalProperties": false
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scheduleEntry"
+      },
+      "description": "Open days and hours. Closed days are left out."
+    },
+    "branch": {
+      "type": "object",
+      "properties": {
+        "branchID": {
+          "type": "integer"
+        },
+        "branchName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Name of the branch, e.g. 'Davao City Branch'. null if not given."
+        },
+        "location": {
+          "type": "string"
+        },
+        "landmark": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "A landmark that helps people find it, as written by the source, e.g. 'infront SPMC Hospital'. null if not given."
+        },
+        "latitude": {
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Latitude in decimal degrees (WGS 84), from an official source or an on-site GPS reading. null if not known."
+        },
+        "longitude": {
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Longitude in decimal degrees (WGS 84), from an official source or an on-site GPS reading. null if not known."
+        },
+        "schedule": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/schedule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Open days and hours. null if not known (show \"Not given\")."
+        },
+        "contacts": {
+          "$ref": "#/$defs/contacts"
+        }
+      },
+      "required": [
+        "branchID",
+        "branchName",
+        "location",
+        "landmark",
+        "latitude",
+        "longitude",
+        "schedule",
+        "contacts"
+      ],
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+    }
+  }
+}

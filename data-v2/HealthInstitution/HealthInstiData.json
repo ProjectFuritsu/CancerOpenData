@@ -1,0 +1,681 @@
+{
+  "$schema": "./HealthInstiData.schema.json",
+  "meta": {
+    "title": "Hospitals",
+    "description": "Hospitals with cancer services in Davao City: services, schedules, fees and the programs they accept.",
+    "apiVersion": "v2",
+    "lastUpdated": "2026-11-27",
+    "recordCount": 3,
+    "coverage": "Davao City, Philippines",
+    "language": "en",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "publisher": "Cancer Open Data (ProjectFuritsu)",
+    "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
+    "schema": "./HealthInstiData.schema.json"
+  },
+  "healthInsti": [
+    {
+      "id": 1,
+      "name": "Southern Philippines Medical Center",
+      "bgImageURL": "/images/HealthInstitution/spmc-cancer-institute.webp",
+      "sources": [
+        "https://spmc.doh.gov.ph/"
+      ],
+      "description": "The Southern Philippines Medical Center is the largest government hospital under the Department of Health of the Republic of the Philippines. It is located at the JP Laurel Ave, Bajada, Davao City. It began as the Davao Medical Center. Its name was changed on November 19, 2009, by Republic Act 9792.",
+      "type": "Public Institution",
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Landline",
+          "contactDetails": "(082) 227-2731"
+        },
+        {
+          "contactID": 2,
+          "type": "Other",
+          "contactDetails": "TELEFAX: (082) 221-7029"
+        },
+        {
+          "contactID": 3,
+          "type": "Email",
+          "contactDetails": "coh.spmc@gmail.com"
+        }
+      ],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "J.P. Laurel Ave, Bajada, Davao City",
+          "landmark": null,
+          "latitude": 7.099167,
+          "longitude": 125.619722,
+          "schedule": [
+            {
+              "day": "Monday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            },
+            {
+              "day": "Tuesday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "contacts": []
+        }
+      ],
+      "services": [
+        {
+          "serviceID": 1,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Adult Cancer Clinic and Infusion Unit",
+          "serviceDescription": "Opened on February 8, 2018 on the fourth floor of the Cancer Institute. It offers subsidized multidisciplinary care for all kinds of cancer. The hospital said most patients are free or subsidized charity, assisted through Lingap, PCSO and others.",
+          "cancerTypes": null,
+          "fee": "Adult Onco Unit room and board: 1,000.00. CHEMOTHERAPY (AVERAGE HCI FEES): 8,871.94 (Professional Fee 1,680.00 to 33,350.00). As of August 31, 2022.",
+          "sources": [
+            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
+            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 2,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Radiation Therapy (Linear Accelerator)",
+          "serviceDescription": "The Cancer Institute's linear accelerator (Linac) for radiation therapy started operating with the adult cancer unit in 2018.",
+          "cancerTypes": null,
+          "fee": "LINAC Daily fee: 5,160.00 (Professional Fee 800.00 to 2,200.00); Conventional Radiotherapy (2D/3D) Session: 5,160.00 (Professional Fee 800.00 to 2,200.00); IMRT Treatment Session: 16,245.00 (Professional Fee 1,680.00 to 4,000.00); CT Simulation- IMRT: 57,730.00 (Professional Fee 11,546.00 to 27,430.00); Treatment Planning Dosimetry (Xray): 24,225.00 (Professional Fee 2,380.00 to 7,225.00); TREATMENT PLANNING SYSTEM (IMRT): 25,265.00 (Professional Fee 8,400.00 to 12,265.00). As of August 31, 2022.",
+          "sources": [
+            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
+            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 3,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Cancer Assistance Fund (CAF)",
+          "serviceDescription": "Listed by the Department of Health as one of 34 CAF access sites in its 2025 list. The fund supports cancer care, from early screening and diagnosis to treatment.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://drive.google.com/file/d/12qWZNvJ9XFXUns86mqCTYgk1KgaqlOFs/view",
+            "https://doh.gov.ph/press-release/DOH-IMPLEMENTS-CANCER-ASSISTANCE-FUND-TO-SUPPORT-CANCER-PATIENTS-AND-SURVIVORS/"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 4,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Chemotherapy",
+          "serviceDescription": "Chemotherapy is listed in the hospital's official Rates and Fees (as of August 31, 2022).",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 5,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Oncology Clinic (Internal Medicine)",
+          "serviceDescription": "dedicated to the diagnosis, treatment and care of adults with cancer. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/internal-medicine/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "Tuesday and Thursday",
+              "timeIn": "1 pm",
+              "timeOut": "5 pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 6,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Hematology Clinic (Internal Medicine)",
+          "serviceDescription": "provides assessment and treatment as well as co-ordination of clinical care for patients with blood diseases and blood-related cancers. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/internal-medicine/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "Tuesday and Thursday",
+              "timeIn": "1 pm",
+              "timeOut": "5 pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 7,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Surgical Oncology",
+          "serviceDescription": "Location: Cancer Institute – 2nd Floor.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/surgery/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "Monday to Friday",
+              "timeIn": "8AM",
+              "timeOut": "5PM"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 8,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Gynecologic Oncology",
+          "serviceDescription": "Caters to patients diagnosed with cancer in the reproductive organs",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "weekdays",
+              "timeIn": "1:00 pm",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 9,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Trophoblastic Service Clinic",
+          "serviceDescription": "Specializes in dealing with a group of conditions involving tumor growth in the womb.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "weekdays",
+              "timeIn": "1:00 pm",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 10,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Colposcopy / Pap’s Smear",
+          "serviceDescription": "Screening procedure for detecting cervical cancer.",
+          "cancerTypes": [
+            "Cervical Cancer"
+          ],
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "Tuesday and Thursday",
+              "timeIn": "1:00 pm",
+              "timeOut": "7:00 pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 11,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Oncology Clinic (Pediatrics)",
+          "serviceDescription": "Specializes on diagnoses, treatment and management of cancer.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://spmc.doh.gov.ph/pediatrics-2/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "Monday and Wednesday",
+              "timeIn": "2:00",
+              "timeOut": "4:00 PM"
+            },
+            {
+              "day": "Tuesday, Thursday and Friday",
+              "timeIn": "8:00 AM",
+              "timeOut": "12:00 PM"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 12,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Breast Imaging",
+          "serviceDescription": "Involves the use of mammography, sonomammography and elastography. Imaging exam dedicated for screening breast cancer.",
+          "cancerTypes": [
+            "Breast Cancer"
+          ],
+          "fee": "SCREENING MAMMOGRAM: 2,500.00. DIAGNOSTIC MAMMOGRAM: 3,500.00. As of August 31, 2022.",
+          "sources": [
+            "https://spmc.doh.gov.ph/radiological-and-imaging-sciences/",
+            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "weekdays (OPD)",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        }
+      ],
+      "coverage": [
+        {
+          "programID": 101002,
+          "name": "Z Benefit Packages",
+          "details": "Contracted for Acute Lymphocytic (Lymphoblastic) Leukemia (ALL), Breast Cancer, Cervical Cancer, Prostate Cancer, Colon Cancer and Rectum Cancer, as of September 30, 2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+          ]
+        },
+        {
+          "programID": null,
+          "name": "Selected Outpatient Cancer Screening Tests",
+          "details": "Accredited for breast ultrasound, low-dose chest CT scan, liver ultrasound, mammography, alpha-fetoprotein and colonoscopy. Accreditation expires 12/31/2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/CancerScreening.pdf"
+          ]
+        },
+        {
+          "programID": 161213,
+          "name": "YAKAP",
+          "details": "Accredited YAKAP clinic. Accreditation expires 12/31/2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/YAKAP.pdf"
+          ]
+        },
+        {
+          "programID": 606002,
+          "name": "Cancer Assistance Fund",
+          "details": "One of 34 CAF access sites in DOH's 2025 list.",
+          "sources": [
+            "https://drive.google.com/file/d/12qWZNvJ9XFXUns86mqCTYgk1KgaqlOFs/view"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Davao Doctors Hospital",
+      "bgImageURL": "",
+      "sources": [
+        "https://ddh.com.ph/"
+      ],
+      "description": "Davao Doctors Hospital soon opened its doors to the public in 1969, starting with a 50-bed capacity. Over time, DDH continued to foster many other firsts in the region as its Radiation Oncology Department became fully operational, among other notable innovations.",
+      "type": "Private Institution",
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Landline",
+          "contactDetails": "(+6382) 222-8000"
+        },
+        {
+          "contactID": 2,
+          "type": "Landline",
+          "contactDetails": "(+6382) 222 - 7948"
+        },
+        {
+          "contactID": 3,
+          "type": "Email",
+          "contactDetails": "info@ddh.com.ph"
+        }
+      ],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "118 E. Quirino Avenue, Davao City Philippines 8000",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": [],
+          "contacts": []
+        }
+      ],
+      "services": [
+        {
+          "serviceID": 1,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Radiation Oncology Department",
+          "serviceDescription": "The oncology Center uses clinical and holistic approaches for the management of cancer. We aim to cure- to eradicate the tumor and prevent its recurrence, as well as to relieve pain and other discomforts of cancer. Equipment: Dual Energy Linear Accelerator; the Elekta Synergy linear Accelerator- the first IMRT/IGRT facility. Services Offered: Radiation Consultation Evaluation; Treatment Planning; External Beam Radiography; Low Dose Rate (LDR) Brachytherapy; Blood Irradiation. Location: Ground Level, Oncology Building. Office Hours: 6:00am - 6:00pm. Contact: (082) 222 8000 local 8158 | radonco@ddh.com.ph",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/radiation-oncology-department/"
+          ],
+          "serviceSchedule": null,
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Referral letter and a short clinical abstract."
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Histopathologic report."
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Laboratory and Imaging work-ups with results and radiographs."
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "Complete blood count preferably normal or least 100 grams/dl. hemoglobin"
+            },
+            {
+              "requirementID": 5,
+              "requirementDescription": "Dental clearance for head and neck tumors."
+            },
+            {
+              "requirementID": 6,
+              "requirementDescription": "Steroid coverage for brain and spinal cord irradiation."
+            }
+          ],
+          "procedure": []
+        },
+        {
+          "serviceID": 2,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "External Beam Radiation Therapy",
+          "serviceDescription": "Curative: Destroy tumors that have not spread the other parts of the body and cure you of disease reduce the risk that cancer will return after you undergo surgery or systemic/chemotherapy by killing small amounts of remaining cancer cells shrink cancer before surgery. Palliative: Shrink tumors that are interfering with your quality of life, such as lung tumor that is causing shortness of breath to relieve pain by reducing the size of a tumor and other unpleasant symptoms, thus improving the quality of life and prolongation of survival. Radiation Therapy usually takes from a week to eight weeks, depending on the goal, either curative or palliative. It is given daily from Monday to Friday lasting only for a few minutes, based on the prescribed dose and number of treatment fields. Who can avail? It has clinical applications for patients diagnosed with malignant tumors and occasionally benign diseases. Location: Ground floor of Oncology Building. Contact: +63 82 222 8000 local 8158 | +63 82 222 7992 | radonco@ddh.com.ph",
+          "cancerTypes": [
+            "Brain / spinal cord tumors",
+            "Head and neck tumors",
+            "Lung cancer",
+            "Breast cancer",
+            "Cervix/ Endometrial / Ovarian",
+            "Vulvar cancer",
+            "Rectal cancer",
+            "Lymphoma",
+            "soft tissue tumors"
+          ],
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/external-beam-radiation-therapy/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "Mondays - Fridays",
+              "timeIn": "6:00am",
+              "timeOut": "6:00pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 3,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Brachytherapy",
+          "serviceDescription": "Brachytherapy is a procedure that involves placing radioactive material inside your body. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "cancerTypes": [
+            "Cervical Cancer",
+            "Endometrial Cancer",
+            "Vaginal Cancer"
+          ],
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/nursing-service/"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Scheduling & pre – operative preparations c/o cancer center"
+            },
+            {
+              "step": 2,
+              "instruction": "Direct to room admission (with prior doctors orders)"
+            },
+            {
+              "step": 3,
+              "instruction": "Confined in a private deluxe for 2 – 3 days"
+            }
+          ]
+        },
+        {
+          "serviceID": 4,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "In-patient Chemotherapy",
+          "serviceDescription": "Hemotherapy is a drug treatment that uses powerful chemicals to kill fast-growing cells in your body. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/nursing-service/"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        },
+        {
+          "serviceID": 5,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Radioactive Iodine Therapy (RAI)",
+          "serviceDescription": "Low dose and high dose radioactive iodine (RAI) therapy c/o physician on – board. Uses: Hyperthyroidism (Grave's Disease, solitary autonomous nodule); Ablation of thyroid remnants after thyroidectomy; Treatment of Metastatic Thyroid Carcinoma. Location: Ground Level, Oncology Building. Contact Info: (6382) 222 - 8000 loc. 8143",
+          "cancerTypes": [
+            "Papillary Thyroid Cancer",
+            "Follicular Thyroid Cancer"
+          ],
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/nursing-service/",
+            "https://ddh.com.ph/services-and-centers/nuclear-medicine/"
+          ],
+          "serviceSchedule": [
+            {
+              "day": "Mondays - Fridays",
+              "timeIn": "7:00am",
+              "timeOut": "6:00pm"
+            },
+            {
+              "day": "Saturdays",
+              "timeIn": "7:00 am",
+              "timeOut": "3:00 pm"
+            }
+          ],
+          "requirements": [],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Scheduling c/o Nuclear Medicine Department"
+            },
+            {
+              "step": 2,
+              "instruction": "Direct – to – room admission (with prior doctors orders)"
+            },
+            {
+              "step": 3,
+              "instruction": "Confined in a private deluxe for 2 – 3 days"
+            }
+          ]
+        },
+        {
+          "serviceID": 6,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Long Term Radiotherapy",
+          "serviceDescription": "Clients located far from the city may opt to be admitted in the unit to complete the recommended number of RT treatments. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://ddh.com.ph/services-and-centers/nursing-service/"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        }
+      ],
+      "coverage": [
+        {
+          "programID": 101002,
+          "name": "Z Benefit Packages",
+          "details": "Contracted for Breast Cancer, as of September 30, 2026.",
+          "sources": [
+            "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+          ]
+        },
+        {
+          "programID": null,
+          "name": "LINGAP – City Government of Davao",
+          "details": "Accredited government financial medical assistance (as of November 2024). Office: Malasakit Center, Bajada, Davao City (beside SPMC Hospital).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": null,
+          "name": "DSWD – Department of Social Welfare & Development",
+          "details": "Accredited government financial medical assistance (as of November 2024). Office: Ramon Magsaysay, Davao City (near DPWH Office).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": 505001,
+          "name": "PCSO – Philippine Charity Sweepstakes Office",
+          "details": "Accredited government financial medical assistance (as of November 2024).",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        },
+        {
+          "programID": 606001,
+          "name": "MAIFIP",
+          "details": "Accredited government financial medical assistance (as of November 2024). For out-patient help, the hospital asks for a Certificate of Procedure's Non-Availability from SPMC Hospital.",
+          "sources": [
+            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Brokenshire Medical Center",
+      "bgImageURL": "",
+      "sources": [
+        "https://brokenshiremed.com/"
+      ],
+      "description": "Private mission hospital in Davao City. It opened a Chemotherapy and Infusion Unit on March 9, 2026, and has medical, surgical and urologic oncologists. In January 2026 it performed its first laparoscopic radical cystectomy for bladder cancer.",
+      "type": "Private Institution",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Brokenshire Heights, Madapo, Brgy. 8-A, Davao City, Philippines",
+          "landmark": null,
+          "latitude": 7.0836433,
+          "longitude": 125.6006496,
+          "schedule": [],
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "(082) 282 1908"
+            },
+            {
+              "contactID": 2,
+              "type": "Mobile",
+              "contactDetails": "0917-326-2262"
+            },
+            {
+              "contactID": 3,
+              "type": "Email",
+              "contactDetails": "info@brokenshire.org"
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "serviceID": 1,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Chemotherapy and Infusion Unit",
+          "serviceDescription": "Delivering safe, patient-centered chemotherapy and infusion treatments in a supportive and healing environment (hospital's words). Opened on March 9, 2026.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://brokenshiremed.com/"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        }
+      ],
+      "coverage": []
+    }
+  ]
+}

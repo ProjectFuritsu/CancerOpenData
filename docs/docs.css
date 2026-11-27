@@ -3,4 +3,11 @@ body { margin: 0; background: #fafafa; }
 .swagger-ui .topbar { display: none; }
 .swagger-ui .info { margin: 32px 0 16px; }
 .swagger-ui .wrapper { padding: 0 16px; }
+/* Top bar with the API version picker (v1 / v2). */
+.versionbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 16px; background: #fff; border-bottom: 1px solid #e3e3e3; font: 14px/1.4 system-ui, sans-serif; color: #3b4151; }
+.versionbar-title { font-weight: 600; margin-right: auto; }
+.versionbar-picker { display: inline-flex; align-items: center; gap: 8px; }
+.versionbar-picker[hidden] { display: none; }
+.versionbar select { font: inherit; padding: 6px 28px 6px 10px; min-height: 36px; border: 1px solid #b8b8b8; border-radius: 6px; background: #fff; color: inherit; }
+.versionbar select:focus-visible { outline: 2px solid #4990e2; outline-offset: 2px; }
 .noscript { font: 16px/1.5 system-ui, sans-serif; max-width: 640px; margin: 48px auto; padding: 0 16px; }

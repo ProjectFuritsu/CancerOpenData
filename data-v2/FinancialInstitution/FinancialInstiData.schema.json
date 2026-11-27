@@ -1,0 +1,420 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "FinancialInstiData.schema.json",
+  "title": "FinancialInstiData",
+  "description": "Cancer Open Data v2. A null value or an empty list means the information is not given yet: apps should show \"Not given\".",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "meta": {
+      "type": "object",
+      "description": "About this file: what it is, when its records last changed, how many there are, and its license. Written by scripts/convert-v2.mjs.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Short name of the dataset."
+        },
+        "description": {
+          "type": "string",
+          "description": "What the dataset holds."
+        },
+        "apiVersion": {
+          "const": "v2",
+          "description": "API version of this file."
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date (YYYY-MM-DD, Philippine time) the records last changed. Rebuilding without changes keeps the date."
+        },
+        "recordCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of records in this file."
+        },
+        "coverage": {
+          "type": "string",
+          "description": "Area the data covers."
+        },
+        "language": {
+          "type": "string",
+          "description": "Language of the text (BCP 47 code)."
+        },
+        "license": {
+          "const": "CC0-1.0",
+          "description": "License of the data (SPDX id). Logos and photos in images/ belong to their owners."
+        },
+        "licenseURL": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where to report wrong data or ask questions."
+        },
+        "schema": {
+          "const": "./FinancialInstiData.schema.json",
+          "description": "This file's JSON Schema."
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "apiVersion",
+        "lastUpdated",
+        "recordCount",
+        "coverage",
+        "language",
+        "license",
+        "licenseURL",
+        "publisher",
+        "contact",
+        "schema"
+      ],
+      "additionalProperties": false
+    },
+    "financialInsti": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL.",
+            "format": "uri-reference"
+          },
+          "sources": {
+            "$ref": "#/$defs/sources",
+            "type": "array",
+            "minItems": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "contacts": {
+            "$ref": "#/$defs/contacts",
+            "description": "Main contacts of the whole institution, e.g. a national hotline. Branch contacts are inside each branch."
+          },
+          "branches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/branch"
+            },
+            "minItems": 1
+          },
+          "programs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "programID": {
+                  "type": "integer"
+                },
+                "programName": {
+                  "type": "string"
+                },
+                "eligibility": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true,
+                  "description": "Who can get this program, one rule per item, as written by the source. Empty if not given. Apps: when empty, show \"Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about who can apply.\""
+                },
+                "programDescription": {
+                  "type": "string"
+                },
+                "cancerTypes": {
+                  "$ref": "#/$defs/cancerTypes"
+                },
+                "applicationURL": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "format": "uri",
+                  "description": "Page to apply online. null if there is none or it is not known."
+                },
+                "sources": {
+                  "$ref": "#/$defs/sources"
+                },
+                "benefits": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "benefitID": {
+                        "type": "integer"
+                      },
+                      "benefitName": {
+                        "type": "string"
+                      },
+                      "amount": {
+                        "type": [
+                          "null",
+                          "string"
+                        ],
+                        "description": "Amount as written by the source, e.g. 'Up to ₱100,000'. null if not given."
+                      }
+                    },
+                    "required": [
+                      "benefitID",
+                      "benefitName",
+                      "amount"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "requirements": {
+                  "$ref": "#/$defs/requirements"
+                },
+                "procedure": {
+                  "$ref": "#/$defs/procedure"
+                }
+              },
+              "required": [
+                "programID",
+                "programName",
+                "eligibility",
+                "programDescription",
+                "cancerTypes",
+                "applicationURL",
+                "sources",
+                "benefits",
+                "requirements",
+                "procedure"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "bgImageURL",
+          "sources",
+          "description",
+          "type",
+          "contacts",
+          "branches",
+          "programs"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "financialInsti"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "contact": {
+      "type": "object",
+      "properties": {
+        "contactID": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Hotline",
+            "Landline",
+            "Mobile",
+            "Email",
+            "Website",
+            "Facebook",
+            "Other"
+          ],
+          "description": "Kind of contact. One fixed list for all datasets."
+        },
+        "contactDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contactID",
+        "type",
+        "contactDetails"
+      ],
+      "additionalProperties": false
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contact"
+      }
+    },
+    "scheduleEntry": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "string",
+          "description": "Day or days as written by the source, e.g. 'Monday' or 'Monday-Friday'. A day can appear twice for split hours."
+        },
+        "timeIn": {
+          "type": "string",
+          "description": "Opening or start time, e.g. '8:00 am'."
+        },
+        "timeOut": {
+          "type": "string",
+          "description": "Closing or end time, e.g. '5:00 pm'."
+        }
+      },
+      "required": [
+        "day",
+        "timeIn",
+        "timeOut"
+      ],
+      "additionalProperties": false
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scheduleEntry"
+      },
+      "description": "Open days and hours. Closed days are left out."
+    },
+    "branch": {
+      "type": "object",
+      "properties": {
+        "branchID": {
+          "type": "integer"
+        },
+        "branchName": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Name of the branch, e.g. 'Davao City Branch'. null if not given."
+        },
+        "location": {
+          "type": "string"
+        },
+        "landmark": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "A landmark that helps people find it, as written by the source, e.g. 'infront SPMC Hospital'. null if not given."
+        },
+        "latitude": {
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Latitude in decimal degrees (WGS 84), from an official source or an on-site GPS reading. null if not known."
+        },
+        "longitude": {
+          "type": [
+            "null",
+            "number"
+          ],
+          "description": "Longitude in decimal degrees (WGS 84), from an official source or an on-site GPS reading. null if not known."
+        },
+        "schedule": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/schedule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Open days and hours. null if not known (show \"Not given\")."
+        },
+        "contacts": {
+          "$ref": "#/$defs/contacts"
+        }
+      },
+      "required": [
+        "branchID",
+        "branchName",
+        "location",
+        "landmark",
+        "latitude",
+        "longitude",
+        "schedule",
+        "contacts"
+      ],
+      "additionalProperties": false
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+    },
+    "cancerTypes": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Cancers this covers, e.g. ['Breast Cancer']. ['All cancers'] if it covers every cancer. null if the source doesn't say (show \"Not given\")."
+    },
+    "requirements": {
+      "type": "array",
+      "description": "Documents to bring, one per item, as written by the source. Empty if not given. Apps: when empty, show \"Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about the requirements.\"",
+      "items": {
+        "type": "object",
+        "properties": {
+          "requirementID": {
+            "type": "integer"
+          },
+          "requirementDescription": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "requirementID",
+          "requirementDescription"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "procedure": {
+      "type": "array",
+      "description": "Steps in order, as written by the source. Empty if not given. Apps: when empty, show \"Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about the steps.\"",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step": {
+            "type": "integer"
+          },
+          "instruction": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "step",
+          "instruction"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

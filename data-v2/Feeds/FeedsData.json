@@ -1,0 +1,343 @@
+{
+  "$schema": "./FeedsData.schema.json",
+  "meta": {
+    "title": "Feeds",
+    "description": "News, articles and announcements about cancer care in Davao City, with a short summary and a link to each source.",
+    "apiVersion": "v2",
+    "lastUpdated": "2026-11-27",
+    "recordCount": 18,
+    "coverage": "Davao City, Philippines",
+    "language": "en",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "publisher": "Cancer Open Data (ProjectFuritsu)",
+    "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
+    "schema": "./FeedsData.schema.json"
+  },
+  "feed": [
+    {
+      "id": 1,
+      "title": "Philippine Cancer Society Delegation Prominent at UICC World Cancer Leaders’ Summit in Melbourne, Championing the New Global Declaration",
+      "bgImageURL": "https://www.philcancer.org.ph/images/uicc.png",
+      "category": "News",
+      "tags": [],
+      "content": "The Philippine Cancer Society joined the UICC World Cancer Leaders' Summit in Melbourne, Australia, on 18–20 November 2025, together with other Filipino cancer groups. The delegation took part in talks on non-communicable diseases and in a workshop on ending cervical cancer through HPV vaccination and screening. The summit launched the World Cancer Declaration 2025–2035, which sets global goals for 2035, such as fewer cancer deaths and more cancers found early.",
+      "authors": [
+        "Philippine Cancer Society"
+      ],
+      "publishDate": "21 November 2025",
+      "sources": [
+        "https://www.philcancer.org.ph/about-us/announcements/latest-news/125-uicc-world-cancer-leaders-summit"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "DOST-ASTI Convenes National Stakeholders to Build the FIRST Philippine Cervical Image Bank and Advance AI-Driven Screening",
+      "bgImageURL": "https://www.philcancer.org.ph/images/dost1.png",
+      "category": "News",
+      "tags": [],
+      "content": "On 17 November 2025, DOST-ASTI hosted \"AI Against Cervical Cancer,\" a hybrid meeting of research, government and civil society groups. They discussed building the first Philippine Cervical Image Bank for the Cerv.ai project, which makes AI tools to find early cervical cancer, and lower-cost HPV-DNA testing. The Philippine Cancer Society offered its mobile bus for screening in poor and far communities.",
+      "authors": [
+        "Philippine Cancer Society"
+      ],
+      "publishDate": "20 November 2025",
+      "sources": [
+        "https://www.philcancer.org.ph/about-us/announcements/latest-news/123-dost-asti-convenes"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "NCCN Partners with Philippine Cancer Organizations to Develop Locally Adapted Cancer Treatment Guidelines",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Treatment Guidelines"
+      ],
+      "content": "The National Comprehensive Cancer Network (NCCN) is working with Philippine medical groups, including PSMO and the Society of Gynecological Oncologists of the Philippines, to adapt its cancer treatment guidelines to conditions in the Philippines. The planned guidelines cover 10 cancers: B-cell lymphomas, breast, colon, hepatocellular carcinoma (liver), lung, prostate, rectal, cervical, ovarian and uterine cancer. The aim is more consistent, evidence-based treatment for Filipino patients.",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "19 October 2026",
+      "sources": [
+        "https://www.psmo.ph/blog/news-2/nccn-partners-with-philippine-cancer-organizations-to-develop-locally-adapted-cancer-treatment-guidelines-42"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "PANAG-ISTORYA: Conversations that matter in Cancer Care.",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Conference"
+      ],
+      "content": "PSMO announced its 24th Midyear Convention, set for 16–17 April 2026 at the Dusit Thani D2 Hotel in Davao City. The theme, Panag-istorya (a Visayan word for dialogue), is about how cancer doctors talk with patients and families during hard moments, with a communication skills workshop led by Dr. Antonio Sison, who trained in psycho-oncology.",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "18 February 2026",
+      "sources": [
+        "https://www.psmo.ph/blog/news-2/panag-istorya-conversations-that-matter-in-cancer-care-38"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "A Unified Front in Systemic Care: PSMO Reinforces the National Cancer Alliance",
+      "bgImageURL": "",
+      "category": "Blog",
+      "tags": [
+        "Cancer Care Network"
+      ],
+      "content": "On World Cancer Day, 4 February 2026, PSMO joined the Philippine Cancer Society, the Philippine Society of Oncologists and the Philippine Medical Association at the PMA Auditorium. The groups signed a National Alliance memorandum of understanding on working together to make patient care pathways smoother, and launched a partnership between Quezon City and the City Cancer Challenge (C/Can).",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "10 February 2026",
+      "sources": [
+        "https://www.psmo.ph/blog/blogs-5/a-unified-front-in-systemic-care-psmo-reinforces-the-national-cancer-alliance-37"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "BARANGAYAN GOES TO GINGOOG CITY!",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Cancer Awareness",
+        "Barangay Health Workers"
+      ],
+      "content": "On 16 August 2025, PSMO held a cancer awareness caravan for health workers at the Arturo S. Lugod Gymnasium in Gingoog City. Doctors, barangay health workers and cancer survivors talked about cancer basics, prevention, screening, treatment and common myths. It was done with the Department of Health, the Gingoog City government and the Philippine College of Physicians–Caraga Chapter.",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "21 August 2025",
+      "sources": [
+        "https://www.psmo.ph/blog/news-2/barangayan-goes-to-gingoog-city-27"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Ano ang Sarcoma?",
+      "bgImageURL": "",
+      "category": "Blog",
+      "tags": [
+        "Sarcoma"
+      ],
+      "content": "A short PSMO explainer in Filipino about sarcoma, a rare cancer that grows in bones and soft tissues such as muscle, fat, blood vessels, nerves, tendons and cartilage. It reminds readers that not every lump is cancer, but a swelling that lasts more than 2 weeks should be checked by a doctor.",
+      "authors": [
+        "PSMO Digital"
+      ],
+      "publishDate": "31 July 2025",
+      "sources": [
+        "https://www.psmo.ph/blog/blogs-5/ano-ang-sarcoma-24"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Philippine Society of Medical Oncologists: A Vital Presence at the 1st National Patient Navigation Conference",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Patient Navigation"
+      ],
+      "content": "PSMO took part in the 1st National Patient Navigation Conference on 26–27 June 2025 at Casa Ibarra, Pasay City. It was organized by the DOH Cancer Control Division, Amang Rodriguez Memorial Medical Center and the Philippine Cancer Society, and ended a training program that trained 61 patient navigators, who guide patients through cancer care.",
+      "authors": [
+        "Herdee Gloriane C. Luna, MD",
+        "PSMO Digital"
+      ],
+      "publishDate": "30 June 2025",
+      "sources": [
+        "https://www.psmo.ph/blog/news-2/philippine-society-of-medical-oncologists-a-vital-presence-at-the-1st-national-patient-navigation-conference-18"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Davao City boosts anti cervical cancer drive",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Cervical Cancer",
+        "Screening"
+      ],
+      "content": "For Cervical Cancer Consciousness Month, the Davao City Health Office reminded women that free cervical cancer screening by visual inspection with acetic acid (VIA) and free HPV vaccination are available all year in the city's health centers. Some barangays also offer Pap smears; women can ask their health center for the schedule.",
+      "authors": [
+        "CIO Admin"
+      ],
+      "publishDate": "4 May 2026",
+      "sources": [
+        "https://davaocity.gov.ph/health/davao-city-boosts-anti-cervical-cancer-drive/"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Free breast cancer-screening available all-year-roundin health centers",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Breast Cancer",
+        "Screening"
+      ],
+      "content": "The Davao City Health Office reminded the public that breast cancer screening is free all year in health centers across the city. From January to September 2025 it screened 33,796 people and referred 364 with suspicious lumps for follow-up. It noted that breast cancer can affect women as young as 25, and most deaths are among women aged 60 and above.",
+      "authors": [
+        "CIO Admin"
+      ],
+      "publishDate": "23 October 2025",
+      "sources": [
+        "https://davaocity.gov.ph/health/free-breast-cancer-screening-available-all-year-roundin-health-centers/"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Davao City logs 197 breast cancer deaths in 2024",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Breast Cancer"
+      ],
+      "content": "The City Health Office recorded 197 breast cancer deaths in Davao City in 2024, including four men, and 161 more from January to September 2025. Most were aged 50 and above, though some were in their early 20s. The office urges all women aged 40 and above to get a yearly mammogram, even without symptoms.",
+      "authors": [
+        "Rojean Grace G. Patumbon"
+      ],
+      "publishDate": "24 October 2025",
+      "sources": [
+        "https://www.sunstar.com.ph/davao/davao-city-logs-197-breast-cancer-deaths-in-2024"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Cervical cancer deaths, screening rates decline",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Cervical Cancer",
+        "Screening"
+      ],
+      "content": "Cervical cancer deaths in Davao City fell from 88 in 2023 to 67 in 2024, the City Health Office said, but fewer women got screened: 7,137 in 2023 and 6,104 in 2024. Most cases are in women aged 40 to 50. The HPV vaccine is free at health centers for girls aged 9 to 14, given in two doses six months apart.",
+      "authors": [
+        "Rojean Grace G. Patumbon"
+      ],
+      "publishDate": "16 May 2025",
+      "sources": [
+        "https://www.sunstar.com.ph/davao/cervical-cancer-deaths-screening-rates-decline"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "SPMC says child cancer patients skipping treatment down to 2%",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Childhood Cancer"
+      ],
+      "content": "Southern Philippines Medical Center says the share of children who stop their cancer treatment fell from 90 percent in 2004 to 2 percent last year. Dr. Mae Dolendo, head of SPMC's Children's Cancer Institute, credited the hospital's strategies and support from government and non-government groups.",
+      "authors": [
+        "CIO Admin"
+      ],
+      "publishDate": "19 September 2025",
+      "sources": [
+        "https://davaocity.gov.ph/health/spmc-says-child-cancer-patients-skipping-treatment-down-to-2/"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Davao City's SPMC now performing non-surgical procedure to remove brain tumors",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Radiation Therapy",
+        "Brain Tumor"
+      ],
+      "content": "The Cancer Institute of Southern Philippines Medical Center began offering stereotactic radiosurgery (SRS), a non-surgical treatment that aims high doses of radiation at a precise spot, making it the only government hospital in the country able to do it. Its first patient was a 27-year-old Davao City resident with a brain tumor (cranial meningioma), treated in five sessions.",
+      "authors": [
+        "Antonio L. Colina IV"
+      ],
+      "publishDate": "10 February 2026",
+      "sources": [
+        "https://mindanews.com/top-stories/2026/02/davao-citys-spmc-now-performing-non-surgical-procedure-to-remove-brain-tumors/"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Malasakit Center eases cancer treatment burden for North Cotabato midwife",
+      "bgImageURL": "",
+      "category": "News",
+      "tags": [
+        "Davao City",
+        "Breast Cancer",
+        "Financial Help"
+      ],
+      "content": "A midwife from Magpet, North Cotabato, diagnosed with Stage 2 breast cancer in 2024, had surgery, chemotherapy and radiation therapy at Southern Philippines Medical Center in Davao City. The story tells how the hospital's Malasakit Center helped with the cost of her treatment.",
+      "authors": [
+        "Daily Tribune"
+      ],
+      "publishDate": "26 August 2026",
+      "sources": [
+        "https://tribune.net.ph/2026/08/26/malasakit-center-eases-cancer-treatment-burden-for-north-cotabato-midwife"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Contracted Health facilities for Z Benefit Packages as of Septemeber 30, 2026",
+      "bgImageURL": "",
+      "category": "Article",
+      "tags": [
+        "Davao City",
+        "PhilHealth",
+        "Z Benefits",
+        "Financial Help"
+      ],
+      "content": "PhilHealth's list of hospitals contracted for its Z Benefit packages, as of 30 September 2026. In Davao City, Southern Philippines Medical Center is contracted for all six cancer packages on the list: acute lymphocytic (lymphoblastic) leukemia, breast, cervical, prostate, colon and rectum cancer. Davao Doctors Hospital is contracted for breast cancer.",
+      "authors": [
+        "PhilHealth"
+      ],
+      "publishDate": "30 September 2026",
+      "sources": [
+        "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "List of Accredited Providers for Selected Outpatient Cancer Screening Tests for CY 2026 Updated as of September 30, 2026",
+      "bgImageURL": "",
+      "category": "Article",
+      "tags": [
+        "Davao City",
+        "PhilHealth",
+        "Cancer Screening"
+      ],
+      "content": "PhilHealth's list of 415 health facilities accredited for selected outpatient cancer screening tests in 2026, updated as of 30 September 2026. The tests on the list are breast ultrasound, low-dose chest CT scan, liver ultrasound, mammography, alpha-fetoprotein and colonoscopy. In Davao City, six facilities are on the list: Alterado General Hospital, Davao Medical School Foundation, Ernesto Guadalupe Community Hospital, Holy Spirit Community Hospital of Davao, Malta Medical Center and Southern Philippines Medical Center. Southern Philippines Medical Center is accredited for all six tests.",
+      "authors": [
+        "PhilHealth"
+      ],
+      "publishDate": "30 September 2026",
+      "sources": [
+        "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/CancerScreening.pdf"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "List of Accredited YAKAP Clinics for CY 2026 Updated as of September 30, 2026",
+      "bgImageURL": "",
+      "category": "Article",
+      "tags": [
+        "Davao City",
+        "PhilHealth",
+        "YAKAP"
+      ],
+      "content": "PhilHealth's list of 4,138 clinics accredited for YAKAP (Yaman ng Kalusugan Program) in 2026, updated as of 30 September 2026. Davao City has 56 of them: 22 government and 34 private. They include City Government of Davao health centers, Southern Philippines Medical Center, hospitals, clinics and diagnostic laboratories.",
+      "authors": [
+        "PhilHealth"
+      ],
+      "publishDate": "30 September 2026",
+      "sources": [
+        "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/YAKAP.pdf"
+      ]
+    }
+  ]
+}

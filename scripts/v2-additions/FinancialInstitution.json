@@ -1,0 +1,341 @@
+{
+  "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. Approved by Fritz on 2026-11-13; sources in CancerData-staging/provenance. Office details for PCSO and DOH (where to go) approved by Fritz on 2026-11-15 (money-help offices review).",
+  "financialInsti": [
+    {
+      "id": 5,
+      "name": "Philippine Charity Sweepstakes Office (PCSO)",
+      "bgImageURL": "/images/FinancialInstitution/pcso.webp",
+      "sources": [
+        "https://www.pcso.gov.ph/",
+        "https://lawphil.net/statutes/repacts/ra2019/ra_11463_2019.html",
+        "https://doh.gov.ph/mpo/mc-directory/"
+      ],
+      "description": "Government agency that gives financial help to people with health problems through its Medical Assistance Program, together with government and private hospitals, health facilities and medicine retailers.",
+      "type": "Public Institution",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "Davao City Branch",
+          "location": "Maharlika Center, J.P Cabagui Avenue, Davao City",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "(082) 282-0305"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "mindanao@pcso.gov.ph"
+            }
+          ]
+        },
+        {
+          "branchID": 2,
+          "branchName": "Malasakit Center",
+          "location": "Malasakit Center, Bajada, Davao City (beside SPMC Hospital)",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "227-2731 loc 4103"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "medicaassistanceprogramspmc@gmail.com"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 505001,
+          "programName": "Medical Assistance Program (MAP)",
+          "eligibility": [
+            "Individuals with health-related problems seeking financial help"
+          ],
+          "programDescription": "Financial help for patients, given in partnership with government and private hospitals, health facilities, medicine retailers and other partners. Cancer treatment (chemotherapy drugs, immunotherapy and radiation therapy) is one of the types of help. If approved, the patient gets a Guarantee Letter (GL) for the hospital, health facility, medicine retailer or diagnostic center.",
+          "cancerTypes": [
+            "All cancers"
+          ],
+          "applicationURL": "https://onlinemap.pcso.gov.ph/",
+          "sources": [
+            "https://www.pcso.gov.ph/ProgramsAndServices/CAD/MedicalAccessProgram.aspx",
+            "https://www.pcso.gov.ph/About/Directories/MindanaoDepartment.aspx",
+            "https://www.pcso.gov.ph/pcsofiles/infographics/pcsoadvisory/PCSOAdvisory2021121501.jpg"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Cancer treatment: chemotherapeutic drugs and immunotherapy",
+              "amount": null
+            },
+            {
+              "benefitID": 2,
+              "benefitName": "Radiation therapy",
+              "amount": null
+            },
+            {
+              "benefitID": 3,
+              "benefitName": "Confinement assistance",
+              "amount": null
+            },
+            {
+              "benefitID": 4,
+              "benefitName": "Laboratory, diagnostic and imaging procedures (such as CT-Scan, MRI, PET Scan and biopsy)",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Duly Accomplished MAP Application Form"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Valid proof of identity of the patient (government-issued ID or other accepted ID)"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Valid ID of the patient's next of kin, if applicable"
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "For cancer treatment: updated clinical or medical abstract (issued within the past 3 months), medical prescription, and treatment protocol (chemotherapy) or treatment plan (radiation therapy), each with the full name, signature and license number of the attending physician"
+            },
+            {
+              "requirementID": 5,
+              "requirementDescription": "For cancer treatment: one quotation from the hospital willing to accept the GL, or official quotations from three different suppliers if the medicine is not available in the hospital"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Apply online through the Online MAP Application (steps 2 to 6), or go to the PCSO Davao City Branch, or to the PCSO or Malasakit Center desk of your hospital. In some areas, MAP can be accessed only through hospitals with a Malasakit Center."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to www.pcso.gov.ph, select \"E-Services\", then \"Online MAP Application\", and create an account."
+            },
+            {
+              "step": 3,
+              "instruction": "Log in with your name, date of birth and email, and enter the one-time code sent to your email."
+            },
+            {
+              "step": 4,
+              "instruction": "Click \"Apply Now\", choose the partner health facility, its city and the type of request, then get a queuing number."
+            },
+            {
+              "step": 5,
+              "instruction": "Upload all required documents as PDF files (not more than 2MB each) and submit the application."
+            },
+            {
+              "step": 6,
+              "instruction": "Wait for the result in your email or in your online account."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Department of Health (DOH)",
+      "bgImageURL": "/images/FinancialInstitution/doh.webp",
+      "sources": [
+        "https://doh.gov.ph/",
+        "https://doh.gov.ph/mpo/mc-directory/"
+      ],
+      "description": "National government department for health. Its MAIFIP program helps pay the medical bills of patients who cannot afford them, and its Cancer Assistance Fund (CAF) and CSPMAP help cancer patients with treatment and free medicines.",
+      "type": "Public Institution",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "Malasakit Center",
+          "location": "Malasakit Center, Bajada, Davao City (beside SPMC Hospital)",
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "227-2731 loc 4103"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "medicaassistanceprogramspmc@gmail.com"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 606001,
+          "programName": "Medical Assistance for Indigent and Financially Incapacitated Patients (MAIFIP)",
+          "eligibility": [
+            "Every Filipino who is an indigent patient",
+            "Every Filipino who is a financially incapacitated patient: a patient facing serious money problems in paying for long-term treatment or costs"
+          ],
+          "programDescription": "DOH medical and financial help given at Malasakit Centers, inside DOH hospitals, state university and college hospitals, the Department of National Defense hospital, the Philippine National Police hospital, and selected LGU hospitals.",
+          "cancerTypes": null,
+          "applicationURL": null,
+          "sources": [
+            "https://doh.gov.ph/mpo/list-of-documentary-requirements-in-availing-maifip-program-medical-assistance/",
+            "https://doh.gov.ph/mpo/process-of-availing-of-medical-assistance/"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Medicines in the Philippine National Drug Formulary (PNDF), or medicines for compassionate use",
+              "amount": null
+            },
+            {
+              "benefitID": 2,
+              "benefitName": "Blood products",
+              "amount": null
+            },
+            {
+              "benefitID": 3,
+              "benefitName": "Medical procedures and supplies",
+              "amount": null
+            },
+            {
+              "benefitID": 4,
+              "benefitName": "Support for mental health, psychosocial and rehabilitation services",
+              "amount": null
+            },
+            {
+              "benefitID": 5,
+              "benefitName": "Hospital bill",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "In-patients: Hospital bill or charges or fees or statement of account (SOA)"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "In-patients: Copy of valid ID of the patient or medical social services-issued ID or barangay-issued Certificate of Residence (for GIDA areas) or Certification from Indigenous People (IP) representatives (for IPs) or valid ID of next of kin, if applicable."
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Out-patients: Prescription of drugs and medicines or treatment protocol or laboratory or diagnostic request issued by referring facilities, if applicable."
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "Out-patients: Copy of valid ID of the patient or medical social services-issued ID or barangay-issued Certificate of Residence (for GIDA areas) or Certification from Indigenous People (IP) representatives (for IPs) or valid ID of next of kin, if applicable."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Get a consultation or treatment at a hospital that has a Malasakit Center."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to the Malasakit Center office inside the hospital for your medical or financial needs."
+            },
+            {
+              "step": 3,
+              "instruction": "Have an interview and assessment with the assigned social worker."
+            },
+            {
+              "step": 4,
+              "instruction": "Submit the required documents to receive the benefits."
+            },
+            {
+              "step": 5,
+              "instruction": "Receive the approved medical or financial benefit."
+            }
+          ]
+        },
+        {
+          "programID": 606002,
+          "programName": "Cancer Assistance Fund (CAF)",
+          "eligibility": [
+            "Persons with cancer, cancer survivors and high-risk individuals",
+            "For the eight priority cancer types"
+          ],
+          "programDescription": "DOH fund under RA 11215 (National Integrated Cancer Control Act). It pays for cancer prevention, screening, early detection and diagnosis, treatment and care-related components for 8 priority cancer types. It adds to PhilHealth and other help for costs they do not cover, and for cancer cases it is used before MAIFIP. In Davao City, Southern Philippines Medical Center is a CAF access site (one of 34 in DOH's 2025 list).",
+          "cancerTypes": [
+            "Breast cancer",
+            "Childhood cancers",
+            "Gynecologic cancers",
+            "Liver cancer, including colorectal and other digestive tract cancers",
+            "Adult blood cancers",
+            "Head and neck cancers, including thyroid",
+            "Lung cancer",
+            "Prostate, renal and urinary bladder cancer"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.dbm.gov.ph/wp-content/uploads/Issuances/2023/Joint-Memorandum-Circular/JOINT-MEMORANDUM-CIRCULAR-NO.-2023-001-DATED-SEPTEMBER-18-2023.pdf",
+            "https://doh.gov.ph/press-release/DOH-IMPLEMENTS-CANCER-ASSISTANCE-FUND-TO-SUPPORT-CANCER-PATIENTS-AND-SURVIVORS/",
+            "https://drive.google.com/file/d/12qWZNvJ9XFXUns86mqCTYgk1KgaqlOFs/view"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Diagnostic procedures, medicines and treatment",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Medical abstract, doctor's prescription, or treatment plan"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Go to a CAF access site. In Davao City: Southern Philippines Medical Center."
+            },
+            {
+              "step": 2,
+              "instruction": "Present your medical abstract, doctor's prescription, or treatment plan to the social worker assigned to the hospital for assessment and approval."
+            },
+            {
+              "step": 3,
+              "instruction": "Your documents are evaluated before approval and availment of services."
+            }
+          ]
+        },
+        {
+          "programID": 606003,
+          "programName": "Cancer and Supportive-Palliative Medicines Access Program (CSPMAP)",
+          "eligibility": [],
+          "programDescription": "DOH program that gives free medicines not yet covered by PhilHealth, to lower or remove out-of-pocket costs. It is part of the National Integrated Cancer Control Program. Its DOH hospital access sites are also CAF access sites. In 2024, 35 access sites offered 61 medicines for the most common cancers.",
+          "cancerTypes": null,
+          "applicationURL": null,
+          "sources": [
+            "https://www.dbm.gov.ph/wp-content/uploads/Issuances/2023/Joint-Memorandum-Circular/JOINT-MEMORANDUM-CIRCULAR-NO.-2023-001-DATED-SEPTEMBER-18-2023.pdf",
+            "https://doh.gov.ph/press-release/DOH-LEADS-NATIONAL-LUNG-CANCER-AWARENESS-MONTH-FREE-MEDICINES-AVAILABLE-NATIONWIDE/",
+            "https://doh.gov.ph/doh-who-launch-2024-2028-national-integrated-cancer-control-program-niccp-strategic-framework/"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Free medicines not yet covered by PhilHealth",
+              "amount": "Free"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        }
+      ]
+    }
+  ]
+}

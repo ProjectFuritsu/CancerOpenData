@@ -12,6 +12,11 @@ import {
 } from "./images.mjs";
 
 const DATA_DIR = "data";
+// v2 data (served at /v2/) lives in data-v2/ with the same layout and rules.
+const DATA_DIRS = [DATA_DIR, "data-v2"].filter(d => existsSync(d));
+const datasetDirs = () => DATA_DIRS.flatMap(base =>
+  readdirSync(base, { withFileTypes: true }).filter(f => f.isDirectory()).map(f => join(base, f.name)));
+const label = p => (p.startsWith(`${DATA_DIR}-`) ? p : relative(DATA_DIR, p));
 let failed = 0;
 let warned = 0;
 let checked = 0;
@@ -27,10 +32,7 @@ function readJson(path) {
   }
 }
 
-for (const folder of readdirSync(DATA_DIR, { withFileTypes: true })) {
-  if (!folder.isDirectory()) continue;
-  const dir = join(DATA_DIR, folder.name);
-
+for (const dir of datasetDirs()) {
   for (const file of readdirSync(dir).filter(f => f.endsWith(".schema.json"))) {
     const name = file.replace(/\.schema\.json$/, "");
     const schemaPath = join(dir, file);
@@ -60,10 +62,10 @@ for (const folder of readdirSync(DATA_DIR, { withFileTypes: true })) {
     const validate = ajv.compile(schema);
 
     if (validate(data)) {
-      console.log(`PASS ${relative(DATA_DIR, dataPath)}`);
+      console.log(`PASS ${label(dataPath)}`);
     } else {
       failed++;
-      console.error(`FAIL ${relative(DATA_DIR, dataPath)}`);
+      console.error(`FAIL ${label(dataPath)}`);
       for (const err of validate.errors) {
         const extra = err.params?.additionalProperty ? ` (${err.params.additionalProperty})` : "";
         console.error(`     ${err.instancePath || "/"} ${err.message}${extra}`);
@@ -73,13 +75,73 @@ for (const folder of readdirSync(DATA_DIR, { withFileTypes: true })) {
 }
 
 // Data files without a schema are not allowed either.
-for (const folder of readdirSync(DATA_DIR, { withFileTypes: true })) {
-  if (!folder.isDirectory()) continue;
-  const dir = join(DATA_DIR, folder.name);
+for (const dir of datasetDirs()) {
   for (const f of readdirSync(dir)) {
     if (f.endsWith(".json") && !f.endsWith(".schema.json") && !existsSync(join(dir, f.replace(/\.json$/, ".schema.json")))) {
       console.error(`FAIL ${join(dir, f)}: no matching schema file`);
       failed++;
+    }
+  }
+}
+
+// ---- v2: each service's branchIDs must exist in the same institution ----
+// JSON Schema can't compare two parts of a file, so this is checked here.
+const v2Health = join("data-v2", "HealthInstitution", "HealthInstiData.json");
+if (existsSync(v2Health)) {
+  let data = null;
+  try { data = JSON.parse(readFileSync(v2Health, "utf8")); } catch { /* already reported above */ }
+  for (const insti of data?.healthInsti ?? []) {
+    const ids = (insti.branches ?? []).map(b => b.branchID);
+    const known = new Set(ids);
+    if (known.size !== ids.length) {
+      console.error(`FAIL ${v2Health}: ${insti.name} has the same branchID twice`); failed++;
+    }
+    for (const s of insti.services ?? []) {
+      for (const id of s.branchIDs ?? []) {
+        if (!known.has(id)) {
+          console.error(`FAIL ${v2Health}: ${insti.name}, service ${s.serviceID} "${s.serviceName}" uses branchID ${id}, which this institution doesn't have`);
+          failed++;
+        }
+      }
+    }
+  }
+}
+
+// ---- v2: links between datasets must point to records that exist ----
+// Hospital coverage -> financial programs (programID, unless null).
+const v2Read = (p) => { try { return existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null; } catch { return null; } };
+const v2Fin = v2Read(join("data-v2", "FinancialInstitution", "FinancialInstiData.json"));
+const v2Hos = v2Read(v2Health);
+if (v2Fin && v2Hos) {
+  const programIDs = new Set(v2Fin.financialInsti.flatMap(r => (r.programs ?? []).map(p => p.programID)));
+  for (const h of v2Hos.healthInsti) {
+    for (const c of h.coverage ?? []) {
+      if (c.programID !== null && !programIDs.has(c.programID)) {
+        console.error(`FAIL ${v2Health}: ${h.name}, coverage "${c.name}" uses programID ${c.programID}, which no financial program has`); failed++;
+      }
+    }
+  }
+}
+
+// ---- v2: a room capacity range can't be upside down ----
+const v2Acc = join("data-v2", "Accommodation", "AccommodationData.json");
+for (const a of v2Read(v2Acc)?.accommodation ?? []) {
+  const { min, max } = a.roomCapacity ?? {};
+  if (min != null && max != null && min > max) {
+    console.error(`FAIL ${v2Acc}: ${a.name} has roomCapacity min ${min} above max ${max}`); failed++;
+  }
+}
+
+// ---- v2: meta.recordCount must match the records in the file ----
+if (existsSync("data-v2")) {
+  for (const dir of readdirSync("data-v2", { withFileTypes: true }).filter(d => d.isDirectory())) {
+    for (const f of readdirSync(join("data-v2", dir.name)).filter(n => n.endsWith(".json") && !n.endsWith(".schema.json"))) {
+      const p = join("data-v2", dir.name, f);
+      const d = v2Read(p);
+      if (!d?.meta) continue; // the schema check reports a missing meta
+      const key = Object.keys(d).find(k => k !== "$schema" && k !== "meta");
+      const n = Array.isArray(d[key]) ? d[key].length : 0;
+      if (d.meta.recordCount !== n) { console.error(`FAIL ${p}: meta.recordCount is ${d.meta.recordCount}, but the file has ${n} records`); failed++; }
     }
   }
 }
@@ -103,11 +165,10 @@ for (const f of listImageFiles()) {
 
 const used = new Set();
 let imageRefs = 0;
-for (const folder of readdirSync(DATA_DIR, { withFileTypes: true })) {
-  if (!folder.isDirectory()) continue;
-  for (const f of readdirSync(join(DATA_DIR, folder.name))) {
+for (const dir of datasetDirs()) {
+  for (const f of readdirSync(dir)) {
     if (!f.endsWith(".json") || f.endsWith(".schema.json")) continue;
-    const path = join(DATA_DIR, folder.name, f);
+    const path = join(dir, f);
     let data;
     try { data = JSON.parse(readFileSync(path, "utf8")); } catch { continue; } // already reported above
     for (const { where, value } of findImageValues(data)) {

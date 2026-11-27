@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "MedicalSpecialistData.schema.json",
+  "title": "MedicalSpecialistData",
+  "description": "Cancer Open Data v2. A null value or an empty list means the information is not given yet: apps should show \"Not given\".",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "meta": {
+      "type": "object",
+      "description": "About this file: what it is, when its records last changed, how many there are, and its license. Written by scripts/convert-v2.mjs.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Short name of the dataset."
+        },
+        "description": {
+          "type": "string",
+          "description": "What the dataset holds."
+        },
+        "apiVersion": {
+          "const": "v2",
+          "description": "API version of this file."
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date (YYYY-MM-DD, Philippine time) the records last changed. Rebuilding without changes keeps the date."
+        },
+        "recordCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of records in this file."
+        },
+        "coverage": {
+          "type": "string",
+          "description": "Area the data covers."
+        },
+        "language": {
+          "type": "string",
+          "description": "Language of the text (BCP 47 code)."
+        },
+        "license": {
+          "const": "CC0-1.0",
+          "description": "License of the data (SPDX id). Logos and photos in images/ belong to their owners."
+        },
+        "licenseURL": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where to report wrong data or ask questions."
+        },
+        "schema": {
+          "const": "./MedicalSpecialistData.schema.json",
+          "description": "This file's JSON Schema."
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "apiVersion",
+        "lastUpdated",
+        "recordCount",
+        "coverage",
+        "language",
+        "license",
+        "licenseURL",
+        "publisher",
+        "contact",
+        "schema"
+      ],
+      "additionalProperties": false
+    },
+    "medicalSpecialist": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "specialty": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "imageURL": {
+            "type": "string",
+            "description": "Profile image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL. Empty if there is no consented photo.",
+            "format": "uri-reference"
+          },
+          "sources": {
+            "$ref": "#/$defs/sources"
+          },
+          "clinics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "clinicID": {
+                  "type": "integer"
+                },
+                "clinicName": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": [
+                    "null",
+                    "number"
+                  ],
+                  "description": "Latitude (from Google Maps). null if not known."
+                },
+                "longitude": {
+                  "type": [
+                    "null",
+                    "number"
+                  ],
+                  "description": "Longitude (from Google Maps). null if not known."
+                },
+                "bookingType": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "enum": [
+                    null,
+                    "Walk-in only",
+                    "Appointment only",
+                    "Walk-in and appointment"
+                  ],
+                  "description": "How patients are seen. null if not known (show \"Not given\")."
+                },
+                "contacts": {
+                  "$ref": "#/$defs/contacts"
+                },
+                "schedule": {
+                  "$ref": "#/$defs/schedule"
+                }
+              },
+              "required": [
+                "clinicID",
+                "clinicName",
+                "location",
+                "latitude",
+                "longitude",
+                "bookingType",
+                "contacts",
+                "schedule"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "firstname",
+          "lastname",
+          "specialty",
+          "description",
+          "imageURL",
+          "sources",
+          "clinics"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "medicalSpecialist"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "contact": {
+      "type": "object",
+      "properties": {
+        "contactID": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "Hotline",
+            "Landline",
+            "Mobile",
+            "Email",
+            "Website",
+            "Facebook",
+            "Other"
+          ],
+          "description": "Kind of contact. One fixed list for all datasets."
+        },
+        "contactDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contactID",
+        "type",
+        "contactDetails"
+      ],
+      "additionalProperties": false
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/contact"
+      }
+    },
+    "scheduleEntry": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "type": "string",
+          "description": "Day or days as written by the source, e.g. 'Monday' or 'Monday-Friday'. A day can appear twice for split hours."
+        },
+        "timeIn": {
+          "type": "string",
+          "description": "Opening or start time, e.g. '8:00 am'."
+        },
+        "timeOut": {
+          "type": "string",
+          "description": "Closing or end time, e.g. '5:00 pm'."
+        }
+      },
+      "required": [
+        "day",
+        "timeIn",
+        "timeOut"
+      ],
+      "additionalProperties": false
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scheduleEntry"
+      },
+      "description": "Open days and hours. Closed days are left out."
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+    }
+  }
+}

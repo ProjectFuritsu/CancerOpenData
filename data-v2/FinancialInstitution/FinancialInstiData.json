@@ -1,0 +1,727 @@
+{
+  "$schema": "./FinancialInstiData.schema.json",
+  "meta": {
+    "title": "Financial help",
+    "description": "Programs that help cancer patients pay for care: where to go, who can apply, benefits, requirements and steps.",
+    "apiVersion": "v2",
+    "lastUpdated": "2026-11-27",
+    "recordCount": 3,
+    "coverage": "Davao City, Philippines",
+    "language": "en",
+    "license": "CC0-1.0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "publisher": "Cancer Open Data (ProjectFuritsu)",
+    "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
+    "schema": "./FinancialInstiData.schema.json"
+  },
+  "financialInsti": [
+    {
+      "id": 1,
+      "name": "PhilHealth",
+      "bgImageURL": "/images/FinancialInstitution/philhealth.webp",
+      "sources": [
+        "https://www.philhealth.gov.ph/"
+      ],
+      "description": "PhilHealth is the Philippines' government-owned health insurer, providing universal health coverage through a social insurance program. It pools funds from member contributions to subsidize medical costs, making healthcare affordable for hospitalizations and preventive care.",
+      "type": "Public Institution",
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Hotline",
+          "contactDetails": "(02) 866-225-88"
+        },
+        {
+          "contactID": 2,
+          "type": "Website",
+          "contactDetails": "https://e.gov.ph/"
+        }
+      ],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "Local Health Insurance Office (LHIO) Davao City",
+          "location": "Valgosons Bldg., Bolton Ext., Poblacion District, Davao City, Davao del Sur",
+          "landmark": null,
+          "latitude": 7.0655,
+          "longitude": 125.6128,
+          "schedule": [
+            {
+              "day": "Monday-Friday",
+              "timeIn": "8:00 am",
+              "timeOut": "5:00 pm"
+            }
+          ],
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "(082) 295-2133 loc. 6328 to 30"
+            },
+            {
+              "contactID": 2,
+              "type": "Mobile",
+              "contactDetails": "09457256139"
+            },
+            {
+              "contactID": 3,
+              "type": "Email",
+              "contactDetails": "lhiodavao.onlinetransactions@gmail.com"
+            }
+          ]
+        },
+        {
+          "branchID": 2,
+          "branchName": "PhilHealth Express Calinan",
+          "location": "Old Barangay Hall beside Police Station, Aurora-Quezon St., Calinan, Davao City",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": [],
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Email",
+              "contactDetails": "pro11.fod.ossco@gmail.com"
+            }
+          ]
+        },
+        {
+          "branchID": 3,
+          "branchName": "PhilHealth Express Toril",
+          "location": "Urban Health Center A, Agton St., Toril, Davao City, Davao del Sur",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": [],
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Mobile",
+              "contactDetails": "0955 986 0938"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "pro11.express.toril@gmail.com"
+            }
+          ]
+        },
+        {
+          "branchID": 4,
+          "branchName": "One-Stop Service Center Office (OSSCO) Gaisano Mall Davao",
+          "location": "Fifth Floor, OSSCO, Gaisano Mall of Davao, Bajada, J.P. Laurel Ave., Davao City, Davao del Sur",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": [],
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Email",
+              "contactDetails": "pro11.fod.ossco@gmail.com"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 161213,
+          "programName": "PhilHealth YAKAP: Yaman ng Kalusugan Program",
+          "eligibility": [
+            "Government and Private Employees",
+            "Kasambahay",
+            "Indigents",
+            "Persons with Disability",
+            "Self-Earning Individuals or Professional Practitioners",
+            "Lifetime Members",
+            "Pantawid Pamilyang Pilipino Program (4Ps)",
+            "Infants and Children under 21 years old",
+            "Overseas Filipino Workers",
+            "Solo Parent",
+            "Senior Citizens"
+          ],
+          "programDescription": "Government program that helps Filipinos take care of their health and prevent illness. YAKAP Clinics watch over members' health, find illness early, and give the right medicines so the illness does not get worse and hospital stays are avoided.",
+          "cancerTypes": [
+            "Breast Cancer",
+            "Liver Cancer",
+            "Colorectal Cancer",
+            "Lung Cancer"
+          ],
+          "applicationURL": "https://e.gov.ph/",
+          "sources": [
+            "https://www.philhealth.gov.ph/yakap/"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Primary Care Checkup",
+              "amount": "Free"
+            },
+            {
+              "benefitID": 2,
+              "benefitName": "Selected laboratory tests based on risk, age and health assessment: Complete Blood Count (CBC) with Platelet Count, Lipid Profile, Fasting Blood Sugar (FBS), Oral Glucose Tolerance Test (OGTT), Hemoglobin Test (HbA1c), Creatinine, Chest X-Ray, Sputum Microscopy, Electrocardiogram (ECG), Urinalysis, Pap Smear, Fecalysis, Fecal Occult Blood Test (FOBT), Upper Abdomen & Pelvic Ultrasound",
+              "amount": null
+            },
+            {
+              "benefitID": 3,
+              "benefitName": "Medicines under PhilHealth GAMOT",
+              "amount": null
+            },
+            {
+              "benefitID": 4,
+              "benefitName": "Breast cancer screening: Breast Ultrasound & Mammogram",
+              "amount": null
+            },
+            {
+              "benefitID": 5,
+              "benefitName": "Liver cancer screening: Alpha Fetoprotein Test & Liver Ultrasound",
+              "amount": null
+            },
+            {
+              "benefitID": 6,
+              "benefitName": "Colorectal cancer screening: Fecal Immunochemical Test, Fecal Occult Blood Test & Colonoscopy",
+              "amount": null
+            },
+            {
+              "benefitID": 7,
+              "benefitName": "Lung cancer screening: Low-dose Chest CT Scan",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "PhilHealth Identification Number (PIN) with updated membership"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Register: make sure you have a PhilHealth Identification Number (PIN) and your membership is updated."
+            },
+            {
+              "step": 2,
+              "instruction": "Choose a YAKAP Clinic using the eGovPH Super App, the PhilHealth Member Portal, or the nearest PhilHealth office."
+            },
+            {
+              "step": 3,
+              "instruction": "Have your First Patient Encounter (FPE): medical history, health screening and health education."
+            },
+            {
+              "step": 4,
+              "instruction": "Sign the form agreeing that your chosen YAKAP Clinic will keep caring for you."
+            },
+            {
+              "step": 5,
+              "instruction": "Keep seeing your YAKAP doctor for prescriptions, referrals for laboratory and/or cancer screening tests when needed, and follow-up checkups."
+            }
+          ]
+        },
+        {
+          "programID": 101002,
+          "programName": "Z Benefits",
+          "eligibility": [
+            "PhilHealth members and their qualified dependents who are eligible to avail of PhilHealth benefits at the time of pre-authorization approval",
+            "Breast Cancer (cStage 0 to IV): Breast cancer clinical stage requiring treatments covered under the Z Benefits (Stage 0 Ductal Carcinoma in Situ (DCIS), Stage I, Stage II, Stage III or Stage IV), with management involving any or all of: Surgery; Chemotherapy (neo/adjuvant); Targeted therapy; Hormonotherapy; Surveillance",
+            "Breast Cancer (cStage 0 to IV): Chemotherapy (neo/adjuvant): patient has not initiated any chemotherapy treatment from any HF",
+            "Breast Cancer (cStage 0 to IV): Diagnostic tests are covered when all of these are met: Positive (+) breast mass AND/OR palpable axillary lymph node; BI-RADS category 4 to 5 result of either mammogram or ultrasound; and Biopsy result of confirmed malignant breast cancer or ductal carcinoma in situ (DCIS)",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): Patients not yet registered in PhilHealth must complete member registration first",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): Age 1 to less than 10 years old and 364 days",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): White blood cell count ‹50,000/mcL",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): No CNS leukemia at diagnosis",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): There should be no testicular involvement of male patient at diagnosis",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): WHO Classification: B or T lymphoblastic leukemia immunophenotype (mature B-cell ALL or Burkitt leukemia are excluded)",
+            "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): The membership category upon approval of the pre-authorization applies for the three years of the package",
+            "Prostate Cancer (low to intermediate risk): PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+            "Prostate Cancer (low to intermediate risk): Patients not yet registered in PhilHealth must complete member registration first",
+            "Prostate Cancer (low to intermediate risk): Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+            "Prostate Cancer (low to intermediate risk): Male patients age up to 70 years old",
+            "Prostate Cancer (low to intermediate risk): Clinical stage (T1a-T2c), PSA level 10 to 20 ng/ml, Tumor Grade (Gleason's score of 2-7) - Low risk: T1-T2a and Gleason score 2-6, and PSA ‹10 ng/ml - Intermediate risk: T2b to T2c, Gleason score of 7, and PSA 10-20 ng/ml",
+            "Prostate Cancer (low to intermediate risk): Localized prostate cancer",
+            "Prostate Cancer (low to intermediate risk): No uncontrolled co-morbid conditions",
+            "Cervical Cancer: PhilHealth members and their qualified dependents, eligible upon application for pre-authorization",
+            "Cervical Cancer: Patients not yet registered in PhilHealth must complete member registration first",
+            "Cervical Cancer: Newly diagnosed case (a first-time diagnosis, not previously treated for the same condition under this Z Benefit package)",
+            "Cervical Cancer: No previous chemotherapy",
+            "Cervical Cancer: No previous radiotherapy",
+            "Cervical Cancer: No uncontrolled co-morbid conditions",
+            "Colorectal Cancer: Colon or rectal cancer stage I to III",
+            "Colorectal Cancer: Normal or with mild systemic disease (ASA I or II)",
+            "Colorectal Cancer: Fully active, able to carry on all pre-disease performance without restriction, OR restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g light house work, office work, OR ambulatory and capable of all self-care but unable to carry out any work activities. Up and about more than 50% of working hours.",
+            "Colorectal Cancer: Services needed after progression to stage IV are not covered."
+          ],
+          "programDescription": "PhilHealth's Z Benefits packages for selected cancers, at Z Benefits contracted health facilities. Each cancer has its own package and medical criteria; the hospital's Z Benefits coordinator checks them.\n\nBreast Cancer (cStage 0 to IV): PhilHealth's Z Benefit package for breast cancer, up to P1.4 million (effective March 30, 2024). It covers diagnostic tests, surgery, hormonotherapy, chemotherapy, targeted therapy and surveillance after surgery, at Z Benefits contracted health facilities. Up to five (5) days are deducted from the 45-day annual benefit limit.\n\nAcute Lymphocytic / Lymphoblastic Leukemia (standard risk): PhilHealth's Z Benefit package for children with standard-risk acute lymphoblastic leukemia: five hundred thousand pesos (Php 500,000) for the complete course of treatment for three (3) years, paid to the contracted health facility in three tranches. Pre-authorization must be submitted before the end of the induction phase.\n\nProstate Cancer (low to intermediate risk): PhilHealth's Z Benefit package for localized low- to intermediate-risk prostate cancer, at Z Benefits contracted health facilities.\n\nCervical Cancer: PhilHealth's Z Benefit package for cervical cancer treatment (chemoradiation with brachytherapy, or primary surgery for early stages), at Z Benefits contracted health facilities.\n\nColorectal Cancer: PhilHealth's Z Benefit package for colon and rectal cancer. The amount depends on the cancer, its stage and risk. Available at Z Benefits contracted health facilities. Up to five (5) days are deducted from the 45-day annual benefit limit.",
+          "cancerTypes": [
+            "Breast Cancer",
+            "Acute Lymphocytic / Lymphoblastic Leukemia",
+            "Prostate Cancer",
+            "Cervical Cancer",
+            "Colorectal Cancer"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.philhealth.gov.ph/circulars/2024/PC2024-0007.pdf",
+            "https://www.philhealth.gov.ph/circulars/2017/circ2017-0016.pdf",
+            "https://www.philhealth.gov.ph/benefits/",
+            "https://www.philhealth.gov.ph/circulars/2023/PC2023-0005.pdf"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Breast Cancer (cStage 0 to IV): Total package",
+              "amount": "Up to P1.4 million"
+            },
+            {
+              "benefitID": 2,
+              "benefitName": "Breast Cancer (cStage 0 to IV): Diagnostic tests and prognostication",
+              "amount": "Php 1,000 to Php 10,000.00"
+            },
+            {
+              "benefitID": 3,
+              "benefitName": "Breast Cancer (cStage 0 to IV): Surgical procedures (partial mastectomy to modified radical mastectomy)",
+              "amount": "Php 30,000 – Php 140,000.00"
+            },
+            {
+              "benefitID": 4,
+              "benefitName": "Breast Cancer (cStage 0 to IV): Hormonotherapy",
+              "amount": "Php 2,700 or Php 18,000"
+            },
+            {
+              "benefitID": 5,
+              "benefitName": "Breast Cancer (cStage 0 to IV): Cytotoxic chemotherapy",
+              "amount": "Php 43,000 to Php 185,010"
+            },
+            {
+              "benefitID": 6,
+              "benefitName": "Breast Cancer (cStage 0 to IV): Targeted therapy",
+              "amount": "Php 333,336 for 18 maximum cycles"
+            },
+            {
+              "benefitID": 7,
+              "benefitName": "Breast Cancer (cStage 0 to IV): Surveillance",
+              "amount": "Php 5,000 (basic) and Php 9,000 (specific)"
+            },
+            {
+              "benefitID": 8,
+              "benefitName": "Breast Cancer (cStage 0 to IV): No co-payment for patients admitted in basic or ward-type accommodation",
+              "amount": null
+            },
+            {
+              "benefitID": 9,
+              "benefitName": "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): Total package",
+              "amount": "Php 500,000 for the complete course of treatment for three (3) years"
+            },
+            {
+              "benefitID": 10,
+              "benefitName": "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): Tranche 1",
+              "amount": "Php 300,000 (after the 1st induction phase)"
+            },
+            {
+              "benefitID": 11,
+              "benefitName": "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): Tranche 2",
+              "amount": "Php 125,000 (after the 3rd maintenance cycle)"
+            },
+            {
+              "benefitID": 12,
+              "benefitName": "Acute Lymphocytic / Lymphoblastic Leukemia (standard risk): Tranche 3",
+              "amount": "Php 75,000 (after the 7th maintenance cycle)"
+            },
+            {
+              "benefitID": 13,
+              "benefitName": "Prostate Cancer (low to intermediate risk): Total package",
+              "amount": "P100,000"
+            },
+            {
+              "benefitID": 14,
+              "benefitName": "Cervical Cancer: Chemoradiation with Cobalt and Brachytherapy (low dose) or Primary surgery for Stage IA1, IA2 - IIA1",
+              "amount": "P120,000"
+            },
+            {
+              "benefitID": 15,
+              "benefitName": "Cervical Cancer: Chemoradiation with Linear Accelerator and Brachytherapy (high dose)",
+              "amount": "P175,000"
+            },
+            {
+              "benefitID": 16,
+              "benefitName": "Colorectal Cancer: Colon Cancer, Stage I to II (Low Risk)",
+              "amount": "Php 150,000"
+            },
+            {
+              "benefitID": 17,
+              "benefitName": "Colorectal Cancer: Colon Cancer, Stage II to III (High Risk)",
+              "amount": "Php 300,000"
+            },
+            {
+              "benefitID": 18,
+              "benefitName": "Colorectal Cancer: Rectal Cancer, Stage I to II (Low Risk)",
+              "amount": "Php 150,000"
+            },
+            {
+              "benefitID": 19,
+              "benefitName": "Colorectal Cancer: Rectal Cancer, Pre-operative Stage I, with Post-Operative Stage II to III",
+              "amount": "Php 400,000"
+            },
+            {
+              "benefitID": 20,
+              "benefitName": "Colorectal Cancer: Rectal Cancer, Stage II to III",
+              "amount": "Php 400,000"
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "PhilHealth ID"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Regardless of the type of cancer, bring your PhilHealth ID to the hospital's Z Benefits coordinator for the list of requirements and further steps."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Philippine Charity Sweepstakes Office (PCSO)",
+      "bgImageURL": "/images/FinancialInstitution/pcso.webp",
+      "sources": [
+        "https://www.pcso.gov.ph/",
+        "https://lawphil.net/statutes/repacts/ra2019/ra_11463_2019.html",
+        "https://doh.gov.ph/mpo/mc-directory/"
+      ],
+      "description": "Government agency that gives financial help to people with health problems through its Medical Assistance Program, together with government and private hospitals, health facilities and medicine retailers.",
+      "type": "Public Institution",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "Davao City Branch",
+          "location": "Maharlika Center, J.P Cabagui Avenue, Davao City",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "(082) 282-0305"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "mindanao@pcso.gov.ph"
+            }
+          ]
+        },
+        {
+          "branchID": 2,
+          "branchName": "Malasakit Center",
+          "location": "Malasakit Center, Bajada, Davao City (beside SPMC Hospital)",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "227-2731 loc 4103"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "medicaassistanceprogramspmc@gmail.com"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 505001,
+          "programName": "Medical Assistance Program (MAP)",
+          "eligibility": [
+            "Individuals with health-related problems seeking financial help"
+          ],
+          "programDescription": "Financial help for patients, given in partnership with government and private hospitals, health facilities, medicine retailers and other partners. Cancer treatment (chemotherapy drugs, immunotherapy and radiation therapy) is one of the types of help. If approved, the patient gets a Guarantee Letter (GL) for the hospital, health facility, medicine retailer or diagnostic center.",
+          "cancerTypes": [
+            "All cancers"
+          ],
+          "applicationURL": "https://onlinemap.pcso.gov.ph/",
+          "sources": [
+            "https://www.pcso.gov.ph/ProgramsAndServices/CAD/MedicalAccessProgram.aspx",
+            "https://www.pcso.gov.ph/About/Directories/MindanaoDepartment.aspx",
+            "https://www.pcso.gov.ph/pcsofiles/infographics/pcsoadvisory/PCSOAdvisory2021121501.jpg"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Cancer treatment: chemotherapeutic drugs and immunotherapy",
+              "amount": null
+            },
+            {
+              "benefitID": 2,
+              "benefitName": "Radiation therapy",
+              "amount": null
+            },
+            {
+              "benefitID": 3,
+              "benefitName": "Confinement assistance",
+              "amount": null
+            },
+            {
+              "benefitID": 4,
+              "benefitName": "Laboratory, diagnostic and imaging procedures (such as CT-Scan, MRI, PET Scan and biopsy)",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Duly Accomplished MAP Application Form"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Valid proof of identity of the patient (government-issued ID or other accepted ID)"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Valid ID of the patient's next of kin, if applicable"
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "For cancer treatment: updated clinical or medical abstract (issued within the past 3 months), medical prescription, and treatment protocol (chemotherapy) or treatment plan (radiation therapy), each with the full name, signature and license number of the attending physician"
+            },
+            {
+              "requirementID": 5,
+              "requirementDescription": "For cancer treatment: one quotation from the hospital willing to accept the GL, or official quotations from three different suppliers if the medicine is not available in the hospital"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Apply online through the Online MAP Application (steps 2 to 6), or go to the PCSO Davao City Branch, or to the PCSO or Malasakit Center desk of your hospital. In some areas, MAP can be accessed only through hospitals with a Malasakit Center."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to www.pcso.gov.ph, select \"E-Services\", then \"Online MAP Application\", and create an account."
+            },
+            {
+              "step": 3,
+              "instruction": "Log in with your name, date of birth and email, and enter the one-time code sent to your email."
+            },
+            {
+              "step": 4,
+              "instruction": "Click \"Apply Now\", choose the partner health facility, its city and the type of request, then get a queuing number."
+            },
+            {
+              "step": 5,
+              "instruction": "Upload all required documents as PDF files (not more than 2MB each) and submit the application."
+            },
+            {
+              "step": 6,
+              "instruction": "Wait for the result in your email or in your online account."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Department of Health (DOH)",
+      "bgImageURL": "/images/FinancialInstitution/doh.webp",
+      "sources": [
+        "https://doh.gov.ph/",
+        "https://doh.gov.ph/mpo/mc-directory/"
+      ],
+      "description": "National government department for health. Its MAIFIP program helps pay the medical bills of patients who cannot afford them, and its Cancer Assistance Fund (CAF) and CSPMAP help cancer patients with treatment and free medicines.",
+      "type": "Public Institution",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": "Malasakit Center",
+          "location": "Malasakit Center, Bajada, Davao City (beside SPMC Hospital)",
+          "landmark": null,
+          "latitude": null,
+          "longitude": null,
+          "schedule": null,
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "227-2731 loc 4103"
+            },
+            {
+              "contactID": 2,
+              "type": "Email",
+              "contactDetails": "medicaassistanceprogramspmc@gmail.com"
+            }
+          ]
+        }
+      ],
+      "programs": [
+        {
+          "programID": 606001,
+          "programName": "Medical Assistance for Indigent and Financially Incapacitated Patients (MAIFIP)",
+          "eligibility": [
+            "Every Filipino who is an indigent patient",
+            "Every Filipino who is a financially incapacitated patient: a patient facing serious money problems in paying for long-term treatment or costs"
+          ],
+          "programDescription": "DOH medical and financial help given at Malasakit Centers, inside DOH hospitals, state university and college hospitals, the Department of National Defense hospital, the Philippine National Police hospital, and selected LGU hospitals.",
+          "cancerTypes": null,
+          "applicationURL": null,
+          "sources": [
+            "https://doh.gov.ph/mpo/list-of-documentary-requirements-in-availing-maifip-program-medical-assistance/",
+            "https://doh.gov.ph/mpo/process-of-availing-of-medical-assistance/"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Medicines in the Philippine National Drug Formulary (PNDF), or medicines for compassionate use",
+              "amount": null
+            },
+            {
+              "benefitID": 2,
+              "benefitName": "Blood products",
+              "amount": null
+            },
+            {
+              "benefitID": 3,
+              "benefitName": "Medical procedures and supplies",
+              "amount": null
+            },
+            {
+              "benefitID": 4,
+              "benefitName": "Support for mental health, psychosocial and rehabilitation services",
+              "amount": null
+            },
+            {
+              "benefitID": 5,
+              "benefitName": "Hospital bill",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "In-patients: Hospital bill or charges or fees or statement of account (SOA)"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "In-patients: Copy of valid ID of the patient or medical social services-issued ID or barangay-issued Certificate of Residence (for GIDA areas) or Certification from Indigenous People (IP) representatives (for IPs) or valid ID of next of kin, if applicable."
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Out-patients: Prescription of drugs and medicines or treatment protocol or laboratory or diagnostic request issued by referring facilities, if applicable."
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "Out-patients: Copy of valid ID of the patient or medical social services-issued ID or barangay-issued Certificate of Residence (for GIDA areas) or Certification from Indigenous People (IP) representatives (for IPs) or valid ID of next of kin, if applicable."
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Get a consultation or treatment at a hospital that has a Malasakit Center."
+            },
+            {
+              "step": 2,
+              "instruction": "Go to the Malasakit Center office inside the hospital for your medical or financial needs."
+            },
+            {
+              "step": 3,
+              "instruction": "Have an interview and assessment with the assigned social worker."
+            },
+            {
+              "step": 4,
+              "instruction": "Submit the required documents to receive the benefits."
+            },
+            {
+              "step": 5,
+              "instruction": "Receive the approved medical or financial benefit."
+            }
+          ]
+        },
+        {
+          "programID": 606002,
+          "programName": "Cancer Assistance Fund (CAF)",
+          "eligibility": [
+            "Persons with cancer, cancer survivors and high-risk individuals",
+            "For the eight priority cancer types"
+          ],
+          "programDescription": "DOH fund under RA 11215 (National Integrated Cancer Control Act). It pays for cancer prevention, screening, early detection and diagnosis, treatment and care-related components for 8 priority cancer types. It adds to PhilHealth and other help for costs they do not cover, and for cancer cases it is used before MAIFIP. In Davao City, Southern Philippines Medical Center is a CAF access site (one of 34 in DOH's 2025 list).",
+          "cancerTypes": [
+            "Breast cancer",
+            "Childhood cancers",
+            "Gynecologic cancers",
+            "Liver cancer, including colorectal and other digestive tract cancers",
+            "Adult blood cancers",
+            "Head and neck cancers, including thyroid",
+            "Lung cancer",
+            "Prostate, renal and urinary bladder cancer"
+          ],
+          "applicationURL": null,
+          "sources": [
+            "https://www.dbm.gov.ph/wp-content/uploads/Issuances/2023/Joint-Memorandum-Circular/JOINT-MEMORANDUM-CIRCULAR-NO.-2023-001-DATED-SEPTEMBER-18-2023.pdf",
+            "https://doh.gov.ph/press-release/DOH-IMPLEMENTS-CANCER-ASSISTANCE-FUND-TO-SUPPORT-CANCER-PATIENTS-AND-SURVIVORS/",
+            "https://drive.google.com/file/d/12qWZNvJ9XFXUns86mqCTYgk1KgaqlOFs/view"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Diagnostic procedures, medicines and treatment",
+              "amount": null
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Medical abstract, doctor's prescription, or treatment plan"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Go to a CAF access site. In Davao City: Southern Philippines Medical Center."
+            },
+            {
+              "step": 2,
+              "instruction": "Present your medical abstract, doctor's prescription, or treatment plan to the social worker assigned to the hospital for assessment and approval."
+            },
+            {
+              "step": 3,
+              "instruction": "Your documents are evaluated before approval and availment of services."
+            }
+          ]
+        },
+        {
+          "programID": 606003,
+          "programName": "Cancer and Supportive-Palliative Medicines Access Program (CSPMAP)",
+          "eligibility": [],
+          "programDescription": "DOH program that gives free medicines not yet covered by PhilHealth, to lower or remove out-of-pocket costs. It is part of the National Integrated Cancer Control Program. Its DOH hospital access sites are also CAF access sites. In 2024, 35 access sites offered 61 medicines for the most common cancers.",
+          "cancerTypes": null,
+          "applicationURL": null,
+          "sources": [
+            "https://www.dbm.gov.ph/wp-content/uploads/Issuances/2023/Joint-Memorandum-Circular/JOINT-MEMORANDUM-CIRCULAR-NO.-2023-001-DATED-SEPTEMBER-18-2023.pdf",
+            "https://doh.gov.ph/press-release/DOH-LEADS-NATIONAL-LUNG-CANCER-AWARENESS-MONTH-FREE-MEDICINES-AVAILABLE-NATIONWIDE/",
+            "https://doh.gov.ph/doh-who-launch-2024-2028-national-integrated-cancer-control-program-niccp-strategic-framework/"
+          ],
+          "benefits": [
+            {
+              "benefitID": 1,
+              "benefitName": "Free medicines not yet covered by PhilHealth",
+              "amount": "Free"
+            }
+          ],
+          "requirements": [],
+          "procedure": []
+        }
+      ]
+    }
+  ]
+}

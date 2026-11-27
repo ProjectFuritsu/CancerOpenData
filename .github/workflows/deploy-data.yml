@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "data/**"
+      - "data-v2/**"
       - "images/**"
       - "docs/**"
       - "scripts/**"
@@ -15,6 +16,7 @@ on:
   pull_request:
     paths:
       - "data/**"
+      - "data-v2/**"
       - "images/**"
       - "docs/**"
       - "scripts/**"

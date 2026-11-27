@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "FeedsData.schema.json",
+  "title": "FeedsData",
+  "description": "Cancer Open Data v2. A null value or an empty list means the information is not given yet: apps should show \"Not given\".",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Path to this file's JSON Schema."
+    },
+    "meta": {
+      "type": "object",
+      "description": "About this file: what it is, when its records last changed, how many there are, and its license. Written by scripts/convert-v2.mjs.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Short name of the dataset."
+        },
+        "description": {
+          "type": "string",
+          "description": "What the dataset holds."
+        },
+        "apiVersion": {
+          "const": "v2",
+          "description": "API version of this file."
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date",
+          "description": "Date (YYYY-MM-DD, Philippine time) the records last changed. Rebuilding without changes keeps the date."
+        },
+        "recordCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of records in this file."
+        },
+        "coverage": {
+          "type": "string",
+          "description": "Area the data covers."
+        },
+        "language": {
+          "type": "string",
+          "description": "Language of the text (BCP 47 code)."
+        },
+        "license": {
+          "const": "CC0-1.0",
+          "description": "License of the data (SPDX id). Logos and photos in images/ belong to their owners."
+        },
+        "licenseURL": {
+          "type": "string",
+          "format": "uri"
+        },
+        "publisher": {
+          "type": "string"
+        },
+        "contact": {
+          "type": "string",
+          "format": "uri",
+          "description": "Where to report wrong data or ask questions."
+        },
+        "schema": {
+          "const": "./FeedsData.schema.json",
+          "description": "This file's JSON Schema."
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "apiVersion",
+        "lastUpdated",
+        "recordCount",
+        "coverage",
+        "language",
+        "license",
+        "licenseURL",
+        "publisher",
+        "contact",
+        "schema"
+      ],
+      "additionalProperties": false
+    },
+    "feed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "bgImageURL": {
+            "type": "string",
+            "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL.",
+            "format": "uri-reference"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "News",
+              "Blog",
+              "Article"
+            ],
+            "description": "Feed type: News, Blog or Article."
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "description": "Topics, free text, e.g. 'Breast Cancer'. Can be empty."
+          },
+          "content": {
+            "type": "string"
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Writers or organizations, as written by the source."
+          },
+          "publishDate": {
+            "type": "string",
+            "description": "Publish date in 'DD Month YYYY' format, e.g. '21 November 2025'."
+          },
+          "sources": {
+            "$ref": "#/$defs/sources",
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "bgImageURL",
+          "category",
+          "tags",
+          "content",
+          "authors",
+          "publishDate",
+          "sources"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "meta",
+    "feed"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+    }
+  }
+}
