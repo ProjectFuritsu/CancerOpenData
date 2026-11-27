@@ -37,6 +37,7 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - **All v2 keys are camelCase**, with `ID` and `URL` kept upper case (as in `programID` and `imageURL`). Records keys: `feed`, `financialInsti`, `healthInsti`, `medicalSpecialist`, `supportGroup`, `accommodation`. Inside records: `contactID`, `contactDetails`, `programName`, `programDescription`, `benefitID`, `benefitName`, `requirementID`, `requirementDescription`, `serviceName`, `serviceDescription`, `serviceSchedule`. v1 keeps its old names.
 - **Every source is a `sources` list** (links, no repeats). Feeds, financial and health institutions had one `source` link; places to stay had both `source` and `sources`. Feeds and institutions must have at least one link; elsewhere an empty list means "Not given". Values are unchanged.
 - Specialists: no SeriousMD page gives a booking type for an online clinic, so all 9 online clinics have `bookingType` `null`.
+- DOH programs use official sources instead of news: the DOH Malasakit Program Office pages (MAIFIP requirements, how to apply, eMAIFIP access sites), DOH Davao's Citizen's Charter 2025, and DOH's own releases on CAF and CSPMAP. Facts that only news gave are removed until an official source is found: MAIFIP's "no fixed cap" and 12-working-day payment, applying through the eGovPH app, and CAF's "up to P150,000" (both amounts are now "Not given").
 
 ### Repo
 - Issue forms: wrong data, new resource, API problem, privacy or removal request. Blank issues are off.

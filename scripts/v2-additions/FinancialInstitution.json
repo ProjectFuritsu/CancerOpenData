@@ -161,23 +161,23 @@
             "Indigent and financially incapacitated patients who cannot afford their medical expenses",
             "Including PhilHealth members whose remaining bill is still too big"
           ],
-          "programDescription": "Covers the remaining out-of-pocket hospital bill after PhilHealth and other discounts. DOH Davao says there is no fixed maximum amount, and payment is targeted within 12 working days when documents are complete (2026). Cancer patients at SPMC have used it for laboratories, CT scans, procedures and medicines.",
+          "programDescription": "Covers the remaining out-of-pocket hospital bill after PhilHealth and other discounts.",
           "cancerTypes": [
             "All cancers"
           ],
-          "applicationURL": "https://e.gov.ph/",
+          "applicationURL": null,
           "sources": [
-            "https://www.sunstar.com.ph/davao/maifip-program-eases-medical-cost-burden-for-struggling-families",
-            "https://ddh.com.ph/ddh-accredited-government-financial-medical-assistance/",
             "https://ro2.doh.gov.ph/medical-assistance-for-indigent-and-financially-incapacitated-patients-maifip/",
-            "https://ptvnews.ph/?p=251764",
-            "https://www.sunstar.com.ph/manila/doh-expands-emaifip-to-lgu-hospitals-32k-patients-served-in-1-month"
+            "https://doh.gov.ph/mpo/list-of-documentary-requirements-in-availing-maifip-program-medical-assistance/",
+            "https://doh.gov.ph/mpo/process-of-availing-of-medical-assistance/",
+            "https://doh.gov.ph/mpo/emaifip-access-sites/",
+            "https://ro11.doh.gov.ph/wp-content/uploads/2025/12/citizens-charter_compressed.pdf"
           ],
           "benefits": [
             {
               "benefitID": 1,
               "benefitName": "Remaining medical bill after PhilHealth and other discounts",
-              "amount": "No fixed cap"
+              "amount": null
             }
           ],
           "requirements": [
@@ -201,7 +201,7 @@
           "procedure": [
             {
               "step": 1,
-              "instruction": "Go to the Malasakit Center or the Medical Social Work Unit (MSW) of your hospital, or apply online through eMAIFIP in the eGovPH app. eMAIFIP started in DOH hospitals and is being extended to LGU hospitals."
+              "instruction": "Go to the Malasakit Center or the Medical Social Work Unit (MSW) of your hospital."
             },
             {
               "step": 2,
@@ -234,15 +234,14 @@
           "applicationURL": null,
           "sources": [
             "https://www.dbm.gov.ph/wp-content/uploads/Issuances/2023/Joint-Memorandum-Circular/JOINT-MEMORANDUM-CIRCULAR-NO.-2023-001-DATED-SEPTEMBER-18-2023.pdf",
-            "https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide",
-            "https://ptvnews.ph/pbbm-to-doh-expedite-cancer-fund-request/",
-            "https://www.philstar.com/headlines/2022/11/14/2223750/how-cancer-patients-survivors-can-access-assistance-fund"
+            "https://doh.gov.ph/press-release/DOH-IMPLEMENTS-CANCER-ASSISTANCE-FUND-TO-SUPPORT-CANCER-PATIENTS-AND-SURVIVORS/",
+            "https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide"
           ],
           "benefits": [
             {
               "benefitID": 1,
               "benefitName": "Diagnostic procedures, medicines and treatment",
-              "amount": "Up to P150,000"
+              "amount": null
             }
           ],
           "requirements": [
@@ -275,7 +274,8 @@
           "applicationURL": null,
           "sources": [
             "https://www.dbm.gov.ph/wp-content/uploads/Issuances/2023/Joint-Memorandum-Circular/JOINT-MEMORANDUM-CIRCULAR-NO.-2023-001-DATED-SEPTEMBER-18-2023.pdf",
-            "https://www.who.int/philippines/news/detail/14-02-2024-doh--who-launch-2024-2028-national-integrated-cancer-control-program-(niccp)-strategic-framework"
+            "https://doh.gov.ph/press-release/DOH-LEADS-NATIONAL-LUNG-CANCER-AWARENESS-MONTH-FREE-MEDICINES-AVAILABLE-NATIONWIDE/",
+            "https://doh.gov.ph/doh-who-launch-2024-2028-national-integrated-cancer-control-program-niccp-strategic-framework/"
           ],
           "benefits": [
             {
