@@ -23,11 +23,17 @@ const DESCRIPTIONS = {
 };
 
 const INTRO = {
-  v1: { title: "Cancer Open Data API", note: [] },
-  v2: {
-    title: "Cancer Open Data API v2 (preview)",
+  v1: {
+    title: "Cancer Open Data API (beta)",
     note: [
-      "**Preview of version 2.** The data shape can still change before release. Version 1 stays at the same links.",
+      "**Beta.** The API can still change. Version 1 is frozen: new and corrected data goes to version 2 at `/v2/`. Version 1 stays at the same links until a stop date is announced.",
+      "",
+    ],
+  },
+  v2: {
+    title: "Cancer Open Data API v2 (beta)",
+    note: [
+      "**Beta.** Version 2 is the main version, but its data shape can still change. Version 1 stays at the same links.",
       "- **New in v2:** office `branches` with their own hours and contacts, lists of `sources` and `cancerTypes`, a `meta` block with `lastUpdated` in each file, benefit `amount`, clinic `bookingType`, and `eligibility` as a list. No loan programs; PCSO and DOH added.",
       "- **A `null`, empty text or empty list means \"Not given\".**",
       "",
@@ -88,6 +94,8 @@ export function buildOpenApi(datasets, schemas, version, { apiVersion = "v1" } =
         required: ["name", "version", "datasets"],
         properties: {
           name: { type: "string" },
+          apiVersion: { type: "string", description: "Which API version this list is for." },
+          status: { type: "string", description: "Release status of this API version, for example beta." },
           about: { type: "string" },
           source: { type: "string", format: "uri" },
           version: { type: "string", description: "The Git commit that is live." },
