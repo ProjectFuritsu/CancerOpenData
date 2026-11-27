@@ -306,7 +306,9 @@
       "bgImageURL": "",
       "sources": [
         "https://www.apoviewhotel.com/",
-        "https://www.apoviewhotel.com/contact"
+        "https://www.apoviewhotel.com/contact",
+        "https://www.apoviewhotel.com/rooms",
+        "https://www.apoviewhotel.com/Index/search"
       ],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
@@ -345,11 +347,16 @@
           "contacts": []
         }
       ],
-      "cost": "Paid.",
-      "amenities": [],
+      "cost": "Estimated ₱4,018 to ₱6,938 per night (as of 27 November 2026)",
+      "amenities": [
+        "LED TV set with cable channels",
+        "Hot and cold shower",
+        "Free Wi-Fi access",
+        "Individual safety deposit box"
+      ],
       "roomCapacity": {
-        "min": null,
-        "max": null
+        "min": 2,
+        "max": 4
       }
     }
   ]
