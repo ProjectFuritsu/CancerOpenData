@@ -93,8 +93,9 @@ execFileSync("node", ["scripts/build-site.mjs"], { cwd: root, stdio: "inherit", 
 rmSync(imgDir, { recursive: true, force: true });
 const index = JSON.parse(readFileSync(join(here, "..", "dist", "index.json"), "utf8"));
 const files = index.datasets.flatMap(d => [d.data, d.schema]).map(p => p.slice(1));
-// v2 is built only when data-v2/ exists; its tests run only then.
-const hasV2 = existsSync(join(root, "data-v2"));
+// v2 is the main version since 2026-11-27: data-v2/ must exist, so its tests always run.
+if (!existsSync(join(root, "data-v2"))) throw new Error("data-v2/ is missing: v2 is the main version");
+const hasV2 = true;
 const indexV2 = hasV2 ? JSON.parse(readFileSync(join(here, "..", "dist", "v2", "index.json"), "utf8")) : null;
 const filesV2 = hasV2 ? indexV2.datasets.flatMap(d => [d.data, d.schema]).map(p => p.slice(1)) : [];
 

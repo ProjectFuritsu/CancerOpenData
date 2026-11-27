@@ -1,3 +1,7 @@
+// FROZEN since 2026-11-27. v2 is the source of truth: edit data-v2/ and its
+// schemas directly. A re-run would overwrite those edits with v1, so the script
+// stops unless --unfreeze is given. The last run (after PR #18) changed nothing.
+//
 // Converts the v1 data in data/ to the v2 shape in data-v2/.
 // Values are copied as written. Nothing is guessed: a value the v1 data
 // doesn't have becomes null or an empty list ("Not given" in apps).
@@ -13,6 +17,10 @@ import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 
 const args = process.argv.slice(2);
+if (!args.includes("--unfreeze")) {
+  console.error("convert-v2.mjs is frozen (2026-11-27): edit data-v2/ directly. A re-run would undo v2 edits. Use --unfreeze only to compare.");
+  process.exit(1);
+}
 const provDir = args.includes("--provenance") ? args[args.indexOf("--provenance") + 1] : null;
 
 const read = (p) => JSON.parse(readFileSync(p, "utf8"));
