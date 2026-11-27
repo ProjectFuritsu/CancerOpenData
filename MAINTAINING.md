@@ -85,6 +85,15 @@ npm run validate
 3. Start the data file with `"$schema": "./HospiceData.schema.json"`. The check fails if this doesn't point to the schema next to it.
 4. Run `npm run validate`, then push. The new dataset appears at `/` by itself, with no code change.
 
+**Facts with no link (personal communication).** Some facts come only from a person: a phone call, a visit or a chat with the officer in charge. Rules (decided 2026-11-27):
+1. **Who counts:** the officer in charge of that office, program or group, talking about their own office. Patients, other groups and forum posts are leads to check, not sources.
+2. **Write it down the same day,** in the staging provenance file (not in the repo): what was said (close to their words), their role and office (no name), how (phone, visit, chat), the date and who got it.
+3. **What goes public:** `sources` holds links only, so nothing is added there. The CHANGELOG line and the pull request say "Given by <role>, <office>, by <phone/visit/chat>, <date>". Write the value as said; don't fill gaps with guesses.
+4. **Privacy (RA 10173):** no personal names, personal phone numbers or personal email. Use the office's own contacts; if there is none, leave it out.
+5. **Ask for proof:** a posted notice, printed form, official post or email from an official address. When a link turns up, add it to `sources` and note it in the CHANGELOG.
+6. **When sources disagree:** an official written source wins over a verbal one. The officer in charge wins over a news article about their own office (say so in the CHANGELOG). If two officers disagree, leave the value empty ("Not given") and ask again.
+7. **Recheck** these facts every 6 months and before any demo.
+
 **Before changing a schema:** apps rely on it. Tell the people who build on the API first, and add the change to [CHANGELOG.md](CHANGELOG.md).
 
 ## Deploy setup
