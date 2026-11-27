@@ -5,7 +5,7 @@
     "description": "Hospitals with cancer services in Davao City: services, schedules, fees and the programs they accept.",
     "apiVersion": "v2",
     "lastUpdated": "2026-11-27",
-    "recordCount": 2,
+    "recordCount": 3,
     "coverage": "Davao City, Philippines",
     "language": "en",
     "license": "CC0-1.0",
@@ -618,6 +618,64 @@
           ]
         }
       ]
+    },
+    {
+      "id": 3,
+      "name": "Brokenshire Medical Center",
+      "bgImageURL": "",
+      "sources": [
+        "https://brokenshiremed.com/"
+      ],
+      "description": "Private mission hospital in Davao City. It opened a Chemotherapy and Infusion Unit on March 9, 2026, and has medical, surgical and urologic oncologists. In January 2026 it performed its first laparoscopic radical cystectomy for bladder cancer.",
+      "type": "Private Institution",
+      "contacts": [],
+      "branches": [
+        {
+          "branchID": 1,
+          "branchName": null,
+          "location": "Brokenshire Heights, Madapo, Brgy. 8-A, Davao City, Philippines",
+          "landmark": null,
+          "latitude": 7.0836433,
+          "longitude": 125.6006496,
+          "schedule": [],
+          "contacts": [
+            {
+              "contactID": 1,
+              "type": "Landline",
+              "contactDetails": "(082) 282 1908"
+            },
+            {
+              "contactID": 2,
+              "type": "Mobile",
+              "contactDetails": "0917-326-2262"
+            },
+            {
+              "contactID": 3,
+              "type": "Email",
+              "contactDetails": "info@brokenshire.org"
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "serviceID": 1,
+          "branchIDs": [
+            1
+          ],
+          "serviceName": "Chemotherapy and Infusion Unit",
+          "serviceDescription": "Delivering safe, patient-centered chemotherapy and infusion treatments in a supportive and healing environment (hospital's words). Opened on March 9, 2026.",
+          "cancerTypes": null,
+          "fee": null,
+          "sources": [
+            "https://brokenshiremed.com/"
+          ],
+          "serviceSchedule": null,
+          "requirements": [],
+          "procedure": []
+        }
+      ],
+      "coverage": []
     }
   ]
 }

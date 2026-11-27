@@ -61,6 +61,48 @@
           "procedure": []
         }
       ]
+    },
+    {
+      "id": 3,
+      "name": "Brokenshire Medical Center",
+      "bgImageURL": "",
+      "source": "https://brokenshiremed.com/",
+      "description": "Private mission hospital in Davao City. It opened a Chemotherapy and Infusion Unit on March 9, 2026, and has medical, surgical and urologic oncologists. In January 2026 it performed its first laparoscopic radical cystectomy for bladder cancer.",
+      "type": "Private Institution",
+      "location": "Brokenshire Heights, Madapo, Brgy. 8-A, Davao City, Philippines",
+      "latitude": 7.0836433,
+      "longitude": 125.6006496,
+      "schedule": {
+        "isWholeWeek": false,
+        "days": []
+      },
+      "contacts": [
+        {
+          "contact_id": 1,
+          "type": "Landline",
+          "contact_details": "(082) 282 1908"
+        },
+        {
+          "contact_id": 2,
+          "type": "Mobile",
+          "contact_details": "0917-326-2262"
+        },
+        {
+          "contact_id": 3,
+          "type": "Email",
+          "contact_details": "info@brokenshire.org"
+        }
+      ],
+      "services": [
+        {
+          "serviceID": 1,
+          "source": "https://brokenshiremed.com/",
+          "service_name": "Chemotherapy and Infusion Unit",
+          "service_description": "Delivering safe, patient-centered chemotherapy and infusion treatments in a supportive and healing environment (hospital's words). Opened on March 9, 2026.",
+          "requirements": [],
+          "procedure": []
+        }
+      ]
     }
   ]
 }
