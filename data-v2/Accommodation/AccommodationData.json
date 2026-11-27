@@ -184,8 +184,8 @@
           "branchName": null,
           "location": "J.P. Laurel Ave, Agdao",
           "landmark": "Accessible to SM Lanang Premier via footbridge",
-          "latitude": null,
-          "longitude": null,
+          "latitude": 7.0973367,
+          "longitude": 125.6175165,
           "schedule": null,
           "contacts": []
         }
@@ -239,8 +239,8 @@
           "branchName": null,
           "location": "71 J.P. Laurel Street Lanang, Davao City 8000 Philippines",
           "landmark": null,
-          "latitude": null,
-          "longitude": null,
+          "latitude": 7.0996126,
+          "longitude": 125.623302,
           "schedule": null,
           "contacts": []
         }
@@ -281,8 +281,8 @@
           "branchName": null,
           "location": "Mt. Apo, Cor Lopez Jaena St, Davao City, 8000 Davao del Sur",
           "landmark": null,
-          "latitude": null,
-          "longitude": null,
+          "latitude": 7.0732165,
+          "longitude": 125.6023387,
           "schedule": null,
           "contacts": []
         }
@@ -341,8 +341,8 @@
           "branchName": null,
           "location": "4-A, Barangay, J. Camus St, Poblacion District, Davao City, 8000 Davao del Sur",
           "landmark": null,
-          "latitude": null,
-          "longitude": null,
+          "latitude": 7.0694497,
+          "longitude": 125.6052029,
           "schedule": null,
           "contacts": []
         }
