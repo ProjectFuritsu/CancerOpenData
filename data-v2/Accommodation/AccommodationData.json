@@ -68,7 +68,7 @@
     {
       "id": 5,
       "name": "Hop Inn Hotel Davao",
-      "bgImageURL": "https://image-tc.galaxy.tf/wijpeg-c071fvyu8ovsfgxr94wbzhqak/new-hero-banner03.jpg?width=1920",
+      "bgImageURL": "/images/Accommodation/hop-inn-davao.webp",
       "sources": [
         "https://www.hopinnhotel.com/our-hotels/hop-inn-davao",
         "https://reservations.hopinnhotel.com/9877885"
@@ -116,7 +116,7 @@
     {
       "id": 6,
       "name": "Seda Abreeza",
-      "bgImageURL": "https://cdn.sanity.io/images/4f3ey4m9/hospitality-production/7d46449b1573cdc056bbbeff9d4172459ebfb069-1600x1066.jpg?w=1600&fm=jpg",
+      "bgImageURL": "/images/Accommodation/seda-abreeza.webp",
       "sources": [
         "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao",
         "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao/contact-us",
