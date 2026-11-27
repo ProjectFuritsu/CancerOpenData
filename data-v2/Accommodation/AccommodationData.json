@@ -68,11 +68,12 @@
     {
       "id": 5,
       "name": "Hop Inn Hotel Davao",
-      "bgImageURL": "",
+      "bgImageURL": "https://image-tc.galaxy.tf/wijpeg-c071fvyu8ovsfgxr94wbzhqak/new-hero-banner03.jpg?width=1920",
       "sources": [
-        "https://www.hopinnhotel.com/our-hotels/hop-inn-davao"
+        "https://www.hopinnhotel.com/our-hotels/hop-inn-davao",
+        "https://reservations.hopinnhotel.com/9877885"
       ],
-      "description": "Paid place to stay near Southern Philippines Medical Center.",
+      "description": "Paid place to stay near Southern Philippines Medical Center. Offers a Senior Citizen rate.",
       "type": "Hotel",
       "operator": null,
       "contacts": [
@@ -92,18 +93,24 @@
           "branchID": 1,
           "branchName": null,
           "location": "Lot 1175 C1-C3 J.P. Laurel Avenue, Barrio Bajada, Davao City",
-          "landmark": null,
-          "latitude": null,
-          "longitude": null,
+          "landmark": "Located beside Southern Philippines Medical Center",
+          "latitude": 7.0979918,
+          "longitude": 125.6186796,
           "schedule": null,
           "contacts": []
         }
       ],
-      "cost": "Paid.",
-      "amenities": [],
+      "cost": "Estimated ₱1,800 to ₱3,000 per night (as of 27 November 2026)",
+      "amenities": [
+        "high speed Wi-Fi",
+        "32 inch cable TV",
+        "aircon",
+        "work desk",
+        "hot & cold shower"
+      ],
       "roomCapacity": {
-        "min": null,
-        "max": null
+        "min": 2,
+        "max": 3
       }
     },
     {
