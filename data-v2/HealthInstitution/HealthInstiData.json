@@ -105,11 +105,12 @@
             1
           ],
           "serviceName": "Cancer Assistance Fund (CAF)",
-          "serviceDescription": "Listed by the Department of Health as one of 36 Cancer Assistance Fund access sites nationwide (July 2026). The fund supports cancer care, from early screening and diagnosis to treatment.",
+          "serviceDescription": "Listed by the Department of Health as one of 34 CAF access sites in its 2025 list. The fund supports cancer care, from early screening and diagnosis to treatment.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
-            "https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide"
+            "https://drive.google.com/file/d/12qWZNvJ9XFXUns86mqCTYgk1KgaqlOFs/view",
+            "https://doh.gov.ph/press-release/DOH-IMPLEMENTS-CANCER-ASSISTANCE-FUND-TO-SUPPORT-CANCER-PATIENTS-AND-SURVIVORS/"
           ],
           "serviceSchedule": null,
           "requirements": [],

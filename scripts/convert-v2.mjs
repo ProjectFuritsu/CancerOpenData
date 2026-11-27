@@ -565,6 +565,20 @@ function applyReview(folder, records) {
       }
       log(`${r.name}: fees for ${Object.keys(byName).length} services`);
     }
+    // Decision 22 (Fritz, 2026-11-27): SPMC's CAF access site comes from DOH's 2025 list
+    // (34 sites), not the Daily Tribune's "36 sites" article. v2 only; v1 keeps its text.
+    {
+      const spmc = records.find((x) => x.id === 1);
+      const svc = spmc?.services.find((x) => x.service_name === "Cancer Assistance Fund (CAF)");
+      const old = "Listed by the Department of Health as one of 36 Cancer Assistance Fund access sites nationwide (July 2026).";
+      if (!svc || !svc.service_description.includes(old)) throw new Error("Decision 22: SPMC's CAF service text changed; update the rule");
+      svc.service_description = svc.service_description.replace(old, "Listed by the Department of Health as one of 34 CAF access sites in its 2025 list.");
+      // The list backs the access site; DOH's CAF release backs "supports cancer care ... to treatment".
+      svc.sources = [...new Set(svc.sources.flatMap((u) => (u.includes("tribune.net.ph")
+        ? ["https://drive.google.com/file/d/12qWZNvJ9XFXUns86mqCTYgk1KgaqlOFs/view", "https://doh.gov.ph/press-release/DOH-IMPLEMENTS-CANCER-ASSISTANCE-FUND-TO-SUPPORT-CANCER-PATIENTS-AND-SURVIVORS/"]
+        : [u])))];
+      log(`${spmc.name}: CAF service -> DOH's 2025 access-site list`);
+    }
     // Decision 16: coverage (programs the hospital accepts or is accredited for).
     for (const [id, items] of Object.entries(REVIEW.healthInstitutionCoverage)) {
       const r = records.find((x) => x.id === Number(id));
