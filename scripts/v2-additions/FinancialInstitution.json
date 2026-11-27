@@ -136,15 +136,6 @@
       "branches": [
         {
           "branchID": 1,
-          "branchName": "DOH Office Davao City",
-          "location": "PRRD Bldg Bajada, Davao City (infront SPMC Hospital)",
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        },
-        {
-          "branchID": 2,
           "branchName": "Malasakit Center",
           "location": "Malasakit Center, Bajada, Davao City (beside SPMC Hospital)",
           "latitude": null,
