@@ -80,7 +80,7 @@
       ],
       "additionalProperties": false
     },
-    "Feed": {
+    "feed": {
       "type": "array",
       "items": {
         "type": "object",
@@ -129,10 +129,10 @@
             "type": "string",
             "description": "Publish date in 'DD Month YYYY' format, e.g. '21 November 2025'."
           },
-          "source": {
-            "type": "string",
-            "description": "Source URL.",
-            "format": "uri"
+          "sources": {
+            "$ref": "#/$defs/sources",
+            "type": "array",
+            "minItems": 1
           }
         },
         "required": [
@@ -144,7 +144,7 @@
           "content",
           "authors",
           "publishDate",
-          "source"
+          "sources"
         ],
         "additionalProperties": false
       }
@@ -152,8 +152,18 @@
   },
   "required": [
     "meta",
-    "Feed"
+    "feed"
   ],
   "additionalProperties": false,
-  "$defs": {}
+  "$defs": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "uniqueItems": true,
+      "description": "Links to the pages these facts come from. Empty if no source is given (show \"Not given\")."
+    }
+  }
 }

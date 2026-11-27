@@ -1,18 +1,20 @@
 {
-  "Accommodation": [
+  "accommodation": [
     {
       "id": 4,
       "name": "Red Planet Davao",
       "bgImageURL": "",
-      "source": "https://www.redplanethotels.com/hotel/red-planet-davao",
+      "sources": [
+        "https://www.redplanethotels.com/hotel/red-planet-davao"
+      ],
       "description": "Budget hotel on J.P. Laurel Avenue. Its official page says \"Damosa IT Park and Davao Medical Center are nearby\" (Davao Medical Center is SPMC's former name).",
       "type": "Hotel",
       "operator": "Red Planet Hotels",
       "contacts": [
         {
-          "contact_id": 1,
+          "contactID": 1,
           "type": "Landline",
-          "contact_details": "+63 (082) 224 0577"
+          "contactDetails": "+63 (082) 224 0577"
         }
       ],
       "branches": [
@@ -32,16 +34,13 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": [
-        "https://www.redplanethotels.com/hotel/red-planet-davao"
-      ]
+      }
     },
     {
       "id": 5,
       "name": "Hop Inn Hotel Davao",
       "bgImageURL": "",
-      "source": null,
+      "sources": [],
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": null,
@@ -63,14 +62,15 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": []
+      }
     },
     {
       "id": 6,
       "name": "Seda Abreeza",
       "bgImageURL": "",
-      "source": "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao",
+      "sources": [
+        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao"
+      ],
       "description": "Paid place to stay near Southern Philippines Medical Center. 181 refreshed rooms.",
       "type": "Hotel",
       "operator": "Seda Hotels",
@@ -92,16 +92,15 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": [
-        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao"
-      ]
+      }
     },
     {
       "id": 7,
       "name": "Park Inn by Radisson Davao",
       "bgImageURL": "",
-      "source": "https://www.radissonhotels.com/en-us/hotels/park-inn-davao",
+      "sources": [
+        "https://www.radissonhotels.com/en-us/hotels/park-inn-davao"
+      ],
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": "Park Inn by Radisson",
@@ -131,16 +130,13 @@
       "roomCapacity": {
         "min": null,
         "max": 4
-      },
-      "sources": [
-        "https://www.radissonhotels.com/en-us/hotels/park-inn-davao"
-      ]
+      }
     },
     {
       "id": 8,
       "name": "Acacia Hotel Davao",
       "bgImageURL": "",
-      "source": null,
+      "sources": [],
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": null,
@@ -162,14 +158,13 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": []
+      }
     },
     {
       "id": 9,
       "name": "RedDoorz near Davao Doctors Hospital",
       "bgImageURL": "",
-      "source": null,
+      "sources": [],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
@@ -191,14 +186,13 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": []
+      }
     },
     {
       "id": 10,
       "name": "Rogen Inn",
       "bgImageURL": "",
-      "source": null,
+      "sources": [],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Inn",
       "operator": null,
@@ -220,14 +214,13 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": []
+      }
     },
     {
       "id": 11,
       "name": "D'Morvie Suites - Davao",
       "bgImageURL": "",
-      "source": null,
+      "sources": [],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
@@ -249,14 +242,13 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": []
+      }
     },
     {
       "id": 12,
       "name": "The Bourke Hotel",
       "bgImageURL": "",
-      "source": null,
+      "sources": [],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
@@ -278,14 +270,13 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": []
+      }
     },
     {
       "id": 13,
       "name": "Apo View Hotel",
       "bgImageURL": "",
-      "source": null,
+      "sources": [],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
@@ -307,8 +298,7 @@
       "roomCapacity": {
         "min": null,
         "max": null
-      },
-      "sources": []
+      }
     }
   ]
 }

@@ -25,7 +25,7 @@ const WHERE = {
   bookingType: "the hospital's doctor page or a call to the clinic",
   description: "the hospital's doctor page",
   socmedURL: "the group's official Facebook page",
-  service_schedule: "the hospital's service page or a phone call",
+  serviceSchedule: "the hospital's service page or a phone call",
   requirements: "the hospital's service page, Malasakit desk or social worker",
   procedure: "the hospital's service page, Malasakit desk or social worker",
   eligibility: "the program page",
@@ -63,30 +63,30 @@ const insti = (dataset, r, extra) => [
   ...extra,
 ];
 
-const F = read("data-v2/FinancialInstitution/FinancialInstiData.json").Financial_Insti;
+const F = read("data-v2/FinancialInstitution/FinancialInstiData.json").financialInsti;
 section("Financial institutions", F.map((r) => ({ ...r, label: `#${r.id} ${r.name}` })), (r) => insti("Financial", r,
   r.programs.flatMap((p) => [
-    ...check("Financial", r.name, p, ["eligibility", "cancerTypes", "applicationURL", "sources", "requirements", "procedure"], `${p.program_name} › `),
-    ...p.benefits.flatMap((b) => check("Financial", r.name, b, ["amount"], `${p.program_name} › benefit "${b.benefit_name}" › `)),
+    ...check("Financial", r.name, p, ["eligibility", "cancerTypes", "applicationURL", "sources", "requirements", "procedure"], `${p.programName} › `),
+    ...p.benefits.flatMap((b) => check("Financial", r.name, b, ["amount"], `${p.programName} › benefit "${b.benefitName}" › `)),
   ])));
 
-const H = read("data-v2/HealthInstitution/HealthInstiData.json").Health_Insti;
+const H = read("data-v2/HealthInstitution/HealthInstiData.json").healthInsti;
 section("Health institutions", H.map((r) => ({ ...r, label: `#${r.id} ${r.name}` })), (r) => insti("Health", r,
-  r.services.flatMap((s) => check("Health", r.name, s, ["cancerTypes", "fee", "sources", "service_schedule", "requirements", "procedure"], `${s.service_name} › `))));
+  r.services.flatMap((s) => check("Health", r.name, s, ["cancerTypes", "fee", "sources", "serviceSchedule", "requirements", "procedure"], `${s.serviceName} › `))));
 
-const M = read("data-v2/MedicalSpecialist/MedicalSpecialistData.json").Medical_Specialist;
+const M = read("data-v2/MedicalSpecialist/MedicalSpecialistData.json").medicalSpecialist;
 section("Medical specialists", M.map((r) => ({ ...r, label: `#${r.id} ${r.firstname} ${r.lastname}` })), (r) => [
   ...check("Specialist", r.lastname, r, ["description", "imageURL", "sources"]),
   ...r.clinics.flatMap((c) => check("Specialist", r.lastname, c, ["latitude", "longitude", "bookingType", "contacts", "schedule"], `${c.clinicName} › `)),
 ]);
 
-const S = read("data-v2/SupportGroups/SupportGroupsData.json").Support_Group;
+const S = read("data-v2/SupportGroups/SupportGroupsData.json").supportGroup;
 section("Support groups", S.map((r) => ({ ...r, label: `#${r.id} ${r.name}` })), (r) =>
-  check("Support group", r.name, r, ["cancerTypes", "socmedURL", "bgImageURL", "latitude", "longitude", "founders", "meetingSchedule", "sources", "lastVerified", "contacts"]));
+  check("Support group", r.name, r, ["cancerTypes", "socmedURL", "bgImageURL", "latitude", "longitude", "founders", "meetingSchedule", "sources", "contacts"]));
 
-const FD = read("data-v2/Feeds/FeedsData.json").Feed;
+const FD = read("data-v2/Feeds/FeedsData.json").feed;
 section("Feeds", FD.map((r) => ({ ...r, label: `#${r.id} ${r.title}` })), (r) =>
-  check("Feed", r.title, r, ["bgImageURL", "tags", "content", "authors", "source"]));
+  check("Feed", r.title, r, ["bgImageURL", "tags", "content", "authors", "sources"]));
 
 const summary = Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, n]) => `| ${k} | ${n} |`).join("\n");
 console.log(`# Missing data in v2 (not given yet)

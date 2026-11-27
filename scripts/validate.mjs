@@ -90,7 +90,7 @@ const v2Health = join("data-v2", "HealthInstitution", "HealthInstiData.json");
 if (existsSync(v2Health)) {
   let data = null;
   try { data = JSON.parse(readFileSync(v2Health, "utf8")); } catch { /* already reported above */ }
-  for (const insti of data?.Health_Insti ?? []) {
+  for (const insti of data?.healthInsti ?? []) {
     const ids = (insti.branches ?? []).map(b => b.branchID);
     const known = new Set(ids);
     if (known.size !== ids.length) {
@@ -99,7 +99,7 @@ if (existsSync(v2Health)) {
     for (const s of insti.services ?? []) {
       for (const id of s.branchIDs ?? []) {
         if (!known.has(id)) {
-          console.error(`FAIL ${v2Health}: ${insti.name}, service ${s.serviceID} "${s.service_name}" uses branchID ${id}, which this institution doesn't have`);
+          console.error(`FAIL ${v2Health}: ${insti.name}, service ${s.serviceID} "${s.serviceName}" uses branchID ${id}, which this institution doesn't have`);
           failed++;
         }
       }
@@ -113,8 +113,8 @@ const v2Read = (p) => { try { return existsSync(p) ? JSON.parse(readFileSync(p, 
 const v2Fin = v2Read(join("data-v2", "FinancialInstitution", "FinancialInstiData.json"));
 const v2Hos = v2Read(v2Health);
 if (v2Fin && v2Hos) {
-  const programIDs = new Set(v2Fin.Financial_Insti.flatMap(r => (r.programs ?? []).map(p => p.programID)));
-  for (const h of v2Hos.Health_Insti) {
+  const programIDs = new Set(v2Fin.financialInsti.flatMap(r => (r.programs ?? []).map(p => p.programID)));
+  for (const h of v2Hos.healthInsti) {
     for (const c of h.coverage ?? []) {
       if (c.programID !== null && !programIDs.has(c.programID)) {
         console.error(`FAIL ${v2Health}: ${h.name}, coverage "${c.name}" uses programID ${c.programID}, which no financial program has`); failed++;
@@ -125,7 +125,7 @@ if (v2Fin && v2Hos) {
 
 // ---- v2: a room capacity range can't be upside down ----
 const v2Acc = join("data-v2", "Accommodation", "AccommodationData.json");
-for (const a of v2Read(v2Acc)?.Accommodation ?? []) {
+for (const a of v2Read(v2Acc)?.accommodation ?? []) {
   const { min, max } = a.roomCapacity ?? {};
   if (min != null && max != null && min > max) {
     console.error(`FAIL ${v2Acc}: ${a.name} has roomCapacity min ${min} above max ${max}`); failed++;

@@ -80,7 +80,7 @@
       ],
       "additionalProperties": false
     },
-    "Accommodation": {
+    "accommodation": {
       "type": "array",
       "items": {
         "type": "object",
@@ -95,14 +95,6 @@
             "type": "string",
             "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL. Empty if none.",
             "format": "uri-reference"
-          },
-          "source": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "description": "The place's own website, or the best page about it. null if it has no website.",
-            "format": "uri"
           },
           "description": {
             "type": "string"
@@ -180,7 +172,7 @@
           "id",
           "name",
           "bgImageURL",
-          "source",
+          "sources",
           "description",
           "type",
           "operator",
@@ -188,8 +180,7 @@
           "branches",
           "cost",
           "amenities",
-          "roomCapacity",
-          "sources"
+          "roomCapacity"
         ],
         "additionalProperties": false
       }
@@ -197,14 +188,14 @@
   },
   "required": [
     "meta",
-    "Accommodation"
+    "accommodation"
   ],
   "additionalProperties": false,
   "$defs": {
     "contact": {
       "type": "object",
       "properties": {
-        "contact_id": {
+        "contactID": {
           "type": "integer"
         },
         "type": {
@@ -220,14 +211,14 @@
           ],
           "description": "Kind of contact. One fixed list for all datasets."
         },
-        "contact_details": {
+        "contactDetails": {
           "type": "string"
         }
       },
       "required": [
-        "contact_id",
+        "contactID",
         "type",
-        "contact_details"
+        "contactDetails"
       ],
       "additionalProperties": false
     },

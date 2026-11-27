@@ -1,11 +1,13 @@
 {
   "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. Approved by Fritz on 2026-11-13; sources in CancerData-staging/provenance. Office details for PCSO and DOH (where to go) approved by Fritz on 2026-11-15 (money-help offices review).",
-  "Financial_Insti": [
+  "financialInsti": [
     {
       "id": 5,
       "name": "Philippine Charity Sweepstakes Office (PCSO)",
       "bgImageURL": "/images/FinancialInstitution/pcso.webp",
-      "source": "https://www.pcso.gov.ph/",
+      "sources": [
+        "https://www.pcso.gov.ph/"
+      ],
       "description": "Government agency that gives financial help to people with health problems through its Medical Assistance Program, together with government and private hospitals, health facilities and medicine retailers.",
       "type": "Public Institution",
       "contacts": [],
@@ -19,14 +21,14 @@
           "schedule": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Landline",
-              "contact_details": "(082) 282-0305"
+              "contactDetails": "(082) 282-0305"
             },
             {
-              "contact_id": 2,
+              "contactID": 2,
               "type": "Email",
-              "contact_details": "mindanao@pcso.gov.ph"
+              "contactDetails": "mindanao@pcso.gov.ph"
             }
           ]
         }
@@ -34,11 +36,11 @@
       "programs": [
         {
           "programID": 505001,
-          "program_name": "Medical Assistance Program (MAP)",
+          "programName": "Medical Assistance Program (MAP)",
           "eligibility": [
             "Individuals with health-related problems seeking financial help"
           ],
-          "program_description": "Financial help for patients, given in partnership with government and private hospitals, health facilities, medicine retailers and other partners. Cancer treatment (chemotherapy drugs, immunotherapy and radiation therapy) is one of the types of help. If approved, the patient gets a Guarantee Letter (GL) for the hospital, health facility, medicine retailer or diagnostic center.",
+          "programDescription": "Financial help for patients, given in partnership with government and private hospitals, health facilities, medicine retailers and other partners. Cancer treatment (chemotherapy drugs, immunotherapy and radiation therapy) is one of the types of help. If approved, the patient gets a Guarantee Letter (GL) for the hospital, health facility, medicine retailer or diagnostic center.",
           "cancerTypes": [
             "All cancers"
           ],
@@ -50,46 +52,46 @@
           ],
           "benefits": [
             {
-              "benefit_id": 1,
-              "benefit_name": "Cancer treatment: chemotherapeutic drugs and immunotherapy",
+              "benefitID": 1,
+              "benefitName": "Cancer treatment: chemotherapeutic drugs and immunotherapy",
               "amount": null
             },
             {
-              "benefit_id": 2,
-              "benefit_name": "Radiation therapy",
+              "benefitID": 2,
+              "benefitName": "Radiation therapy",
               "amount": null
             },
             {
-              "benefit_id": 3,
-              "benefit_name": "Confinement assistance",
+              "benefitID": 3,
+              "benefitName": "Confinement assistance",
               "amount": null
             },
             {
-              "benefit_id": 4,
-              "benefit_name": "Laboratory, diagnostic and imaging procedures (such as CT-Scan, MRI, PET Scan and biopsy)",
+              "benefitID": 4,
+              "benefitName": "Laboratory, diagnostic and imaging procedures (such as CT-Scan, MRI, PET Scan and biopsy)",
               "amount": null
             }
           ],
           "requirements": [
             {
-              "requirement_id": 1,
-              "requirement_description": "Duly Accomplished MAP Application Form"
+              "requirementID": 1,
+              "requirementDescription": "Duly Accomplished MAP Application Form"
             },
             {
-              "requirement_id": 2,
-              "requirement_description": "Valid proof of identity of the patient (government-issued ID or other accepted ID)"
+              "requirementID": 2,
+              "requirementDescription": "Valid proof of identity of the patient (government-issued ID or other accepted ID)"
             },
             {
-              "requirement_id": 3,
-              "requirement_description": "Valid ID of the patient's next of kin, if applicable"
+              "requirementID": 3,
+              "requirementDescription": "Valid ID of the patient's next of kin, if applicable"
             },
             {
-              "requirement_id": 4,
-              "requirement_description": "For cancer treatment: updated clinical or medical abstract (issued within the past 3 months), medical prescription, and treatment protocol (chemotherapy) or treatment plan (radiation therapy), each with the full name, signature and license number of the attending physician"
+              "requirementID": 4,
+              "requirementDescription": "For cancer treatment: updated clinical or medical abstract (issued within the past 3 months), medical prescription, and treatment protocol (chemotherapy) or treatment plan (radiation therapy), each with the full name, signature and license number of the attending physician"
             },
             {
-              "requirement_id": 5,
-              "requirement_description": "For cancer treatment: one quotation from the hospital willing to accept the GL, or official quotations from three different suppliers if the medicine is not available in the hospital"
+              "requirementID": 5,
+              "requirementDescription": "For cancer treatment: one quotation from the hospital willing to accept the GL, or official quotations from three different suppliers if the medicine is not available in the hospital"
             }
           ],
           "procedure": [
@@ -125,7 +127,9 @@
       "id": 6,
       "name": "Department of Health (DOH)",
       "bgImageURL": "/images/FinancialInstitution/doh.webp",
-      "source": "https://doh.gov.ph/",
+      "sources": [
+        "https://doh.gov.ph/"
+      ],
       "description": "National government department for health. Its MAIFIP program helps pay the medical bills of patients who cannot afford them, and its Cancer Assistance Fund (CAF) and CSPMAP help cancer patients with treatment and free medicines.",
       "type": "Public Institution",
       "contacts": [],
@@ -152,12 +156,12 @@
       "programs": [
         {
           "programID": 606001,
-          "program_name": "Medical Assistance for Indigent and Financially Incapacitated Patients (MAIFIP)",
+          "programName": "Medical Assistance for Indigent and Financially Incapacitated Patients (MAIFIP)",
           "eligibility": [
             "Indigent and financially incapacitated patients who cannot afford their medical expenses",
             "Including PhilHealth members whose remaining bill is still too big"
           ],
-          "program_description": "Covers the remaining out-of-pocket hospital bill after PhilHealth and other discounts. DOH Davao says there is no fixed maximum amount, and payment is targeted within 12 working days when documents are complete (2026). Cancer patients at SPMC have used it for laboratories, CT scans, procedures and medicines.",
+          "programDescription": "Covers the remaining out-of-pocket hospital bill after PhilHealth and other discounts. DOH Davao says there is no fixed maximum amount, and payment is targeted within 12 working days when documents are complete (2026). Cancer patients at SPMC have used it for laboratories, CT scans, procedures and medicines.",
           "cancerTypes": [
             "All cancers"
           ],
@@ -171,27 +175,27 @@
           ],
           "benefits": [
             {
-              "benefit_id": 1,
-              "benefit_name": "Remaining medical bill after PhilHealth and other discounts",
+              "benefitID": 1,
+              "benefitName": "Remaining medical bill after PhilHealth and other discounts",
               "amount": "No fixed cap"
             }
           ],
           "requirements": [
             {
-              "requirement_id": 1,
-              "requirement_description": "Unified Intake Sheet (evaluated by a social worker)"
+              "requirementID": 1,
+              "requirementDescription": "Unified Intake Sheet (evaluated by a social worker)"
             },
             {
-              "requirement_id": 2,
-              "requirement_description": "Final bill or statement of account (in-patient), or price quotation and doctor's prescription (out-patient)"
+              "requirementID": 2,
+              "requirementDescription": "Final bill or statement of account (in-patient), or price quotation and doctor's prescription (out-patient)"
             },
             {
-              "requirement_id": 3,
-              "requirement_description": "Medical certificate or patient's clinical summary / medical abstract"
+              "requirementID": 3,
+              "requirementDescription": "Medical certificate or patient's clinical summary / medical abstract"
             },
             {
-              "requirement_id": 4,
-              "requirement_description": "Copy of IDs (patient and/or patient's representative)"
+              "requirementID": 4,
+              "requirementDescription": "Copy of IDs (patient and/or patient's representative)"
             }
           ],
           "procedure": [
@@ -211,12 +215,12 @@
         },
         {
           "programID": 606002,
-          "program_name": "Cancer Assistance Fund (CAF)",
+          "programName": "Cancer Assistance Fund (CAF)",
           "eligibility": [
             "Persons with cancer, cancer survivors and high-risk individuals",
             "For the eight priority cancer types"
           ],
-          "program_description": "DOH fund under RA 11215 (National Integrated Cancer Control Act). It pays for cancer prevention, screening, early detection and diagnosis, treatment and care-related components for 8 priority cancer types. It adds to PhilHealth and other help for costs they do not cover, and for cancer cases it is used before MAIP. In Davao City, Southern Philippines Medical Center is a CAF access site (one of 36 nationwide, July 2026).",
+          "programDescription": "DOH fund under RA 11215 (National Integrated Cancer Control Act). It pays for cancer prevention, screening, early detection and diagnosis, treatment and care-related components for 8 priority cancer types. It adds to PhilHealth and other help for costs they do not cover, and for cancer cases it is used before MAIP. In Davao City, Southern Philippines Medical Center is a CAF access site (one of 36 nationwide, July 2026).",
           "cancerTypes": [
             "Breast cancer",
             "Childhood cancers",
@@ -236,15 +240,15 @@
           ],
           "benefits": [
             {
-              "benefit_id": 1,
-              "benefit_name": "Diagnostic procedures, medicines and treatment",
+              "benefitID": 1,
+              "benefitName": "Diagnostic procedures, medicines and treatment",
               "amount": "Up to P150,000"
             }
           ],
           "requirements": [
             {
-              "requirement_id": 1,
-              "requirement_description": "Medical abstract, doctor's prescription, or treatment plan"
+              "requirementID": 1,
+              "requirementDescription": "Medical abstract, doctor's prescription, or treatment plan"
             }
           ],
           "procedure": [
@@ -264,9 +268,9 @@
         },
         {
           "programID": 606003,
-          "program_name": "Cancer and Supportive-Palliative Medicines Access Program (CSPMAP)",
+          "programName": "Cancer and Supportive-Palliative Medicines Access Program (CSPMAP)",
           "eligibility": [],
-          "program_description": "DOH program that gives free medicines not yet covered by PhilHealth, to lower or remove out-of-pocket costs. It is part of the National Integrated Cancer Control Program. Its DOH hospital access sites are also CAF access sites. In 2024, 35 access sites offered 61 medicines for the most common cancers.",
+          "programDescription": "DOH program that gives free medicines not yet covered by PhilHealth, to lower or remove out-of-pocket costs. It is part of the National Integrated Cancer Control Program. Its DOH hospital access sites are also CAF access sites. In 2024, 35 access sites offered 61 medicines for the most common cancers.",
           "cancerTypes": null,
           "applicationURL": null,
           "sources": [
@@ -275,8 +279,8 @@
           ],
           "benefits": [
             {
-              "benefit_id": 1,
-              "benefit_name": "Free medicines not yet covered by PhilHealth",
+              "benefitID": 1,
+              "benefitName": "Free medicines not yet covered by PhilHealth",
               "amount": "Free"
             }
           ],

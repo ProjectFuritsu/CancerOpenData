@@ -80,7 +80,7 @@
       ],
       "additionalProperties": false
     },
-    "Medical_Specialist": {
+    "medicalSpecialist": {
       "type": "array",
       "items": {
         "type": "object",
@@ -186,14 +186,14 @@
   },
   "required": [
     "meta",
-    "Medical_Specialist"
+    "medicalSpecialist"
   ],
   "additionalProperties": false,
   "$defs": {
     "contact": {
       "type": "object",
       "properties": {
-        "contact_id": {
+        "contactID": {
           "type": "integer"
         },
         "type": {
@@ -209,14 +209,14 @@
           ],
           "description": "Kind of contact. One fixed list for all datasets."
         },
-        "contact_details": {
+        "contactDetails": {
           "type": "string"
         }
       },
       "required": [
-        "contact_id",
+        "contactID",
         "type",
-        "contact_details"
+        "contactDetails"
       ],
       "additionalProperties": false
     },

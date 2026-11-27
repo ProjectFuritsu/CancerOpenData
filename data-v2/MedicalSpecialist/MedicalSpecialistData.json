@@ -4,7 +4,7 @@
     "title": "Medical specialists",
     "description": "Cancer doctors in Davao City, with their clinics, schedules and booking.",
     "apiVersion": "v2",
-    "lastUpdated": "2026-11-19",
+    "lastUpdated": "2026-11-27",
     "recordCount": 29,
     "coverage": "Davao City, Philippines",
     "language": "en",
@@ -14,7 +14,7 @@
     "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
     "schema": "./MedicalSpecialistData.schema.json"
   },
-  "Medical_Specialist": [
+  "medicalSpecialist": [
     {
       "id": 1,
       "firstname": "Soo Rah",
@@ -969,9 +969,9 @@
           "bookingType": "Walk-in and appointment",
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "0918 426 3266"
+              "contactDetails": "0918 426 3266"
             }
           ],
           "schedule": [
@@ -1011,9 +1011,9 @@
           "bookingType": "Walk-in and appointment",
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "(082) 227 7343"
+              "contactDetails": "(082) 227 7343"
             }
           ],
           "schedule": [
@@ -1113,9 +1113,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "0917-701-0567"
+              "contactDetails": "0917-701-0567"
             }
           ],
           "schedule": [
@@ -1158,9 +1158,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "0954-273-4521"
+              "contactDetails": "0954-273-4521"
             }
           ],
           "schedule": [
@@ -1213,9 +1213,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "0915-058-3725"
+              "contactDetails": "0915-058-3725"
             }
           ],
           "schedule": [
@@ -1268,9 +1268,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "09694235569"
+              "contactDetails": "09694235569"
             }
           ],
           "schedule": [
@@ -1323,9 +1323,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "09423997676"
+              "contactDetails": "09423997676"
             }
           ],
           "schedule": [
@@ -1365,9 +1365,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "0953-960-8332"
+              "contactDetails": "0953-960-8332"
             }
           ],
           "schedule": [
@@ -1420,9 +1420,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "09333486510"
+              "contactDetails": "09333486510"
             }
           ],
           "schedule": [
@@ -1475,9 +1475,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "09502681182"
+              "contactDetails": "09502681182"
             }
           ],
           "schedule": [
@@ -1530,9 +1530,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "09755547833"
+              "contactDetails": "09755547833"
             }
           ],
           "schedule": [
@@ -1585,14 +1585,14 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "0943-707-8266"
+              "contactDetails": "0943-707-8266"
             },
             {
-              "contact_id": 2,
+              "contactID": 2,
               "type": "Mobile",
-              "contact_details": "0917-705-6902"
+              "contactDetails": "0917-705-6902"
             }
           ],
           "schedule": []
@@ -1619,9 +1619,9 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "0917-705-6902"
+              "contactDetails": "0917-705-6902"
             }
           ],
           "schedule": []
@@ -1648,14 +1648,14 @@
           "bookingType": null,
           "contacts": [
             {
-              "contact_id": 1,
+              "contactID": 1,
               "type": "Mobile",
-              "contact_details": "0963-124-3548"
+              "contactDetails": "0963-124-3548"
             },
             {
-              "contact_id": 2,
+              "contactID": 2,
               "type": "Mobile",
-              "contact_details": "0917-319-5140"
+              "contactDetails": "0917-319-5140"
             }
           ],
           "schedule": []

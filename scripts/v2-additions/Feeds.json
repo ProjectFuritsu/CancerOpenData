@@ -1,6 +1,6 @@
 {
   "_about": "Records that exist only in v2 (not in data/). convert-v2.mjs appends them after converting data/. PSMO posts (https://www.psmo.ph/blog) approved by Fritz on 2026-11-15 (feeds review): titles, authors and dates as written, summaries in our own words. Davao City cancer news (davaocity.gov.ph, SunStar Davao, MindaNews, Daily Tribune) approved by Fritz on 2026-11-15, same rules.",
-  "Feed": [
+  "feed": [
     {
       "id": 3,
       "title": "NCCN Partners with Philippine Cancer Organizations to Develop Locally Adapted Cancer Treatment Guidelines",
@@ -14,7 +14,9 @@
         "PSMO Digital"
       ],
       "publishDate": "19 October 2026",
-      "source": "https://www.psmo.ph/blog/news-2/nccn-partners-with-philippine-cancer-organizations-to-develop-locally-adapted-cancer-treatment-guidelines-42"
+      "sources": [
+        "https://www.psmo.ph/blog/news-2/nccn-partners-with-philippine-cancer-organizations-to-develop-locally-adapted-cancer-treatment-guidelines-42"
+      ]
     },
     {
       "id": 4,
@@ -30,7 +32,9 @@
         "PSMO Digital"
       ],
       "publishDate": "18 February 2026",
-      "source": "https://www.psmo.ph/blog/news-2/panag-istorya-conversations-that-matter-in-cancer-care-38"
+      "sources": [
+        "https://www.psmo.ph/blog/news-2/panag-istorya-conversations-that-matter-in-cancer-care-38"
+      ]
     },
     {
       "id": 5,
@@ -45,7 +49,9 @@
         "PSMO Digital"
       ],
       "publishDate": "10 February 2026",
-      "source": "https://www.psmo.ph/blog/blogs-5/a-unified-front-in-systemic-care-psmo-reinforces-the-national-cancer-alliance-37"
+      "sources": [
+        "https://www.psmo.ph/blog/blogs-5/a-unified-front-in-systemic-care-psmo-reinforces-the-national-cancer-alliance-37"
+      ]
     },
     {
       "id": 6,
@@ -61,7 +67,9 @@
         "PSMO Digital"
       ],
       "publishDate": "21 August 2025",
-      "source": "https://www.psmo.ph/blog/news-2/barangayan-goes-to-gingoog-city-27"
+      "sources": [
+        "https://www.psmo.ph/blog/news-2/barangayan-goes-to-gingoog-city-27"
+      ]
     },
     {
       "id": 7,
@@ -76,7 +84,9 @@
         "PSMO Digital"
       ],
       "publishDate": "31 July 2025",
-      "source": "https://www.psmo.ph/blog/blogs-5/ano-ang-sarcoma-24"
+      "sources": [
+        "https://www.psmo.ph/blog/blogs-5/ano-ang-sarcoma-24"
+      ]
     },
     {
       "id": 8,
@@ -92,7 +102,9 @@
         "PSMO Digital"
       ],
       "publishDate": "30 June 2025",
-      "source": "https://www.psmo.ph/blog/news-2/philippine-society-of-medical-oncologists-a-vital-presence-at-the-1st-national-patient-navigation-conference-18"
+      "sources": [
+        "https://www.psmo.ph/blog/news-2/philippine-society-of-medical-oncologists-a-vital-presence-at-the-1st-national-patient-navigation-conference-18"
+      ]
     },
     {
       "id": 9,
@@ -109,7 +121,9 @@
         "CIO Admin"
       ],
       "publishDate": "4 May 2026",
-      "source": "https://davaocity.gov.ph/health/davao-city-boosts-anti-cervical-cancer-drive/"
+      "sources": [
+        "https://davaocity.gov.ph/health/davao-city-boosts-anti-cervical-cancer-drive/"
+      ]
     },
     {
       "id": 10,
@@ -126,7 +140,9 @@
         "CIO Admin"
       ],
       "publishDate": "23 October 2025",
-      "source": "https://davaocity.gov.ph/health/free-breast-cancer-screening-available-all-year-roundin-health-centers/"
+      "sources": [
+        "https://davaocity.gov.ph/health/free-breast-cancer-screening-available-all-year-roundin-health-centers/"
+      ]
     },
     {
       "id": 11,
@@ -142,7 +158,9 @@
         "Rojean Grace G. Patumbon"
       ],
       "publishDate": "24 October 2025",
-      "source": "https://www.sunstar.com.ph/davao/davao-city-logs-197-breast-cancer-deaths-in-2024"
+      "sources": [
+        "https://www.sunstar.com.ph/davao/davao-city-logs-197-breast-cancer-deaths-in-2024"
+      ]
     },
     {
       "id": 12,
@@ -159,7 +177,9 @@
         "Rojean Grace G. Patumbon"
       ],
       "publishDate": "16 May 2025",
-      "source": "https://www.sunstar.com.ph/davao/cervical-cancer-deaths-screening-rates-decline"
+      "sources": [
+        "https://www.sunstar.com.ph/davao/cervical-cancer-deaths-screening-rates-decline"
+      ]
     },
     {
       "id": 13,
@@ -175,7 +195,9 @@
         "CIO Admin"
       ],
       "publishDate": "19 September 2025",
-      "source": "https://davaocity.gov.ph/health/spmc-says-child-cancer-patients-skipping-treatment-down-to-2/"
+      "sources": [
+        "https://davaocity.gov.ph/health/spmc-says-child-cancer-patients-skipping-treatment-down-to-2/"
+      ]
     },
     {
       "id": 14,
@@ -192,7 +214,9 @@
         "Antonio L. Colina IV"
       ],
       "publishDate": "10 February 2026",
-      "source": "https://mindanews.com/top-stories/2026/02/davao-citys-spmc-now-performing-non-surgical-procedure-to-remove-brain-tumors/"
+      "sources": [
+        "https://mindanews.com/top-stories/2026/02/davao-citys-spmc-now-performing-non-surgical-procedure-to-remove-brain-tumors/"
+      ]
     },
     {
       "id": 15,
@@ -209,7 +233,9 @@
         "Daily Tribune"
       ],
       "publishDate": "26 August 2026",
-      "source": "https://tribune.net.ph/2026/08/26/malasakit-center-eases-cancer-treatment-burden-for-north-cotabato-midwife"
+      "sources": [
+        "https://tribune.net.ph/2026/08/26/malasakit-center-eases-cancer-treatment-burden-for-north-cotabato-midwife"
+      ]
     },
     {
       "id": 16,
@@ -227,7 +253,9 @@
         "PhilHealth"
       ],
       "publishDate": "30 September 2026",
-      "source": "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+      "sources": [
+        "https://www.philhealth.gov.ph/partners/providers/facilities/contracted/20260930_ContractedZBen.pdf"
+      ]
     },
     {
       "id": 17,
@@ -244,7 +272,9 @@
         "PhilHealth"
       ],
       "publishDate": "30 September 2026",
-      "source": "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/CancerScreening.pdf"
+      "sources": [
+        "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/CancerScreening.pdf"
+      ]
     },
     {
       "id": 18,
@@ -261,7 +291,9 @@
         "PhilHealth"
       ],
       "publishDate": "30 September 2026",
-      "source": "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/YAKAP.pdf"
+      "sources": [
+        "https://www.philhealth.gov.ph/partners/providers/facilities/accredited/YAKAP.pdf"
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@
     "title": "Hospitals",
     "description": "Hospitals with cancer services in Davao City: services, schedules, fees and the programs they accept.",
     "apiVersion": "v2",
-    "lastUpdated": "2026-11-19",
+    "lastUpdated": "2026-11-27",
     "recordCount": 2,
     "coverage": "Davao City, Philippines",
     "language": "en",
@@ -14,29 +14,31 @@
     "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
     "schema": "./HealthInstiData.schema.json"
   },
-  "Health_Insti": [
+  "healthInsti": [
     {
       "id": 1,
       "name": "Southern Philippines Medical Center",
       "bgImageURL": "/images/HealthInstitution/spmc-cancer-institute.webp",
-      "source": "https://spmc.doh.gov.ph/",
+      "sources": [
+        "https://spmc.doh.gov.ph/"
+      ],
       "description": "The Southern Philippines Medical Center is the largest government hospital under the Department of Health of the Republic of the Philippines. It is located at the JP Laurel Ave, Bajada, Davao City. It began as the Davao Medical Center. Its name was changed on November 19, 2009, by Republic Act 9792.",
       "type": "Public Institution",
       "contacts": [
         {
-          "contact_id": 1,
+          "contactID": 1,
           "type": "Landline",
-          "contact_details": "(082) 227-2731"
+          "contactDetails": "(082) 227-2731"
         },
         {
-          "contact_id": 2,
+          "contactID": 2,
           "type": "Other",
-          "contact_details": "TELEFAX: (082) 221-7029"
+          "contactDetails": "TELEFAX: (082) 221-7029"
         },
         {
-          "contact_id": 3,
+          "contactID": 3,
           "type": "Email",
-          "contact_details": "coh.spmc@gmail.com"
+          "contactDetails": "coh.spmc@gmail.com"
         }
       ],
       "branches": [
@@ -68,15 +70,15 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Adult Cancer Clinic and Infusion Unit",
-          "service_description": "Opened on February 8, 2018 on the fourth floor of the Cancer Institute. It offers subsidized multidisciplinary care for all kinds of cancer. The hospital said most patients are free or subsidized charity, assisted through Lingap, PCSO and others.",
+          "serviceName": "Adult Cancer Clinic and Infusion Unit",
+          "serviceDescription": "Opened on February 8, 2018 on the fourth floor of the Cancer Institute. It offers subsidized multidisciplinary care for all kinds of cancer. The hospital said most patients are free or subsidized charity, assisted through Lingap, PCSO and others.",
           "cancerTypes": null,
           "fee": "Adult Onco Unit room and board: 1,000.00. CHEMOTHERAPY (AVERAGE HCI FEES): 8,871.94 (Professional Fee 1,680.00 to 33,350.00). As of August 31, 2022.",
           "sources": [
             "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
             "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
           ],
-          "service_schedule": null,
+          "serviceSchedule": null,
           "requirements": [],
           "procedure": []
         },
@@ -85,15 +87,15 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Radiation Therapy (Linear Accelerator)",
-          "service_description": "The Cancer Institute's linear accelerator (Linac) for radiation therapy started operating with the adult cancer unit in 2018.",
+          "serviceName": "Radiation Therapy (Linear Accelerator)",
+          "serviceDescription": "The Cancer Institute's linear accelerator (Linac) for radiation therapy started operating with the adult cancer unit in 2018.",
           "cancerTypes": null,
           "fee": "LINAC Daily fee: 5,160.00 (Professional Fee 800.00 to 2,200.00); Conventional Radiotherapy (2D/3D) Session: 5,160.00 (Professional Fee 800.00 to 2,200.00); IMRT Treatment Session: 16,245.00 (Professional Fee 1,680.00 to 4,000.00); CT Simulation- IMRT: 57,730.00 (Professional Fee 11,546.00 to 27,430.00); Treatment Planning Dosimetry (Xray): 24,225.00 (Professional Fee 2,380.00 to 7,225.00); TREATMENT PLANNING SYSTEM (IMRT): 25,265.00 (Professional Fee 8,400.00 to 12,265.00). As of August 31, 2022.",
           "sources": [
             "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
             "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
           ],
-          "service_schedule": null,
+          "serviceSchedule": null,
           "requirements": [],
           "procedure": []
         },
@@ -102,14 +104,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Cancer Assistance Fund (CAF)",
-          "service_description": "Listed by the Department of Health as one of 36 Cancer Assistance Fund access sites nationwide (July 2026). The fund supports cancer care, from early screening and diagnosis to treatment.",
+          "serviceName": "Cancer Assistance Fund (CAF)",
+          "serviceDescription": "Listed by the Department of Health as one of 36 Cancer Assistance Fund access sites nationwide (July 2026). The fund supports cancer care, from early screening and diagnosis to treatment.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://tribune.net.ph/2026/07/06/doh-expands-cancer-assistance-fund-access-sites-to-36-nationwide"
           ],
-          "service_schedule": null,
+          "serviceSchedule": null,
           "requirements": [],
           "procedure": []
         },
@@ -118,14 +120,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Oncology Clinic (Internal Medicine)",
-          "service_description": "dedicated to the diagnosis, treatment and care of adults with cancer. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
+          "serviceName": "Oncology Clinic (Internal Medicine)",
+          "serviceDescription": "dedicated to the diagnosis, treatment and care of adults with cancer. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://spmc.doh.gov.ph/internal-medicine/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "Tuesday and Thursday",
               "timeIn": "1 pm",
@@ -140,14 +142,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Hematology Clinic (Internal Medicine)",
-          "service_description": "provides assessment and treatment as well as co-ordination of clinical care for patients with blood diseases and blood-related cancers. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
+          "serviceName": "Hematology Clinic (Internal Medicine)",
+          "serviceDescription": "provides assessment and treatment as well as co-ordination of clinical care for patients with blood diseases and blood-related cancers. Location: Internal Medicine OPD at the Second Floor of JICA OPD Building.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://spmc.doh.gov.ph/internal-medicine/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "Tuesday and Thursday",
               "timeIn": "1 pm",
@@ -162,14 +164,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Surgical Oncology",
-          "service_description": "Location: Cancer Institute – 2nd Floor.",
+          "serviceName": "Surgical Oncology",
+          "serviceDescription": "Location: Cancer Institute – 2nd Floor.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://spmc.doh.gov.ph/surgery/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "Monday to Friday",
               "timeIn": "8AM",
@@ -184,14 +186,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Gynecologic Oncology",
-          "service_description": "Caters to patients diagnosed with cancer in the reproductive organs",
+          "serviceName": "Gynecologic Oncology",
+          "serviceDescription": "Caters to patients diagnosed with cancer in the reproductive organs",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "weekdays",
               "timeIn": "1:00 pm",
@@ -206,14 +208,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Trophoblastic Service Clinic",
-          "service_description": "Specializes in dealing with a group of conditions involving tumor growth in the womb.",
+          "serviceName": "Trophoblastic Service Clinic",
+          "serviceDescription": "Specializes in dealing with a group of conditions involving tumor growth in the womb.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "weekdays",
               "timeIn": "1:00 pm",
@@ -228,8 +230,8 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Colposcopy / Pap’s Smear",
-          "service_description": "Screening procedure for detecting cervical cancer.",
+          "serviceName": "Colposcopy / Pap’s Smear",
+          "serviceDescription": "Screening procedure for detecting cervical cancer.",
           "cancerTypes": [
             "Cervical Cancer"
           ],
@@ -237,7 +239,7 @@
           "sources": [
             "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "Tuesday and Thursday",
               "timeIn": "1:00 pm",
@@ -252,14 +254,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Oncology Clinic (Pediatrics)",
-          "service_description": "Specializes on diagnoses, treatment and management of cancer.",
+          "serviceName": "Oncology Clinic (Pediatrics)",
+          "serviceDescription": "Specializes on diagnoses, treatment and management of cancer.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://spmc.doh.gov.ph/pediatrics-2/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "Monday and Wednesday",
               "timeIn": "2:00",
@@ -279,8 +281,8 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Breast Imaging",
-          "service_description": "Involves the use of mammography, sonomammography and elastography. Imaging exam dedicated for screening breast cancer.",
+          "serviceName": "Breast Imaging",
+          "serviceDescription": "Involves the use of mammography, sonomammography and elastography. Imaging exam dedicated for screening breast cancer.",
           "cancerTypes": [
             "Breast Cancer"
           ],
@@ -289,7 +291,7 @@
             "https://spmc.doh.gov.ph/radiological-and-imaging-sciences/",
             "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "weekdays (OPD)",
               "timeIn": "8:00 am",
@@ -347,24 +349,26 @@
       "id": 2,
       "name": "Davao Doctors Hospital",
       "bgImageURL": "",
-      "source": "https://ddh.com.ph/",
+      "sources": [
+        "https://ddh.com.ph/"
+      ],
       "description": "Davao Doctors Hospital soon opened its doors to the public in 1969, starting with a 50-bed capacity. Over time, DDH continued to foster many other firsts in the region as its Radiation Oncology Department became fully operational, among other notable innovations.",
       "type": "Private Institution",
       "contacts": [
         {
-          "contact_id": 1,
+          "contactID": 1,
           "type": "Landline",
-          "contact_details": "(+6382) 222-8000"
+          "contactDetails": "(+6382) 222-8000"
         },
         {
-          "contact_id": 2,
+          "contactID": 2,
           "type": "Landline",
-          "contact_details": "(+6382) 222 - 7948"
+          "contactDetails": "(+6382) 222 - 7948"
         },
         {
-          "contact_id": 3,
+          "contactID": 3,
           "type": "Email",
-          "contact_details": "info@ddh.com.ph"
+          "contactDetails": "info@ddh.com.ph"
         }
       ],
       "branches": [
@@ -385,38 +389,38 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Radiation Oncology Department",
-          "service_description": "The oncology Center uses clinical and holistic approaches for the management of cancer. We aim to cure- to eradicate the tumor and prevent its recurrence, as well as to relieve pain and other discomforts of cancer. Equipment: Dual Energy Linear Accelerator; the Elekta Synergy linear Accelerator- the first IMRT/IGRT facility. Services Offered: Radiation Consultation Evaluation; Treatment Planning; External Beam Radiography; Low Dose Rate (LDR) Brachytherapy; Blood Irradiation. Location: Ground Level, Oncology Building. Office Hours: 6:00am - 6:00pm. Contact: (082) 222 8000 local 8158 | radonco@ddh.com.ph",
+          "serviceName": "Radiation Oncology Department",
+          "serviceDescription": "The oncology Center uses clinical and holistic approaches for the management of cancer. We aim to cure- to eradicate the tumor and prevent its recurrence, as well as to relieve pain and other discomforts of cancer. Equipment: Dual Energy Linear Accelerator; the Elekta Synergy linear Accelerator- the first IMRT/IGRT facility. Services Offered: Radiation Consultation Evaluation; Treatment Planning; External Beam Radiography; Low Dose Rate (LDR) Brachytherapy; Blood Irradiation. Location: Ground Level, Oncology Building. Office Hours: 6:00am - 6:00pm. Contact: (082) 222 8000 local 8158 | radonco@ddh.com.ph",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://ddh.com.ph/services-and-centers/radiation-oncology-department/"
           ],
-          "service_schedule": null,
+          "serviceSchedule": null,
           "requirements": [
             {
-              "requirement_id": 1,
-              "requirement_description": "Referral letter and a short clinical abstract."
+              "requirementID": 1,
+              "requirementDescription": "Referral letter and a short clinical abstract."
             },
             {
-              "requirement_id": 2,
-              "requirement_description": "Histopathologic report."
+              "requirementID": 2,
+              "requirementDescription": "Histopathologic report."
             },
             {
-              "requirement_id": 3,
-              "requirement_description": "Laboratory and Imaging work-ups with results and radiographs."
+              "requirementID": 3,
+              "requirementDescription": "Laboratory and Imaging work-ups with results and radiographs."
             },
             {
-              "requirement_id": 4,
-              "requirement_description": "Complete blood count preferably normal or least 100 grams/dl. hemoglobin"
+              "requirementID": 4,
+              "requirementDescription": "Complete blood count preferably normal or least 100 grams/dl. hemoglobin"
             },
             {
-              "requirement_id": 5,
-              "requirement_description": "Dental clearance for head and neck tumors."
+              "requirementID": 5,
+              "requirementDescription": "Dental clearance for head and neck tumors."
             },
             {
-              "requirement_id": 6,
-              "requirement_description": "Steroid coverage for brain and spinal cord irradiation."
+              "requirementID": 6,
+              "requirementDescription": "Steroid coverage for brain and spinal cord irradiation."
             }
           ],
           "procedure": []
@@ -426,8 +430,8 @@
           "branchIDs": [
             1
           ],
-          "service_name": "External Beam Radiation Therapy",
-          "service_description": "Curative: Destroy tumors that have not spread the other parts of the body and cure you of disease reduce the risk that cancer will return after you undergo surgery or systemic/chemotherapy by killing small amounts of remaining cancer cells shrink cancer before surgery. Palliative: Shrink tumors that are interfering with your quality of life, such as lung tumor that is causing shortness of breath to relieve pain by reducing the size of a tumor and other unpleasant symptoms, thus improving the quality of life and prolongation of survival. Radiation Therapy usually takes from a week to eight weeks, depending on the goal, either curative or palliative. It is given daily from Monday to Friday lasting only for a few minutes, based on the prescribed dose and number of treatment fields. Who can avail? It has clinical applications for patients diagnosed with malignant tumors and occasionally benign diseases. Location: Ground floor of Oncology Building. Contact: +63 82 222 8000 local 8158 | +63 82 222 7992 | radonco@ddh.com.ph",
+          "serviceName": "External Beam Radiation Therapy",
+          "serviceDescription": "Curative: Destroy tumors that have not spread the other parts of the body and cure you of disease reduce the risk that cancer will return after you undergo surgery or systemic/chemotherapy by killing small amounts of remaining cancer cells shrink cancer before surgery. Palliative: Shrink tumors that are interfering with your quality of life, such as lung tumor that is causing shortness of breath to relieve pain by reducing the size of a tumor and other unpleasant symptoms, thus improving the quality of life and prolongation of survival. Radiation Therapy usually takes from a week to eight weeks, depending on the goal, either curative or palliative. It is given daily from Monday to Friday lasting only for a few minutes, based on the prescribed dose and number of treatment fields. Who can avail? It has clinical applications for patients diagnosed with malignant tumors and occasionally benign diseases. Location: Ground floor of Oncology Building. Contact: +63 82 222 8000 local 8158 | +63 82 222 7992 | radonco@ddh.com.ph",
           "cancerTypes": [
             "Brain / spinal cord tumors",
             "Head and neck tumors",
@@ -443,7 +447,7 @@
           "sources": [
             "https://ddh.com.ph/services-and-centers/external-beam-radiation-therapy/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "Mondays - Fridays",
               "timeIn": "6:00am",
@@ -458,8 +462,8 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Brachytherapy",
-          "service_description": "Brachytherapy is a procedure that involves placing radioactive material inside your body. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "serviceName": "Brachytherapy",
+          "serviceDescription": "Brachytherapy is a procedure that involves placing radioactive material inside your body. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
           "cancerTypes": [
             "Cervical Cancer",
             "Endometrial Cancer",
@@ -469,7 +473,7 @@
           "sources": [
             "https://ddh.com.ph/services-and-centers/nursing-service/"
           ],
-          "service_schedule": null,
+          "serviceSchedule": null,
           "requirements": [],
           "procedure": [
             {
@@ -491,14 +495,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "In-patient Chemotherapy",
-          "service_description": "Hemotherapy is a drug treatment that uses powerful chemicals to kill fast-growing cells in your body. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "serviceName": "In-patient Chemotherapy",
+          "serviceDescription": "Hemotherapy is a drug treatment that uses powerful chemicals to kill fast-growing cells in your body. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://ddh.com.ph/services-and-centers/nursing-service/"
           ],
-          "service_schedule": null,
+          "serviceSchedule": null,
           "requirements": [],
           "procedure": []
         },
@@ -507,8 +511,8 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Radioactive Iodine Therapy (RAI)",
-          "service_description": "Low dose and high dose radioactive iodine (RAI) therapy c/o physician on – board. Uses: Hyperthyroidism (Grave's Disease, solitary autonomous nodule); Ablation of thyroid remnants after thyroidectomy; Treatment of Metastatic Thyroid Carcinoma. Location: Ground Level, Oncology Building. Contact Info: (6382) 222 - 8000 loc. 8143",
+          "serviceName": "Radioactive Iodine Therapy (RAI)",
+          "serviceDescription": "Low dose and high dose radioactive iodine (RAI) therapy c/o physician on – board. Uses: Hyperthyroidism (Grave's Disease, solitary autonomous nodule); Ablation of thyroid remnants after thyroidectomy; Treatment of Metastatic Thyroid Carcinoma. Location: Ground Level, Oncology Building. Contact Info: (6382) 222 - 8000 loc. 8143",
           "cancerTypes": [
             "Papillary Thyroid Cancer",
             "Follicular Thyroid Cancer"
@@ -518,7 +522,7 @@
             "https://ddh.com.ph/services-and-centers/nursing-service/",
             "https://ddh.com.ph/services-and-centers/nuclear-medicine/"
           ],
-          "service_schedule": [
+          "serviceSchedule": [
             {
               "day": "Mondays - Fridays",
               "timeIn": "7:00am",
@@ -551,14 +555,14 @@
           "branchIDs": [
             1
           ],
-          "service_name": "Long Term Radiotherapy",
-          "service_description": "Clients located far from the city may opt to be admitted in the unit to complete the recommended number of RT treatments. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
+          "serviceName": "Long Term Radiotherapy",
+          "serviceDescription": "Clients located far from the city may opt to be admitted in the unit to complete the recommended number of RT treatments. Location: Ground Floor, Oncology Building. Office Hours: 24/7. Contact Info: 222-8000 local 7329.",
           "cancerTypes": null,
           "fee": null,
           "sources": [
             "https://ddh.com.ph/services-and-centers/nursing-service/"
           ],
-          "service_schedule": null,
+          "serviceSchedule": null,
           "requirements": [],
           "procedure": []
         }

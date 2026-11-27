@@ -4,7 +4,7 @@
     "title": "Support groups",
     "description": "Cancer support groups for patients, survivors and families.",
     "apiVersion": "v2",
-    "lastUpdated": "2026-11-19",
+    "lastUpdated": "2026-11-27",
     "recordCount": 2,
     "coverage": "Davao City, Philippines",
     "language": "en",
@@ -14,7 +14,7 @@
     "contact": "https://github.com/ProjectFuritsu/CancerOpenData/issues",
     "schema": "./SupportGroupsData.schema.json"
   },
-  "Support_Group": [
+  "supportGroup": [
     {
       "id": 1,
       "name": "AMUMA",
@@ -33,9 +33,9 @@
       "sources": [],
       "contacts": [
         {
-          "contact_id": 1,
+          "contactID": 1,
           "type": "Mobile",
-          "contact_details": "09384376090"
+          "contactDetails": "09384376090"
         }
       ]
     },
@@ -63,9 +63,9 @@
       ],
       "contacts": [
         {
-          "contact_id": 1,
+          "contactID": 1,
           "type": "Mobile",
-          "contact_details": "0977 329 8496"
+          "contactDetails": "0977 329 8496"
         }
       ]
     }

@@ -80,7 +80,7 @@
       ],
       "additionalProperties": false
     },
-    "Financial_Insti": {
+    "financialInsti": {
       "type": "array",
       "items": {
         "type": "object",
@@ -96,10 +96,10 @@
             "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL.",
             "format": "uri-reference"
           },
-          "source": {
-            "type": "string",
-            "description": "Main page of the institution.",
-            "format": "uri"
+          "sources": {
+            "$ref": "#/$defs/sources",
+            "type": "array",
+            "minItems": 1
           },
           "description": {
             "type": "string"
@@ -126,7 +126,7 @@
                 "programID": {
                   "type": "integer"
                 },
-                "program_name": {
+                "programName": {
                   "type": "string"
                 },
                 "eligibility": {
@@ -137,7 +137,7 @@
                   "uniqueItems": true,
                   "description": "Who can get this program, one rule per item, as written by the source. Empty if not given (show \"Not given\")."
                 },
-                "program_description": {
+                "programDescription": {
                   "type": "string"
                 },
                 "cancerTypes": {
@@ -159,10 +159,10 @@
                   "items": {
                     "type": "object",
                     "properties": {
-                      "benefit_id": {
+                      "benefitID": {
                         "type": "integer"
                       },
-                      "benefit_name": {
+                      "benefitName": {
                         "type": "string"
                       },
                       "amount": {
@@ -174,8 +174,8 @@
                       }
                     },
                     "required": [
-                      "benefit_id",
-                      "benefit_name",
+                      "benefitID",
+                      "benefitName",
                       "amount"
                     ],
                     "additionalProperties": false
@@ -190,9 +190,9 @@
               },
               "required": [
                 "programID",
-                "program_name",
+                "programName",
                 "eligibility",
-                "program_description",
+                "programDescription",
                 "cancerTypes",
                 "applicationURL",
                 "sources",
@@ -208,7 +208,7 @@
           "id",
           "name",
           "bgImageURL",
-          "source",
+          "sources",
           "description",
           "type",
           "contacts",
@@ -221,14 +221,14 @@
   },
   "required": [
     "meta",
-    "Financial_Insti"
+    "financialInsti"
   ],
   "additionalProperties": false,
   "$defs": {
     "contact": {
       "type": "object",
       "properties": {
-        "contact_id": {
+        "contactID": {
           "type": "integer"
         },
         "type": {
@@ -244,14 +244,14 @@
           ],
           "description": "Kind of contact. One fixed list for all datasets."
         },
-        "contact_details": {
+        "contactDetails": {
           "type": "string"
         }
       },
       "required": [
-        "contact_id",
+        "contactID",
         "type",
-        "contact_details"
+        "contactDetails"
       ],
       "additionalProperties": false
     },
@@ -381,16 +381,16 @@
       "items": {
         "type": "object",
         "properties": {
-          "requirement_id": {
+          "requirementID": {
             "type": "integer"
           },
-          "requirement_description": {
+          "requirementDescription": {
             "type": "string"
           }
         },
         "required": [
-          "requirement_id",
-          "requirement_description"
+          "requirementID",
+          "requirementDescription"
         ],
         "additionalProperties": false
       }

@@ -80,7 +80,7 @@
       ],
       "additionalProperties": false
     },
-    "Health_Insti": {
+    "healthInsti": {
       "type": "array",
       "items": {
         "type": "object",
@@ -96,10 +96,10 @@
             "description": "Background image: a path in this API like /images/<Folder>/<file>.webp, or a full https:// URL.",
             "format": "uri-reference"
           },
-          "source": {
-            "type": "string",
-            "description": "Main page of the institution.",
-            "format": "uri"
+          "sources": {
+            "$ref": "#/$defs/sources",
+            "type": "array",
+            "minItems": 1
           },
           "description": {
             "type": "string"
@@ -135,10 +135,10 @@
                   "uniqueItems": true,
                   "description": "Branches that offer this service. Each must be a branchID of the same institution."
                 },
-                "service_name": {
+                "serviceName": {
                   "type": "string"
                 },
-                "service_description": {
+                "serviceDescription": {
                   "type": "string"
                 },
                 "cancerTypes": {
@@ -154,7 +154,7 @@
                 "sources": {
                   "$ref": "#/$defs/sources"
                 },
-                "service_schedule": {
+                "serviceSchedule": {
                   "type": [
                     "array",
                     "null"
@@ -174,12 +174,12 @@
               "required": [
                 "serviceID",
                 "branchIDs",
-                "service_name",
-                "service_description",
+                "serviceName",
+                "serviceDescription",
                 "cancerTypes",
                 "fee",
                 "sources",
-                "service_schedule",
+                "serviceSchedule",
                 "requirements",
                 "procedure"
               ],
@@ -228,7 +228,7 @@
           "id",
           "name",
           "bgImageURL",
-          "source",
+          "sources",
           "description",
           "type",
           "contacts",
@@ -242,14 +242,14 @@
   },
   "required": [
     "meta",
-    "Health_Insti"
+    "healthInsti"
   ],
   "additionalProperties": false,
   "$defs": {
     "contact": {
       "type": "object",
       "properties": {
-        "contact_id": {
+        "contactID": {
           "type": "integer"
         },
         "type": {
@@ -265,14 +265,14 @@
           ],
           "description": "Kind of contact. One fixed list for all datasets."
         },
-        "contact_details": {
+        "contactDetails": {
           "type": "string"
         }
       },
       "required": [
-        "contact_id",
+        "contactID",
         "type",
-        "contact_details"
+        "contactDetails"
       ],
       "additionalProperties": false
     },
@@ -402,16 +402,16 @@
       "items": {
         "type": "object",
         "properties": {
-          "requirement_id": {
+          "requirementID": {
             "type": "integer"
           },
-          "requirement_description": {
+          "requirementDescription": {
             "type": "string"
           }
         },
         "required": [
-          "requirement_id",
-          "requirement_description"
+          "requirementID",
+          "requirementDescription"
         ],
         "additionalProperties": false
       }

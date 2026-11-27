@@ -582,6 +582,13 @@ function applyReview(folder, records) {
     // Decision 6: placeholder faces look like real doctors; no photo until there is a consented one.
     const ids = records.filter((r) => /i\.pravatar\.cc/.test(r.imageURL)).map((r) => { r.imageURL = ""; return r.id; });
     if (ids.length) log(`placeholder photos cleared: ${ids.join(", ")}`);
+    // Decision 21 (Fritz, 2026-11-27): no SeriousMD page gives a booking type for an online
+    // clinic (and walk-in can't apply online), so every "Online Clinic" has bookingType null.
+    const online = [];
+    for (const r of records) for (const c of r.clinics) {
+      if (c.clinicName === "Online Clinic" && c.bookingType !== null) { c.bookingType = null; online.push(r.id); }
+    }
+    if (online.length) log(`online clinics: bookingType -> null for ${online.join(", ")}`);
   }
   if (folder === "SupportGroups") {
     for (const r of records) {
@@ -598,12 +605,43 @@ function applyReview(folder, records) {
   return records;
 }
 
-// Records that exist only in v2 live in scripts/v2-additions/<Folder>.json (same records key).
+// Decision 20 (Fritz, 2026-11-27): every v2 key is camelCase, with ID and URL kept upper case
+// (contactID, imageURL), and every source is a `sources` list. The converter builds records
+// with the v1 key names, then toV2Keys renames them as the last step before writing.
+const KEY_V2 = {
+  Feed: "feed", Financial_Insti: "financialInsti", Health_Insti: "healthInsti",
+  Medical_Specialist: "medicalSpecialist", Support_Group: "supportGroup", Accommodation: "accommodation",
+};
+const RENAME = {
+  contact_id: "contactID", contact_details: "contactDetails",
+  program_name: "programName", program_description: "programDescription",
+  benefit_id: "benefitID", benefit_name: "benefitName",
+  requirement_id: "requirementID", requirement_description: "requirementDescription",
+  service_name: "serviceName", service_description: "serviceDescription", service_schedule: "serviceSchedule",
+};
+function toV2Keys(v) {
+  if (Array.isArray(v)) return v.map(toV2Keys);
+  if (!v || typeof v !== "object") return v;
+  const out = {};
+  for (const [k, x] of Object.entries(v)) {
+    if (k === "source" || k === "sources") {
+      // One `sources` list where `source` (or `sources`) first appears; `source` first, no repeats.
+      if (!("sources" in out)) out.sources = [...new Set([...list(v.source), ...(v.sources ?? [])])];
+      continue;
+    }
+    out[RENAME[k] ?? k] = toV2Keys(x);
+  }
+  return out;
+}
+
+// Records that exist only in v2 live in scripts/v2-additions/<Folder>.json, under the v2 records
+// key (for example "financialInsti") and with v2 key names.
 function addV2Only(folder, key, records) {
   const p = join("scripts", "v2-additions", `${folder}.json`);
   if (!existsSync(p)) return;
   const taken = new Set(records.map((r) => r.id));
-  for (const r of read(p)[key] ?? []) {
+  const file = read(p);
+  for (const r of file[KEY_V2[key] ?? key] ?? file[key] ?? []) {
     if (taken.has(r.id)) throw new Error(`${p}: id ${r.id} is already used in ${folder}`);
     records.push(r);
     console.log(`  v2 only: added ${r.name ?? r.title ?? r.id} (id ${r.id})`);
@@ -650,6 +688,8 @@ function lastUpdated(path, records, key) {
 function write(folder, file, key, records) {
   if (!args.includes("--no-review")) { applyReview(folder, records); addV2Only(folder, key, records); }
   withLandmarks(records);
+  records = toV2Keys(records);
+  key = KEY_V2[key] ?? key;
   const path = join("data-v2", folder, `${file}.json`);
   const [title, description] = META[folder] ?? [folder, ""];
   const meta = {
