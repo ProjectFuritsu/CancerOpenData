@@ -142,9 +142,9 @@
           "branchID": 1,
           "branchName": null,
           "location": "Abreeza Ayala Business Park, J.P. Laurel Ave., Bajada, Davao City",
-          "landmark": null,
-          "latitude": null,
-          "longitude": null,
+          "landmark": "Beside Abreeza Mall",
+          "latitude": 7.0894738,
+          "longitude": 125.6076706,
           "schedule": null,
           "contacts": []
         }
