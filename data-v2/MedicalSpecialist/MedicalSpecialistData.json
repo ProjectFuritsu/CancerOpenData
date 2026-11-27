@@ -1870,7 +1870,7 @@
           "location": "NowServing App",
           "latitude": null,
           "longitude": null,
-          "bookingType": "Walk-in and appointment",
+          "bookingType": null,
           "contacts": [],
           "schedule": [
             {
