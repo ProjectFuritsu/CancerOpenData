@@ -7,6 +7,7 @@ Dates are Philippine time (UTC+8). See [MILESTONES.md](MILESTONES.md) for the bi
 ## Unreleased
 
 ### Data
+- Red Planet Davao (Accommodation #4): `bgImageURL` now points to a copy hosted by this API, `/images/Accommodation/red-planet-davao.webp` (1200 × 675 WebP, 51 KB), instead of the 1.5 MB image on the hotel's website. Same photo, from Red Planet's official site; photos belong to their owners.
 - Specialist #12 (Michael Jonathan Latayan): his SeriousMD profile link was in `imageURL` and he had no `source`. `imageURL` is now empty (no photo without consent) and `source` is `https://seriousmd.com/doc/mlatayan` (issue #10).
 - Specialist #12: clinic "Latayan Urology Clinic DMSF" is now "Davao Medical School Foundation Hospital", as his SeriousMD page names it (checked 2026-11-16). His 3 clinics' schedules and booking already matched the page.
 - AMUMA: removed the landline (082) 295-2133. PhilHealth's official directory lists it as PhilHealth Regional Office XI's trunkline.
