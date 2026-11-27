@@ -82,6 +82,8 @@ const v1 = collect(DATA, OUT, "");
 writeFileSync(join(OUT, "index.json"), JSON.stringify({
   name: "Cancer Open Data",
   about: "Public data on cancer care resources in one place. Each dataset has a JSON data file and a JSON Schema.",
+  apiVersion: "v1",
+  status: "beta",
   source: SOURCE,
   version,
   docs: "/docs/",
@@ -91,8 +93,9 @@ writeFileSync(join(OUT, "index.json"), JSON.stringify({
 }, null, 2) + "\n");
 writeFileSync(join(OUT, "openapi.json"), JSON.stringify(buildOpenApi(v1.list, v1.schemas, version), null, 2) + "\n");
 
-// ---- v2: data-v2/ under /v2/ (preview until it is released) ----
-const docVersions = [{ id: "v1", label: "v1 (current)", spec: "/openapi.json" }];
+// ---- v2: data-v2/ under /v2/ ----
+// Both versions are labeled beta (2026-11-27): the API can still change.
+const docVersions = [{ id: "v1", label: "v1 (beta)", spec: "/openapi.json" }];
 let v2 = null;
 if (existsSync(DATA_V2)) {
   const V2_OUT = join(OUT, "v2");
@@ -100,7 +103,7 @@ if (existsSync(DATA_V2)) {
   writeFileSync(join(V2_OUT, "index.json"), JSON.stringify({
     name: "Cancer Open Data",
     apiVersion: "v2",
-    status: "preview",
+    status: "beta",
     about: "Version 2 of the data: branches, sources, cancer types, amounts and booking type. A null or empty value means \"Not given\".",
     source: SOURCE,
     version,
@@ -110,7 +113,7 @@ if (existsSync(DATA_V2)) {
     datasets: v2.list,
   }, null, 2) + "\n");
   writeFileSync(join(V2_OUT, "openapi.json"), JSON.stringify(buildOpenApi(v2.list, v2.schemas, version, { apiVersion: "v2" }), null, 2) + "\n");
-  docVersions.push({ id: "v2", label: "v2 (preview)", spec: "/v2/openapi.json" });
+  docVersions.push({ id: "v2", label: "v2 (beta)", spec: "/v2/openapi.json" });
 }
 
 let images = 0;

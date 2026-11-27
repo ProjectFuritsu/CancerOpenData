@@ -13,6 +13,7 @@ Dates are Philippine time (UTC+8). See [MILESTONES.md](MILESTONES.md) for the bi
 - SSS (Financial #2): `bgImageURL` is now empty. The old link (https://www.sss.gov.ph/sss/images/SSS_Building.jpg) returns 404 (checked 2026-11-27). Apps show no background image until an official one is found.
 
 ### Repo: v2 is the main version
+- v1 and v2 are both labeled **beta**: the docs picker shows "v1 (beta)" and "v2 (beta)", each OpenAPI title says "(beta)", and `GET /` and `GET /v2/` have `"status": "beta"` (v2 was "preview"). `GET /` also gets `"apiVersion": "v1"`. Nothing else changes: same links, same data.
 - `data-v2/` is now the source of truth: v2 is edited directly, and validate and the Worker tests require it. `data/` (v1) is frozen and stays online read-only until a stop date is agreed. `scripts/convert-v2.mjs` is frozen (it stops unless run with `--unfreeze`); its last run after PR #18 changed nothing.
 
 ### v2 (in development, not public)

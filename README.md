@@ -7,6 +7,7 @@ Financial help, hospitals, specialists, support groups and news, as JSON with a 
 
 [![Validate and deploy data](https://github.com/ProjectFuritsu/CancerOpenData/actions/workflows/deploy-data.yml/badge.svg)](https://github.com/ProjectFuritsu/CancerOpenData/actions/workflows/deploy-data.yml)
 [![API](https://img.shields.io/badge/API-live-2ea44f)](https://cancer-open-data.capillanesjohnfritz.workers.dev/)
+[![Status: beta](https://img.shields.io/badge/status-beta-orange)](CHANGELOG.md)
 [![OpenAPI 3.1](https://img.shields.io/badge/OpenAPI-3.1-6BA539?logo=openapiinitiative&logoColor=white)](https://cancer-open-data.capillanesjohnfritz.workers.dev/openapi.json)
 [![JSON Schema](https://img.shields.io/badge/JSON%20Schema-2020--12-blue)](https://json-schema.org/draft/2020-12)
 [![Cloudflare Workers](https://img.shields.io/badge/hosted%20on-Cloudflare%20Workers-F38020?logo=cloudflare&logoColor=white)](https://developers.cloudflare.com/workers/static-assets/)
