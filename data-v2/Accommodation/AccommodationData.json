@@ -5,7 +5,7 @@
     "description": "Places where cancer patients and their companions can stay near the hospitals.",
     "apiVersion": "v2",
     "lastUpdated": "2026-11-27",
-    "recordCount": 10,
+    "recordCount": 7,
     "coverage": "Davao City, Philippines",
     "language": "en",
     "license": "CC0-1.0",
@@ -55,7 +55,9 @@
       "id": 5,
       "name": "Hop Inn Hotel Davao",
       "bgImageURL": "",
-      "sources": [],
+      "sources": [
+        "https://www.hopinnhotel.com/our-hotels/hop-inn-davao"
+      ],
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": null,
@@ -151,7 +153,9 @@
       "id": 8,
       "name": "Acacia Hotel Davao",
       "bgImageURL": "",
-      "sources": [],
+      "sources": [
+        "https://acaciahotelsdavao.com/"
+      ],
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": null,
@@ -176,38 +180,12 @@
       }
     },
     {
-      "id": 9,
-      "name": "RedDoorz near Davao Doctors Hospital",
-      "bgImageURL": "",
-      "sources": [],
-      "description": "Paid place to stay near Davao Doctors Hospital.",
-      "type": "Hotel",
-      "operator": null,
-      "contacts": [],
-      "branches": [
-        {
-          "branchID": 1,
-          "branchName": null,
-          "location": "Elpidio Quirino Ave., Poblacion District, Davao, Davao del Sur",
-          "landmark": null,
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        }
-      ],
-      "cost": "Paid.",
-      "amenities": [],
-      "roomCapacity": {
-        "min": null,
-        "max": null
-      }
-    },
-    {
       "id": 10,
       "name": "Rogen Inn",
       "bgImageURL": "",
-      "sources": [],
+      "sources": [
+        "https://www.sunstar.com.ph/davao/feature/rogen-inn-not-a-hotel-but-feels-like-it"
+      ],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Inn",
       "operator": null,
@@ -232,66 +210,12 @@
       }
     },
     {
-      "id": 11,
-      "name": "D'Morvie Suites - Davao",
-      "bgImageURL": "",
-      "sources": [],
-      "description": "Paid place to stay near Davao Doctors Hospital.",
-      "type": "Hotel",
-      "operator": null,
-      "contacts": [],
-      "branches": [
-        {
-          "branchID": 1,
-          "branchName": null,
-          "location": "224 San Pedro St, Poblacion District, Davao City, 8000 Davao del Sur",
-          "landmark": null,
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        }
-      ],
-      "cost": "Paid.",
-      "amenities": [],
-      "roomCapacity": {
-        "min": null,
-        "max": null
-      }
-    },
-    {
-      "id": 12,
-      "name": "The Bourke Hotel",
-      "bgImageURL": "",
-      "sources": [],
-      "description": "Paid place to stay near Davao Doctors Hospital.",
-      "type": "Hotel",
-      "operator": null,
-      "contacts": [],
-      "branches": [
-        {
-          "branchID": 1,
-          "branchName": null,
-          "location": "115 P Pelayo St, Poblacion District, Davao City, 8000 Davao del Sur",
-          "landmark": null,
-          "latitude": null,
-          "longitude": null,
-          "schedule": null,
-          "contacts": []
-        }
-      ],
-      "cost": "Paid.",
-      "amenities": [],
-      "roomCapacity": {
-        "min": null,
-        "max": null
-      }
-    },
-    {
       "id": 13,
       "name": "Apo View Hotel",
       "bgImageURL": "",
-      "sources": [],
+      "sources": [
+        "https://www.apoviewhotel.com/"
+      ],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
