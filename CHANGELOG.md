@@ -38,6 +38,7 @@ A new data shape, to be served at `/v2/…` next to v1. Not live yet; v1 is unch
 - **Every source is a `sources` list** (links, no repeats). Feeds, financial and health institutions had one `source` link; places to stay had both `source` and `sources`. Feeds and institutions must have at least one link; elsewhere an empty list means "Not given". Values are unchanged.
 - Specialists: no SeriousMD page gives a booking type for an online clinic, so all 9 online clinics have `bookingType` `null`.
 - DOH programs use official sources instead of news: the DOH Malasakit Program Office pages (MAIFIP requirements, how to apply, eMAIFIP access sites), DOH Davao's Citizen's Charter 2025, and DOH's own releases on CAF and CSPMAP. Facts that only news gave are removed until an official source is found: MAIFIP's "no fixed cap" and 12-working-day payment, applying through the eGovPH app, and CAF's "up to P150,000" (both amounts are now "Not given").
+- Display rule for apps: when a program's or service's `requirements` or `procedure` is empty, show "Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about the requirements." (or "…about the steps."). The text is in the schemas and the v2 OpenAPI spec; the data stays empty, so the missing-data list still shows these gaps.
 
 ### Repo
 - Issue forms: wrong data, new resource, API problem, privacy or removal request. Blank issues are off.

@@ -378,6 +378,7 @@
     },
     "requirements": {
       "type": "array",
+      "description": "Documents to bring, one per item, as written by the source. Empty if not given. Apps: when empty, show \"Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about the requirements.\"",
       "items": {
         "type": "object",
         "properties": {
@@ -397,6 +398,7 @@
     },
     "procedure": {
       "type": "array",
+      "description": "Steps in order, as written by the source. Empty if not given. Apps: when empty, show \"Not given yet. Visit the facility and ask the staff in charge (for example the social worker or the help desk) about the steps.\"",
       "items": {
         "type": "object",
         "properties": {
