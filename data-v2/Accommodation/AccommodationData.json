@@ -119,7 +119,8 @@
       "bgImageURL": "",
       "sources": [
         "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao",
-        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao/contact-us"
+        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao/contact-us",
+        "https://booking.ayalalandhospitality.com/?chain=33724&hotel=50203&level=hotel&locale=en-US"
       ],
       "description": "Paid place to stay near Southern Philippines Medical Center. 181 refreshed rooms.",
       "type": "Hotel",
@@ -148,11 +149,11 @@
           "contacts": []
         }
       ],
-      "cost": "Paid. Rates on the hotel's website.",
+      "cost": "Estimated ₱6,605 to ₱14,267 per night, excluding taxes and fees (as of 27 November 2026)",
       "amenities": [],
       "roomCapacity": {
-        "min": null,
-        "max": null
+        "min": 4,
+        "max": 4
       }
     },
     {
