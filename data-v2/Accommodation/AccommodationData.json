@@ -61,7 +61,18 @@
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": null,
-      "contacts": [],
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Landline",
+          "contactDetails": "+63 082 241 7600"
+        },
+        {
+          "contactID": 2,
+          "type": "Email",
+          "contactDetails": "fo.davao@hopinnhotel.com"
+        }
+      ],
       "branches": [
         {
           "branchID": 1,
@@ -86,12 +97,24 @@
       "name": "Seda Abreeza",
       "bgImageURL": "",
       "sources": [
-        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao"
+        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao",
+        "https://ayalalandhospitality.com/en/seda/hotels/seda-abreeza-davao/contact-us"
       ],
       "description": "Paid place to stay near Southern Philippines Medical Center. 181 refreshed rooms.",
       "type": "Hotel",
       "operator": "Seda Hotels",
-      "contacts": [],
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Landline",
+          "contactDetails": "(082) 244 3000"
+        },
+        {
+          "contactID": 2,
+          "type": "Email",
+          "contactDetails": "sedaabreeza@ayalalandhospitality.com"
+        }
+      ],
       "branches": [
         {
           "branchID": 1,
@@ -121,7 +144,18 @@
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": "Park Inn by Radisson",
-      "contacts": [],
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Landline",
+          "contactDetails": "+63 82 2727600"
+        },
+        {
+          "contactID": 2,
+          "type": "Email",
+          "contactDetails": "reservations.davao@parkinn.com"
+        }
+      ],
       "branches": [
         {
           "branchID": 1,
@@ -154,12 +188,29 @@
       "name": "Acacia Hotel Davao",
       "bgImageURL": "",
       "sources": [
-        "https://acaciahotelsdavao.com/"
+        "https://acaciahotelsdavao.com/",
+        "https://acaciahotelsdavao.com/contact-us/"
       ],
       "description": "Paid place to stay near Southern Philippines Medical Center.",
       "type": "Hotel",
       "operator": null,
-      "contacts": [],
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Landline",
+          "contactDetails": "+63 (82) 298-8088"
+        },
+        {
+          "contactID": 2,
+          "type": "Landline",
+          "contactDetails": "+63 (82) 2254052"
+        },
+        {
+          "contactID": 3,
+          "type": "Email",
+          "contactDetails": "enquiry@acaciahotelsdavao.com"
+        }
+      ],
       "branches": [
         {
           "branchID": 1,
@@ -189,7 +240,18 @@
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Inn",
       "operator": null,
-      "contacts": [],
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Mobile",
+          "contactDetails": "0917 687 6436"
+        },
+        {
+          "contactID": 2,
+          "type": "Email",
+          "contactDetails": "reservations@rogeninn.com"
+        }
+      ],
       "branches": [
         {
           "branchID": 1,
@@ -214,12 +276,34 @@
       "name": "Apo View Hotel",
       "bgImageURL": "",
       "sources": [
-        "https://www.apoviewhotel.com/"
+        "https://www.apoviewhotel.com/",
+        "https://www.apoviewhotel.com/contact"
       ],
       "description": "Paid place to stay near Davao Doctors Hospital.",
       "type": "Hotel",
       "operator": null,
-      "contacts": [],
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Landline",
+          "contactDetails": "(082) 221-6430"
+        },
+        {
+          "contactID": 2,
+          "type": "Mobile",
+          "contactDetails": "(+63) 917-5486000"
+        },
+        {
+          "contactID": 3,
+          "type": "Mobile",
+          "contactDetails": "(+63) 998-9588758"
+        },
+        {
+          "contactID": 4,
+          "type": "Email",
+          "contactDetails": "avh@apoviewhotel.com"
+        }
+      ],
       "branches": [
         {
           "branchID": 1,
