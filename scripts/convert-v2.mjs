@@ -285,12 +285,7 @@ const REVIEW = {
         details: "One of 34 CAF access sites in DOH's 2025 list.",
         sources: ["https://drive.google.com/file/d/12qWZNvJ9XFXUns86mqCTYgk1KgaqlOFs/view"],
       },
-      {
-        programID: 606001,
-        name: "MAIFIP",
-        details: "Cancer patients at SPMC have used MAIFIP for laboratories, CT scans, procedures and medicines (2026).",
-        sources: ["https://www.sunstar.com.ph/davao/maifip-program-eases-medical-cost-burden-for-struggling-families"],
-      },
+      // MAIFIP removed (Fritz, 2026-11-27): only a SunStar article supported it.
     ],
   },
   // Decision 11 (Fritz, 2026-11-15): one Z Benefits program instead of one per cancer,
