@@ -681,6 +681,11 @@
           "contactID": 3,
           "type": "Email",
           "contactDetails": "info@ddh.com.ph"
+        },
+        {
+          "contactID": 4,
+          "type": "Facebook",
+          "contactDetails": "https://www.facebook.com/DavaoDoctorsHospital/"
         }
       ],
       "branches": [
@@ -931,7 +936,13 @@
       ],
       "description": "Private mission hospital in Davao City. It opened a Chemotherapy and Infusion Unit on March 9, 2026, and has medical, surgical and urologic oncologists. In January 2026 it performed its first laparoscopic radical cystectomy for bladder cancer.",
       "type": "Private Institution",
-      "contacts": [],
+      "contacts": [
+        {
+          "contactID": 1,
+          "type": "Facebook",
+          "contactDetails": "https://www.facebook.com/brokenshiremedicalcenter/"
+        }
+      ],
       "branches": [
         {
           "branchID": 1,
