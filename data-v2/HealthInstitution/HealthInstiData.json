@@ -211,7 +211,8 @@
           "cancerTypes": null,
           "fee": null,
           "sources": [
-            "https://spmc.doh.gov.ph/internal-medicine/"
+            "https://spmc.doh.gov.ph/internal-medicine/",
+            "https://spmc.doh.gov.ph/wp-content/uploads/SPMC_CitizensCharter_Handbook-2025_1st-Edition.pdf"
           ],
           "serviceSchedule": [
             {
@@ -220,8 +221,54 @@
               "timeOut": "5 pm"
             }
           ],
-          "requirements": [],
-          "procedure": []
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Health Declaration Form (Nurse on Duty, Nursing Attendant (OPD Entrance))"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Triage patient with OPD Yellow card (OPD Triage Unit)"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Valid ID, Senior Citizen/PWD ID (If applicable) (Appropriate government agencies)"
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "Referral from other physician (Referring Physician (other clinic))"
+            },
+            {
+              "requirementID": 5,
+              "requirementDescription": "Patient's Discharge Instruction (if applicable) (Nurse Station (Inpatient, Emergency Room))"
+            },
+            {
+              "requirementID": 6,
+              "requirementDescription": "Patient's Chart (HIMD)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Proceeds to reception area and waits for his/her name to be called."
+            },
+            {
+              "step": 2,
+              "instruction": "Undergoes vital signs checking."
+            },
+            {
+              "step": 3,
+              "instruction": "Undergoes Consultation."
+            },
+            {
+              "step": 4,
+              "instruction": "Receives prescription and/or Laboratory/Radiology procedural request."
+            },
+            {
+              "step": 5,
+              "instruction": "Receives Discharge Instruction Slip."
+            }
+          ]
         },
         {
           "serviceID": 6,
@@ -233,17 +280,64 @@
           "cancerTypes": null,
           "fee": null,
           "sources": [
-            "https://spmc.doh.gov.ph/internal-medicine/"
+            "https://spmc.doh.gov.ph/internal-medicine/",
+            "https://spmc.doh.gov.ph/wp-content/uploads/SPMC_CitizensCharter_Handbook-2025_1st-Edition.pdf"
           ],
           "serviceSchedule": [
             {
-              "day": "Tuesday and Thursday",
-              "timeIn": "1 pm",
-              "timeOut": "5 pm"
+              "day": "Monday to Friday (triage time)",
+              "timeIn": "11:00 AM",
+              "timeOut": "1 PM"
             }
           ],
-          "requirements": [],
-          "procedure": []
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Health Declaration Form (Nurse on Duty, Nursing Attendant (OPD Entrance))"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Triage patient with OPD Yellow card (OPD Triage Unit)"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Valid ID, Senior Citizen/PWD ID (If applicable) (Appropriate government agencies)"
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "Referral from other physician (Referring Physician (other clinic))"
+            },
+            {
+              "requirementID": 5,
+              "requirementDescription": "Patient's Discharge Instruction (if applicable) (Nurse Station (Inpatient, Emergency Room))"
+            },
+            {
+              "requirementID": 6,
+              "requirementDescription": "Patient's Chart (HIMD)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Proceeds to reception area and waits for his/her name to be called."
+            },
+            {
+              "step": 2,
+              "instruction": "Undergoes vital signs checking."
+            },
+            {
+              "step": 3,
+              "instruction": "Undergoes Consultation."
+            },
+            {
+              "step": 4,
+              "instruction": "Receives prescription and/or Laboratory/Radiology procedural request."
+            },
+            {
+              "step": 5,
+              "instruction": "Receives Discharge Instruction Slip."
+            }
+          ]
         },
         {
           "serviceID": 7,
@@ -255,17 +349,52 @@
           "cancerTypes": null,
           "fee": null,
           "sources": [
-            "https://spmc.doh.gov.ph/surgery/"
+            "https://spmc.doh.gov.ph/surgery/",
+            "https://spmc.doh.gov.ph/wp-content/uploads/SPMC_CitizensCharter_Handbook-2025_1st-Edition.pdf"
           ],
           "serviceSchedule": [
             {
-              "day": "Monday to Friday",
-              "timeIn": "8AM",
-              "timeOut": "5PM"
+              "day": "Monday to Friday. Except Saturday, Sunday and Holidays.",
+              "timeIn": "8:00am",
+              "timeOut": "4:00pm"
             }
           ],
-          "requirements": [],
-          "procedure": []
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Referral from other hospital/doctor (if available) (Doctor)"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Yellow Card (HIMD)"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Paid receipt for consultation/routing slip (Cashier/social worker)"
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "Photocopy of laboratory and diagnostics results (if Available) (Laboratory/Diagnostic Section)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Proceed to reception area located at ground floor for securing priority number and Vital signs."
+            },
+            {
+              "step": 2,
+              "instruction": "Proceed to the Surgical Oncology clinic located at 2nd floor waiting area and wait for your number to be called."
+            },
+            {
+              "step": 3,
+              "instruction": "Undergoes consultation."
+            },
+            {
+              "step": 4,
+              "instruction": "Discharge."
+            }
+          ]
         },
         {
           "serviceID": 8,
@@ -274,20 +403,83 @@
           ],
           "serviceName": "Gynecologic Oncology",
           "serviceDescription": "Caters to patients diagnosed with cancer in the reproductive organs",
-          "cancerTypes": null,
-          "fee": null,
+          "cancerTypes": [
+            "Endometrial Cancer",
+            "Uterine Cancer",
+            "Leiomyosarcoma",
+            "Cervical Cancer",
+            "Vulvar Cancer",
+            "Vaginal Cancer",
+            "Ovarian Cancer"
+          ],
+          "fee": "Php 0.00",
           "sources": [
-            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
+            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/",
+            "https://spmc.doh.gov.ph/wp-content/uploads/SPMC_CitizensCharter_Handbook-2025_1st-Edition.pdf"
           ],
           "serviceSchedule": [
             {
-              "day": "weekdays",
-              "timeIn": "1:00 pm",
-              "timeOut": "5:00 pm"
+              "day": "Monday to Friday, except Holidays (Triaging)",
+              "timeIn": "7:00 am",
+              "timeOut": "3:00 pm"
+            },
+            {
+              "day": "Monday – Endometrial Cancer, Uterine Cancer, Leiomyosarcoma",
+              "timeIn": "8:00 am",
+              "timeOut": "3:00 pm"
+            },
+            {
+              "day": "Tuesday – Cervical Cancer, Vulvar Cancer, Vaginal Cancer",
+              "timeIn": "8:00 am",
+              "timeOut": "3:00 pm"
+            },
+            {
+              "day": "Thursday- Ovarian Cancer",
+              "timeIn": "8:00 am",
+              "timeOut": "3:00 pm"
+            },
+            {
+              "day": "Friday- New Patients",
+              "timeIn": "8:00 am",
+              "timeOut": "3:00 pm"
             }
           ],
-          "requirements": [],
-          "procedure": []
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Referral from other physician (if applicable) (Referring Physician (Other Clinic/Hospital))"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Patient's Discharge Instruction (if appliacale) (Nurse Station (Inpatient))"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "OPD Yellowcard (Medical Records)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Proceeds to Nurse Station for verification."
+            },
+            {
+              "step": 2,
+              "instruction": "Patients waits for her name to be called."
+            },
+            {
+              "step": 3,
+              "instruction": "Undergoes vital signs checking."
+            },
+            {
+              "step": 4,
+              "instruction": "Patient waits her name to be called for consultation."
+            },
+            {
+              "step": 5,
+              "instruction": "Receives prescription and/or laboratory/radiology procedural request."
+            }
+          ]
         },
         {
           "serviceID": 9,
@@ -296,20 +488,62 @@
           ],
           "serviceName": "Trophoblastic Service Clinic",
           "serviceDescription": "Specializes in dealing with a group of conditions involving tumor growth in the womb.",
-          "cancerTypes": null,
-          "fee": null,
+          "cancerTypes": [
+            "Trophoblastic Diseases"
+          ],
+          "fee": "Php 0.00",
           "sources": [
-            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/"
+            "https://spmc.doh.gov.ph/obstetrics-and-gynecology/",
+            "https://spmc.doh.gov.ph/wp-content/uploads/SPMC_CitizensCharter_Handbook-2025_1st-Edition.pdf"
           ],
           "serviceSchedule": [
             {
-              "day": "weekdays",
-              "timeIn": "1:00 pm",
-              "timeOut": "5:00 pm"
+              "day": "Monday to Friday, except Holidays (Triaging)",
+              "timeIn": "7:00 am",
+              "timeOut": "3:00 pm"
+            },
+            {
+              "day": "Wednesday- Trophoblastic Diseases",
+              "timeIn": "8:00 am",
+              "timeOut": "3:00 pm"
             }
           ],
-          "requirements": [],
-          "procedure": []
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Referral from other physician (if applicable) (Referring Physician (Other Clinic/Hospital))"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Patient's Discharge Instruction (if appliacale) (Nurse Station (Inpatient))"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "OPD Yellowcard (Medical Records)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Proceeds to Nurse Station for verification."
+            },
+            {
+              "step": 2,
+              "instruction": "Patients waits for her name to be called."
+            },
+            {
+              "step": 3,
+              "instruction": "Undergoes vital signs checking."
+            },
+            {
+              "step": 4,
+              "instruction": "Patient waits her name to be called for consultation."
+            },
+            {
+              "step": 5,
+              "instruction": "Receives prescription and/or laboratory/radiology procedural request."
+            }
+          ]
         },
         {
           "serviceID": 10,
