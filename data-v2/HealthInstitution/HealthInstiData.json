@@ -4,7 +4,7 @@
     "title": "Hospitals",
     "description": "Hospitals with cancer services in Davao City: services, schedules, fees and the programs they accept.",
     "apiVersion": "v2",
-    "lastUpdated": "2026-11-27",
+    "lastUpdated": "2026-11-28",
     "recordCount": 3,
     "coverage": "Davao City, Philippines",
     "language": "en",
@@ -71,16 +71,63 @@
             1
           ],
           "serviceName": "Adult Cancer Clinic and Infusion Unit",
-          "serviceDescription": "Opened on February 8, 2018 on the fourth floor of the Cancer Institute. It offers subsidized multidisciplinary care for all kinds of cancer. The hospital said most patients are free or subsidized charity, assisted through Lingap, PCSO and others.",
+          "serviceDescription": "Chemotherapy for patients with tumor and diagnosed cancer patients (new/old case), at the Cancer Institute Out-Patient Department (Adult Infusion Unit).",
           "cancerTypes": null,
-          "fee": "Adult Onco Unit room and board: 1,000.00. CHEMOTHERAPY (AVERAGE HCI FEES): 8,871.94 (Professional Fee 1,680.00 to 33,350.00). As of August 31, 2022.",
+          "fee": "P 50.00 for loss card/new; P 100.00 chemotherapy fee (* can be socialized)",
           "sources": [
-            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
-            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
+            "https://spmc.doh.gov.ph/wp-content/uploads/SPMC_CitizensCharter_Handbook-2025_1st-Edition.pdf"
           ],
-          "serviceSchedule": null,
-          "requirements": [],
-          "procedure": []
+          "serviceSchedule": [
+            {
+              "day": "Monday to Friday (Adult). Except Saturday, Sunday and Holidays.",
+              "timeIn": "7:00am",
+              "timeOut": "6:00pm"
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "Yellow Card (HIMD)"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "RT-PCR results for Pediatrics / RAT results for Adult for patients with Covid symptoms (Swabbing Center/ Laboratory)"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Treatment Protocol (Patient's copy) (Watcher/Patient, Shadow Folder)"
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "IV fluids, chemotherapy diluent, chemotherapy medicines, microset/macroset, IV cannula (Pharmacy/ Drug store)"
+            }
+          ],
+          "procedure": [
+            {
+              "step": 1,
+              "instruction": "Proceed to the Triage area and secure charge slip."
+            },
+            {
+              "step": 2,
+              "instruction": "Proceed to Billing section if with PHIC."
+            },
+            {
+              "step": 3,
+              "instruction": "Secure all the necessary materials for the procedure."
+            },
+            {
+              "step": 4,
+              "instruction": "Proceed to Infusion Area (Adult Infusion Unit)."
+            },
+            {
+              "step": 5,
+              "instruction": "Chemotherapy infusion."
+            },
+            {
+              "step": 6,
+              "instruction": "Discharge."
+            }
+          ]
         },
         {
           "serviceID": 2,
@@ -88,15 +135,37 @@
             1
           ],
           "serviceName": "Radiation Therapy (Linear Accelerator)",
-          "serviceDescription": "The Cancer Institute's linear accelerator (Linac) for radiation therapy started operating with the adult cancer unit in 2018.",
+          "serviceDescription": "Daily external beam radiotherapy (3D or IMRT) at the Division of Radiation Oncology, Section of External Beam Radiotherapy, for all patients referred for external beam radiotherapy.",
           "cancerTypes": null,
-          "fee": "LINAC Daily fee: 5,160.00 (Professional Fee 800.00 to 2,200.00); Conventional Radiotherapy (2D/3D) Session: 5,160.00 (Professional Fee 800.00 to 2,200.00); IMRT Treatment Session: 16,245.00 (Professional Fee 1,680.00 to 4,000.00); CT Simulation- IMRT: 57,730.00 (Professional Fee 11,546.00 to 27,430.00); Treatment Planning Dosimetry (Xray): 24,225.00 (Professional Fee 2,380.00 to 7,225.00); TREATMENT PLANNING SYSTEM (IMRT): 25,265.00 (Professional Fee 8,400.00 to 12,265.00). As of August 31, 2022.",
+          "fee": null,
           "sources": [
-            "https://www.sunstar.com.ph/more-articles/spmc-inaugurates-adult-cancer-unit",
-            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
+            "https://spmc.doh.gov.ph/wp-content/uploads/SPMC_CitizensCharter_Handbook-2025_1st-Edition.pdf"
           ],
-          "serviceSchedule": null,
-          "requirements": [],
+          "serviceSchedule": [
+            {
+              "day": "Monday to Friday, except holidays.",
+              "timeIn": "6:00 am",
+              "timeOut": "8:00 pm"
+            }
+          ],
+          "requirements": [
+            {
+              "requirementID": 1,
+              "requirementDescription": "SPMC Yellow Card (SPMC-F-HIM-11) (HIMD)"
+            },
+            {
+              "requirementID": 2,
+              "requirementDescription": "Complete Blood Count (Laboratory)"
+            },
+            {
+              "requirementID": 3,
+              "requirementDescription": "Funds for External Beam Radiotherapy Treatment: With PhilHealth: PhilHealth Clearance and PhilHealth Monitoring Sheet (or Z-package approval if eligible) (SPMC PhilHealth Section, SPMC Social Service (Cancer Center Institute Section)); No PhilHealth: Cash or Financial Assistance/ Guarantee Letter"
+            },
+            {
+              "requirementID": 4,
+              "requirementDescription": "Complete Blood Count with Platelet every week."
+            }
+          ],
           "procedure": []
         },
         {
@@ -303,10 +372,9 @@
           "cancerTypes": [
             "Breast Cancer"
           ],
-          "fee": "SCREENING MAMMOGRAM: 2,500.00. DIAGNOSTIC MAMMOGRAM: 3,500.00. As of August 31, 2022.",
+          "fee": null,
           "sources": [
-            "https://spmc.doh.gov.ph/radiological-and-imaging-sciences/",
-            "https://spmc.doh.gov.ph/wp-content/uploads/AllRatesAndFees-merged.pdf"
+            "https://spmc.doh.gov.ph/radiological-and-imaging-sciences/"
           ],
           "serviceSchedule": [
             {
